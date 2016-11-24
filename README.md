@@ -28,7 +28,7 @@ There's only one problem: our local pizzeria's pizza builder **isn't working**. 
 
 ## Instructions
 
-Taking a look at the pizza builder you can see that we will work with the `pizza.js` file, that right now it's empty. Let's help the pizzeria out by writing the pizza builder's JavaScript.
+We will work with the `pizza.js` file that right now it's empty. Let's help the restaurante out by writing the pizza builder's JavaScript.
 
 ### Iteration 1: Add and remove toppings
 
@@ -82,9 +82,9 @@ Currently our pizza builder's buttons look the same, no matter if the option is 
 
 **Also make sure that the buttons' initial state matches that of their ingredient**. If when you first load the pizza builder there is no pepperonni, the pepperonni button should not be active.
 
-### Iteration 4: List of ingredients in the pizza
+### Iteration 4: Ingredients and prices
 
-On the right side of the pizza builder there is a price sections. It should show the ingredients we have in the pizza, not all of them. By default, it should have the base price $10, and the price for the pepperonni, mushrooms, and green pepper.
+On the right side of the pizza builder there is a price section. It should show the ingredients we have in the pizza, not all of them. By default, it should show the base price $10, and the price for the pepperonni, mushrooms, and green pepper.
 
 ```htmlmixed=43
 <ul>
@@ -96,9 +96,9 @@ On the right side of the pizza builder there is a price sections. It should show
 </ul>
 ```
 
-**Use JavaScript to hide and show the items by default. Don't worry right now for the total price of the pizza. When an ingredient is added or removed, update the list to show/hide the ingredient in the list.**
+**Use JavaScript to hide and show the items by default. For now, forget the total price of the pizza. When an ingredient is added or removed, update the list to show/hide the ingredient in the list.**
 
-By default, the selected ingredients should be **pepperonni**, **mushrooms**, and **green peppers**. Once we remove the pepperonni and we add the white sauce, the list should be:
+By default, the selected ingredients should be **pepperonni**, **mushrooms**, and **green peppers**. Once we remove the pepperonni and we add the white sauce, the list should show:
 
 ```
 $10 cheese pizza
@@ -115,7 +115,7 @@ $10 cheese pizza
 
 ### Iteration 4: Update price
 
-To finish this exercise, we shoudl show the correct total price of our pizza. Right now, it's always stuck on **$21**, which is the price if all the ingredients were on:
+To finish this exercise, we should show the correct total price of our pizza. It should show the current price of your pizza, but it's always stuck on **$21**, which is the price if all the ingredients were on:
 
 ```htmlmixed=39
 <aside class="panel price">
