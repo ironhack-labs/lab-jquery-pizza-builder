@@ -82,25 +82,9 @@ Currently our pizza builder's buttons look the same, no matter if the option is 
 
 **Also make sure that the buttons' initial state matches that of their ingredient**. If when you first load the pizza builder there is no pepperonni, the pepperonni button should not be active.
 
-### Iteration 4: Update price
+### Iteration 4: List of ingredients in the pizza
 
-On the right side of the pizza builder there is a price section. It should show the current price of your pizza, but it's always stuck on **$21**, which is the price if all the ingredients were on:
-
-```htmlmixed=39
-<aside class="panel price">
-```
-
-```htmlmixed=50
-<strong>$21</strong>
-```
-
-**Write the JavaScript that update the current price of the pizza as a user clicks the ingredient buttons to turn ingredients on and off. How can you keep track of the current price? When an ingredient changes, how will you know how much to add or substract?**
-
-Don't worry about the individual price items in above the total. First update the total price and worry about those later.
-
-### Iteration 5: Update ingredient itemization
-
-Now that the price is updating we should also update the itemization of the ingredients that make up the total price. It's always showing all of the ingredients, as if they were all turned on.
+On the right side of the pizza builder there is a price sections. It should show the ingredients we have in the pizza, not all of them. By default, it should have the base price $10, and the price for the pepperonni, mushrooms, and green pepper.
 
 ```htmlmixed=43
 <ul>
@@ -112,15 +96,33 @@ Now that the price is updating we should also update the itemization of the ingr
 </ul>
 ```
 
-**Use JavaScript to hide and show the price items as they are turned on and off. When an ingredient is on, the user should see the price of the item. When an ingredient is off, the price item should be hidden.**
+**Use JavaScript to hide and show the items by default. Don't worry right now for the total price of the pizza. When an ingredient is added or removed, update the list to show/hide the ingredient in the list.**
 
-For example, if the user has selected only **white sauce** and **green peppers**, they should see:
+By default, the selected ingredients should be **pepperonni**, **mushrooms**, and **green peppers**. Once we remove the pepperonni and we add the white sauce, the list should be:
 
 ```
 $10 cheese pizza
+  + $1 mushrooms
   + $1 green peppers
   + $3 white sauce
-$14
 ```
 
-When an ingredient changes, how will you know which element to hide?
+**Don't worry about the total price right now.**
+
+:::success
+**Hint:** How could we select the current ingredients? Remember we have a jQuery Selector that allows us to check if an HTML Node contains a certain text chain :)
+:::
+
+### Iteration 4: Update price
+
+To finish this exercise, we shoudl show the correct total price of our pizza. Right now, it's always stuck on **$21**, which is the price if all the ingredients were on:
+
+```htmlmixed=39
+<aside class="panel price">
+```
+
+```htmlmixed=50
+<strong>$21</strong>
+```
+
+**Write the JavaScript that update the current price of the pizza as a user clicks the ingredient buttons to turn ingredients on and off. How can you keep track of the current price? When an ingredient changes, how will you know how much to add or substract?**
