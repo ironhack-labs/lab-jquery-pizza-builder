@@ -1,4 +1,4 @@
-![](https://i.imgur.com/1QgrNNw.png)
+![Ironhack Logo](https://i.imgur.com/1QgrNNw.png)
 
 # JS | Pizza Builder
 
@@ -25,6 +25,10 @@ There's only one problem: our local pizzeria's pizza builder **isn't working**. 
 	git push origin master
 	```
 - Navigate to your repo and [create a Pull Request](https://help.github.com/articles/creating-a-pull-request/)
+
+## Deliverables
+
+You should push every file needed to execute the exercise
 
 ## Instructions
 
