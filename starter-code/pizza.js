@@ -35,8 +35,13 @@ $(document).ready(function() {
   var crustDefault=".crust";
   var crustClass="crust-gluten-free";
 
+  var activeBtn="active";
+
   activateClass(sauceDefault,sauceClass);//Resetea la salsa por defecto al ejectura
   activateClass(crustDefault,crustClass);//Resetea la Masa por defecto al ejectura
+  activateClass(sauceBtn,activeBtn);
+  activateClass(crustBtn,activeBtn);
+  //activateClass(pepperoniBtn,activeBtn);//Pone el Boton a posicion UP
 
   togleBtn(pepperoniBtn,pepperoniClass);
   togleBtn(mushroomBtn,mushroomClass);
@@ -44,9 +49,12 @@ $(document).ready(function() {
   togleAllClass(sauceBtn,sauceDefault,sauceClass);
   togleAllClass(crustBtn,crustDefault,crustClass);
 
-
-
-
+//////////////////////////////////////////
+  togleAllClass(pepperoniBtn,pepperoniBtn,activeBtn);
+  togleAllClass(mushroomBtn,mushroomBtn,activeBtn);
+  togleAllClass(greenPepperBtn,greenPepperBtn,activeBtn);
+  togleAllClass(sauceBtn,sauceBtn,activeBtn);
+  togleAllClass(crustBtn,crustBtn,activeBtn);
 
 });
 /*
