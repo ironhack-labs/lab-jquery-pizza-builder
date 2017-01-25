@@ -104,6 +104,18 @@ body {
   box-shadow: none;
 }
 
+.display-none {
+  display: none;
+}
+
+li.ingredient {
+  display: none;
+}
+
+li.ingredient.block {
+  display: block;
+}
+
 /*------ Header -----*/
 header {
     text-align: center;
