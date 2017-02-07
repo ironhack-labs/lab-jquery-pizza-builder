@@ -19,6 +19,7 @@ There's only one problem: our local pizzeria's pizza builder **isn't working**. 
 ## Submission
 
 - Upon completion, run the following commands
+
 	```
 	git add .
 	git commit -m "done"
@@ -114,10 +115,10 @@ $10 cheese pizza
 **Don't worry about the total price right now.**
 
 :::success
-**Hint:** How could we select the current ingredients? Remember we have a jQuery Selector that allows us to check if an HTML Node contains a certain text chain :)
+**Hint:** How could we select the current ingredients? Remember we have a jQuery Selector that allows us to check if an HTML Node contains a certain string :)
 :::
 
-### Iteration 4: Update price
+### Iteration 5: Update price
 
 To finish this exercise, we should show the correct total price of our pizza. It should show the current price of your pizza, but it's always stuck on **$21**, which is the price if all the ingredients were on:
 
