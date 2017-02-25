@@ -42,14 +42,14 @@ $(document).ready(function(){
   });
 
   $('.btn-sauce').on('click',function(){
-    $('.sauce').toggle();
+    $('.sauce').toggleClass('sauce-white');
     $('.sauce').toggleClass('off');
     sender('.sauce', sauce);
     $('.price li').eq(3).toggle();
   });
 
   $('.btn-crust').on('click',function(){
-    $('.crust').toggle();
+    $('.crust').toggleClass('crust-gluten-free');
     $('.crust').toggleClass('off');
     sender('.crust', crust);
     $('.price li').eq(4).toggle();
