@@ -2,10 +2,11 @@
 $(document).ready(function(){
 
 
-  // ingredients
 
+// original sum of pizza, toggling adds/subtracts from the sum
   var sum = 21;
 
+// arguments are class from each ingredient price of each ingredient respectively
   function sender(toppings, toppingsPrice){
     if ($(toppings).hasClass('off')) {
       sum -= toppingsPrice;
@@ -16,6 +17,8 @@ $(document).ready(function(){
     }
     $('strong').text("$" + sum);
   }
+
+  // ingredients
 
   $('.btn-pepperonni').on('click',function(){
     $('.pep').toggle();
@@ -58,13 +61,4 @@ $(document).ready(function(){
     greenPepper = 1,
     sauce = 3,
     crust = 5;
-
-    // var toppingsArray = [];
-    //
-    // function pushArray(num) {
-    //   toppingsArray.push(num);
-    //   sum();
-    // }
-
-
 });
