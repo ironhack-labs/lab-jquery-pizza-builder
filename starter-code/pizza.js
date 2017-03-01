@@ -1,8 +1,6 @@
 // Write your Pizza Builder JavaScript in this file.
 
 $(".btn-pepperonni").click(function(e){
-  //  e.preventDefault();
-  //console.log("You clicked the button!");
   $(this).toggleClass('active');
   $('.pep').toggle();
   $("li:contains('pepperonni')").toggle();
@@ -37,29 +35,24 @@ $(".btn-crust").click(function(e){
   calcPrice();
 });
 
-function calcPrice () {
-var totalPrice = 10;
+function calcPrice(){
+  var totalPrice=10;
 
-        if  ($('.btn-pepperonni').hasClass('active'))
-        {
-            $('#totalPrice').html(totalPrice += 1);
-        }
+  if ($('.btn-pepperonni').hasClass('active')) {
+    totalPrice += 1;
+  }
+  if ($('.btn-mushrooms').hasClass('active')) {
+    totalPrice += 1;
+  }
+  if ($('.btn-green-peppers').hasClass('active')) {
+    totalPrice += 1;
+  }
+  if ($('.btn-sauce').hasClass('active')) {
+    totalPrice += 3;
+  }
+  if ($('.btn-crust').hasClass('active')) {
+    totalPrice += 5;
+  }
 
-        if  ($('.btn-mushrooms').hasClass('active'))
-        {
-            $('#totalPrice').html(totalPrice += 1);
-        }
-
-        if  ($('.btn-green-peppers').hasClass('active'))
-        {
-            $('#totalPrice').html(totalPrice += 1);
-        }
-
-        if ($('.btn-sauce').hasClass('active')) {
-            $('#totalPrice').html(totalPrice += 3);
-        }
-
-        if ($('.btn-crust').hasClass('active')) {
-          $('#totalPrice').html(totalPrice += 5);
-        }
+  $('#totalPrice').html(totalPrice);
 }
