@@ -1,21 +1,23 @@
 $(document).ready(function() {
-  totalPrice=10;
-
+var basePrice=10;
 // PEPPERONI BUTTON
 $(".btn-pepperonni").click(function() {
   $('.pep').toggle();
   $('#pepper').toggle();
   $(this).toggleClass("active");
-  if ($(this).hasClass('active')) {
-    totalPrice=Number(totalPrice) + 1;
-    document.getElementById('finalPrice').innerHTML=(totalPrice);
-  } else {
-    totalPrice=Number(totalPrice) - 1;
-    if (totalPrice<10) {
-      document.getElementById('finalPrice').innerHTML=(basePrice);
-  } else {
-      document.getElementById('finalPrice').innerHTML=(totalPrice);
-  }}
+  calculatePrice();
+});
+  // if ($(this).hasClass('active')) {
+  //   totalPrice=Number(totalPrice) + 1;
+  //   document.getElementById('finalPrice').innerHTML=(totalPrice);
+  // } else {
+  //   totalPrice=Number(totalPrice) - 1;
+  //   if (totalPrice<10) {
+  //     document.getElementById('finalPrice').innerHTML=(basePrice);
+  // } else {
+  //     document.getElementById('finalPrice').innerHTML=(totalPrice);
+  // }
+// }});
 
 
   //  if ($(".btn-pepperonni").hasClass('active')) {
@@ -35,16 +37,17 @@ $(".btn-mushrooms").click(function() {
   $(".mushroom").toggle();
   $("#shroom").toggle();
   $(this).toggleClass("active");
-  if ($(this).hasClass('active')) {
-    totalPrice=Number(totalPrice) + 1;
-    document.getElementById('finalPrice').innerHTML=(totalPrice);
-  } else {
-    totalPrice=Number(totalPrice) - 1;
-    if (totalPrice<10) {
-      document.getElementById('finalPrice').innerHTML=(basePrice);
-  } else {
-      document.getElementById('finalPrice').innerHTML=(totalPrice);
-  }}
+  calculatePrice();});
+  // if ($(this).hasClass('active')) {
+  //   totalPrice=Number(totalPrice) + 1;
+  //   document.getElementById('finalPrice').innerHTML=(totalPrice);
+  // } else {
+  //   totalPrice=Number(totalPrice) - 1;
+  //   if (totalPrice<10) {
+  //     document.getElementById('finalPrice').innerHTML=(basePrice);
+  // } else {
+  //     document.getElementById('finalPrice').innerHTML=(totalPrice);
+  // }}});
 //   if ($(".btn-mushrooms").hasClass('active')) {
 //     $('#shroom').show();
 //     currentPrice=basePrice+1;
@@ -59,7 +62,8 @@ $(".btn-mushrooms").click(function() {
 $(".btn-green-peppers").click(function() {
   $(".green-pepper").toggle();
   $(this).toggleClass("active");
-  $("#greenpep").toggle();});
+  $("#greenpep").toggle();
+  calculatePrice();});
 //   if ($(".btn-green-peppers").hasClass('active')) {
 //     $('#greenpep').show();
 //     currentPrice=currentPrice+1;
@@ -75,11 +79,13 @@ $(".btn-green-peppers").click(function() {
   $('#whitesauce').toggle();
   $('.sauce-white').toggle();
   $(this).toggleClass("active");
-  if ($(this).hasClass('active')) {
-    totalPrice=Number(totalPrice) + 3;
-  } else {
-    totalPrice=Number(totalPrice) - 3;
-  }
+  calculatePrice();}
+//   if ($(this).hasClass('active')) {
+//     totalPrice=Number(totalPrice) + 3;
+//   } else {
+//     totalPrice=Number(totalPrice) - 3;
+//   }
+// });
 //   if ($(".btn-sauce").hasClass('active')) {
 //     $('#whitesauce').show();
 //     currentPrice=currentPrice+3;
@@ -90,18 +96,20 @@ $(".btn-green-peppers").click(function() {
 //   if (newPrice<=10) {
 //   document.getElementById('finalPrice').innerHTML=(basePrice);}
 // else {document.getElementById('finalPrice').innerHTML=(currentPrice);}});
-
-$('.btn-crust').click(function(e) {
+);
+$('.btn-crust').click(function() {
   $('.crust').toggle();
+  $('#gfoption').toggle();
   $(this).toggleClass("active");
-  if ($(".btn-crust").hasClass('active')) {
-    $('#gfoption').show();
-    totalPrice=Number(totalPrice) + 3;
+  calculatePrice();}
+//   if ($(".btn-crust").hasClass('active')) {
+//     $('#gfoption').show();
+//     totalPrice=Number(totalPrice) + 3;
+//
+//  } else {$('#gfoption').hide();
+//  totalPrice=Number(totalPrice) - 3;}
+// });
 
- } else {$('#gfoption').hide();
- totalPrice=Number(totalPrice) - 3;}
-});
-}
 // function TotalPrice() {
 //   var basePrice=10;
 //     if ($(".btn-pepperonni").hasClass('active')) {
@@ -138,38 +146,29 @@ $('.btn-crust').click(function(e) {
 //          document.getElementById('total').value = total;
 //        }
 );
-// $('button').click(function() {
-//   var totalPrice=10;
-//   if (".btn-pepperonni".hasClass('active')) {
-//     totalPrice=basePrice+1;
-//   }  else {
-//     totalPrice=basePrice;
-//   }
-//   if (".btn-mushrooms".hasClass('active')) {
-//     totalPrice=totalPrice+1;
-//   } else {
-//     totalPrice=totalPrice-1;
-//   }
-//   if (".btn-green-peppers".hasClass('active')) {
-//     totalPrice=totalPrice+1;
-//   } else {
-//     totalPrice=totalPrice-1;
-//   }
-//   if ('.btn-sauce'.hasClass('active')) {
-//     totalPrice=totalPrice+3;
-//   } else {
-//     totalPrice=totalPrice-3;
-//   }
-//   if (".btn-crust".hasClass('active')) {
-//     totalPrice=totalPrice+5;
-//   } else {
-//     totalPrice=totalPrice-5;
-//   }
-//   return totalPrice;
-//
-// });
-// //$("button").onclick(function(calculatePrice()));
-// console.log(totalPrice);
+
+function calculatePrice () {
+    var basePrice=10;
+    if ($('.btn-pepperonni').hasClass('active')) {
+       basePrice+=1;
+       }
+     if ($('.btn-mushrooms').hasClass('active')) {
+      basePrice+=1;
+      }
+     if ($('.btn-green-peppers').hasClass('active')) {
+       basePrice+=1;
+       }
+     if ($('.btn-sauce').hasClass('active')) {
+      basePrice+=3;
+       }
+     if ($(".btn-crust").hasClass('active')) {
+        basePrice+=5;
+       }
+ document.getElementById('finalPrice').innerHTML=basePrice;
+     }
+  //  $('.btn').click(calculatePrice());
+        // $('.btn').click(function() {
+
+
 });
-});
-});
+// document.getElementById('finalPrice').innerHTML=(totalPrice);
