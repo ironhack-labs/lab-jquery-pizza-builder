@@ -114,9 +114,7 @@ $10 cheese pizza
 
 **Don't worry about the total price right now.**
 
-:::success
-**Hint:** How could we select the current ingredients? Remember we have a jQuery Selector that allows us to check if an HTML Node contains a certain string :)
-:::
+> **Hint:** How could we select the current ingredients? Remember we have a jQuery Selector that allows us to check if an HTML Node contains a certain string :)
 
 ### Iteration 5: Update price
 
