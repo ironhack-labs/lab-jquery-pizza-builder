@@ -19,18 +19,19 @@ SumElements()
     // get ingridients price
     // sum all the prices
     // assing the new price
-    /*var basePrice = $("aside.panel b").attr("data-price");
+    var basePrice = $("aside.panel b").attr("data-price");
     var sum = 10;
     $("aside.panel li").each(function(index, element){
       if($(this).css("display") != "none"){
-        
-        sum += element; 
-        ($("aside strong").html(sum))
+        sum += $(element).data("price")       
       }
     }) 
 
-    return sum;*/
-    var price = 10;
+    $(".price strong").replaceWith("<strong>$"+ sum +"</strong>");
+
+  }
+
+    /*var price = 10;
  if($(".btn-crust").hasClass("active")) price+=5;
  if($(".btn-sauce").hasClass("active")) price+=3;
  if($(".btn-green-peppers").hasClass("active")) price+=1;
@@ -42,7 +43,7 @@ SumElements()
 
   }
 
-  // console.log(peperoni);
+  // console.log(peperoni);*/
 
   function removeThings() {
 
