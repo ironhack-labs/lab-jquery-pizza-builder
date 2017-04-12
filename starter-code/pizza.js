@@ -7,40 +7,44 @@ $(".panel.price ul li:nth-child(5)").hide();
 $(".btn-crust").removeClass("active");
 $(".btn-sauce").removeClass("active");
 
-$(".btn").on("click",function(){
-  getPrice();
-});
 
+//for every button
+//toggle class (active) to update prices
+//we print the price list, call get price function, update price
 $(".btn-pepperonni").on("click", function(){
   $("#pizza section.pep")
     .toggle();
     $(this).toggleClass("active");
     $(".panel.price ul li:nth-child(1)").toggle();
+    getPrice();
 });
 //mushrooms(hide)
 $(".btn-mushrooms").on("click", function(){
   $("#pizza section.mushroom").toggle();
   $(this).toggleClass("active");
   $(".panel.price ul li:nth-child(2)").toggle();
-
+  getPrice();
 });
 //green peppers (hide)
 $(".btn-green-peppers").on("click", function(){
   $("#pizza section.green-pepper").toggle();
   $(this).toggleClass("active");
   $(".panel.price ul li:nth-child(3)").toggle();
+   getPrice();
 });
 //crust
 $(".btn-crust").on("click", function(){
   $(".crust").toggleClass("crust-gluten-free");
   $(this).toggleClass("active");
-  $(".panel.price ul li:nth-child(4)").toggle();
+  $(".panel.price ul li:nth-child(5)").toggle();
+   getPrice();
 });
 //sauce
 $(".btn-sauce").on("click", function(){
   $("#pizza section section.sauce").toggleClass("sauce-white");
   $(this).toggleClass("active");
-  $(".panel.price ul li:nth-child(5)").toggle();
+  $(".panel.price ul li:nth-child(4)").toggle();
+ getPrice();
 });
 
 function getPrice(){
@@ -68,6 +72,7 @@ function getPrice(){
   }
 
   var totalPrice = basicPizza + pepperonni + mushrooms + greenPeppers + glutenFree + whiteSauce;
-  var total = $(".panel.price strong").html("$"+totalPrice);
+
+  $(".panel.price strong").html("$"+totalPrice);
 
 }
