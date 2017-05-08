@@ -41,19 +41,19 @@ There are five buttons on the left of the pizza builder. Three of those have to 
 
 Each individual topping has its own HTML element:
 
-```htmlmixed=56
+```html
 <section class="green-pepper one"></section>
 <section class="green-pepper two"></section>
 ```
 
-```htmlmixed=78
+```html
 <section class="mushroom one">
   <div class="cap">1</div>
   <div class="stem"></div>
 </section>
 ```
 
-```htmlmixed=238
+```html
 <section class="pep one">1</section>
 <section class="pep two">2</section>
 ```
@@ -66,7 +66,7 @@ Wait a minute... this pizza comes with white sauce and gluten-free crust by defa
 
 Both the crust and the sauce have their own HTML elements:
 
-```htmlmixed=271
+```html
 <section class="crust crust-gluten-free">
   <section class="cheese"></section>
   <section class="sauce sauce-white"></section>
@@ -79,7 +79,7 @@ Both the crust and the sauce have their own HTML elements:
 
 Currently our pizza builder's buttons look the same, no matter if the option is activateed or not. If you notice, all the buttons have an `active` class.
 
-```htmlmixed=20
+```html
 <button class="btn btn-pepperonni active">Pepperonni</button>
 ```
 
@@ -91,7 +91,7 @@ Currently our pizza builder's buttons look the same, no matter if the option is 
 
 On the right side of the pizza builder there is a price section. It should show the ingredients we have in the pizza, not all of them. By default, it should show the base price $10, and the price for the pepperonni, mushrooms, and green pepper.
 
-```htmlmixed=43
+```html
 <ul>
   <li>$1 pepperonni</li>
   <li>$1 mushrooms</li>
@@ -120,11 +120,11 @@ $10 cheese pizza
 
 To finish this exercise, we should show the correct total price of our pizza. It should show the current price of your pizza, but it's always stuck on **$21**, which is the price if all the ingredients were on:
 
-```htmlmixed=39
+```html
 <aside class="panel price">
 ```
 
-```htmlmixed=50
+```html
 <strong>$21</strong>
 ```
 
