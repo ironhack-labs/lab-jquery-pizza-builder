@@ -1,5 +1,14 @@
 $(document).ready(function(){
-  var priceBase = 10;
+  function totalPrice(){
+    var total = 10;
+
+    $('.item-price:visible').each(function(){
+        total += parseInt($(this).attr("data-price"));
+    })
+
+    $('.total').text(total);
+
+  }
 
 
   $('.btn-mushrooms').click(function(){
@@ -31,13 +40,9 @@ $(document).ready(function(){
 
   $('button').click(function(){
     $(this).toggleClass('active');
+    totalPrice();
+
   });
-
-  if($('.pizza-mushroom').length > 0){
-    
-  }
-
-  var total = priceBase + pricePep + priceGreenPepper + priceMushroom + priceSauce + priceCrust;
 
 
 });
