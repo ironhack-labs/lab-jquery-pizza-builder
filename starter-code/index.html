@@ -36,18 +36,20 @@
     <!-- End Controls -->
 
     <!-- Price -->
-    <aside class="panel price">
+    <aside class="panel prices">
       <h2>Your pizza's price</h2>
 
       <b>$10 cheese pizza</b>
       <ul>
-        <li>$1 pepperonni</li>
-        <li>$1 mushrooms</li>
-        <li>$1 green peppers</li>
-        <li>$3 white sauce</li>
-        <li>$5 gluten-free crust</li>
+        <li class="price price_pepperoni">$1 pepperonni</li>
+        <li class="price price_mushrooms">$1 mushrooms</li>
+        <li class="price price_green_peppers">$1 green peppers</li>
+        <li class="price price_whitesauce">$3 white sauce</li>
+        <li class="price price_redsauce">$1 red sauce</li>
+        <li class="price price_crust">$1 regular crust</li>
+        <li class="price price_crust_glutenfree">$5 gluten-free crust</li>
       </ul>
-      <strong>$21</strong>
+      <div><p id="totalprice">$12</p></div>
     </aside>
     <!-- End Price -->
 
@@ -289,7 +291,7 @@
     </footer>
     <!-- Footer -->
 
-    <script src="jquery-2.1.4.js"></script>
+    <script src="jquery.js"></script>
     <script src="pizza.js"></script>
   </body>
 </html>

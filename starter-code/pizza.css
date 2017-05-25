@@ -103,6 +103,15 @@ body {
   top: 5px;
   box-shadow: none;
 }
+/*HIDES*/
+.price_whitesauce,
+.price_crust_glutenfree,
+.price_pepperoni,
+.price_mushrooms,
+.price_green_peppers
+{
+  display:none;
+}
 
 /*------ Header -----*/
 header {
@@ -130,7 +139,11 @@ p.description {
     overflow: hidden;
     position: relative;
 }
+#totalprice{
+  font-size: 20px;
+  font-weight: bold;
 
+}
 /*------ Panels -----*/
 
 .panel {
@@ -284,37 +297,37 @@ p.description {
 }
 
 /*------ Price -----*/
-.price {
+.prices {
   right: 0;
 }
 
-.price h2 {
+.prices h2 {
   font-size: 30px;
   font-weight: bold;
   color: #555;
   margin-bottom: 15px;
 }
 
-.price h2:after {
+.prices h2:after {
   content: ':';
 }
 
-.price b {
+.prices b {
   font-size: 20px;
   color: #e2311a;
 }
 
-.price li {
+.prices li {
   margin: 5px 20px 0;
   color: #666;
 }
 
-.price li:before {
+.prices li:before {
   content: '+ ';
   color: #e2311a;
 }
 
-.price strong {
+.prices strong {
   font-size: 30px;
   display: block;
   margin-top: 6px;
