@@ -61,7 +61,53 @@ body {
     max-width: 750px;
     margin: 0 auto;
 }
+#blink {
+    font-size: 40px;
+    -webkit-animation: blink 5s 1s;
+    animation: blink 5s 1s;
+}
 
+@-webkit-keyframes blink {
+    0%  {color: blue;}
+   10%  {color: yellow;}
+   20%  {color: blue;}
+   29%  {color: yellow;}
+   38%  {color: blue;}
+   46%  {color: yellow;}
+   54%  {color: blue;}
+   61%  {color: yellow;}
+   68%  {color: blue;}
+   74%  {color: yellow;}
+   80%  {color: blue;}
+   85%  {color: yellow;}
+   90%  {color: blue;}
+   92%  {color: yellow;}
+   94%  {color: blue;}
+   96%  {color: yellow;}
+   98%  {color: blue;}
+  100%  {color: yellow;}
+ }
+
+@keyframes blink {
+    0%  {color: blue;}
+   10%  {color: yellow;}
+   20%  {color: blue;}
+   29%  {color: yellow;}
+   38%  {color: blue;}
+   46%  {color: yellow;}
+   54%  {color: blue;}
+   61%  {color: yellow;}
+   68%  {color: blue;}
+   74%  {color: yellow;}
+   80%  {color: blue;}
+   85%  {color: yellow;}
+   90%  {color: blue;}
+   92%  {color: yellow;}
+   94%  {color: blue;}
+   96%  {color: yellow;}
+   98%  {color: blue;}
+  100%  {color: yellow;}
+ }
 /*
  * Buttons from:
  * http://codepen.io/TeshaR/pen/cdugG?editors=110
