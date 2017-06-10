@@ -1,50 +1,69 @@
 
+ var counter = 10;
 
 $(document).ready(function() {
 
-
+   $(".price strong").text("$" + counter);
   //Buttons
+  if ($("button.btn-pepperonni").hasClass("active")){
+    counter = counter + 1;
+    $(".price strong").text("$" + counter);
+  }
+  if ($("button.btn-mushrooms").hasClass("active")){
+    counter = counter + 1;
+    $(".price strong").text("$" + counter);
+  }
+  if ($("button.btn-green-peppers").hasClass("active")){
+    counter = counter + 1;
+    $(".price strong").text("$" + counter);
+  }
 
 
-  $("button").click(function(event){
+
+  $(".btn").click(function(event){
     $(this).toggleClass("active");
   });
 
 
 
   $("button.btn-pepperonni").click(function(event){
+    if ($("button.btn-pepperonni").hasClass("active")){
+      counter = counter + 1;
+      $(".price strong").text("$" + counter);
+    } else{
+      counter = counter - 1;
+      $(".price strong").text("$" + counter);
+    }
     $("section.pep").toggle("display");
     $("li:contains('pepperonni')").toggle("display");
-
-    if(!$("button.btn-pepperonni").hasClass("active")){
-      $(".price strong").text("$" + (counter++));
-    } else if ($("button.btn-pepperonni").hasClass("active")){
-      $(".price strong").text("$" + (counter--));
-    }
-
   });
 
 
 
 
   $("button.btn-green-peppers").click(function(event){
+    if ($("button.btn-green-peppers").hasClass("active")){
+      counter = counter + 1;
+      $(".price strong").text("$" + counter);
+    } else{
+      counter = counter - 1;
+      $(".price strong").text("$" + counter);
+    }
     $("section.green-pepper").toggle("display");
     $("li:contains('green peppers')").toggle("display");
-    if(!$("button.btn-green-peppers").hasClass("active")){
-      $(".price strong").text("$" + (counter++));
-    } else if ($("button.btn-green-peppers").hasClass("active")){
-      $(".price strong").text("$" + (counter--));
-    }
   });
 
   $("button.btn-mushrooms").click(function(event){
+    if ($("button.btn-mushrooms").hasClass("active")){
+      counter = counter + 1;
+      $(".price strong").text("$" + counter);
+    } else{
+      counter = counter - 1;
+      $(".price strong").text("$" + counter);
+    }
     $("section.mushroom").toggle("display");
     $("li:contains('mushrooms')").toggle("display");
-    if(!$("button.btn-mushrooms").hasClass("active")){
-      $(".price strong").text("$" + (counter++));
-    } else if ($("button.btn-mushrooms").hasClass("active")){
-      $(".price strong").text("$" + (counter--));
-    }
+
   });
 
   //Sauce and crust Buttons
@@ -55,6 +74,13 @@ $(document).ready(function() {
   $("section.sauce").removeClass("sauce-white");
 
   $("button.btn-sauce").click(function(event){
+    if ($("button.btn-sauce").hasClass("active")){
+      counter = counter + 3;
+      $(".price strong").text("$" + counter);
+    } else{
+      counter = counter - 3;
+      $(".price strong").text("$" + counter);
+    }
     $("section.sauce").toggleClass("sauce-white");
     $("li:contains('white sauce')").toggle("display");
   });
@@ -68,7 +94,14 @@ $(document).ready(function() {
   $("button.btn-crust").toggleClass("active");
   $("section.crust").removeClass("crust-gluten-free");
 
-  $("button.btn-crust").click(function(event){
+  $("button.btn-crust").click(function(){
+    if ($("button.btn-crust").hasClass("active")){
+      counter = counter + 5;
+      $(".price strong").text("$" + counter);
+    } else{
+      counter = counter - 5;
+      $(".price strong").text("$" + counter);
+    }
     $("section.crust").toggleClass("crust-gluten-free");
     $("li:contains('gluten-free crust')").toggle("display");
   });
@@ -80,7 +113,6 @@ $(document).ready(function() {
 
   //Adding to the final price
 
-  var counter = 16;
    $(".price strong").text("$" + counter);
 
 
