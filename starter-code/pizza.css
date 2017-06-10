@@ -17,6 +17,15 @@ header, section, footer, article, details {
     font-family: inherit;
     vertical-align: baseline;
 }
+
+.hidden {
+  visibility: hidden;
+}
+
+.visible {
+  visibility: visible;
+}
+
 /* remember to define focus styles! */
 :focus {
     outline: 0;
