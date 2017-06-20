@@ -6,11 +6,6 @@
 $(document).ready(function() {
 
     var amount = 13;
-    var peperoni = 0;
-    var mushroom = 0;
-    var peppers = 0;
-    var sauce = 0;
-    var gluten = 0;
 
     //Set enable false when page loads
     $(".crust").removeClass( "crust-gluten-free" );
