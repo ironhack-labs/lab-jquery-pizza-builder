@@ -33,6 +33,7 @@ $("document").ready(function(){
   //interacción2 y interacción3
   $(".btn-sauce").toggleClass("active");
   $(".price li:nth-child(4)").css("display","none");
+  $(".price li:nth-child(5)").css("display","none");
   $(".sauce").toggleClass("sauce-white");
   $(".btn-crust").toggleClass("active");
   $(".crust").toggleClass("crust-gluten-free");
@@ -40,25 +41,44 @@ $("document").ready(function(){
   $(".btn-sauce").click(function(){
     $(".btn-sauce").toggleClass("active");
     $(".sauce").toggleClass("sauce-white");
-    if($("sauce").hasClass("sauce-white")){
-      $(".price li:nth-child(4)").css("display","none");
-    }else{
+    if($(".sauce").hasClass("sauce-white")){
       $(".price li:nth-child(4)").css("display","list-item");
+    }else{
+      $(".price li:nth-child(4)").css("display","none");
     }
   });
 
   $(".btn-crust").click(function(){
     $(".btn-crust").toggleClass("active");
     $(".crust").toggleClass("crust-gluten-free");
-    if($("btn-crust").hasClass("active")){
+    if($(".btn-crust").hasClass("active")){
       console.log("Has class");
 
-      $(".price li:nth-child(5)").css("display","none");
+      $(".price li:nth-child(5)").css("display","list-item");
     }else{
       console.log("Dont has class");
-      $(".price li:nth-child(5)").css("display","list-item");
+      $(".price li:nth-child(5)").css("display","none");
     }
   });
-  //interacción4
-  $("")
+  $(".btn").click(function(){
+    var price = 10;
+    if ( $(".btn-pepperonni").hasClass("active")) {
+      price +=1;
+    }
+    if ( $(".btn-mushrooms").hasClass("active")) {
+      price +=1;
+    }
+    if ( $(".btn-green-peppers").hasClass("active")) {
+      price +=1;
+    }
+    if ( $(".btn-sauce").hasClass("active")) {
+      price +=3;
+    }
+    if ( $(".btn-crust").hasClass("active")) {
+      price +=5;
+    }
+    $(".price strong").html("$" + price);
+  });
+   $(".price strong").html("$13");
+
 });
