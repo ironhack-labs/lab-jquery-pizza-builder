@@ -1,5 +1,14 @@
 // Write your Pizza Builder JavaScript in this file.
 $(document).ready(function() {
+  $("section.crust").removeClass("crust-gluten-free");
+  $(".sauce").removeClass("sauce-white");
+  $("li:contains('white sauce')").hide();
+  $("li:contains('gluten-free crust')").hide();
+
+  var pep = 1;
+  var greenPep =1;
+  var mushroom = 1;
+
   $('.btn').click(function(){
     $(this).toggleClass('active');
   });
@@ -17,10 +26,6 @@ $(document).ready(function() {
     $("li:contains('mushroom')").toggle();
   });
 
-  $("section.crust").removeClass("crust-gluten-free");
-  $(".sauce").removeClass("sauce-white");
-
-
   $(".btn-crust").click(function(){
     $("section.crust").toggleClass("crust-gluten-free");
     $("li:contains('gluten-free crust')").toggle();
@@ -30,6 +35,7 @@ $(document).ready(function() {
     $("li:contains('white sauce')").toggle();
   });
 
-  $("li:contains('white sauce')").hide();
-  $("li:contains('gluten-free crust')").hide();
+  var priceList = $(".price ul").toArray().map(li, index);
+  console.log(priceList)
+
 });
