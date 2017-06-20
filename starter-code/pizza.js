@@ -21,7 +21,6 @@ $(document).ready(function(){
   $("aside > ul li:contains('white sauce')").toggle();
   $("aside > ul li:contains('gluten-free crust')").toggle();
 
-  $("aside > ul li:contains('pepperonni')").toggle();
   var price = $("strong");
 
 
