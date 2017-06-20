@@ -5,6 +5,32 @@ $(document).ready(function() {
   $(".panel ul li:contains(white sauce)").hide();
   $(".panel ul li:contains(gluten-free crust)").hide();
 
+  var totalPrice = function() {
+
+    var b = $(".price b");
+    var a = $(".price ul li:visible");
+    var e = [];
+
+    for (var i = 0; i < a.length; i++) {
+      var q = a[i].innerHTML.split(" ");
+      var s = parseInt(q[0][1]);
+      e.push(s);
+    }
+    console.log(e);
+
+    var sum = e.reduce(add, 0) + 10;
+
+    function add(a, b) {
+      return a + b;
+    }
+
+    console.log(sum);
+
+    document.getElementsByTagName('strong')[0].innerHTML = "$" + sum;
+  };
+
+  totalPrice();
+
   $('.btn').on('click', function() {
     $(this).toggleClass("active");
   });
@@ -13,21 +39,25 @@ $(document).ready(function() {
   $(".btn-pepperonni").click(function() {
     $(".pep").toggle();
     $(".panel ul li:contains(pepperonni)").toggle();
+    totalPrice();
   });
 
   $(".btn-mushrooms").click(function() {
     $(".mushroom").toggle();
     $(".panel ul li:contains(mushrooms)").toggle();
+    totalPrice();
   });
 
   $(".btn-green-peppers").click(function() {
     $(".green-pepper").toggle();
     $(".panel ul li:contains(green peppers)").toggle();
+    totalPrice();
   });
 
   $(".btn-sauce").click(function() {
     $(".sauce").toggleClass("sauce-white");
     $(".panel ul li:contains(white sauce)").toggle();
+    totalPrice();
   });
 
   $(".btn-crust").click(function() {
@@ -36,28 +66,6 @@ $(document).ready(function() {
     totalPrice();
   });
 
-var totalPrice = function() {
 
-  var b = $(".price b");
-  var a = $(".price ul li:visible");
-  var e = [];
-
-  for (var i = 0; i < a.length; i++) {
-    var q = a[i].innerHTML.split(" ");
-    var s = parseInt(q[0][1]);
-    e.push(s);
-  }
-  console.log(e);
-
-  var sum = e.reduce(add, 0) + 10;
-
-  function add(a, b) {
-    return a + b;
-  }
-
-  console.log(sum);
-
-  document.getElementsByTagName('strong')[0].innerHTML = "$" + sum;
-};
 
 });
