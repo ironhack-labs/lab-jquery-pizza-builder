@@ -283,6 +283,16 @@ p.description {
   box-shadow: none;
 }
 
+.btn-crust.selected {
+    background: #957160;
+    color: white;
+}
+
+.btn-sauce.selected {
+    background: #998500;
+    color: white;
+}
+
 /*------ Price -----*/
 .price {
   right: 0;
