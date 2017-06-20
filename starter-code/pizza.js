@@ -23,6 +23,16 @@ $("document").ready(function(){
     }else {
       $(".green-pepper").css("display","block");
     }
-
+  });
+  //interacción2
+  $(".btn-sauce").toggleClass("active");
+  $(".btn-crust").toggleClass("active");
+  $(".btn-sauce").click(function(){
+    $(".btn-sauce").toggleClass("active");
+    $(".sauce").toggleClass("sauce-white");
+  });
+  $(".btn-crust").click(function(){
+    $(".btn-crust").toggleClass("active");
+    $(".crust").toggleClass("crust-gluten-free");
   });
 });
