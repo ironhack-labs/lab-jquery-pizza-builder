@@ -1,7 +1,23 @@
 // Write your Pizza Builder JavaScript in this file.
 $(document).ready(function() {
-
-   //var pricePep = $("li:contains(green)").charAt(1);
+  var totalPrice = function() {
+    var b = $(".price b");
+    var a = $(".price ul li:visible");
+    var e = [];
+    for (var i = 0; i < a.length; i++) {
+      var q = a[i].innerHTML.split(" ");
+      var s = parseInt(q[0][1]);
+      e.push(s);
+    }
+    console.log(e);
+    var sum = e.reduce(add, 0) + 10;
+    function add(a, b) {
+      return a + b;
+    }
+    console.log(sum);
+    document.getElementsByTagName('strong')[0].innerHTML = "$" + sum;
+  };
+  totalPrice();
   $(".crust").toggleClass("crust-gluten-free");
   $(".btn-crust").toggleClass("active");
   $(".btn-pepperonni").toggleClass("active");
@@ -40,7 +56,7 @@ $(document).ready(function() {
     $("li:contains(gluten-free)").toggle();
 
   });
-
+  
 
 
 });
