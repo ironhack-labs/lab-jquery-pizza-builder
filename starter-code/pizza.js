@@ -87,16 +87,30 @@ $(document).ready(function() {
           }
         });
 
+          $(".price strong").text("$13");
 
+          $(".btn").click(function(event) {
 
-    /*var m = $("#pizza" ".green-pepper").each(function(e){
-      var display = $(this).css("display");
-      if (display === "none"){
-        $(this).css("display", "inherit");
-      }else if (display === "inherit"){
-        $(this).css("display", "none");
-      }
-      }
-    })*/
+          var price = 10;
+
+          if ($(".btn-pepperonni").hasClass("active")){
+            price += 1;
+          }
+          if ($(".btn-mushrooms").hasClass("active")){
+            price += 1;
+          }
+          if ($(".btn-green-peppers").hasClass("active")){
+            price += 1;
+          }
+          if (($(".btn-sauce").text())==="White sauce"){
+            price += 3;
+          }
+          if (($(".btn-crust").text())==="crust-gluten-free"){
+            price += 5;
+          }
+          price = "$" + price;
+
+          $(".price strong").html(price);
+        });
 
 });
