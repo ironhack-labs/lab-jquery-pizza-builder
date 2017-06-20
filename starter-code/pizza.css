@@ -384,6 +384,9 @@ p.description {
     text-indent: -9999px;
     color: #fff;
 }
+.hide{
+  display: none;
+}
 /*.pep:hover{
     -moz-transform: scale(1.3);
     -webkit-transform: scale(1.3);
