@@ -1,6 +1,7 @@
 // Write your Pizza Builder JavaScript in this file.
 
   $('.btn-pepperonni').click(function(){
+    $('.btn-pepperonni').toggleClass('active')
     if( $('.pep').css('display') === 'none'){
       $('.pep').css('display', 'block')
     } else {
@@ -10,6 +11,7 @@
   });
 
   $('.btn-green-peppers').click(function(){
+    $('.btn-green-peppers').toggleClass('active')
     if( $('.green-pepper').css('display') === 'none'){
       $('.green-pepper').css('display', 'block')
     } else {
@@ -19,6 +21,8 @@
   });
 
   $('.btn-mushrooms').click(function(){
+    $('.btn-mushrooms').toggleClass('active')
+
     if( $('.mushroom').css('display') === 'none'){
       $('.mushroom').css('display', 'block')
     } else {
@@ -29,6 +33,8 @@
 
 
     $('.btn-crust').click(function(){
+      $('.btn-crust').toggleClass('active')
+
       if( $('.cheese').css('display') === 'none'){
         $('.cheese').css('display', 'block')
       } else {
@@ -37,6 +43,8 @@
     });
 
     $('.btn-sauce').click(function(){
+      $('.btn-sauce').toggleClass('active')
+
       if( $('.sauce').css('display') === 'none'){
         $('.sauce').css('display', 'block')
       } else {
