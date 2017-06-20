@@ -6,7 +6,7 @@ small, strike, sub, sup, tt, var,
 dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
-header, section, footer, article, details {
+header, section, footer, article, details { 
     margin: 0;
     padding: 0;
     border: 0;
