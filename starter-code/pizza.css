@@ -148,29 +148,29 @@ p.description {
     left: 0;
 }
 
-.btn-pepperonni {
+.btn-pepperoni {
   background: #e8103b;
   box-shadow: 0 6px #890923;
   color: #fff;
 }
 
-.btn-pepperonni:hover {
+.btn-pepperoni:hover {
   background: #c80e33;
   box-shadow: 0 5px #69071b;
   color: #fff;
 }
 
-.btn-pepperonni.active {
+.btn-pepperoni.active {
   top: 2px;
   box-shadow: 0 2px #890923;
 }
 
-.btn-pepperonni.active:hover {
+.btn-pepperoni.active:hover {
   box-shadow: 0 2px #69071b;
 }
 
-.btn-pepperonni:active,
-.btn-pepperonni.active:active {
+.btn-pepperoni:active,
+.btn-pepperoni.active:active {
   top: 5px;
   box-shadow: none;
 }
