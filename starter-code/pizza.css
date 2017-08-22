@@ -284,6 +284,11 @@ p.description {
 }
 
 /*------ Price -----*/
+
+.list-whiteSauce, .list-glutenFreeCrust {
+  display:none;
+}
+
 .price {
   right: 0;
 }
