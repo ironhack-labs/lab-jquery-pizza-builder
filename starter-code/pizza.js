@@ -6,16 +6,23 @@ $(document).ready(function() {
     $x = e.currentTarget 
     switch ($x.innerHTML) {
       case 'Pepperonni':
-        $('#pizza section.pep').hide()
+        $('#pizza section.pep').toggle()
         break;
       case 'Mushrooms':
-        $('#pizza section.mushroom').hide()
+        $('#pizza section.mushroom').toggle()
         break;
       case 'Green peppers':
-        $('#pizza section.green-pepper').hide()
+        $('#pizza section.green-pepper').toggle()
         break;
+      //Iteration 2.
+      case 'White sauce':
+        $('#pizza section.crust section.sauce').toggle()
+        break;
+      case 'Gluten-free crust':
+        $('#pizza section.crust').toggleClass('crust-gluten-free')
       default:
         break;
     }
   })
+
 })
