@@ -33,7 +33,9 @@ $(document).ready(function() {
 
   $("aside>ul li:nth-child(4)").hide();
   $("aside>ul li:nth-child(5)").hide();
-
+//prueba para acceder a un valor
+  var x =$("aside.price strong").text()[1];
+  console.log(x);
 
 
 });
