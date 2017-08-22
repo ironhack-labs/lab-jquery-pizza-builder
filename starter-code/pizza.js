@@ -1,6 +1,8 @@
 // Write your Pizza Builder JavaScript in this file.
 
 $(document).ready(function(){
+  $(".crust").removeClass("crust-gluten-free");
+  $(".sauce").removeClass("sauce-white");
 $(".btn-pepperonni").on("click", function(  ){
 $(".pep").toggle();
 
@@ -16,6 +18,9 @@ $(".green-pepper").toggle();
 
 }
 );
+
+
+
 
 
 
