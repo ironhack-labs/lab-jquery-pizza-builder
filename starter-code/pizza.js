@@ -3,7 +3,10 @@ $(document).ready(function() {
 
 $('.btn-pepperonni').on("click",function(){
   $(".pep").toggle();
+  // $("this").toggleClass("active");
 });
+
+
 
 $(".btn-mushrooms").on("click", function(){
   $(".mushroom").toggle();
