@@ -3,7 +3,9 @@
 $(document).ready(function() {
   //Iteration 1.
   $('div.controls button.btn').on('click', function(e) {
-    $x = e.currentTarget 
+    $x = e.currentTarget
+    //Iteration 3.
+    $($x).toggleClass('active')
     switch ($x.innerHTML) {
       case 'Pepperonni':
         $('#pizza section.pep').toggle()
