@@ -4,7 +4,6 @@
     <title>Pizza Builder</title>
     <link rel="stylesheet" href="pizza.css">
   </head>
-
   <body>
     <!-- Begin Header -->
     <header>
@@ -41,13 +40,13 @@
 
       <b>$10 cheese pizza</b>
       <ul>
-        <li>$1 pepperonni</li>
-        <li>$1 mushrooms</li>
-        <li>$1 green peppers</li>
-        <li>$3 white sauce</li>
-        <li>$5 gluten-free crust</li>
+        <li class="cost pep-cost">$1 pepperonni</li>
+        <li class="cost mush-cost">$1 mushrooms</li>
+        <li class="cost green-cost">$1 green peppers</li>
+        <li class="cost white-cost">$3 white sauce</li>
+        <li class="cost gluten-cost">$5 gluten-free crust</li>
       </ul>
-      <strong>$21</strong>
+      <strong class="total-cost">$21</strong>
     </aside>
     <!-- End Price -->
 
@@ -268,9 +267,13 @@
       <section class="pep thirty-one">31</section>
       <section class="pep thirty-three">33</section>
 
+
+      <section class="sauce sauce-white"></section>
+
+
+
       <section class="crust crust-gluten-free">
         <section class="cheese"></section>
-        <section class="sauce sauce-white"></section>
       </section>
     </div>
     <!-- End Pizza -->
