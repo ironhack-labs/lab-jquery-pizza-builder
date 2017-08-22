@@ -102,6 +102,7 @@ body {
 .btn:active {
   top: 5px;
   box-shadow: none;
+
 }
 
 /*------ Header -----*/
@@ -195,7 +196,9 @@ p.description {
 .btn-mushrooms.active:hover {
   box-shadow: 0 2px #503d33;
 }
-
+.hideme{
+  display: none;
+}
 .btn-mushrooms:active,
 .btn-mushrooms.active:active {
   top: 5px;
