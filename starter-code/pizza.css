@@ -22,7 +22,7 @@ header, section, footer, article, details {
     outline: 0;
 }
 
-body {
+body
     line-height: 1;
     color: black;
     background: white;
@@ -1036,4 +1036,5 @@ footer a:hover {
     footer {
         margin: 70px 0 10px 0;
     }
+
 }
