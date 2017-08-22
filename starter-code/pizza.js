@@ -11,16 +11,14 @@ $('.crust').removeClass('crust-gluten-free');
 
 
 function sumTotal(){
+  var $totalPrice = 10;
   var $liVisible = $(".price li:visible");
-  console.log($liVisible);
-
-
   for(var i=0; i<$liVisible.length; i++){
     $num = parseInt($liVisible[i].innerHTML.slice(1,3));
     $totalPrice += $num;
     console.log( $totalPrice );
   }
-
+  return $totalPrice;
 }
 
 
@@ -29,45 +27,38 @@ $('.btn-pepperonni').on('click', function(){
   $(this).toggleClass('active');
   $('.pep').toggle();
   $('.price').find("li:nth-child(1)").toggle();
-  sumTotal();
-  // var $tpPep = parseInt($('.price').find('li:nth-child(1)').text().slice(1,3));
-  // console.log($tpPep);
+  $('.price strong').text('$'+sumTotal());
 });
-
 // Adding mushrooms
 $('.btn-mushrooms').on('click', function(){
   $(this).toggleClass('active');
   $('.mushroom').toggle();
   $('.price').find("li:nth-child(2)").toggle();
+  sumTotal();
+  $('.price strong').text('$'+sumTotal());
 });
-
-
 // Adding green peppers
 $('.btn-green-peppers').on('click', function(){
   $(this).toggleClass('active');
   $('.green-pepper').toggle();
   $('.price').find("li:nth-child(3)").toggle();
+  sumTotal();
+  $('.price strong').text('$'+sumTotal());
 });
-
 // Sauce and crust options
 $('.btn-sauce').on('click', function(){
   $(this).toggleClass('active');
   $('.sauce-white').toggle();
   $('.price').find("li:nth-child(4)").toggle();
+  sumTotal();
+  $('.price strong').text('$'+sumTotal());
 });
 $('.btn-crust').on('click', function(){
   $(this).toggleClass('active');
   $('.crust').toggleClass('crust-gluten-free');
   $('.price').find("li:nth-child(5)").toggle();
+  sumTotal();
+  $('.price strong').text('$'+sumTotal());
 });
-
-//Iteration 4: Ingredients and prices
-
-
-
-
-
-
-
 
 });
