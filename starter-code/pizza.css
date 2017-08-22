@@ -143,6 +143,10 @@ p.description {
 }
 
 
+.hidden {
+  display: none;
+}
+
 /*------ Controls -----*/
 .controls {
     left: 0;
