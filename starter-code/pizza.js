@@ -7,9 +7,18 @@ $(document).ready(function() {
   $('#pizza section.crust').toggleClass('crust-gluten-free')
   $('aside.price li:last-child').hide()
   $('aside.price li:nth-child(4)').hide()
-  function isActive() {
 
-  }
+  function total() {
+    $li = $('aside.price li:visible')
+    var count = 10;
+    for(var i=0; i<$li.length; i++) {
+      count += parseInt($li[i].innerHTML[1])
+    }
+    return $('aside.price strong').text('$' + count)
+
+  } 
+
+  total()
 
   $('div.controls button.btn').on('click', function(e) {
     $x = e.currentTarget
@@ -37,6 +46,7 @@ $(document).ready(function() {
       default:
         break;
     }
+    total()
   })
 
 })
