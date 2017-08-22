@@ -1,7 +1,7 @@
 // Write your Pizza Builder JavaScript in this file.
 $(document).ready(function(){
 
-
+var $totalPrice = 10;
 $('.price').find("li:nth-child(4)").hide();
 $('.price').find("li:nth-child(5)").hide();
 $('.btn-sauce').removeClass('active');
@@ -10,12 +10,18 @@ $('.btn-crust').removeClass('active');
 $('.crust').removeClass('crust-gluten-free');
 
 
+function sumTotal(){
+  var $liVisible = $(".price li:visible");
+  console.log($liVisible);
 
-var $basePrice = parseInt($('.price').find('b').text().slice(1,3));
-console.log($basePrice);
 
-var $totalPrice = $('.price').find('strong').text();
-console.log($totalPrice);
+  for(var i=0; i<$liVisible.length; i++){
+    $num = parseInt($liVisible[i].innerHTML.slice(1,3));
+    $totalPrice += $num;
+    console.log( $totalPrice );
+  }
+
+}
 
 
 // Adding pepperonni
@@ -23,7 +29,9 @@ $('.btn-pepperonni').on('click', function(){
   $(this).toggleClass('active');
   $('.pep').toggle();
   $('.price').find("li:nth-child(1)").toggle();
-  var $tpPep = $('.price').find('strong').text();
+  sumTotal();
+  // var $tpPep = parseInt($('.price').find('li:nth-child(1)').text().slice(1,3));
+  // console.log($tpPep);
 });
 
 // Adding mushrooms
