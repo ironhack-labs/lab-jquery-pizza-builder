@@ -3,17 +3,19 @@ $(document).ready(function() {
 
 $('.btn-pepperonni').on("click",function(){
   $(".pep").toggle();
-  // $("this").toggleClass("active");
+  $("button.btn-pepperonni").toggleClass("active")
 });
 
 
 
 $(".btn-mushrooms").on("click", function(){
   $(".mushroom").toggle();
+  $("button.btn-mushrooms").toggleClass("active")
 });
 
 $(".btn-green-peppers").on("click", function(){
   $(".green-pepper").toggle();
+  $("button.btn-green-peppers").toggleClass("active")
 })
 
 });
