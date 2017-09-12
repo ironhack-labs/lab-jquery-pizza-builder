@@ -25,7 +25,7 @@ $('.btn').click(function(){
     } else {
       total-=priceMushroom;
       }
-      $('strong').text(total);
+      $('strong').text("$"+total);
       $('.mushroom').toggle();
   });
 
@@ -38,7 +38,7 @@ $('.btn').click(function(){
       total-=pricePepperoni;
       //console.log("Hey -"+total);
     }
-    $('strong').text(total);
+    $('strong').text("$"+total);
     $('.pep').toggle();
   });
 
@@ -49,7 +49,7 @@ $('.btn').click(function(){
     } else {
        total-= priceGreenPeppers;
     }
-    $('strong').text(total);
+    $('strong').text("$"+total);
     $('.green-pepper').toggle();
   });
 
@@ -67,7 +67,7 @@ $('.btn').click(function(){
    } else {
      total-=priceSauce;
    }
-   $('strong').text(total);
+   $('strong').text("$"+total);
  });
 
 
@@ -80,7 +80,7 @@ $('.btn').click(function(){
    } else {
      total-=priceCrust;
    }
-   $('strong').text(total);
+   $('strong').text("$"+total);
  });
 
 //Iteration 4: Ingredients and prices
@@ -91,6 +91,6 @@ $(".price li:nth-child(4), .price li:nth-child(5)").hide(); //, strong ? total p
 //Iteration 5: Update price
 
 
-$('strong').text(total);
+$('strong').text("$"+total);
 
 });
