@@ -256,6 +256,33 @@ p.description {
   box-shadow: none;
 }
 
+.btn-olives {
+  background: grey;
+  box-shadow: 0 6px #0a5203;
+  color: #fff;
+}
+
+.btn-olives:hover {
+  background: #696969;
+  box-shadow: 0 5px #063102;
+  color: #fff;
+}
+
+.btn-olives.active {
+  top: 2px;
+  box-shadow: 0 2px black;
+}
+
+.btn-olives.active:hover {
+  box-shadow: 0 2px black;
+}
+
+.btn-olives:active,
+.btn-olives.active:active {
+  top: 5px;
+  box-shadow: none;
+}
+
 .btn-crust {
   background: #e0d5cf;
   box-shadow: 0 6px #957160;
@@ -516,6 +543,50 @@ p.description {
 
 .pep.thirty-three {
     margin: 358px 0 0 365px;
+}
+
+/*--- Olives ---*/
+.olives {
+    position: absolute;
+    width: 30px;
+    height: 55px;
+    border-radius: 50%;
+    background: black;
+    box-shadow: 2px 2px 2px rgba(00, 00, 00, .7);
+    margin: 250px 0 0 400px;
+    z-index: 30;
+}
+
+.olives.one {
+    margin: 400px 0 0 150px;
+    -webkit-transform: rotate(44deg);
+    -moz-transform: rotate(44deg);
+    -o-transform: rotate(44deg);
+    transform: rotate(44deg);
+}
+
+.olives.two {
+    margin: 150px 0 0 550px;
+    -webkit-transform: rotate(-57deg);
+    -moz-transform: rotate(-57deg);
+    -o-transform: rotate(-57deg);
+    transform: rotate(-57deg);
+}
+
+.olives.three {
+    margin: 195px 0 0 120px;
+    -webkit-transform: rotate(135deg);
+    -moz-transform: rotate(135deg);
+    -o-transform: rotate(135deg);
+    transform: rotate(135deg);
+}
+
+.olives.four {
+    margin: 290px 0 0 310px;
+    -webkit-transform: rotate(77deg);
+    -moz-transform: rotate(77deg);
+    -o-transform: rotate(77deg);
+    transform: rotate(77deg);
 }
 
 /*--- Mushrooms ---*/
