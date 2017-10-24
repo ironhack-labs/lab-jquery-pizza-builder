@@ -1,7 +1,6 @@
 // Write your Pizza Builder JavaScript in this file.
 function init() {
   //Iteration 1: Add and remove toppings
-  // There are five buttons on the left of the pizza builder. Three of those have to add or remove toppings from the pizza. Write the JavaScript necessary for those three buttons to add and remove pepperonni, mushrooms and green peppers from the pizza. Don't worry about updating the price. We will do it later.
   var pepperonnis = $('.pep');
   var peppers = $('.green-pepper');
   var mushrooms = $('.mushroom');
@@ -15,6 +14,22 @@ function init() {
   $('.btn-green-peppers').click(function (){
     peppers.css('display', 'block');
   });
+  // Iteration 2: Sauce and crust options
+  $('.btn-sauce').click(function () {
+    if ($(this).hasClass('active')) {
+      $('.sauce').removeClass('sauce-white');
+    } else {
+      $('.sauce').addClass('sauce-white');
+    }
+    $(this).toggleClass('active');
+  });
+  $('.btn-crust').click(function () {
+    if ($(this).hasClass('active')) {
+      $('.crust').removeClass('crust-gluten-free');
+    } else {
+      $('.crust').addClass('crust-gluten-free');
+    }
+    $(this).toggleClass('active');
+  });
 }
-
 $(document).ready(init);
