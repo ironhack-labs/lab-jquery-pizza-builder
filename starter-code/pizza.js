@@ -1,25 +1,76 @@
 // Write your Pizza Builder JavaScript in this file.
-function btn (btnClass, ingredient, index) {
+function toping (ingredient) {
+  var btn, ingredients, index;
+  switch (ingredient) {
+    case 'pepperonni' :
+        btn = $('.btn-pepperonni');
+        ingredients = $('.pep');
+        index = 1;
+        break;
+    case 'mushrooms' :
+        btn = $('.btn-mushrooms');
+        ingredients = $('.mushroom');
+        index = 2;
+        break;
+    case 'green-peppers' :
+        btn = $('.btn-green-peppers');
+        ingredients = $('.green-pepper');
+        index = 3;
+  }
+  ingredients.css('display', 'none');
   var listElement = '.panel.price li:nth-child(' + index + ')';
-  $(btnClass).click(function () {
+  listElement = $(listElement);
+  listElement.css('display', 'none');
+  btn.removeClass('active');
+  btn.click(function () {
     if ($(this).hasClass('active')) {
-      $(ingredient).css('display', 'none');
+      ingredients.css('display', 'none');
       $(listElement).css('display', 'none');
     } else {
-      $(ingredient).css('display', 'block');
+      ingredients.css('display', 'block');
       $(listElement).css('display', 'block');
     }
     $(this).toggleClass('active');
     updatePrice();
   });
 }
+
+function mass(ingredient) {
+  var btn, extraIngredient, ingredients, index;
+  switch(ingredient) {
+    case 'sauce' :
+        extraIngredient = '.sauce-white';
+        btn = $('.btn-sauce');
+        ingredients = $('.sauce');
+        index = 4;
+        break;
+    case 'crust' :
+        extraIngredient = '.crust-gluten-free';
+        btn = $('.btn-crust');
+        ingredients = $('.crust');
+        index = 5;
+  }
+  var listElement = '.panel.price li:nth-child(' + index + ')';
+  listElement = $(listElement);
+  btn.click(function () {
+    if ($(this).hasClass('active')) {
+      ingredients.removeClass(extraIngredient);
+      listElement.css('display', 'none');
+    } else {
+      ingredients.addClass(extraIngredient);
+      listElement.css('display', 'block');
+    }
+    $(this).toggleClass('active');
+    updatePrice();
+  });
+}
+
 function updatePrice() {
   var sumPrices = 0;
   $('.price li').each(function() {
     var texto = $(this).text();
     var itemPrice = texto.substring(1,2);
     itemPrice = parseInt(itemPrice);
-    console.log(texto, itemPrice);
     if ($(this).css('display') != 'none'){
       sumPrices = sumPrices + itemPrice;
     }
@@ -28,49 +79,13 @@ function updatePrice() {
   $('.price strong').html("$" + sumPrices);
 }
 function init() {
-  //Iteration 1: Add and remove toppings
-  var pepperonnis = $('.pep');
-  var peppers = $('.green-pepper');
-  var mushrooms = $('.mushroom');
-  $('.green-pepper, .mushroom, .pep').css('display', 'none');
-  $('.btn-pepperonni').click(function (){
-    pepperonnis.css('display', 'block');
-  });
-  $('.btn-mushrooms').click(function (){
-    mushrooms.css('display', 'block');
-  });
-  $('.btn-green-peppers').click(function (){
-    peppers.css('display', 'block');
-  });
-  // Iteration 2: Sauce and crust options
-  $('.btn-sauce').click(function () {
-    if ($(this).hasClass('active')) {
-      $('.sauce').removeClass('sauce-white');
-      $('.panel.price li:nth-child(4)').css('display', 'none');
-    } else {
-      $('.sauce').addClass('sauce-white');
-      $('.panel.price li:nth-child(4)').css('display', 'block');
-    }
-    $(this).toggleClass('active');
-    updatePrice();
-  });
-  $('.btn-crust').click(function () {
-    if ($(this).hasClass('active')) {
-      $('.crust').removeClass('crust-gluten-free');
-      $('.panel.price li:nth-child(5)').css('display', 'none');
-    } else {
-      $('.crust').addClass('crust-gluten-free');
-      $('.panel.price li:nth-child(5)').css('display', 'block');
-    }
-    $(this).toggleClass('active');
-    updatePrice();
-  });
-  // Iteration 3: Change the buttons' state
-  btn('.btn-pepperonni', '.pep', 1);
-  btn('.btn-mushrooms', '.mushroom', 2);
-  btn('.btn-green-peppers', '.green-pepper', 3);
-  $('.btn-mushrooms, .btn-pepperonni, .btn-green-peppers').removeClass('active');
-  $('.panel.price li:nth-child(-n+3)').css('display', 'none');
+  mass('sauce');
+  mass('crust');
+
+  toping('pepperonni');
+  toping('mushrooms');
+  toping('green-peppers');
+
   updatePrice();
 }
 $(document).ready(init);
