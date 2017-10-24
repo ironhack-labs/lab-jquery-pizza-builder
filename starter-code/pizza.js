@@ -1,4 +1,14 @@
 // Write your Pizza Builder JavaScript in this file.
+function btn (btnClass, ingredient) {
+  $(btnClass).click(function () {
+    if ($(this).hasClass('active')) {
+      $(ingredient).css('display', 'none');
+    } else {
+      $(ingredient).css('display', 'block');
+    }
+    $(this).toggleClass('active');
+  });
+}
 function init() {
   //Iteration 1: Add and remove toppings
   var pepperonnis = $('.pep');
@@ -31,5 +41,10 @@ function init() {
     }
     $(this).toggleClass('active');
   });
+  // Iteration 3: Change the buttons' state
+  btn('.btn-pepperonni', '.pep');
+  btn('.btn-mushrooms', '.mushroom');
+  btn('.btn-green-peppers', '.green-pepper');
+  $('.btn-mushrooms, .btn-pepperonni, .btn-green-peppers').removeClass('active');
 }
 $(document).ready(init);
