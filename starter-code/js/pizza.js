@@ -5,6 +5,7 @@ $(document).ready(function(){
   var mushroom = $(".mushroom");
   var whiteSauce = $(".sauce-white");
   var crustGlutenFree = $(".crust-gluten-free");
+  console.log(crustGlutenFree);
   $('.btn-pepperonni').click(function(){
     pepperoni.toggle();
   });
@@ -18,6 +19,6 @@ $(document).ready(function(){
     whiteSauce.toggle();
   });
   $('.btn-crust').click(function(){
-    crustGlutenFree.toggleClassName('crust-gluten-free');
+    crustGlutenFree.toggleClass('crust-gluten-free');
   });
 });
