@@ -1,41 +1,61 @@
 // Write your Pizza Builder JavaScript in this file.
 $(document).ready(function() {
+
   // On document load
-  $('.green-pepper').css('display','none');
-  $('.mushroom').css('display','none');
-  $('.pep').css('display','none');
   $('.crust.crust-gluten-free').removeClass('crust-gluten-free');
+  $('.sauce').addClass('sauce');
   $('.sauce.sauce-white').removeClass('sauce-white');
+
+  $('.panel.price li').hide();
+
+  function showDefaultIngredients(){
+    $('.panel.price li:nth-child(1)').show();
+    $('.panel.price li:nth-child(2)').show();
+    $('.panel.price li:nth-child(3)').show();
+  }
+
+  showDefaultIngredients();
 
   // Button clicks
   $('.btn-pepperonni').click(function() {
-    $('.pep').css('display','block');
-    $('.btn-pepperonni').addClass('active');
+    $('.pep').toggle();
+    //$('.panel.price li:nth-child(1)').show();
   });
 
-  // $( "#clickme" ).click(function() {
-  //   $( "#" ).toggle( "slow", function() {
-  //     // Animation complete.
-  //   });
-  // });
-
+  // Mushroom
   $('.btn-mushrooms').click(function() {
-    $('.mushroom').css('display','block');
-    $('.btn-pepperonni').addClass('active');
-  });
+    $('.mushroom').toggle();
+    // $('.panel.price li:nth-child(2)').show();
+   });
 
+  // Green peppers
   $('.btn-green-peppers').click(function() {
-    $('.green-pepper').css('display','block');
-    $('.btn-pepperonni').addClass('active');
+    $('.green-pepper').toggle('display');
+    //$('.green-pepper').css('display','block');
+    $('.panel.price li:nth-child(3)').show();
   });
 
+  // Sauce
   $('.btn-sauce').click(function() {
+    $('.panel.price li:nth-child(4)').show();
     $('.sauce').toggleClass('sauce sauce-white');
-    $('.btn-pepperonni').addClass('active');
   });
 
+  // Crust
   $('.btn-crust').click(function() {
     $('.crust').addClass('crust-gluten-free');
-    $('.btn-pepperonni').addClass('active');
+    $('.panel.price li:nth-child(5)').show();
+  });
+
+  // Active buttons
+  $('.btn').removeClass('active');
+  $('.btn-pepperonni').addClass('active');
+  $('.btn-mushrooms').addClass('active');
+  $('.btn-green-peppers').addClass('active');
+
+  $('.btn').each(function(){
+    $('.btn').click(function(){
+      $(this).addClass('active');
+    });
   });
 });
