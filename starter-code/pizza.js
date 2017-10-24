@@ -1,28 +1,45 @@
 // Write your Pizza Builder JavaScript in this file.
 
- //Iteration 1: Add and Remove Toppings
+//Iteration 1: Add and Remove Toppings
 
- $(document).ready(function(){
-   //Ingredients
-   var greenPepper = $('.green-pepper');
-
-
-   //buttons
-   var btnGreenPepers = $('.btn-green-peppers');
-
-
-
-   btnGreenPepers.click(function(){
-     if ( greenPepper ) {
-       greenPepper.appendTo( "body" );
-      greenPepper = null;
-    } else {
-      greenPepper.detach();
-    }
-   });
+$(document).ready(function() {
+  //Ingredients
+  var greenPepper = $('.green-pepper');
+  var pepperoni = $('.pep');
+  var mushroom = $('.mushroom');
+  var sauce = $('.sauce-white');
+  var glutenFree = $('.crust-gluten-free');
+  var crust = $('.crust');
 
 
+  //buttons
+  var btnGreenPepers = $('.btn-green-peppers');
+  var btnPepperonni = $('.btn-pepperonni');
+  var btnMushrooms = $('.btn-mushrooms');
+  var btnSauce = $('.btn-sauce');
+  var btnCrust = $('.btn-crust');
+
+//Adding ingredients
+
+  btnGreenPepers.click(function() {
+    greenPepper.toggle();
+  });
+
+  btnPepperonni.click(function() {
+    pepperoni.toggle();
+  });
+
+btnMushrooms.click(function(){
+  mushroom.toggle();
+});
+
+btnSauce.click(function() {
+  sauce.toggle();
+});
+
+btnCrust.click(function() {
+  glutenFree.toggle();
+});
 
 
-
- });
+});
