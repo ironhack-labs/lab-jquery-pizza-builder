@@ -28,13 +28,8 @@ btnSauce.click(function(){
 
 btnCrust.click(function(){
 
-    if($('#pizza .crust').hasClass('crust-gluten-free')){
-        $('#pizza .crust').removeClass('crust-gluten-free');
-    } else {
-        $('#pizza .crust').addClass('crust-gluten-free');
-    }
-    //toggle not working
-    // $('#pizza .crust').toggle('crust-gluten-free')
+    $('#pizza .crust').toggleClass('crust-gluten-free')
 })
+
 
 
