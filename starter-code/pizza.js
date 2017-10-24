@@ -10,21 +10,22 @@ function btn (btnClass, ingredient, index) {
       $(listElement).css('display', 'block');
     }
     $(this).toggleClass('active');
-    //updatePrice();
+    updatePrice();
   });
 }
 function updatePrice() {
   var sumPrices = 0;
   $('.price li').each(function() {
-    if ($(this).css('display', 'block')){
-      var itemPrice = $(this).text();
-      itemPrice = itemPrice.substring(1,1);
+    var texto = $(this).text();
+    var itemPrice = texto.substring(1,2);
+    itemPrice = parseInt(itemPrice);
+    console.log(texto, itemPrice);
+    if ($(this).css('display') != 'none'){
       sumPrices = sumPrices + itemPrice;
     }
-    console.log(itemPrice);
   });
-  //console.log(sumPrices);
-  return sumPrices;
+  sumPrices = sumPrices + 10;
+  $('.price strong').html("$" + sumPrices);
 }
 function init() {
   //Iteration 1: Add and remove toppings
@@ -51,6 +52,7 @@ function init() {
       $('.panel.price li:nth-child(4)').css('display', 'block');
     }
     $(this).toggleClass('active');
+    updatePrice();
   });
   $('.btn-crust').click(function () {
     if ($(this).hasClass('active')) {
@@ -61,6 +63,7 @@ function init() {
       $('.panel.price li:nth-child(5)').css('display', 'block');
     }
     $(this).toggleClass('active');
+    updatePrice();
   });
   // Iteration 3: Change the buttons' state
   btn('.btn-pepperonni', '.pep', 1);
@@ -68,5 +71,6 @@ function init() {
   btn('.btn-green-peppers', '.green-pepper', 3);
   $('.btn-mushrooms, .btn-pepperonni, .btn-green-peppers').removeClass('active');
   $('.panel.price li:nth-child(-n+3)').css('display', 'none');
+  updatePrice();
 }
 $(document).ready(init);
