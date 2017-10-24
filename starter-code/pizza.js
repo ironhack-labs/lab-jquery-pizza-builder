@@ -3,6 +3,7 @@
 //Iteration 1: Add and Remove Toppings
 
 $(document).ready(function() {
+
   //Ingredients
   var greenPepper = $('.green-pepper');
   var pepperoni = $('.pep');
@@ -12,7 +13,6 @@ $(document).ready(function() {
   var glutenFree = ('crust-gluten-free');
   var crust = $('.crust');
 
-
   //buttons
   var btnGreenPepers = $('.btn-green-peppers');
   var btnPepperonni = $('.btn-pepperonni');
@@ -20,33 +20,43 @@ $(document).ready(function() {
   var btnSauce = $('.btn-sauce');
   var btnCrust = $('.btn-crust');
 
-  //Adding ingredients
-
-  btnGreenPepers.click(function() {
-    greenPepper.toggle();
-  });
-
-  btnPepperonni.click(function() {
-    pepperoni.toggle();
-  });
-
-  btnMushrooms.click(function() {
-    mushroom.toggle();
-  });
+  //button State
+  var btn = $('.btn');
+  var active = ('active');
 
   //default pizza ingredients
 
   crust.removeClass(glutenFree);
   sauce.removeClass(sauceWhite);
+  btn.removeClass(active);
+
+  //Adding ingredients
+
+  btnGreenPepers.click(function() {
+    greenPepper.toggle();
+    btnGreenPepers.toggleClass(active);
+  });
+
+  btnPepperonni.click(function() {
+    pepperoni.toggle();
+    btnPepperonni.toggleClass(active);
+  });
+
+  btnMushrooms.click(function() {
+    mushroom.toggle();
+    btnMushrooms.toggleClass(active);
+  });
 
   //extra pizza ingredients
 
   btnSauce.click(function() {
     sauce.toggleClass(sauceWhite);
+    btnSauce.toggleClass(active);
   });
 
   btnCrust.click(function() {
     crust.toggleClass(glutenFree);
+    btnCrust.toggleClass(active);
   });
 
   //
