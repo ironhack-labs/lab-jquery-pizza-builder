@@ -13,6 +13,7 @@ var pepperonni = $( ".pep" );
      pepperonni.css ( "z-index", 0);
 
   } else {
+    
     pepperonni.css ( "z-index", 15);
 
   }
