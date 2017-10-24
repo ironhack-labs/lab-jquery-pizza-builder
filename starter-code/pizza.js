@@ -2,7 +2,7 @@
 function init() {
   //ITERATION 1
   $(".btn-pepperonni").click(function() {
-    if($(".pep").attr("style")) {
+    if ($(".pep").attr("style")) {
       $(".pep").css("display", "");
       $(this).addClass("active");
       $(".price ul li:first").show(500);
@@ -12,12 +12,13 @@ function init() {
       $(this).removeClass("active");
       $(".price ul li:first").hide(500);
       sum -= pep;
-    }total.html("$" + (sum))
+    }
+    total.html("$" + (sum))
 
   });
 
   $(".btn-mushrooms").click(function() {
-    if($(".mushroom").attr("style")) {
+    if ($(".mushroom").attr("style")) {
       $(".mushroom").css("display", "");
       $(this).addClass("active");
       $(".price ul li:nth-child(2)").show(500);
@@ -32,7 +33,7 @@ function init() {
   });
 
   $(".btn-green-peppers").click(function() {
-    if($(".green-pepper").attr("style")) {
+    if ($(".green-pepper").attr("style")) {
       $(".green-pepper").css("display", "");
       $(this).addClass("active");
       $(".price ul li:nth-child(3)").show(500);
@@ -52,22 +53,22 @@ function init() {
 
 
   $(".btn-crust").click(function() {
-    if($(".crust").hasClass("crust-gluten-free")) {
+    if ($(".crust").hasClass("crust-gluten-free")) {
       $(".crust").removeClass("crust-gluten-free");
       $(this).removeClass("active");
       $(".price ul li:nth-child(5)").hide(500);
-      sum-= glutCrust;
+      sum -= glutCrust;
     } else {
       $(".crust").addClass("crust-gluten-free");
       $(this).addClass("active");
       $(".price ul li:nth-child(5)").show(500);
-      sum+= glutCrust;
+      sum += glutCrust;
     }
     total.html("$" + (sum));
   });
 
   $(".btn-sauce").click(function() {
-    if($(".sauce").hasClass("sauce-white")) {
+    if ($(".sauce").hasClass("sauce-white")) {
       $(".sauce").removeClass("sauce-white");
       $(this).removeClass("active");
       $(".price ul li:nth-child(4)").hide(500);
@@ -99,7 +100,7 @@ function init() {
   var green = 1;
   var white = 3;
   var glutCrust = 5;
-  var sum = 10 +(pep+mush+green);
+  var sum = 10 + (pep + mush + green);
   var total = $(".price strong");
 
   total.html("$" + (sum));
