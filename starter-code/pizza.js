@@ -10,7 +10,21 @@ function btn (btnClass, ingredient, index) {
       $(listElement).css('display', 'block');
     }
     $(this).toggleClass('active');
+    //updatePrice();
   });
+}
+function updatePrice() {
+  var sumPrices = 0;
+  $('.price li').each(function() {
+    if ($(this).css('display', 'block')){
+      var itemPrice = $(this).text();
+      itemPrice = itemPrice.substring(1,1);
+      sumPrices = sumPrices + itemPrice;
+    }
+    console.log(itemPrice);
+  });
+  //console.log(sumPrices);
+  return sumPrices;
 }
 function init() {
   //Iteration 1: Add and remove toppings
