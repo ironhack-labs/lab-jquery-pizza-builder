@@ -2,18 +2,20 @@
 function init() {
   // Add or remove pepperoni
   // Check the pepperoni button status
-  var buttonPep = $(".btn-pepperonni");
+  
   buttonPep.click(function(event) {
     if ($(".btn-pepperonni").hasClass("active")) {
       $("#pizza .pep").css({
         display: "none"
       });
+      $(".btn-pepperonni").removeClass("active");
     } else {
       $("#pizza .pep").css({
         display: " "
       });
+      $(".btn-pepperonni").addClass("active");
     }
-    $(".btn-pepperonni").toggleClass("active");
+
   });
 }
 
