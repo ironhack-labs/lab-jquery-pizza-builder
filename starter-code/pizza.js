@@ -7,8 +7,9 @@ $(document).ready(function() {
   var greenPepper = $('.green-pepper');
   var pepperoni = $('.pep');
   var mushroom = $('.mushroom');
-  var sauce = $('.sauce-white');
-  var glutenFree = $('.crust-gluten-free');
+  var sauce = $('.sauce');
+  var sauceWhite = ('sauce-white');
+  var glutenFree = ('crust-gluten-free');
   var crust = $('.crust');
 
 
@@ -19,7 +20,7 @@ $(document).ready(function() {
   var btnSauce = $('.btn-sauce');
   var btnCrust = $('.btn-crust');
 
-//Adding ingredients
+  //Adding ingredients
 
   btnGreenPepers.click(function() {
     greenPepper.toggle();
@@ -29,17 +30,27 @@ $(document).ready(function() {
     pepperoni.toggle();
   });
 
-btnMushrooms.click(function(){
-  mushroom.toggle();
-});
+  btnMushrooms.click(function() {
+    mushroom.toggle();
+  });
 
-btnSauce.click(function() {
-  sauce.toggle();
-});
+  //default pizza ingredients
 
-btnCrust.click(function() {
-  glutenFree.toggle();
-});
+  crust.removeClass(glutenFree);
+  sauce.removeClass(sauceWhite);
+
+  //extra pizza ingredients
+
+  btnSauce.click(function() {
+    sauce.toggleClass(sauceWhite);
+  });
+
+  btnCrust.click(function() {
+    crust.toggleClass(glutenFree);
+  });
+
+  //
+
 
 
 });
