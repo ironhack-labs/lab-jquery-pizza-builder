@@ -1,10 +1,13 @@
 // Write your Pizza Builder JavaScript in this file.
-function btn (btnClass, ingredient) {
+function btn (btnClass, ingredient, index) {
+  var listElement = '.panel.price li:nth-child(' + index + ')';
   $(btnClass).click(function () {
     if ($(this).hasClass('active')) {
       $(ingredient).css('display', 'none');
+      $(listElement).css('display', 'none');
     } else {
       $(ingredient).css('display', 'block');
+      $(listElement).css('display', 'block');
     }
     $(this).toggleClass('active');
   });
@@ -28,23 +31,28 @@ function init() {
   $('.btn-sauce').click(function () {
     if ($(this).hasClass('active')) {
       $('.sauce').removeClass('sauce-white');
+      $('.panel.price li:nth-child(4)').css('display', 'none');
     } else {
       $('.sauce').addClass('sauce-white');
+      $('.panel.price li:nth-child(4)').css('display', 'block');
     }
     $(this).toggleClass('active');
   });
   $('.btn-crust').click(function () {
     if ($(this).hasClass('active')) {
       $('.crust').removeClass('crust-gluten-free');
+      $('.panel.price li:nth-child(5)').css('display', 'none');
     } else {
       $('.crust').addClass('crust-gluten-free');
+      $('.panel.price li:nth-child(5)').css('display', 'block');
     }
     $(this).toggleClass('active');
   });
   // Iteration 3: Change the buttons' state
-  btn('.btn-pepperonni', '.pep');
-  btn('.btn-mushrooms', '.mushroom');
-  btn('.btn-green-peppers', '.green-pepper');
+  btn('.btn-pepperonni', '.pep', 1);
+  btn('.btn-mushrooms', '.mushroom', 2);
+  btn('.btn-green-peppers', '.green-pepper', 3);
   $('.btn-mushrooms, .btn-pepperonni, .btn-green-peppers').removeClass('active');
+  $('.panel.price li:nth-child(-n+3)').css('display', 'none');
 }
 $(document).ready(init);
