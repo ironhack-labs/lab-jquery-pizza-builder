@@ -43,6 +43,9 @@ function main() {
   });
 
 
+  //for calculating the whole price:
+  // $("li:contains('gluten-free crust')").text()[1]
+
 }
 
 
