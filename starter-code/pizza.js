@@ -1,13 +1,30 @@
-
 $(document).ready(function() {
-    $('.btn-pepperonni').click(function() {
-        $('.pep').slideToggle(3000);
+    var roniButton = $('.btn-pepperonni');
+    var myRoni = $('.pep');
+    roniButton.removeClass('active');
+    myRoni.removeClass('active');
+    myRoni.hide();
+    roniButton.click(function(){
+      myRoni.fadeToggle();
+      roniButton.toggleClass('active');
     });
-    $('.btn-mushrooms').click(function() {
-        $('.mushroom').slideToggle(3000);
+
+    var mushroomButton = $('.btn-mushrooms');
+    var myMushroom = $('.mushroom');
+    mushroomButton.removeClass('active');
+    myMushroom.hide();
+    mushroomButton.click(function(){
+      myMushroom.fadeToggle();
+      mushroomButton.toggleClass('active');
     });
-    $('.btn-green-peppers').click(function() {
-        $('.green-pepper').slideToggle(3000);
+    
+    var greenButton = $('.btn-green-peppers');
+    var greenPeppers = $('.green-pepper');
+    greenButton.removeClass('active');
+    greenPeppers.hide();
+    greenButton.click(function(){
+      greenPeppers.fadeToggle();
+      greenButton.toggleClass('active');
     });
 });
 
