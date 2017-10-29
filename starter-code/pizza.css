@@ -335,6 +335,8 @@ p.description {
   box-shadow: inset 0 0 40px #d3c3bb;
 }
 
+
+
 .sauce {
     position: absolute;
     width: 620px;
@@ -344,10 +346,10 @@ p.description {
     margin: 40px 0 0 40px;
     box-shadow: inset 0 0 10px #dd2f25;
 }
-
 .sauce-white {
   background: #fff4aa;
 }
+
 
 .cheese {
     position: absolute;
@@ -1037,3 +1039,35 @@ footer a:hover {
         margin: 70px 0 10px 0;
     }
 }
+/* ------------------------------ MY STYLES */
+
+
+/* Order Matters */
+
+/*.btn-sauce.add::after, .btn-crust.add::after  {
+  content: "\f055";
+  font-family: 'FontAwesome';
+  padding-left: 10px;
+}
+.btn-sauce.minus::after, .btn-crust.minus::after  {
+  content: "\f056";
+  font-family: 'FontAwesome';
+  padding-left: 10px;
+}*/
+
+/* Order Matters */
+
+.btn-pepperonni.minus::after, .btn-mushrooms.minus::after, .btn-green-peppers.minus::after, .btn-sauce.minus::after, .btn-crust.minus::after  {
+  content: "\f056";
+  font-family: 'FontAwesome';
+  padding-left: 10px;
+}
+.btn-pepperonni.add::after, .btn-mushrooms.add::after, .btn-green-peppers.add::after, .btn-sauce.add::after, .btn-crust.add::after {
+  content: "\f055";
+  font-family: 'FontAwesome';
+  padding-left: 10px;
+}
+
+
+
+
