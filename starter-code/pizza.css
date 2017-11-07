@@ -144,6 +144,15 @@ p.description {
 
 
 /*------ Controls -----*/
+
+#pizza > .inactive {
+    display: none;
+}
+
+.strike {
+    text-decoration: line-through;
+}
+
 .controls {
     left: 0;
 }
