@@ -2,15 +2,32 @@
 
 $(document).ready(function() {
 
-  function toogleBtn(btnClassName, ingredientClass) {
+  function toogleIngredientsBtn(btnClassName, ingredientClass) {
     $(btnClassName).click(function() {
       $(this).toggleClass("active");
       $(ingredientClass).toggle();
     });
   }
 
-  toogleBtn(".btn-pepperonni", ".pep");
-  toogleBtn(".btn-mushrooms", ".mushroom");
-  toogleBtn(".btn-green-peppers", ".green-pepper");
+  function toogleSauceCrustBtn(btnClassName, permanentClass, addedClass) {
+    $(btnClassName).click(function() {
+      $(this).toggleClass("active");
+      $(permanentClass).toggleClass(addedClass);
+    });
+  }
+
+  function setDefaultSauceCrust(permanentClass, addedClass) {
+    $(permanentClass).removeClass(addedClass);
+  }
+
+  setDefaultSauceCrust(".sauce", "sauce-white");
+  setDefaultSauceCrust(".crust", "crust-gluten-free");
+
+  toogleIngredientsBtn(".btn-pepperonni", ".pep");
+  toogleIngredientsBtn(".btn-mushrooms", ".mushroom");
+  toogleIngredientsBtn(".btn-green-peppers", ".green-pepper");
+  toogleSauceCrustBtn(".btn-sauce", ".sauce", "sauce-white");
+  toogleSauceCrustBtn(".btn-crust", ".crust", "crust-gluten-free");
+
 
 });
