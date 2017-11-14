@@ -1,22 +1,26 @@
 // Write your Pizza Builder JavaScript in this file.
 $(function(){
-
+    ingActive(".pep",".btn-pepperonni");
+    ingActive(".green-pepper",".btn-green-peppers");
+    ingActive(".mushroom",".btn-mushrooms");
 
 //Iteration 1
 $(".btn-pepperonni").click(function(){
-    ingActive(".pep",".btn-pepperonni");
     $(".pep").toggle();
+    ingActive(".pep",".btn-pepperonni");
         
 });
 
 $(".btn-green-peppers").click(function(){
-    ingActive(".green-pepper",".btn-green-peppers");
     $(".green-pepper").toggle();
+    ingActive(".green-pepper",".btn-green-peppers");
+    
 });
 
 $(".btn-mushrooms").click(function(){
-    ingActive(".mushroom",".btn-mushrooms");
     $(".mushroom").toggle();
+    ingActive(".mushroom",".btn-mushrooms");
+    
 });
 
 //Iteration 2
@@ -25,14 +29,14 @@ $(".crust").removeClass("crust-gluten-free");
 
 $(".btn-crust").click(function(){
     eleClass(".crust","crust-gluten-free",".btn-crust");
-    $(".crust").addClass("crust-gluten-free");
+    $(".crust").toggleClass("crust-gluten-free");
 });
 
 $(".sauce").removeClass("sauce-white");
 
 $(".btn-sauce").click(function(){
     eleClass(".sauce","sauce-white",".btn-sauce");
-    $(".sauce").addClass("sauce-white");
+    $(".sauce").toggleClass("sauce-white");
 });
 
 //Iteration 3
@@ -43,9 +47,9 @@ $(".btn-sauce").click(function(){
 function ingActive(element,button){
     if($(element+":visible").length>0)
     {
-       $(button).addClass("active"); 
+       $(button).removeClass("active"); 
     }
-    else $(button).removeClass("active");
+    else $(button).addClass("active");
 }
 
 function eleClass(element,classs,button){
