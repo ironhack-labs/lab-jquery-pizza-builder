@@ -4,12 +4,47 @@ function toggleVisibility(classButton, classIngredient) {
     $(classButton).toggleClass("active");
     if($(classButton).hasClass("active")) {
         $(classIngredient).show();
+        addPrice(classIngredient);
     }
     else {
         $(classIngredient).hide();
+        removePrice(classIngredient);
     }
     console.log($(classButton));    
 }
+
+function addPrice(classIngredient) {
+    switch(classIngredient) {
+        case ".pep":
+            $(".price ul li:nth-child(1)").show();
+            break;
+        case ".mushroom":
+            $(".price ul li:nth-child(2)").show();
+            break;
+        case ".green-pepper":
+            $(".price ul li:nth-child(3)").show();
+            break;
+        default:
+            alert("EEEEE");
+    }
+}
+
+function removePrice(classIngredient) {
+    switch(classIngredient) {
+        case ".pep":
+            $(".price ul li:nth-child(1)").hide();
+            break;
+        case ".mushroom":
+            $(".price ul li:nth-child(2)").hide();
+            break;
+        case ".green-pepper":
+            $(".price ul li:nth-child(3)").hide();
+            break;
+        default:
+            alert("EEEEE");
+    }
+}
+
 $(".btn-pepperonni").click(function(){
     toggleVisibility(".btn-pepperonni",".pep");
 });
