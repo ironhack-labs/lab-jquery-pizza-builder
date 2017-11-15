@@ -1,9 +1,9 @@
 // Write your Pizza Builder JavaScript in this file.
 
 function setPrice(buttonName, ingredientName, ingredientNth, ingredientePrice){
-    pizzaPrice = parseFloat(( $("strong").text() ).replace('$', '')) || 0;  
-    priceDescription = $("aside ul li:nth-child("+ingredientNth+")");
-    ingredient = $(ingredientName);
+    var pizzaPrice = parseFloat(( $("strong").text() ).replace('$', '')) || 0;  
+    var priceDescription = $("aside ul li:nth-child("+ingredientNth+")");
+    var ingredient = $(ingredientName);
 
     if ( $(buttonName).hasClass("active") ) {
         priceDescription.show();
