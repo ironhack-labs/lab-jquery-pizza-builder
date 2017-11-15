@@ -29,7 +29,41 @@ $(document).ready(function() {
     $(selector).hide();
   }
 
+  //Final cost
+  function pizzaPrice() {
+    $("aside strong").text(function () {
+      price = 10;
 
+      if ($(".btn-pepperonni").hasClass("active")) {
+        price += 1;
+      }
+      if ($(".btn-mushrooms").hasClass("active")) {
+        price += 1;
+      }
+      if ($(".btn-green-peppers").hasClass("active")) {
+        price += 1;
+      }
+      if ($(".btn-sauce").hasClass("active")) {
+        price += 3;
+      }
+      if ($(".btn-crust").hasClass("active")) {
+        price += 5;
+      }
+      return "$" + price;
+    });
+  }
+
+  function updatePrice() {
+    $(".btn").click(function () {
+      pizzaPrice();
+    });
+  }
+
+  toogleIngredientsBtn(".btn-pepperonni", ".pep", "aside li:contains('pepperonni')");
+  toogleIngredientsBtn(".btn-mushrooms", ".mushroom", "aside li:contains('mushrooms')");
+  toogleIngredientsBtn(".btn-green-peppers", ".green-pepper", "aside li:contains('green peppers')");
+  toogleSauceCrustBtn(".btn-sauce", ".sauce", "sauce-white", "aside li:contains('white sauce')");
+  toogleSauceCrustBtn(".btn-crust", ".crust", "crust-gluten-free", "aside li:contains('gluten-free crust')");
 
   setDefaultSauceCrust(".sauce", "sauce-white");
   setDefaultSauceCrust(".crust", "crust-gluten-free");
@@ -40,11 +74,6 @@ $(document).ready(function() {
   defaultHidePrices("aside li:contains('white sauce')");
   defaultHidePrices("aside li:contains('gluten-free crust')");
 
-  toogleIngredientsBtn(".btn-pepperonni", ".pep", "aside li:contains('pepperonni')");
-  toogleIngredientsBtn(".btn-mushrooms", ".mushroom", "aside li:contains('mushrooms')");
-  toogleIngredientsBtn(".btn-green-peppers", ".green-pepper", "aside li:contains('green peppers')");
-  toogleSauceCrustBtn(".btn-sauce", ".sauce", "sauce-white", "aside li:contains('white sauce')");
-  toogleSauceCrustBtn(".btn-crust", ".crust", "crust-gluten-free", "aside li:contains('gluten-free crust')");
-
-
+  pizzaPrice();
+  updatePrice();
 });
