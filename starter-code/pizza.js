@@ -50,16 +50,17 @@ function addAndRemoveIngredientsFromList(ingredient, boolValue) {
     default:
       break;
   }
+  //Show or hide the ingredients and update the final ammount
   textFromLi = $(".price strong").text();
-  numberStrong = textFromLi[1]+textFromLi[2];
+  numberStrong = textFromLi[1] + textFromLi[2];
   if (boolValue) {
     $(".panel-price-ul li:nth-child(" + liPosition + ")").show('fast');
-    numberStrong=parseInt(numberStrong)+unitPrice;
-    $(".price strong").text("$"+numberStrong);
+    numberStrong = parseInt(numberStrong) + unitPrice;
+    $(".price strong").text("$" + numberStrong);
   } else {
     $(".panel-price-ul li:nth-child(" + liPosition + ")").hide('fast');
-    numberStrong=parseInt(numberStrong)-unitPrice;
-    $(".price strong").text("$"+numberStrong);
+    numberStrong = parseInt(numberStrong) - unitPrice;
+    $(".price strong").text("$" + numberStrong);
   }
 }
 $(function() {
@@ -68,7 +69,7 @@ $(function() {
   $(".btn-sauce").removeClass('active');
   $(".panel-price-ul li:nth-child(4)").hide('fast');
   $(".panel-price-ul li:nth-child(5)").hide('fast');
-
+  //Starting price of the pizza is $13
   $(".price strong").text("$13");
   //We add the listeners to the buttons
   hideAndShowOrAdd('.btn-green-peppers', '.green-pepper');
@@ -76,10 +77,4 @@ $(function() {
   hideAndShowOrAdd('.btn-pepperonni', '.pep');
   hideAndShowOrAdd('.btn-crust', '.crust', 'crust-gluten-free');
   hideAndShowOrAdd('.btn-sauce', '.sauce', 'sauce-white');
-
-
-
-
-
-
 });
