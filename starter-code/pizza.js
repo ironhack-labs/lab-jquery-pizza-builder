@@ -1,5 +1,4 @@
 // Write your Pizza Builder JavaScript in this file.
-
 function toggleVisibility(classButton, classIngredient) {
     $(classButton).toggleClass("active");
     if($(classButton).hasClass("active")) {
@@ -9,8 +8,7 @@ function toggleVisibility(classButton, classIngredient) {
     else {
         $(classIngredient).hide();
         removePrice(classIngredient);
-    }
-    console.log($(classButton));    
+    }  
 }
 
 function addPrice(classIngredient) {
@@ -36,7 +34,7 @@ function addPrice(classIngredient) {
             $(".price ul li:nth-child(5)").show();
             break;
         default:
-            alert("EEEEE");
+            alert("Ingredient Not Found");
     }
     updatePrice();
 }
@@ -64,13 +62,13 @@ function removePrice(classIngredient) {
             $(".price ul li:nth-child(5)").hide();
             break;
         default:
-            alert("EEEEE");
+            alert("Ingredient Not Found");
     }
     updatePrice();
 }
 
 function updatePrice() {
-    totalPrice = 10;
+    totalPrice = basePrice;
     $(".price ul li:not(:hidden)").each(function(index) {
         price = $(this).text();
         price = parseFloat(price.substring(price.indexOf("$") + 1, price.indexOf(" ")));
@@ -118,6 +116,7 @@ $(".btn-crust").click(function(){
 
 // on ready set sauce and crust instead of sauce-white and crust-gluten-free
 $(function(){
+    basePrice = 10;
     $("#pizza > .crust > .sauce").toggleClass("sauce-white");
     $(".price ul li:nth-child(4)").attr("hidden", "true");
     $("#pizza > .crust").toggleClass("crust-gluten-free");
