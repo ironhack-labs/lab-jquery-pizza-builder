@@ -1,8 +1,8 @@
 // Write your Pizza Builder JavaScript in this file.
-function hideAndShowOrAdd(button, ingredient, boolValue, extraIngredient) {
+function hideAndShowOrAdd(button, ingredient, extraIngredient) {
   $(button).click(function() {
     if (extraIngredient) {
-      if (!boolValue) {
+      if (!$(this).hasClass("active")) {
         $(ingredient).addClass(extraIngredient);
         $(this).addClass('active');
       } else {
@@ -10,7 +10,7 @@ function hideAndShowOrAdd(button, ingredient, boolValue, extraIngredient) {
         $(this).removeClass('active');
       }
     } else {
-      if (boolValue) {
+      if ($(this).hasClass("active")) {
         $(ingredient).hide('slow');
         $(this).removeClass('active');
       } else {
@@ -18,8 +18,7 @@ function hideAndShowOrAdd(button, ingredient, boolValue, extraIngredient) {
         $(this).addClass('active');
       }
     }
-    addAndRemoveIngredientsFromList(ingredient, boolValue);
-    boolValue = !boolValue;
+    addAndRemoveIngredientsFromList(ingredient, !$(this).hasClass("active"));
   });
 }
 
@@ -53,11 +52,11 @@ $(function() {
   $(".panel-price-ul li:nth-child(4)").hide('fast');
   $(".panel-price-ul li:nth-child(5)").hide('fast');
   //We add the listeners to the buttons
-  hideAndShowOrAdd('.btn-green-peppers', '.green-pepper', true);
-  hideAndShowOrAdd('.btn-mushrooms', '.mushroom', true);
-  hideAndShowOrAdd('.btn-pepperonni', '.pep', true);
-  hideAndShowOrAdd('.btn-crust', '.crust', false, 'crust-gluten-free');
-  hideAndShowOrAdd('.btn-sauce', '.sauce', false, 'sauce-white');
+  hideAndShowOrAdd('.btn-green-peppers', '.green-pepper');
+  hideAndShowOrAdd('.btn-mushrooms', '.mushroom');
+  hideAndShowOrAdd('.btn-pepperonni', '.pep');
+  hideAndShowOrAdd('.btn-crust', '.crust', 'crust-gluten-free');
+  hideAndShowOrAdd('.btn-sauce', '.sauce', 'sauce-white');
 
 
 
