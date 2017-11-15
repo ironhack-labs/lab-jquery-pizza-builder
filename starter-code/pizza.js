@@ -1,7 +1,13 @@
 // Write your Pizza Builder JavaScript in this file.
 
 $(function(){
-  $(".price li").addClass("charge");
+  $(".price li:nth-child(1), .price li:nth-child(2), .price li:nth-child(3)").addClass("charge");
+  $(".price li:nth-child(4)").hide();
+  $(".price li:nth-child(5)").hide();
+  $(".sauce").removeClass("sauce-white");
+  $(".crust").removeClass("crust-gluten-free");
+  $(".btn-sauce").removeClass("active");
+  $(".btn-crust").removeClass("active");
 
   $(".btn-pepperonni").click(function(){
     $(this).toggleClass("active");
