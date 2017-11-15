@@ -1,49 +1,90 @@
 // Write your Pizza Builder JavaScript in this file.
 
-function clickIngrendient(buttonName, ingredientName){
-    pizzaPrice = parseFloat(( $("strong").text() ).replace('$', '')) || 0;
+function setPrice(buttonName, ingredientName, ingredientNth, ingredientePrice){
+    pizzaPrice = parseFloat(( $("strong").text() ).replace('$', '')) || 0;  
+    priceDescription = $("aside ul li:nth-child("+ingredientNth+")");
+    ingredient = $(ingredientName);
 
     if ( $(buttonName).hasClass("active") ) {
-        $(buttonName).removeClass("active");
-        $(ingredientName).hide();
-        pizzaPrice -=3;
+        priceDescription.show();
+        ingredient.show();
+        pizzaPrice += ingredientePrice;
         $("strong").text("$" + pizzaPrice);
     }
     else {
-        $(buttonName).addClass("active");
-        $(ingredientName).show();
-        pizzaPrice +=3;
+        priceDescription.hide();
+        ingredient.hide();
+        pizzaPrice -= ingredientePrice;
         $("strong").text("$" + pizzaPrice);
     }
 }
 
+function actDes(buttonName){
+    if ( $(buttonName).hasClass("active") ) {
+        $(buttonName).removeClass("active");
+    }
+    else {
+        $(buttonName).addClass("active"); 
+    }
+}
+function setIngrendient(buttonName, ingredientName){
+    if ( $(buttonName).hasClass("active") ) {
+        $(ingredientName).show();
+    }
+    else {
+        $(ingredientName).hide(); 
+    }
+}
+function setCrust(buttonName){
+    if ( $(buttonName).hasClass("active") ) {
+        $(".crust").addClass("crust-gluten-free");
+    }
+    else {
+        $(".crust").removeClass("crust-gluten-free");
+    }
+}
+function setSauce(buttonName){
+    if ( $(buttonName).hasClass("active") ) {
+        $(".sauce").addClass("sauce-white");
+    }
+    else {
+        $(".sauce").removeClass("sauce-white");
+    }
+}
 
 
 
 $(function(){
 
     $(".btn-pepperonni").click(function(){
-        clickIngrendient(this, ".pep")
+        actDes(this);
+        setIngrendient(this, ".pep");
+        setPrice(this, ".pep",1,1);
     });
 
     $(".btn-mushrooms").click(function(){
-        clickIngrendient(".btn-mushrooms", ".mushroom")
+        actDes(this);
+        setIngrendient(this, ".pep");
+        setPrice(this, ".mushroom",2,1);
     });
 
     $(".btn-green-peppers").click(function(){
-        clickIngrendient(".btn-green-peppers", ".green-pepper")
+        actDes(this);
+        setIngrendient(this, ".pep");
+        setPrice(this, ".green-pepper",3,1);
     });
 
     $(".btn-sauce").click(function(){
-        clickIngrendient(".btn-sauce", ".sauce")
+        actDes(this);
+        setSauce(this);
+        setPrice(this,"",4,3);
     });
 
     $(".btn-crust").click(function(){
-        clickIngrendient(".btn-crust", ".crust")
+        actDes(this);
+        setCrust(this);
+        setPrice(this,"",5,5);
     });
-
-
-
 
 
 })
