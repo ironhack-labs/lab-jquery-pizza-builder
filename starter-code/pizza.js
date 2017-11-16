@@ -26,4 +26,14 @@ $(".btn-green-peppers").click(function(){
   }
     });
 
+  $(".btn-sauce").text("Regular Sauce");
+  $(".btn-sauce").click(function(){
+        $(this).text("White Sauce");
+      });
+
+  $(".btn-crust").text("Regular Crust");
+  $(".btn-crust").click(function(){
+        $(this).text("Gluten-free crust");
+      });
+
 });
