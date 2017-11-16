@@ -79,15 +79,16 @@ function updatePrice() {
 }
 
 $(".btn-pepperonni").click(function(){
-    toggleVisibility(".btn-pepperonni",".pep","Add Pepperoni","Del Pepperoni");
+    toggleVisibility(".btn-pepperonni",".pep");
+    callThis(this);
 });
 
 $(".btn-mushrooms").click(function(){
-    toggleVisibility(".btn-mushrooms",".mushroom","Add Mushroom","Del Mushroom");
+    toggleVisibility(".btn-mushrooms",".mushroom");
 });
 
 $(".btn-green-peppers").click(function(){
-    toggleVisibility(".btn-green-peppers",".green-pepper","Add Green-pepper", "Del Green-pepper");
+    toggleVisibility(".btn-green-peppers",".green-pepper");
 });
 
 $(".btn-sauce").click(function(){
@@ -117,9 +118,9 @@ $(".btn-crust").click(function(){
 // on ready set sauce and crust instead of sauce-white and crust-gluten-free
 $(function(){
     basePrice = 10;
-    $("#pizza > .crust > .sauce").toggleClass("sauce-white");
+    $("#pizza > .crust > .sauce").removeClass("sauce-white");
     $(".price ul li:nth-child(4)").attr("hidden", "true");
-    $("#pizza > .crust").toggleClass("crust-gluten-free");
+    $("#pizza > .crust").removeClass("crust-gluten-free");
     $(".price ul li:nth-child(5)").attr("hidden", "true");
     updatePrice();
 });
