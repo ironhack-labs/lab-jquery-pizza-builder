@@ -28,12 +28,24 @@ $(".btn-green-peppers").click(function(){
 
   $(".btn-sauce").text("Regular Sauce");
   $(".btn-sauce").click(function(){
-        $(this).text("White Sauce");
+    if ($(this).text("Regular Sauce")){
+      $(".sauce-white").hide();
+      $(this).text("White Sauce");
+    } else {
+      $(".sauce-white").show();
+      $(this).text("Regular Sauce");
+    }
       });
 
   $(".btn-crust").text("Regular Crust");
   $(".btn-crust").click(function(){
-        $(this).text("Gluten-free crust");
+    if ($(this).text("Regular Crust")){
+      $(".crust-gluten-free").hide();
+      $(this).text("Gluten Free Crust");
+    } else {
+      $(".crust-gluten-free").show();
+      $(this).text("Regular Crust");
+    }
       });
 
 });
