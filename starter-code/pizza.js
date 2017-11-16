@@ -2,12 +2,12 @@
 function hideAndShowOrAdd(button, ingredient, extraIngredient) {
   $(button).click(function() {
     if (extraIngredient) {
-      if (!$(this).hasClass("active")) {
-        $(ingredient).addClass(extraIngredient);
-        $(this).addClass('active');
-      } else {
+      if ($(this).hasClass("active")) {
         $(ingredient).removeClass(extraIngredient);
         $(this).removeClass('active');
+      } else {
+        $(ingredient).addClass(extraIngredient);
+        $(this).addClass('active');
       }
     } else {
       if ($(this).hasClass("active")) {
@@ -51,8 +51,8 @@ function addAndRemoveIngredientsFromList(ingredient, boolValue) {
       break;
   }
   //Show or hide the ingredients and update the final ammount
-  textFromLi = $(".price strong").text();
-  numberStrong = textFromLi[1] + textFromLi[2];
+  textFromStrong = $(".price strong").text();
+  numberStrong = textFromStrong[1] + textFromStrong[2];
   if (boolValue) {
     $(".panel-price-ul li:nth-child(" + liPosition + ")").show('fast');
     numberStrong = parseInt(numberStrong) + unitPrice;
