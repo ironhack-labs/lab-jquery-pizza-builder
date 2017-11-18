@@ -1,108 +1,51 @@
-// Write your Pizza Builder JavaScript in this file.
-//buttons for main ingredients
+//Function for buttons for main ingredients
+
 $(function(){
+  changeIngredients(".btn-pepperonni", ".pep");
+  changeIngredients(".btn-mushrooms", ".mushroom");
+  changeIngredients(".btn-green-peppers", ".green-pepper");
+  changeExtraIngredients(".btn-sauce", ".sauce", "sauce-white");
+  changeExtraIngredients(".btn-crust", ".crust", "crust-gluten-free");
 
-  $(".btn-pepperonni").click(function(){
-    $(".btn-pepperonni").toggleClass("active");
-    if ($(".btn-pepperonni").hasClass("active")){
-      $(".pep").css("display", "inline");
-      $("li:contains('$1 pepperonni')").css("display", "block");
+function changeIngredients(btnIngredient, htmlIngredient, ingredientPrice) {
+  $(btnIngredient).click(function(){
+    $(this).toggleClass("active");
+    if ($(this).hasClass("active")){
+      $(htmlIngredient).css("display", "inline");
     }
     else {
-      $(".pep").css("display", "none");
-      $("li:contains('$1 pepperonni')").css("display", "none");
+      $(htmlIngredient).css("display", "none");
     }
-    sumTotalPrice();
+    getTotalPrice(arrayIngredient, arrayIngredientPrices, arrayListIngredients);
   });
-  $(".btn-mushrooms").click(function(){
-    $(".btn-mushrooms").toggleClass("active");
-    if ($(".btn-mushrooms").hasClass("active")){
-      $(".mushroom").css("display", "inline");
-      $("li:contains('$1 mushrooms')").css("display","block");
-    }
-    else {
-      $(".mushroom").css("display", "none");
-      $("li:contains('$1 mushrooms')").css("display", "none");
-    }
-    sumTotalPrice();
+}
+//Function for buttons for extras
+function changeExtraIngredients(btnIngredient, htmlIngredient, cssIngredientClass ,ingredientPrice){
+  $(btnIngredient).removeClass("active");
+  $(htmlIngredient).removeClass(cssIngredientClass);
+  $(btnIngredient).click(function(){
+    $(this).toggleClass("active");
+    $(htmlIngredient).toggleClass(cssIngredientClass);
+  getTotalPrice(arrayIngredient, arrayIngredientPrices, arrayListIngredients);
   });
-  $(".btn-green-peppers").click(function(){
-    $(".btn-green-peppers").toggleClass("active");
-    if ($(".btn-green-peppers").hasClass("active")){
-      $(".green-pepper").css("display", "inline");
-      $("li:contains('$1 green peppers')").css("display","block");
-    }
-    else {$(".green-pepper").css("display", "none");
-    $("li:contains('$1 green peppers')").css("display","none");
-  }
-  sumTotalPrice();
-  });
-//button for sauce
-  $(".btn-sauce").removeClass("active");
-  $(".sauce").removeClass("sauce-white");
-  $("li:contains('$3 white sauce')").css("display", "none");
+}
 
-  $(".btn-sauce").click(function(){
-    $(".btn-sauce").toggleClass("active");
-    $(".sauce").toggleClass("sauce-white");
-    if ($(".btn-sauce").hasClass("active")){
-      $("li:contains('$3 white sauce')").css("display", "block");
-    }
-    else {$("li:contains('$3 white sauce')").css("display", "none");
-    }
-    sumTotalPrice();
-});
-//button for gluten-free
-  $(".btn-crust").removeClass("active");
-  $(".crust").removeClass("crust-gluten-free");
-  $("li:contains('$5 gluten-free crust')").css("display", "none");
+var arrayIngredient = [".btn-pepperonni", ".btn-mushrooms", ".btn-green-peppers", ".btn-sauce", ".btn-crust"];
+var arrayIngredientPrices = [1, 1, 1, 3, 5];
+var arrayListIngredients = ["li:contains('$1 pepperonni')", "li:contains('$1 mushrooms')", "li:contains('$1 green peppers')", "li:contains('$3 white sauce')", "li:contains('$5 gluten-free crust')"];
 
-  $(".btn-crust").click(function(){
-    $(".btn-crust").toggleClass("active");
-    $(".crust").toggleClass("crust-gluten-free");
-    if ($(".btn-crust").hasClass("active")){
-      $("li:contains('$5 gluten-free crust')").css("display", "block");
-    }
-    else {$("li:contains('$5 gluten-free crust')").css("display", "none");
-    }
-    sumTotalPrice();
-  });
-  //calculate total price
-  var pepperonniPrice = 0;
-  var mushroomsPrice = 0;
-  var greenPeppersPrice = 0;
-  var whiteSaucePrice = 0;
-  var glutenFreePrice = 0;
-
-    sumTotalPrice = function () {
-      if ($(".btn-pepperonni").hasClass("active")){
-        pepperonniPrice = 1;
-      } else {pepperonniPrice = 0;}
-      console.log(pepperonniPrice);
-      if ($(".btn-mushrooms").hasClass("active")){
-        mushroomsPrice = 1;
-      } else {mushroomsPrice = 0;}
-      console.log(mushroomsPrice);
-      if ($(".btn-green-peppers").hasClass("active")){
-        greenPeppersPrice = 1;
-      } else {greenPeppersPrice = 0;}
-      console.log(greenPeppersPrice);
-      if ($(".btn-sauce").hasClass("active")){
-        whiteSaucePrice = 3;
+getTotalPrice(arrayIngredient, arrayIngredientPrices, arrayListIngredients);
+function getTotalPrice (array1, array2, array3) {
+    var totalPrice = 10;
+    for(i=0; i<array1.length; i++) {
+      if ($(array1[i]).hasClass("active")) {
+        totalPrice += array2[i];
+        $(array3[i]).css("display", "block");
+      } else {
+        $(array3[i]).css("display", "none");
       }
-      else {whiteSaucePrice = 0;}
-      console.log(whiteSaucePrice);
-      if ($(".btn-crust").hasClass("active")){
-        glutenFreePrice = 5;
-      }
-      else {glutenFreePrice =0;}
-      console.log(glutenFreePrice);
-      var totalPrice = 10+pepperonniPrice+mushroomsPrice+greenPeppersPrice+whiteSaucePrice+glutenFreePrice;
       $("strong:last-child").text('$'+totalPrice);
-      console.log(totalPrice);
-    };
-    sumTotalPrice();
-
-
+    }
+}
 
 });
