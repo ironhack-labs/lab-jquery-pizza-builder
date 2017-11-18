@@ -2,17 +2,23 @@
 
 $("button.btn-crust").click(function() {
   $(this).toggleClass("active");
-  if ($(this).hasClass("active")) {
     $("section.crust > section.cheese").toggle();
-  } else {
-    $(".section.crust > section.cheese").toggle();
-  }
 });
+
 $("button.btn-pepperonni").click(function() {
   $(this).toggleClass("active");
-  if ($(this).hasClass("active")) {
     $("section.pep").toggle();
-  } else {
-    $(".section.pep").toggle();
-  }
+});
+$("button.btn-green-peppers").click(function() {
+  $(this).toggleClass("active");
+      $("section.green-pepper").toggle();
+});
+
+$("button.btn-mushrooms").click(function() {
+  $(this).toggleClass("active");
+    $("section.mushroom").toggle();
+});
+$("button.btn-sauce").click(function() {
+  $(this).toggleClass("active");
+    $("section.sauce").toggle();
 });
