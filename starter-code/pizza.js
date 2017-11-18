@@ -23,6 +23,7 @@ function handleBtn(btnClass, targetClass, extra) {
       $(targetClass).toggleClass(extra);
     }
     updatePrice();
+    totalPrice();
   });
 }
 
@@ -35,7 +36,7 @@ function updatePrice() {
 }
 
 
-function updatePrice() {
+function totalPrice() {
   var total = 10;
   if ($(".btn-pepperonni").hasClass("active")) {
     total += 1;
@@ -47,10 +48,10 @@ function updatePrice() {
     total += 1;
   }
   if ($(".btn-sauce").hasClass("active")) {
-    total += 1;
+    total += 3;
   }
   if ($(".btn-crust").hasClass("active")) {
-    total += 1;
+    total += 5;
   }
 
   $("strong").text("$" + total);
