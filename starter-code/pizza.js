@@ -2,7 +2,6 @@
 $(function() {
   // Remove and add pepperoni
   $(".btn-pepperonni").click(function() {
-    totalPrice();
     if ($(this).hasClass("active")) {
       $(".pep").hide();
       $(".btn-pepperonni").removeClass("active");
@@ -12,10 +11,10 @@ $(function() {
       $(".btn-pepperonni").addClass("active");
       $(".panel.price li:contains($1 pepperonni)").show();
     }
+    totalPrice();
   });
   // Remove and add mushrooms
   $(".btn-mushrooms").click(function() {
-    totalPrice();
     if ($(this).hasClass("active")) {
       $(".mushroom").hide();
       $(".btn-mushrooms").removeClass("active");
@@ -25,10 +24,10 @@ $(function() {
       $(".btn-mushrooms").addClass("active");
       $(".panel.price li:contains($1 mushrooms)").show();
     }
+    totalPrice();
   });
   // Remove and add pepperoni
   $(".btn-green-peppers").click(function() {
-    totalPrice();
     if ($(this).hasClass("active")) {
       $(".green-pepper").hide();
       $(".btn-green-peppers").removeClass("active");
@@ -38,6 +37,7 @@ $(function() {
       $(".btn-green-peppers").addClass("active");
       $(".panel.price li:contains($1 green peppers)").show();
     }
+    totalPrice();
   });
 
   // Remove gluten-free and white sauce as default
@@ -47,7 +47,6 @@ $(function() {
   $(".btn-crust").removeClass("active");
   // Remove and add white sauce
   $(".btn-sauce").click(function() {
-    totalPrice();
     if ($(this).hasClass("active")) {
       $(".sauce").removeClass("sauce-white");
       $(".btn-sauce").removeClass("active");
@@ -57,10 +56,10 @@ $(function() {
       $(".btn-sauce").addClass("active");
       $(".panel.price li:contains($3 white sauce)").show();
     }
+    totalPrice();
   });
   //Remove and add gluten-free
   $(".btn-crust").click(function() {
-    totalPrice();
     if ($(this).hasClass("active")) {
       $(".crust").removeClass("crust-gluten-free");
       $(".btn-crust").removeClass("active");
@@ -70,6 +69,7 @@ $(function() {
       $(".btn-crust").addClass("active");
       $(".panel.price li:contains($5 gluten-free crust)").show();
     }
+    totalPrice();
   });
 
   // add and remove ingredients from price list
@@ -98,12 +98,5 @@ $(function() {
     $(".panel.price strong").text("$" + total);
     return;
   }
-
-  function obtainPrice(li){
-    var price;
-    price = li.text
-    return
-  }
-
 
 });
