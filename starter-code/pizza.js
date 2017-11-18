@@ -6,19 +6,7 @@
 //Iteration 4: Ingredients and prices
 //Iteration 5: Update price
 
-/*buttons
-.btn-pepperonni
-.btn-mushrooms
-.btn-green-peppers
-.btn-sauce
-.btn-crust*/
-/*class
-.green-pepper
-.mushroom
-.pep
-.crust
-.cheese.
-.sauce*/
+
 $(document).ready(function() {
   $(".btn-pepperonni").click(function(){
     $(this).toggleClass("active");
@@ -48,23 +36,3 @@ $(document).ready(function() {
     $(".sauce").toggleClass("sauce-white");
   });
 });
-
-
-// $.("btn-pepperonni")."click"(function)(){
-//   $(".pep").toggleclass(active);
-// }
-// $(.btn-mushrooms).click(function(){
-//
-// }
-// $(.btn-green-peppers).click(function(){
-//
-// }
-// $(.btn-white-sauce).click(function(){
-//
-// }
-// $(.btn-crust).click(function(){
-//
-// }
-
-//first, you add and event
-//second var = price
