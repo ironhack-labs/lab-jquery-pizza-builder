@@ -2,6 +2,7 @@
 $(function() {
   // Remove and add pepperoni
   $(".btn-pepperonni").click(function() {
+    totalPrice();
     if ($(this).hasClass("active")) {
       $(".pep").hide();
       $(".btn-pepperonni").removeClass("active");
@@ -14,6 +15,7 @@ $(function() {
   });
   // Remove and add mushrooms
   $(".btn-mushrooms").click(function() {
+    totalPrice();
     if ($(this).hasClass("active")) {
       $(".mushroom").hide();
       $(".btn-mushrooms").removeClass("active");
@@ -26,6 +28,7 @@ $(function() {
   });
   // Remove and add pepperoni
   $(".btn-green-peppers").click(function() {
+    totalPrice();
     if ($(this).hasClass("active")) {
       $(".green-pepper").hide();
       $(".btn-green-peppers").removeClass("active");
@@ -44,6 +47,7 @@ $(function() {
   $(".btn-crust").removeClass("active");
   // Remove and add white sauce
   $(".btn-sauce").click(function() {
+    totalPrice();
     if ($(this).hasClass("active")) {
       $(".sauce").removeClass("sauce-white");
       $(".btn-sauce").removeClass("active");
@@ -56,6 +60,7 @@ $(function() {
   });
   //Remove and add gluten-free
   $(".btn-crust").click(function() {
+    totalPrice();
     if ($(this).hasClass("active")) {
       $(".crust").removeClass("crust-gluten-free");
       $(".btn-crust").removeClass("active");
@@ -70,10 +75,35 @@ $(function() {
   // add and remove ingredients from price list
   $(".panel.price li:contains($3 white sauce)").hide();
   $(".panel.price li:contains($5 gluten-free crust)").hide();
+  totalPrice();
 
+  // Calculate total Price
+  function totalPrice(){
+    total = 10;
+    if($(".btn-pepperonni").hasClass("active")){
+      total += 1;
+    }
+    if($(".btn-mushrooms").hasClass("active")){
+      total += 1;
+    }
+    if($(".btn-green-peppers").hasClass("active")){
+      total += 1;
+    }
+    if($(".btn-sauce").hasClass("active")){
+      total += 3;
+    }
+    if($(".btn-crust").hasClass("active")){
+      total += 5;
+    }
+    $(".panel.price strong").text("$" + total);
+    return;
+  }
 
-
-
+  function obtainPrice(li){
+    var price;
+    price = li.text
+    return
+  }
 
 
 });
