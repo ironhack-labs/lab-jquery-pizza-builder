@@ -4,11 +4,33 @@ $(document).ready(function () {
     $('section.crust').removeClass('crust-gluten-free');
     $('section.sauce').removeClass('sauce-white');
     $('button').removeClass('active');
+    $("aside li:contains('sauce'), aside li:contains('crust')").remove();
 
-    $("button").click(function(){
+    $(".btn-pepperonni").click(function(){
         $(this).toggleClass("active");
+        $('.pep').fadeToggle();
     });
 
-    $("aside li:contains('sauce'), aside li:contains('crust')").remove();
+    $(".btn-mushrooms").click(function(){
+        $(this).toggleClass("active");
+        $('.mushroom').fadeToggle();
+    });
+
+    $(".btn-green-peppers").click(function(){
+        $(this).toggleClass("active");
+        $('.green-pepper').fadeToggle();
+    });
+
+    $(".btn-sauce").click(function(){
+        $(this).toggleClass("active");
+        $('section.sauce').toggleClass('sauce-white');
+    });
+
+    $(".btn-crust").click(function(){
+        $(this).toggleClass("active");
+        $('section.crust').toggleClass('crust-gluten-free');
+    });
+
+
 
 });
