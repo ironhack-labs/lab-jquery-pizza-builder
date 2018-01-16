@@ -9,21 +9,22 @@ $(function () {
     $('.price li:nth-child(4)').hide();
     $('.price li:nth-child(5)').hide();
     $('strong').html('');
-    $('strong').html('$3');
+    $('strong').html('$10');
     $('.btn-pepperonni').on('click', function (event) {
         event.preventDefault();
         $('.pep').toggle();
         $('.btn-pepperonni').toggleClass('active');
         if ($('.btn-pepperonni').hasClass('active')) {
-            $('.price ul li:first').remove();
-            $('.price ul').prepend('<li>$1 pepperonni</li>');
+            // $('.price ul li:first').remove();
+            // $('.price ul').prepend('<li>$1 pepperonni</li>');
+            $('.price ul li:nth-child(1)').toggle();
             totalPrice += pepPrice;
             $('.price strong').html('');
             $('.price strong').html('$' + totalPrice);
         } else {
             totalPrice -= pepPrice;
-            $('.price ul li:nth-child(1)').html('');
-            $('.price strong').html('');
+            $('.price ul li:nth-child(1)').hide();
+            
             $('.price strong').html('$' + totalPrice);
         }
 
