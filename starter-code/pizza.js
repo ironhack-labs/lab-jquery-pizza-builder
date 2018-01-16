@@ -8,4 +8,7 @@ $(document).ready(function () {
     $("button").click(function(){
         $(this).toggleClass("active");
     });
+
+    $("aside li:contains('sauce'), aside li:contains('crust')").remove();
+
 });
