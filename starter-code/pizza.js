@@ -14,8 +14,22 @@ $(document).ready(function(){
         $(".green-pepper").toggle('display');
      });
 });
-// $(document).ready(function(){
-//     $(".btn-sauce.active").click(function() {
-//         $(".sauce-white").toggle('display');
-//      });
-// });
+$(document).ready(function(){
+    $(".sauce-white").removeClass("sauce-white");
+});
+
+$(document).ready(function(){
+    $(".btn-sauce.active").click(function() {
+        $(".sauce").addClass("sauce-white");;
+     });
+});
+
+$(document).ready(function(){
+    $(".crust").removeClass("crust-gluten-free");
+});
+
+$(document).ready(function(){
+    $(".btn-crust.active").click(function() {
+        $(".crust").addClass("crust-gluten-free");;
+     });
+});
