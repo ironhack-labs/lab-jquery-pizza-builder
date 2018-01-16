@@ -24,10 +24,9 @@ $(function () {
         } else {
             totalPrice -= pepPrice;
             $('.price ul li:nth-child(1)').hide();
-            
+
             $('.price strong').html('$' + totalPrice);
         }
-
     });
     $('.btn-mushrooms').on('click', function (event) {
         event.preventDefault();
@@ -36,13 +35,13 @@ $(function () {
         if ($('.btn-mushrooms').hasClass('active')) {
             $('.price ul li:nth-child(2)').toggle();
             totalPrice += mushPrice;
-           
+
             $('.price strong').html('$' + totalPrice);
         } else {
             totalPrice -= mushPrice;
             $('.price ul li:nth-child(2)').hide();
-            
-            
+
+
             $('.price strong').html('$' + totalPrice);
         }
 
@@ -75,7 +74,7 @@ $(function () {
             $('.price strong').html('');
             $('.price strong').html('$' + totalPrice);
 
-            
+
         } else {
             $('.price ul li:nth-child(4)').append();
             totalPrice += saucePrice;
@@ -95,7 +94,7 @@ $(function () {
             $('.price strong').html('');
             $('.price strong').html('$' + totalPrice);
 
-           
+
         } else {
             $('.price ul li:nth-child(5)').append();
             totalPrice += crustPrice;
