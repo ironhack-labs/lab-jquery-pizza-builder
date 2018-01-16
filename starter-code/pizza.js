@@ -1,6 +1,6 @@
 // Write your Pizza Builder JavaScript in this file.
 $(function () {
-    var totalPrice = 10;
+    var totalPrice = 13;
     var pepPrice = 1;
     var mushPrice = 1;
     var greenPrice = 1;
@@ -9,7 +9,7 @@ $(function () {
     $('.price li:nth-child(4)').hide();
     $('.price li:nth-child(5)').hide();
     $('strong').html('');
-    $('strong').html('$10');
+    $('strong').html('$13');
     $('.btn-pepperonni').on('click', function (event) {
         event.preventDefault();
         $('.pep').toggle();
