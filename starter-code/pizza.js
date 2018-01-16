@@ -13,7 +13,14 @@ $(document).ready(function(){
     $(".btn-mushrooms").toggleClass("active");
     $(".mushroom").toggle();
   })
-
+  $(".btn-sauce").click(function() {
+    $(".btn-sauce").toggleClass("active");
+    $(".sauce").toggleClass("sauce-white");
+  })
+  $(".btn-crust").click(function() {
+    $(".btn-crust").toggleClass("active");
+    $(".crust").toggleClass("crust-gluten-free");
+  })
   
 
 })
