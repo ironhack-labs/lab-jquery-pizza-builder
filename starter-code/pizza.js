@@ -60,7 +60,7 @@ $(".btn-sauce").click(function() {
         $(".price > ul > li:nth-child(4)").hide();
         renderPrice(-3);
     } else {
-        $(".price > ul > li:nth-child(4)").slideUp();
+        $(".price > ul > li:nth-child(4)").show();
         renderPrice(3);
     }
     $(".sauce").toggleClass('sauce-white');
