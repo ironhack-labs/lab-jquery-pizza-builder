@@ -15,8 +15,6 @@ $(function () {
         $('.pep').toggle();
         $('.btn-pepperonni').toggleClass('active');
         if ($('.btn-pepperonni').hasClass('active')) {
-            // $('.price ul li:first').remove();
-            // $('.price ul').prepend('<li>$1 pepperonni</li>');
             $('.price ul li:nth-child(1)').toggle();
             totalPrice += pepPrice;
             $('.price strong').html('');
