@@ -441,7 +441,9 @@ p.description {
 .pep.thirteen {
     margin: 265px 0 0 355px;
 }
-
+.visible{
+display: none;
+}
 .pep.fourteen {
     margin: 233px 0 0 445px;
 }
