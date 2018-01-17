@@ -42,3 +42,11 @@ $crushButton.on('click', function(){
 })
 
 /***** Sauce ****/
+
+var $sauceButton = $('.btn-sauce')
+var $sauce = $('.sauce');
+$pizza.removeClass('sauce-white');
+
+$sauceButton.on('click', function(){
+    $sauce.toggleClass('sauce-white');
+})
