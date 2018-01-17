@@ -2,6 +2,7 @@
 
 
 var $pizza = $('#pizza');
+var $price = $('.panel li');
 
 /***** Pepperonni ****/
 
@@ -10,6 +11,7 @@ var $allPeppe = $('.pep');
 
 $peppeButton.on('click', function(){
     $allPeppe.toggle();
+    $peppeButton.toggleClass('active');
 });
 
 
@@ -19,7 +21,8 @@ var $mushButton = $('.btn-mushrooms');
 var $allMush = $('.mushroom');
 
 $mushButton.on('click', function () {
-        $allMush.toggle();
+    $allMush.toggle();
+    $mushButton.toggleClass('active');
 })
 
 /***** Green Peppers ****/
@@ -29,6 +32,7 @@ var $allGreen = $('.green-pepper');
 
 $greenButton.on('click', function () {
     $allGreen.toggle();
+    $greenButton.toggleClass('active');
 });
 
 /***** Crush ****/
@@ -39,6 +43,7 @@ $pizza.removeClass('crust-gluten-free');
 
 $crushButton.on('click', function(){
     $crush.toggleClass('crust-gluten-free');
+    $crushButton.toggleClass('active')
 })
 
 /***** Sauce ****/
@@ -49,4 +54,5 @@ $pizza.removeClass('sauce-white');
 
 $sauceButton.on('click', function(){
     $sauce.toggleClass('sauce-white');
+    $sauceButton.toggleClass('active');
 })
