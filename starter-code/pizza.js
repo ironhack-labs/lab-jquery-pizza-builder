@@ -34,17 +34,11 @@ $greenButton.on('click', function () {
 /***** Crush ****/
 
 var $crushButton = $('.btn-crust');
+var $crush = $('.crust')
 $pizza.removeClass('crust-gluten-free');
-$pizza.addClass('crust');
 
 $crushButton.on('click', function(){
-    if ($pizza.hasClass('crust')){
-        $pizza.removeClass('crust')
-        $pizza.addClass('crust-gluten-free'); 
-    } else{
-        $pizza.removeClass('crust-gluten-free');
-        $pizza.addClass('crust'); 
-    }
+    $crush.toggleClass('crust-gluten-free');
 })
 
 /***** Sauce ****/
