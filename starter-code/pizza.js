@@ -8,11 +8,7 @@ $(document).ready(function(){
 	$(".crust").removeClass("crust-gluten-free");
 	$(".sauce").removeClass("sauce-white");
 
-	$(".btn-pepperonni").removeClass("active");
-	$(".btn-mushrooms").removeClass("active");
-	$(".btn-green-peppers").removeClass("active");
-	$(".btn-crust").removeClass("active");
-	$(".btn-sauce").removeClass("active");
+	$("button").removeClass("active");
 
 	$(".btn-pepperonni").on("click", function(){
 		$(".btn-pepperonni").toggleClass("active");
