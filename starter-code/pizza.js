@@ -8,7 +8,16 @@ var liGreenPepper = $(".price li:nth-child(3)");
 var liSauce = $(".price li:nth-child(4)");
 var liCrust = $(".price li:nth-child(5)");
 var total = $("strong");
-var numeroTotal = 10;
+var arrayTotal = [10];
+
+// ingrediants varibles
+var precioPepperonni = $(".price li:nth-child(1)").text()[1]; // .text porque el $("") nos reenvia a toda la linea de html, el .text nos renvia el puro string del cual extraemos la posicion 1 para agarar la cifra
+var precioMushrooms = $(".price li:nth-child(2)").text()[1];
+var precioGreenPepper = $(".price li:nth-child(3)").text()[1];
+var precioSauce = $(".price li:nth-child(4)").text()[1];
+var precioCrust = $(".price li:nth-child(5)").text()[1];
+
+console.log(precioGreenPepper)
 
 //defaoult varibles
 
@@ -18,8 +27,17 @@ liSauce.css("display", "none")
 
 liCrust.css("display","none")
 
-total.text("$"+numeroTotal)
+total.text("$"+ 10)
   
+//
+function total(arrar) {
+    sum = 0
+    arrayTotal.forEach(function(element){
+        sum+=element;
+      });
+}
+
+total(arrayTotal)
 
 //btn peperoni
 
