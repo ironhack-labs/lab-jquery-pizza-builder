@@ -14,10 +14,11 @@ $(document).ready(function(){
         if ($('.pep').css('display') ==='block'){
             $('.pep').hide();
             $('.btn-pepperonni').removeClass('active');
-            $('.panel').has('ul:nth-child')
+            $('.price li:nth-child(1)').hide();
         } else {
             $('.pep').show();
             $('.btn-pepperonni').addClass('active');
+            $('.price li:nth-child(1)').show();
         }
     });
 
@@ -25,18 +26,22 @@ $(document).ready(function(){
         if ($('.mushroom').css('display') ==='block'){
             $('.mushroom').hide()
             $('.btn-mushrooms').removeClass('active');
+            $('.price li:nth-child(2)').hide();
         } else {
             $('.mushroom').show();
             $('.btn-mushrooms').addClass('active');
+            $('.price li:nth-child(2)').show();
         }
     });
     $('.btn-green-peppers').click(function(){
         if ($('.green-pepper').css('display') ==='block'){
             $('.green-pepper').hide();
             $('.btn-green-peppers').removeClass('active');
+            $('.price li:nth-child(3)').hide();
         } else {
             $('.green-pepper').show();
             $('.btn-green-peppers').addClass('active');
+            $('.price li:nth-child(3)').show();
         }
     });
 
@@ -68,7 +73,7 @@ $(document).ready(function(){
         } 
     })
     //PRICE
-var sum = 0;
-    (function ($) { console.log($) });
-}
+// var sum = 0;
+//     (function ($) { console.log($) });
+// }
 })
