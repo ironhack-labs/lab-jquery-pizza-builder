@@ -9,7 +9,6 @@ $(document).ready(function(){
    $(".price li:nth-child(4)").css("opacity", "0");
    $(".price li:nth-child(5)").css("opacity", "0");
 
-  count = 0
  
   $(".btn-pepperonni").click(function(){
     if($(".pep").css("display") === "none") {
@@ -107,7 +106,6 @@ $(document).ready(function(){
     if ($(".btn-crust").hasClass("active")){
         count += 5;
     }
-    console.log(count);
 
     $(".price strong").text("$" + count);
   }
