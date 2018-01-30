@@ -321,7 +321,7 @@ p.description {
 }
 
 /*--- Crust & Sauce ---*/
-.crust {
+.crust {    
     width: 700px;
     height: 700px;
     border-radius: 800px;
@@ -347,6 +347,7 @@ p.description {
 
 .sauce-white {
   background: #fff4aa;
+ 
 }
 
 .cheese {
