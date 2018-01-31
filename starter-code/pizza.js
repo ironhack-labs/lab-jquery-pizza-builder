@@ -97,14 +97,16 @@ $('.btn-sauce').click(function(){
     $(".btn-sauce").toggleClass("active")
      if($(".sauce-white").css('display') === 'none') {
          $(".sauce-white").css("display","block")
-         liSauce.css("display", "block") 
+         liSauce.css("display", "none") 
          sumTotal -= precioSauce;
+         
      } else {
          $(".sauce-white").css("display","none") 
-         liSauce.css("display", "none") 
+         liSauce.css("display", "block")
          sumTotal += precioSauce;
+        
      }    
-     $("strong").text("$"+ sumTotal)
+     $("strong").text("$"+ sumTotal) 
 })
 
 //btn crust
@@ -117,12 +119,12 @@ $(".btn-crust").removeClass("active")
     $(".btn-crust").toggleClass("active")
     if ($(".crust").hasClass("crust-gluten-free")) {
         $(".crust").removeClass("crust-gluten-free");
-        liCrust.css("display", "block") 
+        liCrust.css("display", "none")
         sumTotal -= precioCrust;
     } else {
-        $(".crust").addClass("crust-gluten-free");
-        liCrust.css("display", "none") 
-       sumTotal += precioCrust;
+        $(".crust").addClass("crust-gluten-free");   
+        liCrust.css("display", "block") 
+        sumTotal += precioCrust;
     }
     $("strong").text("$"+ sumTotal)
 })
