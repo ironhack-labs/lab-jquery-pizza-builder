@@ -3,6 +3,7 @@
   <head>
     <title>Pizza Builder</title>
     <link rel="stylesheet" href="pizza.css">
+    <!-- <script src="jquery-2.1.4.js"></script> -->
   </head>
 
   <body>
@@ -41,11 +42,11 @@
 
       <b>$10 cheese pizza</b>
       <ul>
-        <li>$1 pepperonni</li>
-        <li>$1 mushrooms</li>
-        <li>$1 green peppers</li>
-        <li>$3 white sauce</li>
-        <li>$5 gluten-free crust</li>
+        <li class="price-li pep-price">$1 pepperonni</li>
+        <li class="price-li mushroom-price">$1 mushrooms</li>
+        <li class="price-li pepper-price">$1 green peppers</li>
+        <li style="display:none;" class="price-li price-sauce-white">$3 white sauce</li>
+        <li style="display:none;" class="price-li price-crust-gluten-free">$5 gluten-free crust</li>
       </ul>
       <strong>$21</strong>
     </aside>
@@ -270,7 +271,8 @@
 
       <section class="crust crust-gluten-free">
         <section class="cheese"></section>
-        <section class="sauce sauce-white"></section>
+        <section class="sauce"></section>
+        <section class="sauce-white"></section>
       </section>
     </div>
     <!-- End Pizza -->
