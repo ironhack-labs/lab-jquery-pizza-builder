@@ -8,9 +8,11 @@ $(".pep").text("");
 $("#pizza section").removeClass("pep")
  $("#pizza section").removeClass("crust-gluten-free")
  $("#pizza section section:last-child").removeClass("sauce-white")
+ $(".active").removeClass("active");
 
 
 $(".btn-green-peppers").click(function(){
+  $(this).toggleClass("active");
   for (let i = 1; i < 22; i++) {
     $("#pizza section:nth-of-type(" + i + "):not(section section)").toggleClass("green-pepper"); 
   }
@@ -18,6 +20,7 @@ $(".btn-green-peppers").click(function(){
   })
 
   $(".btn-mushrooms").click(function(){
+    $(this).toggleClass("active");
     for (let i = 22; i < 54; i++) {
       $("#pizza section:nth-of-type(" + i + ")").toggleClass("mushroom");
       
@@ -31,6 +34,7 @@ $(".btn-green-peppers").click(function(){
 
 
 $(".btn-pepperonni").click(function(){
+  $(this).toggleClass("active");
   for (let i = 54; i < 86; i++) {
     $("#pizza section:nth-of-type(" + i + "):not(section section)").toggleClass("pep");
  
@@ -39,10 +43,12 @@ $(".btn-pepperonni").click(function(){
 })
 
 $(".btn-sauce").click(function(){
+  $(this).toggleClass("active");
   $("#pizza section section:last-child").toggleClass("sauce-white");
 })
 
 $(".btn-crust").click(function(){
+  $(this).toggleClass("active");
   $("#pizza section:last-child:not(section section)").toggleClass("crust-gluten-free");
 })
 
