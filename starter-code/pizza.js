@@ -42,21 +42,29 @@ $(document).ready(function() {
 
   $(".btn-sauce").click(function() {
     $(".crust .sauce").toggleClass("sauce-white");
-    $(this).toggleClass("active");
-    if ($(". crust .sauce").hasClass("sauce-white")) {
+    if ($(".crust .sauce").hasClass("sauce-white")) {
       $(".price ul li:contains(sauce)").show();
+      $(".price ul li:contains(sauce)").attr("value", "3")
     } else {
       $(".price ul li:contains(sauce)").hide();
+      $(".price ul li:contains(sauce)").removeAttr("value");
     }
+    $(this).toggleClass("active");
   });
 
   $(".btn-crust").click(function() {
     $(".crust").toggleClass("crust-gluten-free");
-    $(this).toggleClass("active");
+
     if ($(".crust").hasClass("crust-gluten-free")) {
       $(".price ul li:contains(crust)").show();
+      $(".price ul li:contains(crust)").attr("value", "5")
+    } else {
+      $(".price ul li:contains(crust)").hide();
+      $(".price ul li:contains(crust)").removeAttr("value");
     }
+    $(this).toggleClass("active");
   });
+
 
   //Funcion para poner la pizza inicialmente
   function init() {
