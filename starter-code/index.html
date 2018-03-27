@@ -17,19 +17,19 @@
     <div class="panel controls">
       <ul>
         <li>
-          <button class="btn btn-pepperonni active">Pepperonni</button>
+          <button data-index="0" class="btn btn-pepperonni ">Pepperonni</button>
         </li>
         <li>
-          <button class="btn btn-mushrooms active">Mushrooms</button>
+          <button data-index="1" class="btn btn-mushrooms ">Mushrooms</button>
         </li>
         <li>
-          <button class="btn btn-green-peppers active">Green peppers</button>
+          <button data-index="2" class="btn btn-green-peppers ">Green peppers</button>
         </li>
         <li>
-          <button class="btn btn-sauce active">White sauce</button>
+          <button data-index="3" class="btn btn-sauce ">White sauce</button>
         </li>
         <li>
-          <button class="btn btn-crust active">Gluten-free crust</button>
+          <button data-index="4" class="btn btn-crust">Gluten-free crust</button>
         </li>
       </ul>
     </div>
@@ -47,7 +47,7 @@
         <li>$3 white sauce</li>
         <li>$5 gluten-free crust</li>
       </ul>
-      <strong>$21</strong>
+      <strong>$10</strong>
     </aside>
     <!-- End Price -->
 
@@ -269,8 +269,13 @@
       <section class="pep thirty-three">33</section>
 
       <section class="crust crust-gluten-free">
+          <section class="sauce sauce-white"></section>  
         <section class="cheese"></section>
-        <section class="sauce sauce-white"></section>
+      </section>
+
+      <section class="crust">
+          <section class="sauce sauce-white"></section>
+          <section class="cheese"></section>
       </section>
     </div>
     <!-- End Pizza -->
