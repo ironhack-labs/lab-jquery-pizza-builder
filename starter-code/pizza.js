@@ -61,6 +61,6 @@ $(document).ready(function(){
     }
 
     //Ingredients and prices
-    $(".panel.price > ul").hide("li");
+
 
 });
