@@ -9,7 +9,6 @@ $(document).ready( function() {
   pep.addClass("invisible");
   mushroom.addClass("invisible");
   greenPepper.addClass("invisible");
-  sauce.addClass("invisible");
 
   $(".btn-pepperonni").on("click", function() {
     pep.toggleClass("invisible");
@@ -21,6 +20,14 @@ $(document).ready( function() {
 
   $(".btn-green-peppers").on("click", function() {
     greenPepper.toggleClass("invisible");
+  });
+
+  $(".btn-sauce").on("click", function() {
+    sauce.toggleClass("invisible");
+  });
+
+  $(".btn-crust").on("click", function() {
+    cheese.toggleClass("invisible");
   });
 
 });
