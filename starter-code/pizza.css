@@ -52,7 +52,7 @@ blockquote, q {
 }
 
 /*--- HTML5 -----*/
-header, nav, details, section, aside, footer {
+header, nav, details, sectiocn, aside, footer {
     display: block;
 }
 

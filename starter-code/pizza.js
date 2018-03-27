@@ -1,9 +1,13 @@
 // Write your Pizza Builder JavaScript in this file.
 $(document).ready(function(){
-  borrarAnadirPeperoni();
+inicializacion()
+
+  
+borrarAnadirPeperoni();
   borrarAnadirMushrooms();
   borrarAnadirGreenPeppers();
-
+  borrarAnadirSauce();
+  borrarAnadirCrust();
 
 }
 )
@@ -27,4 +31,29 @@ function borrarAnadirGreenPeppers(){
     $('.green-pepper').fadeToggle(100);
   }  
   )
+}
+
+
+function borrarAnadirSauce(){
+  $('.btn-sauce').click(function(){
+    $('.sauce').toggleClass("sauce-white");
+  }  
+  )
+}
+
+function borrarAnadirCrust(){
+  $('.btn-crust').click(function(){
+    $('.crust').toggleClass("crust-gluten-free");
+  }  
+  )
+}
+
+function inicializacion() {
+
+  $('.pep').hide()
+  $('.mushroom').hide()
+  $('.green-pepper').hide();
+  $('.crust').removeClass("crust-gluten-free");
+  $('.sauce').removeClass("sauce-white");
+  
 }
