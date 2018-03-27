@@ -8,9 +8,16 @@ borrarAnadirPeperoni();
   borrarAnadirGreenPeppers();
   borrarAnadirSauce();
   borrarAnadirCrust();
+  activarBoton();
 
 }
 )
+
+function activarBoton(){
+  $("button").click(function(){
+    $(this).toggleClass("active");
+  })
+}
 
 function borrarAnadirPeperoni(){
    $('.btn-pepperonni').click(function(){
@@ -55,5 +62,7 @@ function inicializacion() {
   $('.green-pepper').hide();
   $('.crust').removeClass("crust-gluten-free");
   $('.sauce').removeClass("sauce-white");
+
+  $('button').removeClass("active");
   
 }
