@@ -10,7 +10,11 @@ $(document).ready(function(){
   var btnSau =$(".btn-sauce");
   var btnCru =$(".btn-crust")
   
+  
+
   btnPep.click(function(){
+    
+    
     if(btnPep.hasClass("active")){
       deleteLi("pep");
     } else {
@@ -72,13 +76,16 @@ $(document).ready(function(){
   });
   
   function calculatePrice(){
-    var lis = $("#pedido").children;
-    var sum =0;
-    for(i=0;i<Object.keys(lis).length;i++){
-      sum+=lis[i].attr("price")
+    var lista = document.getElementById("pedido").children;
+    
+ //   var lista = $("#pedido > li");
+    var sum =10;
+    for(i=0;i<Object.keys(lista).length;i++){
+      sum+=Number(lista[i].getAttribute("price"));
     }
-
-
+    var total= "<strong>"+"$"+sum+"</strong>";
+     $(".total-price").empty();
+     $(total).appendTo(".total-price");
   }
   
   function createLi(ingredient){
@@ -110,7 +117,9 @@ function deleteLi(ingredient){
   }
 }
 
-
+$(".btn").click(function(){
+  calculatePrice();
+});
 
 });
 
