@@ -78,7 +78,6 @@ $(document).ready(function(){
   function calculatePrice(){
     var lista = document.getElementById("pedido").children;
     
- //   var lista = $("#pedido > li");
     var sum =10;
     for(i=0;i<Object.keys(lista).length;i++){
       sum+=Number(lista[i].getAttribute("price"));
