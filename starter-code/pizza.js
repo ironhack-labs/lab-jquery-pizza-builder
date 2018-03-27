@@ -9,6 +9,10 @@ $().ready(function() {
   $(".crust").removeClass("crust-gluten-free");
   $(".sauce").removeClass("sauce-white");
 
+  $("button").removeClass("active");
+
+  encendido()
+  
   /* Iteración 1 */
 
   // Peperoni
@@ -35,3 +39,9 @@ $().ready(function() {
     $(".sauce").toggleClass("sauce-white");
   });
 });
+
+function encendido(){
+  $("button").click(function(){
+    $(this).toggleClass("active");
+  })
+};
