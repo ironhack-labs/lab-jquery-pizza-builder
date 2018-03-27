@@ -518,7 +518,7 @@ p.description {
     margin: 358px 0 0 365px;
 }
 
-/*--- Mushrooms ---*/
+/*--- Mushrooms --- */
 .mushroom {
     position: absolute;
     width: 70px;
@@ -526,7 +526,7 @@ p.description {
     z-index: 20;
     margin: 200px 0 0 200px;
     text-indent: -9999px;
-}
+} 
 
 .cap {
     width: 70px;
@@ -536,7 +536,7 @@ p.description {
     border-top-right-radius: 100px;
     z-index: 20;
     position: relative;
-}
+} 
 
 .stem {
     width: 35px;
