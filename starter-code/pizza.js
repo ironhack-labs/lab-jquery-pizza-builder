@@ -4,17 +4,20 @@ $(document).ready(function(){
     //Pepperonni
     $(".btn-pepperonni").on("click", function(){
         pepperonni();
-        toggleButton(".btn-pepperonni")
+        toggleButton(".btn-pepperonni");
+        $(".panel.price > ul :nth-Child(1)").toggle().toggleClass("off");;
     });
     //Mushrooms
     $(".btn-mushrooms").on("click", function(){
        mushrooms();
-       toggleButton(".btn-mushrooms")
+       toggleButton(".btn-mushrooms");
+       $(".panel.price > ul :nth-Child(2)").toggle().toggleClass("off");;
     });
     //Green-pepper
     $(".btn-green-peppers").on("click", function(){
         greenPepper();
-        toggleButton(".btn-green-peppers")
+        toggleButton(".btn-green-peppers");
+        $(".panel.price > ul :nth-Child(3)").toggle().toggleClass("off");;
     });
 
     //Add and remove toppings
@@ -34,9 +37,12 @@ $(document).ready(function(){
     //Sauce and crust options
     function crustGluten(){
         $(".crust").toggleClass("crust-gluten-free");
+        $(".panel.price > ul :nth-Child(5)").toggle().toggleClass("off");
+        
     }
     function sauceWhite(){
         $(".sauce").toggleClass("sauce-white");
+        $(".panel.price > ul :nth-Child(4)").toggle().toggleClass("off");
     }
 
     $(".crust").removeClass("crust-gluten-free");
@@ -61,6 +67,6 @@ $(document).ready(function(){
     }
 
     //Ingredients and prices
-    $(".panel.price > ul").hide("li");
-
+    $(".panel.price > ul :nth-Child(4)").hide().toggleClass("off");
+    $(".panel.price > ul :nth-Child(5)").hide().toggleClass("off");
 });
