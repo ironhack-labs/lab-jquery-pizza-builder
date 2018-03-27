@@ -2,12 +2,12 @@
 window.onload = function () {
 $(".green-pepper").removeClass("green-pepper")
 $(".cap").text("");
-$("div  section div").removeClass("stem cap");
-$("div section").removeClass("mushroom")
+$("#pizza  section div").removeClass("stem cap");
+$("#pizza section").removeClass("mushroom")
 $(".pep").text("");
-$("div section").removeClass("pep")
-// $("div section").removeClass()
-// $("div section").removeClass()
+$("#pizza section").removeClass("pep")
+ $("#pizza section").removeClass("crust-gluten-free")
+ $("#pizza section section:last-child").removeClass("sauce-white")
 
 
 $(".btn-green-peppers").click(function(){
@@ -26,7 +26,6 @@ $(".btn-green-peppers").click(function(){
     $("#pizza section div:first-child").toggleClass("cap");
     $("#pizza section div:last-child").toggleClass("stem");
       
-    
   })
 
 
@@ -39,8 +38,13 @@ $(".btn-pepperonni").click(function(){
   
 })
 
+$(".btn-sauce").click(function(){
+  $("#pizza section section:last-child").toggleClass("sauce-white");
+})
 
-
+$(".btn-crust").click(function(){
+  $("#pizza section:last-child:not(section section)").toggleClass("crust-gluten-free");
+})
 
 
 
