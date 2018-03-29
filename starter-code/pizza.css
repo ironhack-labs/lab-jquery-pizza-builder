@@ -349,6 +349,14 @@ p.description {
   background: #fff4aa;
 }
 
+.strike {
+    text-decoration-line: line-through;
+}
+
+.none{
+    display: none;
+}
+
 .cheese {
     position: absolute;
     width: 600px;
