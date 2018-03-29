@@ -1,79 +1,66 @@
 // Write your Pizza Builder JavaScript in this file.
 $(".price li:nth-child(4), .price li:nth-child(5)").hide();
 
-var totalPrice = $(".total").text();
-var totalNumber = Number(totalPrice);
+function calculatingTotal (ingredient, listItem){
+    var totalPrice = $(".total").text();
+    var totalNumber = Number(totalPrice);
+    var justNumber = listItem.text().charAt(1);
+    justNumber = Number(justNumber);
+    
+        if(ingredient.is(":visible")){
+            $(".total").text(totalNumber+=justNumber);
+        }else{
+            $(".total").text(totalNumber-=justNumber);
+        }
+}
+
 
 
 $(".btn-pepperonni").click(function(){
-    $(".pep").toggle();
+    var pepperonni=  $(".pep");
+    pepperonni.toggle();
     $(".btn-pepperonni").toggleClass("active");
-    $(".price li:nth-child(1)").toggle();
-    var pepPrice = $(".price span:first").text();
-    pepPrice = Number(pepPrice);
-    if($(".pep").is(":visible")){
-        $(".total").text(totalNumber+=pepPrice);
-    }else{
-        $(".total").text(totalNumber-=pepPrice);
-        //console.log(totalNumber);
-    }
+    var onePrice =$(".price li:nth-child(1)")
+    onePrice.toggle();
+    calculatingTotal(pepperonni, onePrice);
 
 });
 
 $(".btn-green-peppers").click(function(){
-    $(".green-pepper").toggle();
+    var peppers= $(".green-pepper");
+    peppers.toggle();
     $(".btn-green-peppers").toggleClass("active");
-    $(".price li:nth-child(3)").toggle();
-    var pepPrice = $(".price li:nth-child(3) span").text();
-    pepPrice = Number(pepPrice);
-    if($(".green-pepper").is(":visible")){
-        $(".total").text(totalNumber+=pepPrice);
-    }else{
-        $(".total").text(totalNumber-=pepPrice);
-        //console.log(totalNumber);
-    }
+    var onePrice = $(".price li:nth-child(3)");
+    onePrice.toggle();
+    calculatingTotal(peppers, onePrice);  
 });
 
 $(".btn-mushrooms").click(function(){
-    $(".mushroom").toggle();
+    var mushrooms = $(".mushroom");
+    mushrooms.toggle();
     $(".btn-mushrooms").toggleClass("active");
-    $(".price li:nth-child(2)").toggle();
-    var pepPrice = $(".price li:nth-child(2) span").text();
-    pepPrice = Number(pepPrice);
-    if($(".mushroom").is(":visible")){
-        $(".total").text(totalNumber+=pepPrice);
-    }else{
-        $(".total").text(totalNumber-=pepPrice);
-        //console.log(totalNumber);
-    }
+    var onePrice =$(".price li:nth-child(2)");
+    onePrice.toggle();
+    calculatingTotal(mushrooms, onePrice);
 });
 
 $(".btn-crust").click(function(){
-    $(".crust").toggleClass("crust-gluten-free");
+    var crust = $(".crust");
+    crust.toggleClass("crust-gluten-free");
     $(".btn-crust").toggleClass("active");
-    $(".price li:nth-child(5)").toggle();
-    var pepPrice = $(".price li:nth-child(5) span").text();
-    pepPrice = Number(pepPrice);
-    if($(".crust-gluten-free").is(":visible")){
-        $(".total").text(totalNumber+=pepPrice);
-    }else{
-        $(".total").text(totalNumber-=pepPrice);
-        //console.log(totalNumber);
-    }
+    var onePrice =$(".price li:nth-child(5)")
+    onePrice.toggle();
+    var crustGluten = $(".crust-gluten-free");
+    calculatingTotal(crustGluten, onePrice);
 });
 
 $(".btn-sauce").click(function(){
-    $(".sauce").toggleClass("sauce-white");
+    var sauce = $(".sauce");
+    sauce.toggleClass("sauce-white");
     $(".btn-sauce").toggleClass("active");
-    $(".price li:nth-child(4)").toggle();
-    var pepPrice = $(".price li:nth-child(4) span").text();
-    pepPrice = Number(pepPrice);
-    if($(".sauce-white").is(":visible")){
-        $(".total").text(totalNumber+=pepPrice);
-    }else{
-        $(".total").text(totalNumber-=pepPrice);
-        //console.log(totalNumber);
-    }
+    var onePrice = $(".price li:nth-child(4)")
+    onePrice.toggle();
+    var sauceWhite = $(".sauce-white");
+    calculatingTotal(sauceWhite,onePrice)
 });
 
-$("").click(function(){});
