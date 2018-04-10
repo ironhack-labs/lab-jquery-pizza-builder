@@ -214,6 +214,7 @@ p.description {
   color: #fff;
 }
 
+
 .btn-green-peppers.active {
   top: 2px;
   box-shadow: 0 2px #0a5203;
@@ -1004,6 +1005,11 @@ footer a:hover {
     -webkit-transition: all .3s linear;
 }
 
+
+.none{
+    display:none;
+}
+
 @media screen and (max-width: 720px) {
 
     body {
@@ -1037,3 +1043,5 @@ footer a:hover {
         margin: 70px 0 10px 0;
     }
 }
+
+
