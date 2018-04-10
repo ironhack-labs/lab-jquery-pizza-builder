@@ -4,6 +4,7 @@ var pepperonni = true, mushroom = true, sauce = true, greenPepper = true, crust 
 $(".btn-pepperonni").click(function(){
 	$(".pep").toggle();
 	$(".price ul li:first").toggle();
+	$(".btn-pepperonni").toggleClass("active");
 	
 	if (pepperonni){
 		$(".price strong").text("$" + (total - 1));
@@ -20,6 +21,7 @@ $(".btn-pepperonni").click(function(){
 $(".btn-mushrooms").click(function(){
 	$(".mushroom").toggle();
 	$(".price ul li:nth-child(2)").toggle();
+	$(".btn-mushrooms").toggleClass("active");
 
 	if (mushroom){
 		$(".price strong").text("$" + (total - 1));
@@ -36,6 +38,7 @@ $(".btn-mushrooms").click(function(){
 $(".btn-green-peppers").click(function(){
 	$(".green-pepper").toggle();
 	$(".price ul li:nth-child(3)").toggle();
+	$(".btn-green-peppers").toggleClass("active");
 
 	if (greenPepper){
 		$(".price strong").text("$" + (total - 1));
@@ -52,6 +55,7 @@ $(".btn-green-peppers").click(function(){
 $(".btn-sauce").click(function(){
 	$(".sauce").toggle();
 	$(".price ul li:nth-child(4)").toggle();
+	$(".btn-sauce").toggleClass("active");
 
 	if (sauce){
 		$(".price strong").text("$" + (total - 3));
@@ -66,8 +70,9 @@ $(".btn-sauce").click(function(){
 })
 
 $(".btn-crust").click(function(){
-	$(".crust-gluten-free").toggle();
-	// $(".price ul li:last").toggle();
+	$(".crust").toggleClass("crust-gluten-free");
+	$(".price ul li:last").toggle();
+	$(".btn-crust").toggleClass("active");
 
 	if (crust){
 		$(".price strong").text("$" + (total - 5));
