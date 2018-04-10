@@ -356,7 +356,6 @@ p.description {
     border-radius: 700px;
     background: #f3d255;
     margin: 50px 0 0 50px;
-    z-index: 10;
     box-shadow: inset 0 0 200px #d88e24;
 }
 
@@ -1036,4 +1035,16 @@ footer a:hover {
     footer {
         margin: 70px 0 10px 0;
     }
+}
+.display-none{
+    display: none
+}
+
+.price strong{
+    display: inline;
+}
+.price span{
+    font-weight: bold;
+    font-size: 28px;
+    
 }
