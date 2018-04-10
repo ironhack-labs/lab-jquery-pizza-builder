@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="./pizza.js"></script>
     <title>Pizza Builder</title>
     <link rel="stylesheet" href="pizza.css">
   </head>
@@ -39,15 +41,15 @@
     <aside class="panel price">
       <h2>Your pizza's price</h2>
 
-      <b>$10 cheese pizza</b>
+      <b id="base">$10 cheese pizza</b>
       <ul>
-        <li>$1 pepperonni</li>
-        <li>$1 mushrooms</li>
-        <li>$1 green peppers</li>
-        <li>$3 white sauce</li>
-        <li>$5 gluten-free crust</li>
+        <li id="pep">$1 pepperonni</li>
+        <li id="mushroom">$1 mushrooms</li>
+        <li id="grnpep">$1 green peppers</li>
+        <li id="white">$3 white sauce</li>
+        <li id="gluten">$5 gluten-free crust</li>
       </ul>
-      <strong>$21</strong>
+      <strong class="total">$21</strong>
     </aside>
     <!-- End Price -->
 
@@ -268,9 +270,9 @@
       <section class="pep thirty-one">31</section>
       <section class="pep thirty-three">33</section>
 
-      <section class="crust crust-gluten-free">
+      <section class="crust">
         <section class="cheese"></section>
-        <section class="sauce sauce-white"></section>
+        <section class="sauce"></section>
       </section>
     </div>
     <!-- End Pizza -->
@@ -289,7 +291,7 @@
     </footer>
     <!-- Footer -->
 
-    <script src="jquery-2.1.4.js"></script>
-    <script src="pizza.js"></script>
+    <!-- <script src="jquery-2.1.4.js"></script>
+    <script src="pizza.js"></script> -->
   </body>
 </html>
