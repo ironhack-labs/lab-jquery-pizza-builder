@@ -6,28 +6,33 @@
 
 $(document).ready(function() {
   
-  $(".btn").toggleClass("active"); // Deactivate the button
+  // $(".btn").toggleClass("active"); // Deactivate the button
+  $(".btn-crust").toggleClass("active");
+  $(".btn-sauce").toggleClass("active");
   
-  $(".pep").toggle();
+  // $(".pep").toggle();
   $( ".btn-pepperonni" ).click(function() {
     $(".btn-pepperonni").toggleClass("active");
+    $(".ing-Price  li:nth-child(1)").toggle();
    $(".pep").toggle();
    
 });
 
-$(".mushroom").toggle();
+// $(".mushroom").toggle();
 $( ".btn-mushrooms" ).click(function() {
 
   $(".mushroom").toggle();
   $(".btn-mushrooms ").toggleClass("active");
+  $(".ing-Price  li:nth-child(2)").toggle();
   
 });
 
 
-$(".green-pepper ").toggle();
+// $(".green-pepper ").toggle();
 $( ".btn-green-peppers" ).click(function() {
   $(".btn-green-peppers").toggleClass("active");
   $(".green-pepper ").toggle();
+  $(".ing-Price  li:nth-child(3)").toggle();
   
 });
 
@@ -48,6 +53,7 @@ $( ".btn-crust" ).click(function() {
   
   $(".btn-crust").toggleClass("active");
   $(".crust").toggleClass("crust-gluten-free"); 
+  $(".ing-Price  li:nth-child(5)").toggle();
   
 });
 
@@ -55,7 +61,9 @@ $( ".btn-sauce" ).click(function() {
   
   $(".btn-sauce").toggleClass("active");
   $(".sauce").toggleClass("sauce-white"); 
-  
+  $(".ing-Price  li:nth-child(4)").toggle();
+ 
+
 });
 
 
