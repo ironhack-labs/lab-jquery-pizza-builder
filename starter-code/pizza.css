@@ -22,6 +22,14 @@ header, section, footer, article, details {
     outline: 0;
 }
 
+.hidden {
+    visibility: hidden;
+}
+
+.visible {
+    visibility: visible;
+}
+
 body {
     line-height: 1;
     color: black;
@@ -1037,3 +1045,4 @@ footer a:hover {
         margin: 70px 0 10px 0;
     }
 }
+
