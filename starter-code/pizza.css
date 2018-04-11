@@ -104,6 +104,11 @@ body {
   box-shadow: none;
 }
 
+/* .btn:inactive {
+    top: 5px;
+    box-shadow: 5px 10px #888888;
+  } */
+
 /*------ Header -----*/
 header {
     text-align: center;
