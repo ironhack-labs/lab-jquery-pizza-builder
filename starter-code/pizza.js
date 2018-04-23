@@ -4,6 +4,8 @@ $(window).load(function() {
   $(".btn-crust").removeClass("active");
   $(".sauce").removeClass("sauce-white");
   $(".btn-sauce").removeClass("active");
+  activeCheck();
+  calculateTotal();
 });
 
 $(".btn-pepperonni").click(function() {
@@ -55,3 +57,89 @@ $(".btn-crust").click(function() {
     $(".btn-crust").addClass("active");
   }
 });
+
+function activeCheck(){
+  let pepperonni = $(".price li")[0];
+  let mushrooms = $(".price li")[1];
+  let greenPeppers = $(".price li")[2];
+  let sauce = $(".price li")[3];
+  let crust = $(".price li")[4];
+  
+  
+  if ($(".btn-pepperonni").hasClass("active")){
+    $(pepperonni).css("display","list-item");
+  }
+  else{
+    $(pepperonni).css("display","none");
+  }
+
+  if ($(".btn-mushrooms").hasClass("active")){
+    $(mushrooms).css("display","list-item");
+  }
+  else{
+    $(mushrooms).css("display","none");
+  }
+
+  if ($(".btn-green-peppers").hasClass("active")){
+    $(greenPeppers).css("display","list-item");
+  }
+  else{
+    $(greenPeppers).css("display","none");
+  }
+
+  if ($(".btn-sauce").hasClass("active")){
+    $(sauce).css("display","list-item");
+  }
+  else{
+    $(sauce).css("display","none");
+  }
+
+  if ($(".btn-crust").hasClass("active")){
+    $(crust).css("display","list-item");
+  }
+  else{
+    $(crust).css("display","none");
+  }
+}
+
+function calculateTotal(){
+  let total = 10;
+
+  if ($(".btn-pepperonni").hasClass("active")){
+    total += 1;
+  }
+  if ($(".btn-mushrooms").hasClass("active")){
+    total += 1;
+  }
+  if ($(".btn-green-peppers").hasClass("active")){
+    total += 1;
+  }
+  if ($(".btn-sauce").hasClass("active")){
+    total += 3;
+  }
+  if ($(".btn-crust").hasClass("active")){
+    total += 5;
+  }
+
+  $(".price strong").text("$" + total);
+}
+
+
+
+$(".btn").click(function(){
+  activeCheck();
+  calculateTotal();
+});
+// idea: 
+//     use active class to hide or show the li containing prices
+
+//     use "$(".price li")[0].innerText;" to cycle through all
+//     of the li and use parseInt at the location of numbers 
+//     in the string to pull the numbers and pop them into an
+//     array. This should all happen in one function. 
+
+//     Create another function for totaling all of the units
+//     in the array and display them.
+
+//     Create an on click for the btn class that will refresh
+//     all calculations.
