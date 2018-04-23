@@ -2,19 +2,19 @@
 
 // Add/remove pepperonni topping
 $('.btn-pepperonni').on('click', function () {
-  $(".pep").toggleClass('hidden');
+  $(".pep").toggle('hidden');
   $(this).toggleClass('active');
 });
 
 // Add/remove mushroom topping
 $('.btn-mushrooms').on('click', function () {
-  $(".mushroom").toggleClass('hidden');
+  $(".mushroom").toggle('hidden');
   $(this).toggleClass('active');
 });
 
 // Add/remove green pepper topping
 $('.btn-green-peppers').on('click', function () {
-  $(".green-pepper").toggleClass('hidden');
+  $(".green-pepper").toggle('hidden');
   $(this).toggleClass('active');
 });
 
