@@ -42,4 +42,41 @@ $('.price li:contains(sauce)').hide()
 $('.price li:contains(crust)').hide()
 
 //Updates Total Price according to active ingredients
-let totalPrice = $('.price strong')[0].innerHTML
+
+
+$('button').click(function(){
+    var firPrice = []
+    var secPrice = []
+    var thirPrice = []
+
+for (var i = 0; i < $('.price li:visible').length; i++){
+	if ( $('.price li:visible:contains(1)')[i] != undefined){	
+	firPrice.push($('.price li:visible:contains(1)')[i])}
+
+	if ( $('.price li:visible:contains(3)')[i] != undefined){
+	secPrice.push($('.price li:visible:contains(3)')[i])}
+
+	if ( $('.price li:visible:contains(5)')[i] != undefined){
+	thirPrice.push($('.price li:visible:contains(5)')[i])}
+	addPrice = []
+// 	if (subPrice[0] = $('li:contains(1)')){
+// 		addPrice.push(subPrice[0])}
+// 	if (itemPrice = $('.price li[style*=list]')){
+// 			console.log(itemPrice[4]);
+// 			if (itemPrice = $('price li:contains(1)')){
+// 				subPrice.push(itemPrice.length);
+//             }
+//     }
+// 	if (itemPrice = $('.price li:contains(3)') && $('.price li[style*=list]')){
+// 		subPrice.push(itemPrice.length)}
+// 	console.log($('.price li:visible:contains(1)')[i].innerHTML)
+}
+	console.log(firPrice.length)
+	console.log(secPrice.length *3)
+	console.log(thirPrice.length*5)
+
+var sum = firPrice.length + secPrice.length*3 + thirPrice.length*5
+
+
+$('.price span')[0].innerText = sum+10
+})
