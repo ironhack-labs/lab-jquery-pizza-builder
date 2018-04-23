@@ -45,10 +45,12 @@ $('.price li:contains(crust)').hide()
 
 
 $('button').click(function(){
+    //Creates an array for each itemPrice
     var firPrice = []
     var secPrice = []
     var thirPrice = []
 
+//Pushes number of items displayed to their respective price array
 for (var i = 0; i < $('.price li:visible').length; i++){
 	if ( $('.price li:visible:contains(1)')[i] != undefined){	
 	firPrice.push($('.price li:visible:contains(1)')[i])}
@@ -75,6 +77,9 @@ for (var i = 0; i < $('.price li:visible').length; i++){
 	console.log(secPrice.length *3)
 	console.log(thirPrice.length*5)
 
+//Adds up each array's length multiplied by how much each item should be worth
+//Really messy and unintuitive way to make this work, but it works. I would like to
+//improve upon this last bit of code as I'm sure there's a better, more sophisticated way to complete this task
 var sum = firPrice.length + secPrice.length*3 + thirPrice.length*5
 
 
