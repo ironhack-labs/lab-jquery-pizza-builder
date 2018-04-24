@@ -320,6 +320,9 @@ p.description {
   margin-top: 6px;
 }
 
+.price li.disable{
+    display: none;
+}
 /*--- Crust & Sauce ---*/
 .crust {
     width: 700px;
@@ -334,7 +337,9 @@ p.description {
   background-color: #e0d5cf;
   box-shadow: inset 0 0 40px #d3c3bb;
 }
-
+.crust-gluten-free.disable {
+    display: none;
+}
 .sauce {
     position: absolute;
     width: 620px;
@@ -348,7 +353,9 @@ p.description {
 .sauce-white {
   background: #fff4aa;
 }
-
+.sauce-white.disable {
+    display: none;
+}
 .cheese {
     position: absolute;
     width: 600px;
@@ -384,6 +391,11 @@ p.description {
     text-indent: -9999px;
     color: #fff;
 }
+
+.pep.disable {
+    display: none;
+}
+
 /*.pep:hover{
     -moz-transform: scale(1.3);
     -webkit-transform: scale(1.3);
@@ -527,7 +539,9 @@ p.description {
     margin: 200px 0 0 200px;
     text-indent: -9999px;
 }
-
+.mushroom.disable {
+    display: none;
+}
 .cap {
     width: 70px;
     height: 35px;
@@ -814,6 +828,10 @@ p.description {
     z-index: 30;
 }
 
+
+.green-pepper.disable {
+    display: none;
+}
 .green-pepper.one {
     margin: 200px 0 0 100px;
     -webkit-transform: rotate(22deg);
