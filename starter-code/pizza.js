@@ -1,5 +1,16 @@
 // Write your Pizza Builder JavaScript in this file.
 
+/////////////// -- Almost done.  I can't get the sauce and crust to not be active upon loading the page.  Also the prices aren't adding up correctly.
+
+$(window).on("load", function() {
+  $(".btn.sauce").toggleClass("active");
+  console.log("Load Sauce active working");
+  $(".btn.sauce").toggleClass("white-sauce");
+  console.log("Load Sauce working");
+  $(".btn.crust").toggleClass("active");
+  $(".section.crust").toggleClass("crust-gluten-free");
+});
+
 //////////////////Pepperonni =============================
 
 //toggles btwn pepperoni and not pepperoni
@@ -36,10 +47,6 @@ $(".btn-green-peppers").on("click", event =>
 
 ///////////////////Crust ===============================
 
-//trying to get it to default remove class.  DOES NOTE WORK.
-$(".btn.crust").removeClass("active");
-$(".section.crust").removeClass("crust-gluten-free");
-
 $(".btn-crust").on("click", event =>
   $("section.crust").toggleClass("crust-gluten-free")
 );
@@ -50,18 +57,6 @@ $(".btn-crust").on("click", event =>
 );
 
 //////////////////////White Sauce ===============================
-
-//trying to get it to default remove class. DOES NOT WORK!!!
-
-$(window).on("load", function() {
-  $(".btn.sauce").removeClass("active");
-  console.log("Load Sauce active working");
-});
-
-$(window).on("load", function() {
-  $(".btn.sauce").removeClass("white-sauce");
-  console.log("Load Sauce working");
-});
 
 // toggles sauce class image from pizza
 $(".btn-sauce").on("click", event => $("section.sauce").toggle("sauce-white"));
@@ -93,23 +88,26 @@ $(".btn-crust").on("click", event =>
 );
 
 //////////// TOTAL PRICE
+
 function totalPrice() {
-  let totalPrice = 10;
+  let price = 10;
   if ($(".btn-pepperonni").hasClass("active")) {
-    totalPrice += 1;
+    price += 1;
   }
   if ($(".btn-mushrooms").has("active")) {
-    totalPrice += 1;
+    price += 1;
   }
   if ($(".btn-green-peppers").has("active")) {
-    totalPrice += 1;
+    price += 1;
   }
   if ($(".btn-sauce").has("active")) {
-    totalPrice += 3;
+    price += 3;
   }
   if ($(".btn-crust").has("active")) {
-    totalPrice += 5;
+    price += 5;
   }
 }
 
-$(".btn").on("click", event => $("strong").text("$" + totalPrice));
+// $(".btn").on("click", event, totalPrice => $("strong").text("$" +));
+
+$(".btn").on("click", event => $("strong").text("$" + "price"));
