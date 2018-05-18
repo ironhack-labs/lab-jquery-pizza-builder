@@ -94,13 +94,13 @@ body {
 
 .btn:hover {
   background: #e6e6e6;
-  box-shadow: 0 5px #aaa;
+  box-shadow: 0 105px #aaa;
   color: #888;
 }
 
 /* Imitate a pressed effect for buttons */
 .btn:active {
-  top: 5px;
+  top: 10px;
   box-shadow: none;
 }
 
