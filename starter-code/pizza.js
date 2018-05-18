@@ -4,47 +4,76 @@ $('document').ready(function(){
 // Vars    
 var $btnTopping = $('.btn');
 var $pepperonni = $('.pep');
+var $mushrooms = $('.mushroom');
+var $greenPepper = $('.green-pepper');
+var $sauceWhite = $('.sauce-white');
+var $glutenFree = $('.crust-gluten-free');
+//List vars: 
+var $listPep = $('aside li:first');
+var $listMushroom = $('aside li:nth-child(2)');
+var $listGreen = $('aside li:nth-child(3)');
+var $listWhiteSauce = $('aside li:nth-child(4)');
+var $listGluten = $('aside li:last');
 
 
-// Reset default
+
+// Reset default pizza 
 $btnTopping.removeClass('active');
-$('#pizza section:not(.crust)').hide();
+//Default pizza crust and sauce
+$('#pizza .crust').removeClass('crust-gluten-free');
+$('.sauce').removeClass('sauce-white');
+
+// Hidding list items
+$listWhiteSauce.hide();
+$listGluten.hide();
+
 
 
 //Button events
 $('.btn-pepperonni').click(function() {
-    topping($pepperonni);
+    toggleTopping($pepperonni);
     toggleActive(this);
+    ingredientsListing($listPep);
+    getTotalPrice($listPep);
+    
 });
 $('.btn-mushrooms').click(function() { 
-    topping();
+    toggleTopping($mushrooms);
     toggleActive(this);
-});
+    ingredientsListing($listMushroom);
+    
 $('.btn-green-peppers').click(function() { 
-    topping();
+    toggleTopping($greenPepper);
     toggleActive(this);
-
+    ingredientsListing($listGreen);
 });
 $('.btn-sauce').click(function() { 
-    topping()
+    toggleTopping($sauceWhite)
     toggleActive(this);
+    ingredientsListing($listWhiteSauce);
 
 });
 $('.btn-crust').click(function() { 
-    topping()
+    toggleTopping($glutenFree)
     toggleActive(this);
-
+    ingredientsListing($listGluten);
 });
 
 // Functions
-function topping(ingredient) {
-    $(ingredient).css('display', 'none') ? $(ingredient).show() : $(ingredient).hide();
+function toggleTopping(ingredient) {
+    ingredient.hasClass('crust') ? ingredient.toggleClass('crust-gluten-free') 
+    : ingredient.hasClass('sauce') ? ingredient.toggleClass('sauce-white')
+    : $(ingredient).toggle();
 }
 
 function toggleActive(btn) {
     $(btn).toggleClass('active');
 }
 
+
+function ingredientsListing(ingredient, buttonStatus){
+    $(ingredient).toggle();
+}
 
 });
 
