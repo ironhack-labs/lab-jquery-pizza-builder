@@ -129,3 +129,6 @@ To finish this exercise, we should show the correct total price of our pizza. It
 ```
 
 **Write the JavaScript that update the current price of the pizza as a user clicks the ingredient buttons to turn ingredients on and off. How can you keep track of the current price? When an ingredient changes, how will you know how much to add or substract?**
+
+
+
