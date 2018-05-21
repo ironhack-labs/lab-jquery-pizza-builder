@@ -1,39 +1,46 @@
 // Write your Pizza Builder JavaScript in this file.
 $(document).ready(function(){
+
+    // remove specific class names
+    $(".crust").removeClass("crust-gluten-free");
+    $(".sauce").removeClass("sauce-white");
+
+    // remove active for crust and sauce
+    $(".btn-crust, .btn-sauce").removeClass("active");
+
+    //hide sauce and crust price
+    $(".crust-price, .sauce-price").hide();
+
+    //hide and show ingredient and price
+    //repeated functions below, maybe we can declare one function and call it many times?
+
+    
     $(".btn-pepperonni").click(function(){
-        $(".pep").toggle();
-        $(".pep-price").toggle();
-
-
+        $(".pep, .pep-price").toggle();
+        getPrice();
     });
 
     $(".btn-mushrooms").click(function(){
-        $(".mushroom").toggle();
-        $(".mushrooms-price").toggle();
-
-
+        $(".mushroom, .mushroom-price").toggle();
+        getPrice();
     });
 
     $(".btn-green-peppers").click(function(){
-        $(".green-pepper").toggle();
-        $(".peppers-price").toggle();
-
-
+        $(".green-pepper, .pepper-price").toggle();
+        getPrice();
     });
 
     //crust and sauce
     $(".btn-sauce").click(function(){
         $(".sauce").toggleClass("sauce-white");
         $(".sauce-price").toggle();
-
-
+        getPrice();
     });
 
     $(".btn-crust").click(function(){
         $(".crust").toggleClass("crust-gluten-free");
         $(".crust-price").toggle();
-
-
+        getPrice();
     });
 
     //toggle button active state
@@ -42,37 +49,33 @@ $(document).ready(function(){
 
     });
 
+    //update price total 
+    //get individual price from text:
+    //need to calculate properly
+    function getPrice(){
+
+        var total = 10;
+
+        $(".item-price[style*='display: none']").each(function( index ) {
+            numberPrice = Number($( this ).text().split(" ")[0].replace("$", ""));
+
+            total = total + numberPrice;
+
+            console.log(total);
+
+        });
+
+        $(".panel.price strong").text(total)
+
+
+    }
+
+    getPrice();
+
+
+
+    
+
 });
 
 
-    //hide or show price depending on button state
-
-    if ($(".btn-crust").hasClass("active")) {
-        $(".crust-price").show();
-    } else {
-        $(".crust-price").hide();
-    }
-
-    if ($(".btn-pepperonni").hasClass("active")) {
-        $(".pep-price").show();
-    } else {
-        $(".pep-price").hide();
-    }
-
-    if ($(".btn-mushrooms").hasClass("active")) {
-        $(".mushrooms-price").show();
-    } else {
-        $(".mushrooms-price").hide();
-    }
-
-    if ($(".btn-green-peppers").hasClass("active")) {
-        $(".peppers-price").show();
-    } else {
-        $(".peppers-price").hide();
-    }
-
-    if ($(".btn-sauce").hasClass("active")) {
-        $(".sauce-price").show();
-    } else {
-        $(".sauce-price").hide();
-    }
