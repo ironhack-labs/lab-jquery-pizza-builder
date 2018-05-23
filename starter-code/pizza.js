@@ -14,10 +14,9 @@ $('document').ready(function(){
     var $listGreen = $('aside li:nth-child(3)');
     var $listWhiteSauce = $('aside li:nth-child(4)');
     var $listGluten = $('aside li:last');
-
     var $totalPrice = $('.panel > strong');
     var $dollar = $totalPrice.text()[0]; 
-    
+
     // Reset default pizza 
     $btnTopping.removeClass('active');
 
@@ -28,7 +27,6 @@ $('document').ready(function(){
     // Hidding list items
     $listWhiteSauce.hide();
     $listGluten.hide(); 
-    
     getTotalPrice($listPep); /* This is to reset default price*/
     
     //Button events
@@ -89,23 +87,17 @@ $('document').ready(function(){
     }
     
     function getTotalPrice(ingredient){
-        
         var $list = $('.panel.price ul')[0].children; 
-
         var currentPrice = 0;
-    
         for(var i = 0; i < $list.length; i++){
             var listElement = $list[i];
-            
             if($(listElement).is(":visible")){
                 currentPrice += getPriceByItem(listElement);
             }
         }
-        
         currentPrice += 10;
         return $totalPrice.text($dollar + currentPrice)
     }
-
 });
     
     
