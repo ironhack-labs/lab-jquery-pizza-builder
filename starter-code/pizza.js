@@ -1,65 +1,83 @@
 // Write your Pizza Builder JavaScript in this file.
 $(document).ready(function(){
-    $(".crust").removeClass("crust-gluten-free");
-    $(".btn-crust").removeClass("active");
-    $(".price li:contains('$5 gluten-free crust')").hide();
-   
-
-    $(".sauce").removeClass("sauce-white");
-    $(".sauce").addClass("regular-sauce");
-    $(".btn-sauce").removeClass("active");
-    $(".price li:contains('$3 white sauce')").hide();
-
-    $(".btn-sauce").click(function(){
-        if ($(".sauce").hasClass("sauce-white")) {
-            $(".sauce").removeClass("sauce-white");
-            $(".sauce").addClass("regular-sauce");
-        } else {
-            $(".sauce").addClass("sauce-white");
-            $(".sauce").removeClass("regular-sauce");
-        }
+    // Initialize the pizza
+    initPizza();
+    
+    // Set buttons click events
+    $('.btn-pepperonni').click(function () { toggleIngredient('pepperoni'); });
+    $('.btn-mushrooms').click(function () { toggleIngredient('mushrooms'); });
+    $('.btn-green-peppers').click(function () { toggleIngredient('peppers'); });
+    $('.btn-crust').click(function () { toggleIngredient('crust'); });
+    $('.btn-sauce').click(function(){ toggleIngredient('sauce'); });
+    $('.btn').click(function () {
+      $(this).toggleClass('active');
+      updatePrice();
     });
-
-    $(".btn-crust").click(function(){
-        $(".crust").toggleClass("crust-gluten-free");
-    });
-
-    $(".btn-pepperonni").click(function(){
-        $(".pep").toggle();
-        $(".price li:contains('pepperonni')").toggle();
-    });
-
-    $(".btn-mushrooms").click(function(){
-        $(".mushroom").toggle();
-        $(".price li:contains('mushrooms')").toggle();
-    });
-
-    $(".btn-green-peppers").click(function(){
-        $(".green-pepper").toggle();
-        $(".price li:contains('peppers')").toggle();
-    });
-
-    $(".btn").click(function(){
-        $(this).toggleClass("active");
-        updatePrice();
-    });
-
-    function updatePrice(){
-        var sum =  Number(getPriceFromString ($(".price b").text()));
-        
-        var hijos = $(".price ul").children(":visible");
-        
-        for (var i = 0; i < hijos.length; i++) {
-            sum += getPriceFromString(hijos[i].innerText);
-        }
-
-        $(".price strong").text(sum);
+  });
+  
+  function initPizza() {  
+    toggleIngredient('crust')
+    setSauce('regular');
+    updatePrice();
+  
+    $('.btn-sauce').removeClass('active');
+    $('.btn-crust').removeClass('active');
+  }
+  
+  function toggleIngredient(ingredient) {
+    switch (ingredient) {
+      case 'pepperonni':
+        $('.pep').toggle();
+        $('.price li:contains("pepperonni")').toggle();
+        break;
+      case 'mushrooms':
+        $('.mushroom').toggle();
+        $('.price li:contains("mushrooms")').toggle();
+        break;
+      case 'peppers':
+        $('.green-pepper').toggle();
+        $('.price li:contains("peppers")').toggle();
+        break;
+      case 'crust':
+        $('.crust').toggleClass('crust-gluten-free');        
+        $('.price li:contains("$5 gluten-free crust")').toggle();
+        break;
+      case 'sauce':
+        setSauce($('.sauce').hasClass('sauce-white'));
+        break;
+      default:
+        break;
     }
-
+  }
+  
+  function setSauce(hasWhiteSauce) {
+    switch (hasWhiteSauce) {
+      case true:
+        $('.sauce').removeClass('sauce-white');
+        $('.sauce').addClass('regular-sauce');        
+        $('.price li:contains("$3 white sauce")').hide();
+        break;      
+      case false:
+        $('.sauce').removeClass('regular-white');
+        $('.sauce').addClass('sauce-white');        
+        $('.price li:contains("$3 white sauce")').show();
+        break;    
+      default:
+        break;
+    }
+  }
+  
+  function updatePrice(){
     function getPriceFromString(priceString){
-        return Number(priceString.split(" ")[0].slice(1));
+      return Number(priceString.split(' ')[0].slice(1));
     }
-})
-
-
-
+  
+    var sum =  Number(getPriceFromString ($('.price b').text()));  
+    var hijos = $('.price ul').children(':visible');  
+  
+    for (var i = 0; i < hijos.length; i++) {
+      sum += getPriceFromString(hijos[i].innerText);
+    }
+  
+    $('.price strong').text('$' + sum);
+  }
