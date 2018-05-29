@@ -6,7 +6,6 @@ $(() => {
         var leftSide = $(this).text().split(" ");
 
         return leftSide[0].replace("$", "");
-
     });
 
     $(".price li:contains(white sauce)").hide();
