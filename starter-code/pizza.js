@@ -30,10 +30,10 @@ $(document).ready(function () {
     $(".btn-pepperonni").click(function (event) {
         if ($(".pep:hidden").length > 0) {
             $(".pep").show(500);
-            $("aside.panel.price ul li:nth-child(1)").show(w);
+            $("aside.panel.price ul li:nth-child(1)").show();
         } else {
             $(".pep").hide(500);
-            $("aside.panel.price ul li:nth-child(1)").hide(w);
+            $("aside.panel.price ul li:nth-child(1)").hide();
         }
         $(".btn-pepperonni").toggleClass("active");
         bill();
@@ -41,10 +41,10 @@ $(document).ready(function () {
     $(".btn-mushrooms").click(function (event) {
         if ($(".mushroom:hidden").length > 0) {
             $(".mushroom").show(500);
-            $("aside.panel.price ul li:nth-child(2)").show(w);
+            $("aside.panel.price ul li:nth-child(2)").show();
         } else {
             $(".mushroom").hide(500);
-            $("aside.panel.price ul li:nth-child(2)").hide(w);
+            $("aside.panel.price ul li:nth-child(2)").hide();
         }
         $(".btn-mushrooms").toggleClass("active");
         bill();
@@ -52,10 +52,10 @@ $(document).ready(function () {
     $(".btn-green-peppers").click(function (event) {
         if ($(".green-pepper:hidden").length > 0) {
             $(".green-pepper").show(500);
-            $("aside.panel.price ul li:nth-child(3)").show(w);
+            $("aside.panel.price ul li:nth-child(3)").show();
         } else {
             $(".green-pepper").hide(500);
-            $("aside.panel.price ul li:nth-child(3)").hide(w);
+            $("aside.panel.price ul li:nth-child(3)").hide();
         }
         $(".btn-green-peppers").toggleClass("active");
         bill();
@@ -63,10 +63,10 @@ $(document).ready(function () {
     $(".btn-sauce").click(function (event) {
         if ($(".sauce:hidden").length > 0) {
             $(".sauce").show(500);
-            $("aside.panel.price ul li:nth-child(4)").show(w);
+            $("aside.panel.price ul li:nth-child(4)").show();
         } else {
             $(".sauce").hide(500);
-            $("aside.panel.price ul li:nth-child(4)").hide(w);
+            $("aside.panel.price ul li:nth-child(4)").hide();
         }
         $(".btn-sauce").toggleClass("active");
         bill();
@@ -74,10 +74,10 @@ $(document).ready(function () {
     $(".btn-crust").click(function (event) {
         if ($(".crust:hidden").length > 0) {
             $(".crust").show(500);
-            $("aside.panel.price ul li:nth-child(5)").show(w);
+            $("aside.panel.price ul li:nth-child(5)").show();
         } else {
             $(".crust").hide(500);
-            $("aside.panel.price ul li:nth-child(5)").hide(w);
+            $("aside.panel.price ul li:nth-child(5)").hide();
         }
         $(".btn-crust").toggleClass("active");
         bill();
