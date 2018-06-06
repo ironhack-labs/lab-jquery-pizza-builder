@@ -90,10 +90,3 @@ $(document).ready(function () {
   });
 
 })
-
-//intentar hacer each?
-
-// $('.price ul li').each(function () {
-  
-// })
-
