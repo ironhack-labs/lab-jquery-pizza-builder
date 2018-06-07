@@ -21,6 +21,7 @@ function bill() {
     var menu = $("aside.panel.price ul li:visible");
     for (var i = 0; i < menu.length; i++) {
         cost += parseInt(menu[i].textContent.substr(1, 2));
+        console.log(">" + cost + ">" + parseInt(menu[i].textContent.substr(1, 2)));
     };
     $("aside.panel.price strong").text("$" + cost);
 }
@@ -32,10 +33,10 @@ $(document).ready(function () {
     $(".btn-pepperonni").click(function (event) {
         if ($(".pep:hidden").length > 0) {
             $(".pep").show(500);
-            $("aside.panel.price ul li:nth-child(1)").show(500);
+            $("aside.panel.price ul li:nth-child(1)").show();
         } else {
             $(".pep").hide(500);
-            $("aside.panel.price ul li:nth-child(1)").hide(500);
+            $("aside.panel.price ul li:nth-child(1)").hide();
         }
         $(".btn-pepperonni").toggleClass("active");
         bill();
@@ -43,10 +44,10 @@ $(document).ready(function () {
     $(".btn-mushrooms").click(function (event) {
         if ($(".mushroom:hidden").length > 0) {
             $(".mushroom").show(500);
-            $("aside.panel.price ul li:nth-child(2)").show(500);
+            $("aside.panel.price ul li:nth-child(2)").show();
         } else {
             $(".mushroom").hide(500);
-            $("aside.panel.price ul li:nth-child(2)").hide(500);
+            $("aside.panel.price ul li:nth-child(2)").hide();
         }
         $(".btn-mushrooms").toggleClass("active");
         bill();
@@ -54,15 +55,16 @@ $(document).ready(function () {
     $(".btn-green-peppers").click(function (event) {
         if ($(".green-pepper:hidden").length > 0) {
             $(".green-pepper").show(500);
-            $("aside.panel.price ul li:nth-child(3)").show(500);
+            $("aside.panel.price ul li:nth-child(3)").show();
         } else {
             $(".green-pepper").hide(500);
-            $("aside.panel.price ul li:nth-child(3)").hide(500);
+            $("aside.panel.price ul li:nth-child(3)").hide();
         }
         $(".btn-green-peppers").toggleClass("active");
         bill();
     });
     $(".btn-sauce").click(function (event) {
+
         $(".sauce").toggleClass("sauce-white");
         if ($(".sauce.sauce-white").length > 0) {
             $("aside.panel.price ul li:nth-child(4)").show(500);
