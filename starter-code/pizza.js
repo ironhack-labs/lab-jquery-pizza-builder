@@ -3,13 +3,16 @@ function setup() {
     $(".pep").hide();
     $(".mushroom").hide();
     $(".green-pepper").hide();
+    $(".crust").toggleClass("crust-gluten-free");
+    $(".sauce").toggleClass("sauce-white");
 
     $(".btn-pepperonni").toggleClass("active");
     $(".btn-mushrooms").toggleClass("active");
     $(".btn-green-peppers").toggleClass("active");
-    $("aside.panel.price ul li:nth-child(1)").hide();
-    $("aside.panel.price ul li:nth-child(2)").hide();
-    $("aside.panel.price ul li:nth-child(3)").hide();
+    $(".btn-sauce").toggleClass("active");
+    $(".btn-crust").toggleClass("active");
+    $("aside.panel.price ul li").hide();
+   
     bill();
 }
 
@@ -60,22 +63,22 @@ $(document).ready(function () {
         bill();
     });
     $(".btn-sauce").click(function (event) {
-        if ($(".sauce:hidden").length > 0) {
-            $(".sauce").show(500);
+        $(".sauce").toggleClass("sauce-white");
+        if ($(".sauce.sauce-white").length > 0) {
             $("aside.panel.price ul li:nth-child(4)").show(500);
         } else {
-            $(".sauce").hide(500);
             $("aside.panel.price ul li:nth-child(4)").hide(500);
         }
         $(".btn-sauce").toggleClass("active");
+
         bill();
     });
     $(".btn-crust").click(function (event) {
-        if ($(".crust:hidden").length > 0) {
-            $(".crust").show(500);
+        $(".crust").toggleClass("crust-gluten-free");
+    
+        if ($(".crust.crust-gluten-free").length > 0) {
             $("aside.panel.price ul li:nth-child(5)").show(500);
         } else {
-            $(".crust").hide(500);
             $("aside.panel.price ul li:nth-child(5)").hide(500);
         }
         $(".btn-crust").toggleClass("active");
