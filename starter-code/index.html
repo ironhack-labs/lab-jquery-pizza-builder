@@ -41,13 +41,13 @@
 
       <b>$10 cheese pizza</b>
       <ul>
-        <li>$1 pepperonni</li>
-        <li>$1 mushrooms</li>
-        <li>$1 green peppers</li>
-        <li>$3 white sauce</li>
-        <li>$5 gluten-free crust</li>
+        <li class="price-pep">$<span class="price-p">1</span> pepperonni</li>
+        <li class="price-mush">$<span class="price-m">1</span> mushrooms</li>
+        <li class="price-green">$<span class="price-g">1</span> green peppers</li>
+        <li class="price-sauce">$<span class="price-s">3</span> white sauce</li>
+        <li class="price-gluten-free">$<span class="price-gf">5</span> gluten-free crust</li>
       </ul>
-      <strong>$21</strong>
+      <strong>$<span class="total-price">21</span></strong>
     </aside>
     <!-- End Price -->
 
@@ -268,7 +268,7 @@
       <section class="pep thirty-one">31</section>
       <section class="pep thirty-three">33</section>
 
-      <section class="crust crust-gluten-free">
+      <section class="crust crust-gluten-free active">
         <section class="cheese"></section>
         <section class="sauce sauce-white"></section>
       </section>
@@ -288,8 +288,8 @@
       </p>
     </footer>
     <!-- Footer -->
-
-    <script src="jquery-2.1.4.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <!-- <script src="jquery-2.1.4.js"></script> -->
     <script src="pizza.js"></script>
   </body>
 </html>
