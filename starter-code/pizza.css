@@ -383,6 +383,11 @@ p.description {
     border: 2px solid #871b15;
     text-indent: -9999px;
     color: #fff;
+    
+    
+}
+.pep2{
+    display: none;
 }
 /*.pep:hover{
     -moz-transform: scale(1.3);
