@@ -1,78 +1,55 @@
 // Write your Pizza Builder JavaScript in this file.
 $(document).ready(function(){
-  var pepBtn = $(".btn-pepperonni")[0];
-  var shroomsBtn = $(".btn-mushrooms")[0];
-  var greenPBtn = $(".btn-green-peppers")[0];
-  var sauceBtn = $(".btn-sauce")[0];
-  var crustBtn = $(".btn-crust")[0];
+  var pepBtn = $(".btn-pepperonni");
+  var shroomsBtn = $(".btn-mushrooms");
+  var greenPBtn = $(".btn-green-peppers");
+  var sauceBtn = $(".btn-sauce");
+  var crustBtn = $(".btn-crust");
+
+  $(".btn").click(function(){
+    $(this).toggleClass("active");
+  });
 
   $(pepBtn).click(function(){
     $("[class~='pep']").toggle();
-    $(this).toggleClass("active");
-
-    var liItem = $("li:contains('pepperonni')")[0];
-    if(liItem.hidden) {
-      liItem.hidden = false;
-    } else {
-      liItem.hidden = true;
-    }
+    $(".price ul li:contains('pepperonni')").toggle();
     updatePrice();
   });
 
   $(shroomsBtn).click(function(){
     $("[class~='mushroom']").toggle();
-    $(this).toggleClass("active");
-    var liItem = $("li:contains('mushrooms')")[0];
-    if(liItem.hidden) {
-      liItem.hidden = false;
-    } else {
-      liItem.hidden = true;
-    }
+    $(".price ul li:contains('mushroom')").toggle();
     updatePrice();
   });
 
   $(greenPBtn).click(function(){
     $("[class~='green-pepper']").toggle();
-    $(this).toggleClass("active");
-    var liItem = $("li:contains('green peppers')")[0];
-    if(liItem.hidden) {
-      liItem.hidden = false;
-    } else {
-      liItem.hidden = true;
-    }
+    $(".price ul li:contains('green peppers')").toggle();
     updatePrice();
   });
 
   $(sauceBtn).click(function(){
     $("[class~='sauce']").toggleClass("sauce-white");
-    $(this).toggleClass("active");
-    var liItem = $("li:contains('white sauce')")[0];
-    if(liItem.hidden) {
-      liItem.hidden = false;
-    } else {
-      liItem.hidden = true;
-    }
+    $(".price ul li:contains('white sauce')").toggle();
     updatePrice();
   });
   
   $(crustBtn).click(function(){
     $("[class~='crust']").toggleClass("crust-gluten-free");
-    $(this).toggleClass("active");
-    var liItem = $("li:contains('gluten-free crust')")[0];
-    if(liItem.hidden) {
-      liItem.hidden = false;
-    } else {
-      liItem.hidden = true;
-    }
+    $(".price ul li:contains('gluten-free crust')").toggle();
     updatePrice();
   });
 
   updatePrice = function() {
-    var liItems = Array.from($("li:visible('true'):contains('$')"));
+    var liItems = Array.from($("aside ul li:visible('true')"));
     var toppingsTotal = 0;
     liItems.forEach(function(liItem){
       toppingsTotal += Number(liItem.textContent.substr(1).substr(0, liItem.textContent.substr(1).indexOf(" ")));
     });
-    $("strong:contains('$')")[0].textContent = "$" + (10 + toppingsTotal);
+    $("aside strong:contains('$')")[0].textContent = "$" + (10 + toppingsTotal);
   }
+
+  //click buttons to remove white sauce and gluten-free crust by default
+  $(".btn-sauce").click();
+  $(".btn-crust").click();
 });
