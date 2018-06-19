@@ -1,16 +1,18 @@
 // Write your Pizza Builder JavaScript in this file.
 $(document).ready(function() {
-  //$(".green-pepper").css("display", "none");
+  //(".green-pepper").css("display", "none");
   //$(".mushroom").css("display", "none");
-  $(".pep").css("display", "none");
-  $("aside ul li:first-child").css("display", "none");
-  $("aside ul li:last-child").css("display", "none");
+ // $(".pep").css("display", "none");
+//  $("aside ul li:first-child").css("display", "none");
+//  $("aside ul li:last-child").css("display", "none");
+  $("aside ul li:nth-child(4)").css("display", "none");
+  $("aside ul li:nth-child(5)").css("display", "none");
   // $("b").css("display", "none");
   $("strong").css("display", "none");
 
   $("section").removeClass("crust-gluten-free");
   $(".btn-crust").removeClass("active");
-  $(".btn-pepperonni").removeClass("active");
+  $(".btn-sauce").removeClass("active");
 
 
   $(".btn-pepperonni").click(function(e) {
