@@ -79,16 +79,17 @@ $(document).ready(function () {
     updatePrices();
   });
 
-  //////// price calc
-  var updatePrices=function(){
-    let p= globalPrices.pizza +
-  ($("button.btn-green-peppers").hasClass("active")? globalPrices.greenpeppers : 0) +
-  ($("button.btn-mushrooms").hasClass("active")? globalPrices.mushrooms : 0)        +
-  ($("button.btn-pepperonni").hasClass("active")? globalPrices.pepperonni : 0)      +
-  ($("button.btn-crust").hasClass("active")? globalPrices.crust : 0)                +
-  ($("button.btn-sauce").hasClass("active")? globalPrices.sauce : 0);
-
-  $("aside.price strong").text("$" + p.toString());
-  }
-
+  
 });
+
+//////// price calc
+var updatePrices=function(){
+  let p= globalPrices.pizza +
+($("button.btn-green-peppers").hasClass("active")? globalPrices.greenpeppers : 0) +
+($("button.btn-mushrooms").hasClass("active")? globalPrices.mushrooms : 0)        +
+($("button.btn-pepperonni").hasClass("active")? globalPrices.pepperonni : 0)      +
+($("button.btn-crust").hasClass("active")? globalPrices.crust : 0)                +
+($("button.btn-sauce").hasClass("active")? globalPrices.sauce : 0);
+
+$("aside.price strong").text("$" + p.toString());
+}
