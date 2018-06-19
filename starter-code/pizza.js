@@ -1,19 +1,13 @@
 // Write your Pizza Builder JavaScript in this file.
 $(document).ready(function() {
-  //(".green-pepper").css("display", "none");
-  //$(".mushroom").css("display", "none");
- // $(".pep").css("display", "none");
-//  $("aside ul li:first-child").css("display", "none");
-//  $("aside ul li:last-child").css("display", "none");
   $("aside ul li:nth-child(4)").css("display", "none");
   $("aside ul li:nth-child(5)").css("display", "none");
-  // $("b").css("display", "none");
-  $("strong").css("display", "none");
 
   $("section").removeClass("crust-gluten-free");
   $(".btn-crust").removeClass("active");
   $(".btn-sauce").removeClass("active");
 
+  updatePrices();
 
   $(".btn-pepperonni").click(function(e) {
     if ($(".pep").css("display") == "none") {
@@ -25,6 +19,7 @@ $(document).ready(function() {
       $(".btn-pepperonni").removeClass("active");
       $("aside ul li:nth-child(1)").css("display", "none");
     }
+    updatePrices();
   });
   $(".btn-mushrooms").click(function(e) {
     if ($(".mushroom").css("display") == "none") {
@@ -36,6 +31,7 @@ $(document).ready(function() {
       $(".btn-mushrooms").removeClass("active");
       $("aside ul li:nth-child(2)").css("display", "none");
     }
+    updatePrices();
   });
 
   $(".btn-green-peppers").click(function(e) {
@@ -48,6 +44,7 @@ $(document).ready(function() {
       $(".btn-green-peppers").removeClass("active");
       $("aside ul li:nth-child(3)").css("display", "none");
     }
+    updatePrices();
   });
 
   $(".btn-sauce").click(function(e) {
@@ -58,6 +55,7 @@ $(document).ready(function() {
     } else {
       $("aside ul li:nth-child(4)").css("display", "none");
     }
+    updatePrices();
   });
   $(".btn-crust").click(function(e) {
     $(".crust").toggleClass("crust-gluten-free");
@@ -67,5 +65,16 @@ $(document).ready(function() {
     } else {
       $("aside ul li:nth-child(5)").css("display", "none");
     }
+    updatePrices();
   });
 });
+
+function updatePrices() {
+  var precioTotal = parseInt($("b").html().split(" ")[0].split("$")[1]);
+  $("aside ul li").each(function() {
+    if ($(this).css("display") != "none") {
+      precioTotal += parseInt($(this).html().split(" ")[0].split("")[1]);
+      }
+  });
+  $("strong").html("$" + precioTotal);
+}
