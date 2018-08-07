@@ -21,9 +21,17 @@
 $('.price li:nth-child(4)').toggle();    
 $('.price li:nth-child(5)').toggle(); 
 $('price strong').val('look')
+var pizzaPrice = 10;
+
+
 
 
 $(document).ready(function() {
+  if(!$('.crust').hasClass('active')) {
+    pizzaPrice += 5;
+  } else { 
+    pizzaPrice -= 5;
+  };
   //add toppings when requested
   $(".btn-pepperonni").click(function() {
     $(this).toggleClass("active");  
@@ -60,6 +68,7 @@ $(document).ready(function() {
     $(this).toggleClass("active");      
     $(".crust").toggleClass("crust-gluten-free");
     console.log("change crust");
+    $('.price strong').text('$'+pizzaPrice);
   });
 
 //ITERATION 3 ---------------------
@@ -70,8 +79,17 @@ $(document).ready(function() {
 
 //ITERATION 5-----
 // correct price display
-// use nth child of li's to add prices
-var pizzaPrice = 10 + 1 + 1 + 1 + 3 +5;
-$('.price strong').text('pizzaPrice')
-  // END OF DOCUMENT READY COMMMAND - DO NOT CODE BELOW HERE!
+
+//$("button[name]").on("click", function() {
+//    
+//  if(!$(this).hasClass('active')) {
+//      total += Number($(this).val());
+//      $(this).addClass('active').html("remove " + $(this).attr("title"));
+//  } else {
+//      total -= Number($(this).val());
+//      $(this).removeClass('active').html("add " + $(this).attr("title"));
+//  }  
+
+// END OF DOCUMENT READY COMMMAND - DO NOT CODE BELOW HERE!
+
 });
