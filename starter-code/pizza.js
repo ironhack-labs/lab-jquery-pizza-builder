@@ -6,10 +6,10 @@ $(document).ready(function() {
   calcPrice()
 
   $('.btn-pepperonni').click(function() {
-  $(this).toggleClass('active');
-  $("li:contains('$1 pepperonni')").toggle();
-  $('.pep').toggle();
-  btnArr[0] === 1 ? btnArr[0] = 0 : btnArr[0] = 1;
+    $(this).toggleClass('active');
+    $("li:contains('$1 pepperonni')").toggle();
+    $('.pep').toggle();
+    btnArr[0] === 1 ? btnArr[0] = 0 : btnArr[0] = 1;
   })
 
   $('.btn-mushrooms').click(function() {
