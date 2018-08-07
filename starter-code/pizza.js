@@ -1,6 +1,6 @@
 // Write your Pizza Builder JavaScript in this file.
 $(function () {
-    calculate();
+    
 
     $(".price").find("li:nth-child(4)").hide();
     $(".price").find("li:nth-child(5)").hide();
@@ -47,7 +47,7 @@ $(function () {
         calculate();
     })
 
-
+    calculate();
 
     function calculate() {
 
