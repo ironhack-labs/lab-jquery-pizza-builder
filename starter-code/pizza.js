@@ -51,5 +51,5 @@ function updatePrice(ingredientPrice, isActive) {
     ingredientPrice *= -1;
   }
 
-  $(".price strong").text("$ " + (currentPrice += ingredientPrice).toString());
+  $(".price strong").text("$" + (currentPrice += ingredientPrice).toString());
 }
