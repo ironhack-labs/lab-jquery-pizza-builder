@@ -1,101 +1,51 @@
 // Write your Pizza Builder JavaScript in this file.
-// $('.pep').hide()
-$('.btn-pepperonni').click(function() {
-  $('.pep').toggle()
-  $("li:contains('pepperonni')").toggle()
-})
+$(document).ready(function() {
+  var btnArr = [1, 1, 1, 1, 1]
+  toggleWhiteSauce()
+  toggleGlutenFree()
+  calcPrice()
 
+  $('.btn-pepperonni').click(function() {
+  $(this).toggleClass('active');
+  $("li:contains('$1 pepperonni')").toggle();
+  $('.pep').toggle();
+  btnArr[0] === 1 ? btnArr[0] = 0 : btnArr[0] = 1;
+  })
 
+  $('.btn-mushrooms').click(function() {
+    $(this).toggleClass('active');
+    $("li:contains('$1 mushrooms')").toggle();
+    $('.mushroom').toggle();
+    btnArr[1] === 1 ? btnArr[1] = 0 : btnArr[1] = 1;
+  })
 
-$('.btn-mushrooms').click(function() {
-  $('.mushroom').toggle()
-  $("li:contains('mushroom')").toggle()
-})
+  $('.btn-green-peppers').click(function() {
+    $(this).toggleClass('active');
+    $("li:contains('$1 green peppers')").toggle();
+    $('.green-pepper').toggle();
+    btnArr[2] === 1 ? btnArr[2] = 0 : btnArr[2] = 1;
+  })
 
-// $('.mushroom').hide()
-if ($('.mushroom').css('display') === 'block') {
-  $('.btn-mushrooms').addClass('active')
-  // $('.mushroom').css('display') = 'block';
-  // $('.mushroom').toggle()
-  // $("li:contains('mushroom')").toggle()
-} else {
-  $('.btn-mushrooms').removeClass('active')
-  $('.mushroom').css('display') = 'none';
-}
-
-
-$('.btn-green-peppers').click(function() {
-  $('.green-pepper').toggle()
-  $("li:contains('green peppers')").toggle()
-})
-
-
-$('.sauce').removeClass('sauce-white')
-$('.btn-sauce').removeClass('active')
-$("li:contains('white sauce')").hide()
-$('.btn-sauce').click(function() {
-  $('.sauce').toggleClass('sauce-white')
-  $("li:contains('white sauce')").toggle()
-
-})
-
-$('.crust').removeClass('crust-gluten-free')
-$("li:contains('gluten-free crust')").hide()
-$('.btn-crust').removeClass('active')
-$('.btn-crust').click(function() {
-  $('.crust').toggleClass('crust-gluten-free')
-  $("li:contains('gluten-free crust')").toggle()
-
-})
-
-$('.btn').click(function() {
-  $(this).toggleClass('active')
-})
-
-$('.btn').click(function() {
-  var price = 10;
-  if($('.btn-pepperonni').hasClass('active')) {
-    price += 1
-  } else {
-    price += 0
+  function toggleWhiteSauce() {
+    $('.btn-sauce').toggleClass('active');
+    $("li:contains('$3 white sauce')").toggle();
+    $('.sauce').toggleClass('sauce-white');
+    btnArr[3] === 1 ? btnArr[3] = 0 : btnArr[3] = 1;
   }
-  if($('.btn-mushrooms').hasClass('active')) {
-    price += 1
-  } else {
-    price += 0
+  $('.btn-sauce').click(toggleWhiteSauce)
+
+  function toggleGlutenFree() {
+    $('.btn-crust').toggleClass('active');
+    $("li:contains('$5 gluten-free crust')").toggle();
+    $('.crust').toggleClass('crust-gluten-free');
+    btnArr[4] === 1 ? btnArr[4] = 0 : btnArr[4] = 1;
   }
-  if($('.btn-green-peppers').hasClass('active')) {
-    price += 1
-  } else {
-    price += 0
-  } 
-  if ($('.btn-crust').hasClass('active')) {
-    price += 5
-  } else {
-    price += 0
+  $('.btn-crust').click(toggleGlutenFree)
+
+  function calcPrice() {
+    var price = 10;
+    price += btnArr[0] + btnArr[1] + btnArr[2] + btnArr[3]*3 + btnArr[4]*5
+    $('strong').text(price)
   }
-  if ($('.btn-sauce').hasClass('active')) {
-    price += 3
-  } else {
-    price += 0
-  }
-  price = '$' + price
-  $('strong').text(price)
+  $('.btn').click(calcPrice)
 })
-
-// if($("li:contains('gluten-free crust')")) {
-//   price += 5
-// }
-// if($("li:contains('white sauce')")) {
-//   price += 3
-// }
-
-$('strong').text('$13')
-
-
- 
-
-
-
-
-
