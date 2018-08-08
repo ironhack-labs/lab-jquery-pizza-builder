@@ -54,6 +54,7 @@ pepBtn.click(function() {
     } else {
         pizzaObj.pepperonni.isActive = true;
     }
+    getTotalPrice(pizzaObj);
 });
 
 mushBtn.click(function() {
@@ -65,6 +66,7 @@ mushBtn.click(function() {
     } else {
         pizzaObj.mushrooms.isActive = true;
     }
+    getTotalPrice(pizzaObj);
 });
 
 greenBtn.click(function() {
@@ -76,6 +78,7 @@ greenBtn.click(function() {
     } else {
         pizzaObj.greenPeppers.isActive = true;
     }
+    getTotalPrice(pizzaObj);
 });
 
 sauceBtn.click(function() {
@@ -88,6 +91,7 @@ sauceBtn.click(function() {
     } else {
         pizzaObj.whiteSauce.isActive = true;
     }
+    getTotalPrice(pizzaObj);
 });
 
 crustBtn.click(function() {
@@ -100,18 +104,20 @@ crustBtn.click(function() {
     } else {
         pizzaObj.gfCrust.isActive = true;
     }
+    getTotalPrice(pizzaObj);
 });
 
 function getTotalPrice(obj) {
-    // var basePizza = 10;
-    // var pepPrice = $('.list-pep')[0].innerHTML;
-    // var parsedPep = parseInt(pepPrice[1]);
-    // var mushPrice = $('.list-mush')[0].innerHTML;
-    // var parsedmush = parseInt(mushPrice[1]);
-    // var greenPrice = $('.list-greenpep')[0].innerHTML;
-    // var saucePrice = $('.list-white')[0].innerHTML;
-    // var gfPrice = $('.list-gfcrust')[0].innerHTML;
-    // console.log(parsedmush);
+    var totalEl = document.querySelector('strong');
+    var parsed = parseInt(totalEl.innerHTML[1] + totalEl.innerHTML[2]);
+    var pizzaObjArr = Object.values(obj);
+
+    var total = 0;
+    pizzaObjArr.forEach(function(el) {
+        if (el.isActive) {
+            total += el.price;
+            totalEl.innerHTML = '$' + String(total);
+        }
+    });
 }
 getTotalPrice(pizzaObj);
-//object.crust.active = !object.crust.active;
