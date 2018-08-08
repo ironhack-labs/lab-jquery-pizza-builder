@@ -69,7 +69,12 @@ $(document).ready(function() {
 
   //   toppings.filter
 
-  var priceArray = [];
-  priceArray = Array.from($('.panel.price li'));
-  console.log(priceArray);
+  var prices = $('.panel.price ul');
+  var priceArray = Array.from(prices.children());
+  console.log(typeof prices.children());
+  var totalPrice = 0;
+  var pricesArray = priceArray.map(function(price) {
+    return parseInt(price.innerHTML[1]);
+  });
+  console.log(pricesArray);
 });
