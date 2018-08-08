@@ -1,14 +1,8 @@
 // Write your Pizza Builder JavaScript in this file.
 
 $(document).ready(function(){
-  // $('.pep').toggle();
-  // $('.mushroom').toggle();
-  // $('.green-pepper').toggle();
   $('.crust').toggleClass("crust-gluten-free");
   $('.sauce').toggleClass("sauce-white");
-  // $('.btn-green-peppers').toggleClass('active');
-  // $('.btn-mushrooms').toggleClass('active');
-  // $('.btn-pepperonni').toggleClass('active');
   $('.btn-crust').toggleClass('active');
   $('.btn-sauce').toggleClass('active');
 $('.panel.price>ul>li:last-child').hide();
