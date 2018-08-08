@@ -1,12 +1,65 @@
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, font, img, ins, kbd, q, s, samp,
-small, strike, sub, sup, tt, var,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-header, section, footer, article, details {
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+font,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+sub,
+sup,
+tt,
+var,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+header,
+section,
+footer,
+article,
+details {
     margin: 0;
     padding: 0;
     border: 0;
@@ -28,7 +81,8 @@ body {
     background: white;
 }
 
-ol, ul {
+ol,
+ul {
     list-style: none;
 }
 /* tables still need 'cellspacing="0"' in the markup */
@@ -37,27 +91,37 @@ table {
     border-spacing: 0;
 }
 
-caption, th, td {
+caption,
+th,
+td {
     text-align: left;
     font-weight: normal;
 }
 
-blockquote:before, blockquote:after,
-q:before, q:after {
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
     content: "";
 }
 
-blockquote, q {
+blockquote,
+q {
     quotes: "" "";
 }
 
 /*--- HTML5 -----*/
-header, nav, details, section, aside, footer {
+header,
+nav,
+details,
+section,
+aside,
+footer {
     display: block;
 }
 
 body {
-    font-family: 'Courier', 'Courier New', Serif;
+    font-family: "Courier", "Courier New", Serif;
     max-width: 750px;
     margin: 0 auto;
 }
@@ -67,41 +131,41 @@ body {
  * http://codepen.io/TeshaR/pen/cdugG?editors=110
  */
 .btn {
-  float: left;
-  position: relative;
-  top: 0;
-  cursor: pointer;
-  border: none;
-  border-radius: 3px;
-  margin: 0 7px 11px 0;
-  padding: 0 20px;
-  text-align: center;
+    float: left;
+    position: relative;
+    top: 0;
+    cursor: pointer;
+    border: none;
+    border-radius: 3px;
+    margin: 0 7px 11px 0;
+    padding: 0 20px;
+    text-align: center;
 
-  /* Smoothing out hover using css3 transitions, if not, the pressed button effect looks a bit hard */
-  transition: all 0.2s ease;
+    /* Smoothing out hover using css3 transitions, if not, the pressed button effect looks a bit hard */
+    transition: all 0.2s ease;
 
-  /* Size */
-  line-height: 45px;
-  width: 100%;
-  height: 45px;
-  font-size: 120%;
+    /* Size */
+    line-height: 45px;
+    width: 100%;
+    height: 45px;
+    font-size: 120%;
 
-  /* Colors */
-  background: #f7f7f7;
-  box-shadow: 0 6px rgba(0, 0, 0, 0.2);
-  color: #888;
+    /* Colors */
+    background: #f7f7f7;
+    box-shadow: 0 6px rgba(0, 0, 0, 0.2);
+    color: #888;
 }
 
 .btn:hover {
-  background: #e6e6e6;
-  box-shadow: 0 5px #aaa;
-  color: #888;
+    background: #e6e6e6;
+    box-shadow: 0 5px #aaa;
+    color: #888;
 }
 
 /* Imitate a pressed effect for buttons */
 .btn:active {
-  top: 5px;
-  box-shadow: none;
+    top: 5px;
+    box-shadow: none;
 }
 
 /*------ Header -----*/
@@ -112,7 +176,7 @@ header {
 h1 {
     font-size: 70px;
     color: #444;
-    margin-bottom: 10px
+    margin-bottom: 10px;
 }
 
 p.description {
@@ -142,182 +206,181 @@ p.description {
     background-color: rgba(255, 255, 255, 0.8);
 }
 
-
 /*------ Controls -----*/
 .controls {
     left: 0;
 }
 
 .btn-pepperonni {
-  background: #e8103b;
-  box-shadow: 0 6px #890923;
-  color: #fff;
+    background: #e8103b;
+    box-shadow: 0 6px #890923;
+    color: #fff;
 }
 
 .btn-pepperonni:hover {
-  background: #c80e33;
-  box-shadow: 0 5px #69071b;
-  color: #fff;
+    background: #c80e33;
+    box-shadow: 0 5px #69071b;
+    color: #fff;
 }
 
 .btn-pepperonni.active {
-  top: 2px;
-  box-shadow: 0 2px #890923;
+    top: 2px;
+    box-shadow: 0 2px #890923;
 }
 
 .btn-pepperonni.active:hover {
-  box-shadow: 0 2px #69071b;
+    box-shadow: 0 2px #69071b;
 }
 
 .btn-pepperonni:active,
 .btn-pepperonni.active:active {
-  top: 5px;
-  box-shadow: none;
+    top: 5px;
+    box-shadow: none;
 }
 
 .btn-mushrooms {
-  background: #b49989;
-  box-shadow: 0 6px #644d40;
-  color: #fff;
+    background: #b49989;
+    box-shadow: 0 6px #644d40;
+    color: #fff;
 }
 
 .btn-mushrooms:hover {
-  background: #a78774;
-  box-shadow: 0 5px #503d33;
-  color: #fff;
+    background: #a78774;
+    box-shadow: 0 5px #503d33;
+    color: #fff;
 }
 
 .btn-mushrooms.active {
-  top: 2px;
-  box-shadow: 0 2px #644d40;
+    top: 2px;
+    box-shadow: 0 2px #644d40;
 }
 
 .btn-mushrooms.active:hover {
-  box-shadow: 0 2px #503d33;
+    box-shadow: 0 2px #503d33;
 }
 
 .btn-mushrooms:active,
 .btn-mushrooms.active:active {
-  top: 5px;
-  box-shadow: none;
+    top: 5px;
+    box-shadow: none;
 }
 
 .btn-green-peppers {
-  background: #129306;
-  box-shadow: 0 6px #0a5203;
-  color: #fff;
+    background: #129306;
+    box-shadow: 0 6px #0a5203;
+    color: #fff;
 }
 
 .btn-green-peppers:hover {
-  background: #0e7205;
-  box-shadow: 0 5px #063102;
-  color: #fff;
+    background: #0e7205;
+    box-shadow: 0 5px #063102;
+    color: #fff;
 }
 
 .btn-green-peppers.active {
-  top: 2px;
-  box-shadow: 0 2px #0a5203;
+    top: 2px;
+    box-shadow: 0 2px #0a5203;
 }
 
 .btn-green-peppers.active:hover {
-  box-shadow: 0 2px #063102;
+    box-shadow: 0 2px #063102;
 }
 
 .btn-green-peppers:active,
 .btn-green-peppers.active:active {
-  top: 5px;
-  box-shadow: none;
+    top: 5px;
+    box-shadow: none;
 }
 
 .btn-sauce {
-  background: #fff4aa;
-  box-shadow: 0 6px #998500;
-  color: #555;
+    background: #fff4aa;
+    box-shadow: 0 6px #998500;
+    color: #555;
 }
 
 .btn-sauce:hover {
-  background: #fff088;
-  box-shadow: 0 5px #776800;
-  color: #555;
+    background: #fff088;
+    box-shadow: 0 5px #776800;
+    color: #555;
 }
 
 .btn-sauce.active {
-  top: 2px;
-  box-shadow: 0 2px #998500;
+    top: 2px;
+    box-shadow: 0 2px #998500;
 }
 
 .btn-sauce.active:hover {
-  box-shadow: 0 2px #776800;
+    box-shadow: 0 2px #776800;
 }
 
 .btn-sauce:active,
 .btn-sauce.active:active {
-  top: 5px;
-  box-shadow: none;
+    top: 5px;
+    box-shadow: none;
 }
 
 .btn-crust {
-  background: #e0d5cf;
-  box-shadow: 0 6px #957160;
-  color: #555;
+    background: #e0d5cf;
+    box-shadow: 0 6px #957160;
+    color: #555;
 }
 
 .btn-crust:hover {
-  background: #d3c3bb;
-  box-shadow: 0 5px #816253;
-  color: #555;
+    background: #d3c3bb;
+    box-shadow: 0 5px #816253;
+    color: #555;
 }
 
 .btn-crust.active {
-  top: 2px;
-  box-shadow: 0 2px #957160;
+    top: 2px;
+    box-shadow: 0 2px #957160;
 }
 
 .btn-crust.active:hover {
-  box-shadow: 0 2px #816253;
+    box-shadow: 0 2px #816253;
 }
 
 .btn-crust:active,
 .btn-crust.active:active {
-  top: 5px;
-  box-shadow: none;
+    top: 5px;
+    box-shadow: none;
 }
 
 /*------ Price -----*/
 .price {
-  right: 0;
+    right: 0;
 }
 
 .price h2 {
-  font-size: 30px;
-  font-weight: bold;
-  color: #555;
-  margin-bottom: 15px;
+    font-size: 30px;
+    font-weight: bold;
+    color: #555;
+    margin-bottom: 15px;
 }
 
 .price h2:after {
-  content: ':';
+    content: ":";
 }
 
 .price b {
-  font-size: 20px;
-  color: #e2311a;
+    font-size: 20px;
+    color: #e2311a;
 }
 
 .price li {
-  margin: 5px 20px 0;
-  color: #666;
+    margin: 5px 20px 0;
+    color: #666;
 }
 
 .price li:before {
-  content: '+ ';
-  color: #e2311a;
+    content: "+ ";
+    color: #e2311a;
 }
 
 .price strong {
-  font-size: 30px;
-  display: block;
-  margin-top: 6px;
+    font-size: 30px;
+    display: block;
+    margin-top: 6px;
 }
 
 /*--- Crust & Sauce ---*/
@@ -331,8 +394,8 @@ p.description {
 }
 
 .crust-gluten-free {
-  background-color: #e0d5cf;
-  box-shadow: inset 0 0 40px #d3c3bb;
+    background-color: #e0d5cf;
+    box-shadow: inset 0 0 40px #d3c3bb;
 }
 
 .sauce {
@@ -346,7 +409,7 @@ p.description {
 }
 
 .sauce-white {
-  background: #fff4aa;
+    background: #fff4aa;
 }
 
 .cheese {
@@ -359,7 +422,6 @@ p.description {
     z-index: 10;
     box-shadow: inset 0 0 200px #d88e24;
 }
-
 
 /*--- Pepperoni ---*/
 #pepperoni section:nth-child(7) {
@@ -802,14 +864,13 @@ p.description {
     transform: rotate(67deg);
 }
 
-
 /*--- Green Peppers ---*/
 .green-pepper {
     position: absolute;
     width: 20px;
     height: 45px;
     background: #2f5e20;
-    box-shadow: 2px 2px 2px rgba(66, 132, 45, .9);
+    box-shadow: 2px 2px 2px rgba(66, 132, 45, 0.9);
     margin: 250px 0 0 400px;
     z-index: 30;
 }
@@ -1001,11 +1062,10 @@ footer a:hover {
 
 #crumbs {
     opacity: 0;
-    -webkit-transition: all .3s linear;
+    -webkit-transition: all 0.3s linear;
 }
 
 @media screen and (max-width: 720px) {
-
     body {
         padding: 25px 0;
     }
@@ -1036,4 +1096,32 @@ footer a:hover {
     footer {
         margin: 70px 0 10px 0;
     }
+}
+
+#pizza .pep {
+    display: none;
+}
+
+#pizza.has-pepperonni .pep {
+    display: block;
+}
+
+#pizza .mushroom {
+    display: none;
+}
+
+#pizza.has-mushrooms .mushroom {
+    display: block;
+}
+
+#pizza .green-pepper {
+    display: none;
+}
+
+#pizza.has-peppers .green-pepper {
+    display: block;
+}
+
+.price-item-hidden {
+    display: none;
 }
