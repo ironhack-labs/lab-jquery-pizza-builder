@@ -28,6 +28,11 @@ body {
     background: white;
 }
 
+/* hide */
+.hide{
+    visibility: hidden;
+}
+
 ol, ul {
     list-style: none;
 }
