@@ -25,7 +25,9 @@ header, section, footer, article, details {
 body {
     line-height: 1;
     color: black;
-    background: white;
+    background-image: url(./images/fin.gif);
+    background-attachment: fixed;
+    
 }
 
 ol, ul {
@@ -313,10 +315,12 @@ p.description {
   content: '+ ';
   color: #e2311a;
 }
-
+.signo{
+font-size: 30px;
+}
 .price strong {
   font-size: 30px;
-  display: block;
+  display: inline-block;
   margin-top: 6px;
 }
 
