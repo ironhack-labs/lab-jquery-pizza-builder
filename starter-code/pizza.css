@@ -104,6 +104,8 @@ body {
   box-shadow: none;
 }
 
+
+
 /*------ Header -----*/
 header {
     text-align: center;
@@ -158,6 +160,10 @@ p.description {
   background: #c80e33;
   box-shadow: 0 5px #69071b;
   color: #fff;
+}
+
+.active{
+    color: red !important;
 }
 
 .btn-pepperonni.active {
