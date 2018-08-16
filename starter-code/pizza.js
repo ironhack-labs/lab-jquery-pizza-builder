@@ -3,12 +3,18 @@ $(document).ready(function () {
 
   $(".btn-pepperonni").click(function () {
     $(".pep").toggleClass("hide");
+    // Cambia activo-inactivo al boton
+    $(".btn-pepperonni").toggleClass("active");
   })
   $(".btn-mushrooms").click(function () {
     $(".mushroom").toggleClass("hide");
+    // Cambia activo-inactivo al boton
+    $(".btn-mushrooms").toggleClass("active");
   })
   $(".btn-green-peppers").click(function () {
     $(".green-pepper").toggleClass("hide");
+    // Cambia activo-inactivo al boton
+    $(".btn-green-peppers").toggleClass("active");
   })
 
   // Boton cambia para escoger la salsa
