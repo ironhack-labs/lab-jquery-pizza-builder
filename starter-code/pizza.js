@@ -23,6 +23,13 @@ function initState() {
     $crustBtn.toggleClass('active');
     $sauceBtn.toggleClass('active');
     $panelTotalPrice.text('$13');
+
+    $pepperonniBtn.on('click', showHide);
+    $mushrBtn.on('click', showHide);
+    $greenPepBtn.on('click', showHide);
+    $sauceBtn.on('click', addCrustOrSauce);
+    $crustBtn.on('click', addCrustOrSauce);
+
 }
 
 function addCrustOrSauce(e) {
@@ -131,15 +138,7 @@ function showHide(e) {
     }
 }
 
-function calculatePrice() {
-
-}
 
 
-$pepperonniBtn.on('click', showHide);
-$mushrBtn.on('click', showHide);
-$greenPepBtn.on('click', showHide);
-$sauceBtn.on('click', addCrustOrSauce);
-$crustBtn.on('click', addCrustOrSauce);
 
 
