@@ -75,28 +75,3 @@ buttCrust.on('click', function(){
 })
 
 $('.panel strong').text("$13")
-
-
-// var list = $(".price ul li")
-// list.hide()
-
-// if($(".pep").is( ":visible" )){
-// 	console.log('visible')
-//   $('.btn-pepperonni').addClass('active')
-// }else if($(".pep").is(":hidden")){
-//   // $('.btn-pepperonni').removeClass('active')
-// }
-
-// //
-// $('.pep').each(function() {
-//   if($('.pep.active')){
-//     $('.btn-pepperonni').addClass('active')
-//   }else {
-//     $('.btn-pepperonni').removeClass('active')
-//   }
-// })
-//
-// $('.item').each(function() {
-//   $(this).removeClass('hover');
-//   $('.item.active').addClass('hover');
-// });
