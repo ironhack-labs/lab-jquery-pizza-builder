@@ -991,6 +991,17 @@ footer {
     text-align: center;
 }
 
+.pep-none {
+    display: none;
+}
+
+.mush-none{
+    display: none;
+}
+
+.pepper-none{
+    display: none;
+}
 footer a {
     color: #3974a8;
 }
@@ -1036,4 +1047,9 @@ footer a:hover {
     footer {
         margin: 70px 0 10px 0;
     }
+
+    .esconder{
+        display:none;
+    }
+    
 }
