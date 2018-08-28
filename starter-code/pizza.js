@@ -1,14 +1,5 @@
 // Write your Pizza Builder JavaScript in this file.
-/*function  listenerButton() {
-    var $btnpepperonni = $(".btn-pepperonni");
-    var $btnmushrooms = $(".btn-mushrooms");
-    var $btngreenpeppers = $(".btn-green-peppers");
-    $btnpepperonn.click(function (){
-        $(this).toggleClass("on");
 
-        if($("$btn-pepperonni.on").
-    })
-}*/
 $(document).ready(function() {
   $(".btn-pepperonni").click(function() {
     $(this).toggleClass("active");
@@ -56,28 +47,29 @@ $(document).ready(function() {
 
   $(".btn-sauce").click(function() {
     $(this).toggleClass("active");
-    $(".price li:nth-child(4)").toggleClass("charge");
-    if ($(this).hasClass("active")){
-        $(".sauce").show();
+    $(".sauce").parent().toggleClass("sauce-white");
+    /*if ($(this).hasClass("active")){
+        $(".sauce, sauce-white").show();
         $(".price li:nth-child(1)").show();
       } else {
-        $(".sauce").hide();
+        $(".sauce-white").hide();
         $(".price li:nth-child(1)").hide();
       }
-      totalPrice.innerHTML = "$" + getTotalPrice();
+      totalPrice.innerHTML = "$" + getTotalPrice();*/
   });
 
 
   $(".btn-crust").click(function() {
     $(this).toggleClass("active");
-    $(".price li:nth-child(5)").toggleClass("charge");
-    if ($(this).hasClass("active")){
-        $(".crust").show();
+    $(".crust").toggleClass("crust-gluten-free");
+    /* if ($(this).hasClass("active")){
+        $(".crust, .crust-gluten-free").show();
         $(".price li:nth-child(1)").show();
       } else {
-        $(".crust").hide();
+        $(".crust, .crust-gluten-free").hide();
         $(".price li:nth-child(1)").hide();
       }
-      totalPrice.innerHTML = "$" + getTotalPrice();
+      totalPrice.innerHTML = "$" + getTotalPrice(); */
+      
   });
 });
