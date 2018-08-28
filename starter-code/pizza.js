@@ -4,8 +4,13 @@ var pep = $('.pep');
 
 
 function removePep() {
-  pep.css('display', 'none').addClass('hidden');
+  pep.css('display', 'none');
 };
+
+function addPep() {
+  pep.css('display', 'block');
+};
+
 
 function removeMush() {
   $('.mushroom').css('display', 'none');
@@ -28,10 +33,12 @@ function toggleClassPep(boolen) {
 }
 
 function checkPep() {
-  if ($(pep[0]).hasClass('hidden')) {
+  if ($(pep[0]).css('display') === 'none') {
     toggleClassPep(true); 
+    addPep();
   } else {
     toggleClassPep(false);
+    removePep();
   }
 }
 
