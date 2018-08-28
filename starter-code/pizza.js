@@ -7,7 +7,10 @@ var glutenFree = $('.btn-crust');
 removeIngredient('.pep')
 removeIngredient('.mushroom')
 removeIngredient('.green-pepper')
-
+pepperonis.removeClass('active')
+mushrooms.removeClass('active')
+greenPeppers.removeClass('active')
+whiteSauce.removeClass('active')
 
 function removeIngredient(ingredient){
   $(ingredient).hide();
@@ -18,31 +21,31 @@ function addIngredient(ingredient){
 }
 
 pepperonis.click(function (){
-  if($(this).hasClass('ingredient-added')){
+  if($(this).hasClass('active')){
   removeIngredient('.pep');
-  pepperonis.removeClass('ingredient-added');
+  pepperonis.removeClass('active');
   }else{
     addIngredient('.pep');
-    pepperonis.addClass('ingredient-added');
+    pepperonis.addClass('active');
   }
 });
 
 mushrooms.click(function(){
-  if($(this).hasClass('ingredient-added')){
+  if($(this).hasClass('active')){
     removeIngredient('.mushroom');
-    mushrooms.removeClass('ingredient-added');
+    mushrooms.removeClass('active');
   } else {
     addIngredient('.mushroom');
-    mushrooms.addClass('ingredient-added');
+    mushrooms.addClass('active');
   }
 })
 greenPeppers.click(function(){
-  if($(this).hasClass('ingredient-added')){
+  if($(this).hasClass('active')){
     removeIngredient('.green-pepper');
-    greenPeppers.removeClass('ingredient-added');
+    greenPeppers.removeClass('active');
   } else {
     addIngredient('.green-pepper');
-    greenPeppers.addClass('ingredient-added');
+    greenPeppers.addClass('active');
   }
 })
 whiteSauce.on('click',function(){
