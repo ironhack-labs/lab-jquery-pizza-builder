@@ -12,14 +12,21 @@ function removeGreen() {
   $('.green-pepper').css('display', 'none');
 };
 
+function removeSauce() {
+  $('.sauce').removeClass('sauce-white');
+};
 
-
+function removeGluten() {
+  $('.crust').removeClass('crust-gluten-free');
+};
 
 
 function init() {
   removePep();
   removeMush();
   removeGreen();
+  removeSauce();
+  removeGluten();
 };
 
 $(init());
