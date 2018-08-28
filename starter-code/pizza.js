@@ -4,10 +4,10 @@ var mushrooms = $('.btn-mushrooms');
 var greenPeppers = $('.btn-green-peppers');
 var whiteSauce = $('.btn-sauce');
 var glutenFree = $('.btn-crust');
+removeIngredient('.pep')
+removeIngredient('.mushroom')
+removeIngredient('.green-pepper')
 
-pepperonis.addClass('ingredient-added');
-mushrooms.addClass('ingredient-added');
-greenPeppers.addClass('ingredient-added');
 
 function removeIngredient(ingredient){
   $(ingredient).hide();
@@ -45,5 +45,9 @@ greenPeppers.click(function(){
     greenPeppers.addClass('ingredient-added');
   }
 })
-whiteSauce.on('click',function(){removeIngredient('.sauce-white')});
-
+whiteSauce.on('click',function(){
+  $('.sauce').toggleClass('sauce-white')
+});
+glutenFree.on('click',function(){
+  $('.crust').toggleClass('crust-gluten-free')
+});
