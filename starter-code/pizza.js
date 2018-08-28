@@ -1,5 +1,5 @@
 // Write your Pizza Builder JavaScript in this file.
-var btnPep = $('.btn-pepperoni');
+var btnPep = $('.btn-pepperonni');
 var pep = $('.pep');
 
 
@@ -23,18 +23,19 @@ function removeGluten() {
   $('.crust').removeClass('crust-gluten-free');
 };
 
-function toggleClassPep(boole) {
-  btnPep.toggleClass('active', boole);
-
+function toggleClassPep(boolen) {
+  btnPep.toggleClass('active', boolen);
 }
 
 function checkPep() {
-  if (pep.hasClass('hidden')) {
+  if ($(pep[0]).hasClass('hidden')) {
     toggleClassPep(true); 
   } else {
     toggleClassPep(false);
   }
 }
+
+
 
 function init() {
   removePep();
@@ -42,6 +43,7 @@ function init() {
   removeGreen();
   removeSauce();
   removeGluten();
+  btnPep.on('click', checkPep); 
 
 };
 
