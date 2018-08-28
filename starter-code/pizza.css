@@ -982,6 +982,12 @@ p.description {
     transform: rotate(69deg);
 }
 
+/*------ Show -----*/
+
+.not-show {
+    display: none;
+}
+
 /*------ Footer -----*/
 footer {
     margin: 0 0 30px 0;
