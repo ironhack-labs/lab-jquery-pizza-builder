@@ -1,95 +1,169 @@
+var pepperoniButton = $(".btn-pepperonni");
+var mushroomsButton = $(".btn-mushrooms");
+var greenPeppersButton = $(".btn-green-peppers");
+var sauceButton = $(".btn-sauce");
+var crustButton = $(".btn-crust");
+var finalPrice = $("strong");
+
 function togglePepperoni() {
   var pepperoni = $(".pep");
-  var btn = $(".btn-pepperonni");
-  if ($(btn).hasClass("active")) {
+
+  if ($(pepperoniButton).hasClass("active")) {
     $(pepperoni).each(function() {
       $(this).css("display", "none");
-      $(btn).removeClass("active");
+      $(pepperoniButton).removeClass("active");
     });
   } else {
     $(pepperoni).each(function() {
       $(this).css("display", "block");
-      $(btn).addClass("active");
+      $(pepperoniButton).addClass("active");
     });
   }
 }
 
 function toggleMushroom() {
   var mushroom = $(".mushroom");
-  var btn = $(".btn-mushrooms");
-  if ($(btn).hasClass("active")) {
+
+  if ($(mushroomsButton).hasClass("active")) {
     $(mushroom).each(function() {
       $(this).css("display", "none");
-      $(btn).removeClass("active");
+      $(mushroomsButton).removeClass("active");
     });
   } else {
     $(mushroom).each(function() {
       $(this).css("display", "block");
-      $(btn).addClass("active");
+      $(mushroomsButton).addClass("active");
     });
   }
 }
 
 function togglePepper() {
   var pepper = $(".green-pepper");
-  var btn = $(".btn-green-peppers");
-  if ($(btn).hasClass("active")) {
+  if ($(greenPeppersButton).hasClass("active")) {
     $(pepper).each(function() {
       $(this).css("display", "none");
-      $(btn).removeClass("active");
+      $(greenPeppersButton).removeClass("active");
     });
   } else {
     $(pepper).each(function() {
       $(this).css("display", "block");
-      $(btn).addClass("active");
+      $(greenPeppersButton).addClass("active");
     });
   }
 }
 
 function toggleSauce() {
   var sauce = $(".sauce");
-  var btn = $(".btn-sauce");
-  if ($(btn).hasClass("active")) {
+  if ($(sauceButton).hasClass("active")) {
     $(sauce).each(function() {
       $(this).css("display", "none");
-      $(btn).removeClass("active");
+      $(sauceButton).removeClass("active");
     });
   } else {
     $(sauce).each(function() {
       $(this).css("display", "block");
-      $(btn).addClass("active");
+      $(sauceButton).addClass("active");
     });
   }
 }
 
 function toggleCrust() {
   var crust = $(".crust");
-  var btn = $(".btn-crust");
-  if ($(btn).hasClass("active")) {
+  if ($(crustButton).hasClass("active")) {
     $(crust).each(function() {
       $(this).css("display", "none");
-      $(btn).removeClass("active");
+      $(crustButton).removeClass("active");
     });
   } else {
     $(crust).each(function() {
       $(this).css("display", "block");
-      $(btn).addClass("active");
+      $(crustButton).addClass("active");
     });
   }
 }
+var price = 21;
 
-$($(".btn-pepperonni")).click(function() {
+function updatePrice() {
+  if ($(pepperoniButton).hasClass("active")) {
+    $(".price ul li:nth-child(1)").toggle();
+    price = price - 1;
+    finalPrice.text(price);
+  } else if (!$(pepperoniButton).hasClass("active")) {
+    $(".price ul li:nth-child(1)").toggle();
+    price = price + 1;
+    finalPrice.text(price);
+  }
+  // if ($(mushroomsButton).hasClass("active")) {
+  //   $(".price ul li:nth-child(2)").toggle();
+  //   // $("strong").toggle();
+  //   // cambiar de 20 a 21
+  //   price = price - 1;
+  //   finalPrice.text(price);
+  // }
+  // } else if (!$(mushroomsButton).hasClass("active")) {
+  //   $(".price ul li:nth-child(2)").toggle();
+  //   price = price + 1;
+  //   finalPrice.text(price);
+  // }
+  // if ($(greenPeppersButton).hasClass("active")) {
+  //   $(".price ul li:nth-child(3)").toggle();
+  //   // $("strong").toggle();
+  //   // cambiar de 20 a 21
+  //   price = price - 1;
+  //   finalPrice.text(price);
+  // } else if (!$(greenPeppersButton).hasClass("active")) {
+  //   $(".price ul li:nth-child(3)").toggle();
+  //   price = price + 1;
+  //   finalPrice.text(price);
+  // }
+  // if ($(sauceButton).hasClass("active")) {
+  //   $(".price ul li:nth-child(4)").toggle();
+  //   // $("strong").toggle();
+  //   // cambiar de 20 a 21
+  //   price = price - 3;
+  //   finalPrice.text(price);
+  // } else if (!$(sauceButton).hasClass("active")) {
+  //   $(".price ul li:nth-child(4)").toggle();
+  //   price = price + 3;
+  //   finalPrice.text(price);
+  // }
+  // if ($(crustButton).hasClass("active")) {
+  //   $(".price ul li:nth-child(5)").toggle();
+  //   // $("strong").toggle();
+  //   // cambiar de 20 a 21
+  //   price = price - 5;
+  //   finalPrice.text(price);
+  // } else if (!$(crustButton).hasClass("active")) {
+  //   $(".price ul li:nth-child(5)").toggle();
+  //   price = price + 5;
+  //   finalPrice.text(price);
+  // }
+}
+// display none
+
+// $( "p span" ).first().addClass( "highlight" );
+// $(crust).each(function() {
+//   $(this).css("display", "none");
+//   $(btn).removeClass("active");
+// });
+
+$($(pepperoniButton)).click(function() {
   togglePepperoni();
+  updatePrice();
 });
-$($(".btn-mushrooms")).click(function() {
+$($(mushroomsButton)).click(function() {
   toggleMushroom();
+  updatePrice();
 });
-$($(".btn-green-peppers")).click(function() {
+$($(greenPeppersButton)).click(function() {
   togglePepper();
+  updatePrice();
 });
-$($(".btn-sauce")).click(function() {
+$($(sauceButton)).click(function() {
   toggleSauce();
+  updatePrice();
 });
-$($(".btn-crust")).click(function() {
+$($(crustButton)).click(function() {
   toggleCrust();
+  updatePrice();
 });
