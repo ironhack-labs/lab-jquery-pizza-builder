@@ -83,87 +83,87 @@ function toggleCrust() {
 }
 var price = 21;
 
-function updatePrice() {
-  if ($(pepperoniButton).hasClass("active")) {
-    $(".price ul li:nth-child(1)").toggle();
-    price = price - 1;
-    finalPrice.text(price);
-  } else if (!$(pepperoniButton).hasClass("active")) {
-    $(".price ul li:nth-child(1)").toggle();
-    price = price + 1;
-    finalPrice.text(price);
+function updatePrice(n) {
+  switch (n) {
+    case "pepperoni":
+      if ($(pepperoniButton).hasClass("active")) {
+        $(".price ul li:nth-child(1)").toggle();
+        price = price + 1;
+        finalPrice.text(price);
+      } else if (!$(pepperoniButton).hasClass("active")) {
+        $(".price ul li:nth-child(1)").toggle();
+        price = price - 1;
+        finalPrice.text(price);
+      }
+      return price;
+    case "mushrooms":
+      if ($(mushroomsButton).hasClass("active")) {
+        $(".price ul li:nth-child(2)").toggle();
+        price = price + 1;
+        finalPrice.text(price);
+      } else if (!$(mushroomsButton).hasClass("active")) {
+        $(".price ul li:nth-child(2)").toggle();
+        price = price - 1;
+      }
+      finalPrice.text(price);
+      return price;
+    case "greenPeppers":
+      if ($(greenPeppersButton).hasClass("active")) {
+        $(".price ul li:nth-child(3)").toggle();
+        price = price + 1;
+        finalPrice.text(price);
+      } else if (!$(greenPeppersButton).hasClass("active")) {
+        $(".price ul li:nth-child(3)").toggle();
+        price = price - 1;
+        finalPrice.text(price);
+      }
+      return price;
+    case "sauce":
+      if ($(sauceButton).hasClass("active")) {
+        $(".price ul li:nth-child(4)").toggle();
+        // $("strong").toggle();
+        // cambiar de 20 a 21
+        price = price + 3;
+        finalPrice.text(price);
+      } else if (!$(sauceButton).hasClass("active")) {
+        $(".price ul li:nth-child(4)").toggle();
+        price = price - 3;
+        finalPrice.text(price);
+      }
+      return price;
+    case "crust":
+      if ($(crustButton).hasClass("active")) {
+        $(".price ul li:nth-child(5)").toggle();
+        // $("strong").toggle();
+        // cambiar de 20 a 21
+        price = price + 5;
+        finalPrice.text(price);
+      } else if (!$(crustButton).hasClass("active")) {
+        $(".price ul li:nth-child(5)").toggle();
+        price = price - 5;
+        finalPrice.text(price);
+      }
+      return price;
   }
-  // if ($(mushroomsButton).hasClass("active")) {
-  //   $(".price ul li:nth-child(2)").toggle();
-  //   // $("strong").toggle();
-  //   // cambiar de 20 a 21
-  //   price = price - 1;
-  //   finalPrice.text(price);
-  // }
-  // } else if (!$(mushroomsButton).hasClass("active")) {
-  //   $(".price ul li:nth-child(2)").toggle();
-  //   price = price + 1;
-  //   finalPrice.text(price);
-  // }
-  // if ($(greenPeppersButton).hasClass("active")) {
-  //   $(".price ul li:nth-child(3)").toggle();
-  //   // $("strong").toggle();
-  //   // cambiar de 20 a 21
-  //   price = price - 1;
-  //   finalPrice.text(price);
-  // } else if (!$(greenPeppersButton).hasClass("active")) {
-  //   $(".price ul li:nth-child(3)").toggle();
-  //   price = price + 1;
-  //   finalPrice.text(price);
-  // }
-  // if ($(sauceButton).hasClass("active")) {
-  //   $(".price ul li:nth-child(4)").toggle();
-  //   // $("strong").toggle();
-  //   // cambiar de 20 a 21
-  //   price = price - 3;
-  //   finalPrice.text(price);
-  // } else if (!$(sauceButton).hasClass("active")) {
-  //   $(".price ul li:nth-child(4)").toggle();
-  //   price = price + 3;
-  //   finalPrice.text(price);
-  // }
-  // if ($(crustButton).hasClass("active")) {
-  //   $(".price ul li:nth-child(5)").toggle();
-  //   // $("strong").toggle();
-  //   // cambiar de 20 a 21
-  //   price = price - 5;
-  //   finalPrice.text(price);
-  // } else if (!$(crustButton).hasClass("active")) {
-  //   $(".price ul li:nth-child(5)").toggle();
-  //   price = price + 5;
-  //   finalPrice.text(price);
-  // }
 }
-// display none
-
-// $( "p span" ).first().addClass( "highlight" );
-// $(crust).each(function() {
-//   $(this).css("display", "none");
-//   $(btn).removeClass("active");
-// });
 
 $($(pepperoniButton)).click(function() {
   togglePepperoni();
-  updatePrice();
+  updatePrice("pepperoni");
 });
 $($(mushroomsButton)).click(function() {
   toggleMushroom();
-  updatePrice();
+  updatePrice("mushrooms");
 });
 $($(greenPeppersButton)).click(function() {
   togglePepper();
-  updatePrice();
+  updatePrice("greenPeppers");
 });
 $($(sauceButton)).click(function() {
   toggleSauce();
-  updatePrice();
+  updatePrice("sauce");
 });
 $($(crustButton)).click(function() {
   toggleCrust();
-  updatePrice();
+  updatePrice("crust");
 });
