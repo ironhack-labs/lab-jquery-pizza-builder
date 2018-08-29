@@ -148,6 +148,10 @@ p.description {
     left: 0;
 }
 
+.off {
+    display: none;
+}
+
 .btn-pepperonni {
   background: #e8103b;
   box-shadow: 0 6px #890923;
