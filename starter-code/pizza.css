@@ -18,6 +18,13 @@ header, section, footer, article, details {
     vertical-align: baseline;
 }
 /* remember to define focus styles! */
+
+.off{
+    display: none;
+}
+
+
+
 :focus {
     outline: 0;
 }
@@ -517,6 +524,16 @@ p.description {
 .pep.thirty-three {
     margin: 358px 0 0 365px;
 }
+
+
+
+
+
+
+
+
+
+
 
 /*--- Mushrooms ---*/
 .mushroom {
@@ -1036,4 +1053,7 @@ footer a:hover {
     footer {
         margin: 70px 0 10px 0;
     }
+
+
+    
 }
