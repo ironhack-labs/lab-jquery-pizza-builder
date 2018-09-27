@@ -11,26 +11,30 @@ $(document).ready(function(){
 
     $('.btn').on("click", function() {
         $(this).toggleClass('active');
-        changeView($(this), ingredients);
+        var ingredient = detectIngredient($(this), ingredients);
+        changeView(ingredient);
+        printPrice(ingredient);
     })
 })
 
-function changeView(element, array) {
+function detectIngredient(element, array) {
     for(var i = 0; i < array.length; i++) {
         var btnClass = array[i].btn;
         if(element.hasClass(btnClass)) {
-            console.log(btnClass);
-            if(!$(array).get(i).hasOwnProperty("classtoggled")) {
-                console.log("2");
-                $("." + array[i].classname).toggle();
-            } else {
-                console.log("not 2");
-                $("." + array[i].classname).toggleClass(array[i].classtoggled);
-            }
+            return array[i];
         }
 
     }
 }
+
+function changeView(ingredient) {
+    if(!ingredient.hasOwnProperty("classtoggled")) {
+        $("." + ingredient.classname).toggle();
+    } else {
+        $("." + ingredient.classname).toggleClass(ingredient.classtoggled);
+    }
+}
+
 
 function resetBtn(element, classname) {
     $("." + element).removeClass(classname);
@@ -43,7 +47,7 @@ function resetExtras() {
     resetBtn("crust", "crust-gluten-free");
 }
 
-function printPrice(arrayelement) { //array[i]
-    var priceMsg = "$" + arrayelement.price + " " + arrayelement.name;
-    
+function printPrice(element) { //array[i]
+     $('.price li:contains(' + element.name + ')').slideToggle();
+    console.log($('.price li:contains(' + element.name + ')'));
 }
