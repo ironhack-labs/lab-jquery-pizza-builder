@@ -1,5 +1,4 @@
 // Write your Pizza Builder JavaScript in this file.
-var hide = false;
 var greenPepperBtn = $(".btn.btn-green-peppers");
 var greenPepper = $("section[class*='green-pepper ']");
 var greenPepperItem = $(".panel.price ul li:nth-child(3)");
@@ -26,6 +25,7 @@ function toggleIngredients(
   ingredientItemList,
   toggleClassName
 ) {
+  var hide = false;
   btnIngredient.click(function() {
     if (hide) {
       if (toggleClassName) {
@@ -47,7 +47,25 @@ function toggleIngredients(
       btnIngredient.removeClass("active");
       ingredientItemList.hide();
     }
+    updateTotal();
   });
+}
+
+function updateTotal() {
+  var priceList = $(".panel.price ul li");
+  var regex = /[+-]?\d+(?:\.\d+)?/g;
+  var pizzaBasePrice = $(".panel.price b")[0].innerHTML;
+  var match = regex.exec(pizzaBasePrice);
+  var total = parseInt(match[0]);
+  for (var index = 0; index < priceList.length; index++) {
+    if ($(priceList[index]).css("display") !== "none") {
+      var regex = /[+-]?\d+(?:\.\d+)?/g;
+      var priceSentence = priceList[index].innerHTML;
+      match = regex.exec(priceSentence);
+      total += parseInt(match[0]);
+    }
+  }
+  $(".panel.price strong")[0].innerHTML = "$" + total;
 }
 
 toggleIngredients(greenPepperBtn, greenPepper, greenPepperItem);
