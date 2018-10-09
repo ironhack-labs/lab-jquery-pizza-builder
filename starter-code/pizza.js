@@ -43,16 +43,3 @@ $(document).ready(function(){
   });
 
 });
-
-
-
-
-
-
-//$(document).ready(function(){
-//    $(".crust").toggleClass("crust-gluten-free");
-//});
-//btnCrust.click(function(){
-//    btnCrust.toggleClass("active");
-//    $(".crust").hasClass("crust-gluten-free");
-//});
