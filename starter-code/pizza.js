@@ -37,28 +37,28 @@ $(".btn-crust").click(function() {
 });
 
 
+var classNames = [
+  {name: $(".btn-pepperonni"), price: 1 },
+  {name: $(".btn-mushrooms"), price: 1 },
+  {name: $(".btn-green-peppers"), price: 1 },
+  {name: $(".btn-sauce"), price: 3 },
+  {name: $(".btn-crust"), price: 5 },
+]
+var total  = 10;
+
 function updatePrice() {
- var total = 10; 
-  if ($(".btn-pepperonni").hasClass("active")) {
-    total += 1
-  }
-  else if ($(".btn-mushrooms").hasClass("active")) {
-    total += 1
-  }
-  else if ($(".btn-green-peppers").hasClass("active")) {
-    total += 1
-  }
-  else if ($(".btn-sauce").hasClass("active")) {
-    total += 3
-  }
-  else if ($(".btn-crust").hasClass("active")) {
-    total += 5
-  }
 
-var displayedTotalPrice = $("#total-price").text(total + "$");
-
-return displayedTotalPrice;
-
+  for ( var i = 0 ; i < object.length ; I++) {
+    if (classNames.name.hasClass("active")) {
+    total += classNames.price
+  }
 }
+var displayedTotalPrice = $("#total-price").text(total + "$");
+return displayedTotalPrice;
+}
+
+updatePrice(classNames)
+
+
 
 
