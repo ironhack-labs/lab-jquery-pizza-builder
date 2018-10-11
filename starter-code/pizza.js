@@ -1,6 +1,14 @@
 // Write your Pizza Builder JavaScript in this file.
 
 
+var classNames = [
+  {name: $(".btn-pepperonni"), price: 1 },
+  {name: $(".btn-mushrooms"), price: 1 },
+  {name: $(".btn-green-peppers"), price: 1 },
+  {name: $(".btn-sauce"), price: 3 },
+  {name: $(".btn-crust"), price: 5 },
+]
+
 $(".btn-pepperonni").click(function() {
   $(".btn-pepperonni").toggleClass("active")
   $(".pep").toggle()
@@ -37,20 +45,11 @@ $(".btn-crust").click(function() {
 });
 
 
-var classNames = [
-  {name: $(".btn-pepperonni"), price: 1 },
-  {name: $(".btn-mushrooms"), price: 1 },
-  {name: $(".btn-green-peppers"), price: 1 },
-  {name: $(".btn-sauce"), price: 3 },
-  {name: $(".btn-crust"), price: 5 },
-]
-var total  = 10;
-
-function updatePrice() {
-
+function updatePrice(classNames) {
+  var total  = 10;
   for ( var i = 0 ; i < object.length ; I++) {
-    if (classNames.name.hasClass("active")) {
-    total += classNames.price
+    if (classNames[i].name.hasClass("active")) {
+    total += classNames[i].price
   }
 }
 var displayedTotalPrice = $("#total-price").text(total + "$");
