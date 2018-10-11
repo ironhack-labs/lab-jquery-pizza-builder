@@ -47,7 +47,7 @@ $(".btn-crust").click(function() {
 
 function updatePrice(classNames) {
   var total  = 10;
-  for ( var i = 0 ; i < object.length ; I++) {
+  for ( var i = 0 ; i < classNames.length ; i++) {
     if (classNames[i].name.hasClass("active")) {
     total += classNames[i].price
   }
