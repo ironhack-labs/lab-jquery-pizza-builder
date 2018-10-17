@@ -2,21 +2,19 @@
 
 $('.btn-pepperonni').click(function(){
   $(".pep").toggle()
-  toggleList("$1 pepperonni")
-  updatePriceCheap()
+  toggleList(0)
+  //updatePriceCheap()
  })
  
  $('.btn-mushrooms').click(function(){
    $(".mushroom").toggle()
-   toggleList("$1 mushrooms")
-   updatePriceCheap()
+   toggleList(1)
+
   })
  
   $('.btn-green-peppers').click(function(){
    $(".green-pepper").toggle()
-   toggleList("$1 green peppers")
-   updatePriceCheap()
-   
+   toggleList(2) 
   })
  
   //sauce elements
@@ -25,7 +23,7 @@ $('.btn-pepperonni').click(function(){
   
   $('.btn-sauce').click(function(){
    $(".sauce").toggleClass("sauce-white")
-   toggleList("$3 white sauce")
+   toggleList(3)
   })
  
   //crust elements
@@ -34,7 +32,7 @@ $('.btn-pepperonni').click(function(){
   
   $('.btn-crust').click(function(){
    $(".crust").toggleClass("crust-gluten-free")
-   toggleList("$5 gluten-free crust")
+   toggleList(4)
   })
  
   $(".btn").click((e) => {
@@ -42,21 +40,30 @@ $('.btn-pepperonni').click(function(){
     console.log(e.target)
   });
  
-  //
-  function toggleList (text) {
-    console.log("hi")
-    $("li:contains("+ text + ")").toggle()
+  
+  function toggleList (a) {
+    $('.price li').eq(a).toggle()
   }
 
- 
-  $('strong').text("10")
+//$('strong').text("$10")
 
-  function updatePriceCheap() {
-  var totalPrice = 10
-    if ($("button").hasClass("active")) {
-      totalPrice++
-    }
-    $('strong').text(totalPrice)
-    }
+var totalPrice = 10
+totalPrice = () => {
+   if ($("button.btn-green-peppers, button.btn-mushrooms, button.btn-pepperonni").hasClass("active")) {
+  totalPrice++
+}
+}
+  // function updatePrice() {
+  // var totalPrice = 21
+  //   if ($("button.btn-green-peppers, button.btn-mushrooms, button.btn-pepperonni").hasClass("active") === false ) {
+  //     totalPrice-- 
+  //   // } else {
+  //   //   totalPrice--
+  //   // }
+  //   $('strong').text(totalPrice)
+  //   }
+  //   return totalPrice
+  // }
+  $('strong').text(totalPrice)
 
  
