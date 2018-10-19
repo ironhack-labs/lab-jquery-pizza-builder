@@ -38,12 +38,12 @@ greenPeppersButton.click(function() {
 })
 
 sauceButton.click(function() {
-    sauce.toggleClass();
+    sauce.toggleClass("sauce-white");
 })
 
 
 glutenButton.click(function(){
-    gluten.toggleClass()
+    gluten.toggleClass("crust-gluten-free");
 })
 
 
