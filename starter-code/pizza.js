@@ -167,9 +167,7 @@ function activeState () {
 
 
 window.onload =function() {
-	$(".pep").addClass("hidden");
-	$(".mushroom").addClass("hidden");
-	$(".green-pepper").addClass("hidden");
+	
 	$(".sauce").removeClass("sauce-white");
 	$(".crust").removeClass("crust-gluten-free");
 
