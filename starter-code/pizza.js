@@ -41,8 +41,15 @@ var whiteSauce= $(".btn-sauce").click(function(){
 var glutenCrust=$(".btn-crust").click(function(){
     $("section").toggleClass("crust-gluten-free");
     $(".btn-crust").toggleClass("active")
-    $(".price li:contains('gluten free crust')").toggle();
+    $(".price li:contains('gluten-free crust')").toggle();
 })
 
+var count=10;
 
-
+function totalPrice() {
+    var visible=$(".price li:visible");
+    for (var i=0;i<visible.length;i++){
+    count += parseInt((visible).eq(i).text().slice(1));
+    
+    }}
+$(".panel strong").text($(count));
