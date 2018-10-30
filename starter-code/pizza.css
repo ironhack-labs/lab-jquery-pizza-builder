@@ -982,6 +982,13 @@ p.description {
     transform: rotate(69deg);
 }
 
+ #whiteSauce{
+     display: none;
+}
+#glutenFree{
+    display: none;
+}
+
 /*------ Footer -----*/
 footer {
     margin: 0 0 30px 0;
