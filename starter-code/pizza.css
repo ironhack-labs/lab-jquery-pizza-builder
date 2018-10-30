@@ -368,7 +368,7 @@ p.description {
     -o-transform: rotate(12deg) translate(-4px, -600px);
     transform: rotate(12deg) translate(-4px, -600px);
 }
-
+/* one pepperoni */
 .pep {
     position: absolute;
     width: 80px;
