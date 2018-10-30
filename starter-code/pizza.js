@@ -25,7 +25,7 @@ let toggleMushroom = $(".btn-mushrooms").click(() => {
   } else {
     defaultPrice--;
   }
-  $("#total").text(defaultPrice)
+  $("#total").text(defaultPrice);
 });
 // ------adding and removing Pepper ------
 let togglePeppers = $(".btn-green-peppers").click(() => {
@@ -37,7 +37,7 @@ let togglePeppers = $(".btn-green-peppers").click(() => {
   } else {
     defaultPrice--;
   }
-  $("#total").text(defaultPrice)
+  $("#total").text(defaultPrice);
 });
 
 // ------adding and removing Sauce ------
@@ -50,8 +50,8 @@ let toggleSauce = $(".btn-sauce").click(() => {
   } else {
     defaultPrice = defaultPrice - 3;
   }
-  $("#total").text(defaultPrice)
   
+  $("#total").text(defaultPrice);
 });
 
 // ------adding and removing Crust ------
@@ -64,7 +64,7 @@ let toggleCrust = $(".btn-crust").click(() => {
   } else {
     defaultPrice = defaultPrice - 5;
   }
-  $("#total").text(defaultPrice)
   
+  $("#total").text(defaultPrice);
 });
 

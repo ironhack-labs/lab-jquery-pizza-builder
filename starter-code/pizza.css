@@ -981,13 +981,16 @@ p.description {
     -o-transform: rotate(69deg);
     transform: rotate(69deg);
 }
+/* .active{
+    display: none;
+} */
 
- #whiteSauce{
+/* #whiteSauce{
      display: none;
 }
 #glutenFree{
     display: none;
-}
+} */
 
 /*------ Footer -----*/
 footer {
