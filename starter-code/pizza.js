@@ -14,4 +14,17 @@ $(function(){
                 $('.green-pepper').toggle();
                 });
 
+    $('.crust').removeClass('crust-gluten-free');
+
+    $('.sauce').removeClass('sauce-white');
+
+    $('.btn-crust').click(function() {
+        $('.crust').toggleClass('crust-gluten-free');
+    });
+
+    $('.btn-sauce').click(function() {
+        $('.sauce').toggleClass('sauce-white');
+    });
+
+
 });
