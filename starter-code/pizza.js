@@ -1,39 +1,27 @@
 // Write your Pizza Builder JavaScript in this file.
 $(document).ready(function() {
 
-//intialzing the variables TODO: Transform in an object
-var basis = 10;
-var pepPrice = 1;
-var mushPrice = 1;
-var greenPrice = 1;
-var saucePrice = 3;
-var crustPrice = 5;
-var ingredientsPrice = 0;
-var pizzaPrice = basis + ingredientsPrice;
-
-// Updating the price of the pizza with the right ingredients
-console.log(pizzaPrice);
- // Callback function to calculate the price
- function CalculatePrice(){
-  if ($("ul > li:contains(pepperonni)").is(":visible")){
-    ingredientsPrice = ingredientsPrice + pepPrice;
-  }
-  else if ($("ul > li:contains(mushrooms)").is(":visible")){
-    ingredientsPrice = ingredientsPrice + mushPrice;
-  }
-   else if ($("ul > li:contains(green peppers)").is(":visible")){
-     ingredientsPrice = ingredientsPrice + greenPrice;
-   }
-   else if ($("ul > li:contains(white sauce)").is(":visible")){
-     ingredientsPrice = ingredientsPrice + saucePrice;
-   }
-   else if ($("ul > li:contains(gluten-free crust)").is(":visible")){
-    ingredientsPrice = ingredientsPrice + crustPrice;
-   };
-   var pizzaPrice = basis + ingredientsPrice;
-   $("aside strong").html(pizzaPrice);
+var pizzaPrice = 10;
+function CalculatePrice(){
+if($(".btn-pepperonni").hasClass("active")) {
+   pizzaPrice +=1;
+}
+if ($(".btn-mushrooms").hasClass("active")) {
+   pizzaPrice +=1;
+}
+if($(".btn-green-peppers").hasClass("active")) {
+   pizzaPrice +=1;
+}
+if($(".btn-sauce").hasClass("active")) {
+   pizzaPrice +=3;
+}
+if($(".btn-crust").hasClass("active")) {
+  pizzaPrice +=5;
+}
+$("aside strong").html(pizzaPrice);
   console.log(pizzaPrice);
- };
+};
+
   // Select the toppings with the 3 buttons
   $(".btn-pepperonni").click(function() {
     $(".btn-pepperonni").toggleClass("active");
@@ -92,3 +80,36 @@ console.log(pizzaPrice);
 //  ]
 //};
 
+/*/intialzing the variables TODO: Transform in an object
+var basis = 10;
+var pepPrice = 1;
+var mushPrice = 1;
+var greenPrice = 1;
+var saucePrice = 3;
+var crustPrice = 5;
+var ingredientsPrice = 0;
+var pizzaPrice = basis + ingredientsPrice;
+
+// Updating the price of the pizza with the right ingredients
+console.log(pizzaPrice);
+ // Callback function to calculate the price
+ function CalculatePrice(){
+  if ($("ul > li:contains(pepperonni)").is(":visible")){
+    ingredientsPrice = ingredientsPrice + pepPrice;
+  }
+  else if ($("ul > li:contains(mushrooms)").is(":visible")){
+    ingredientsPrice = ingredientsPrice + mushPrice;
+  }
+   else if ($("ul > li:contains(green peppers)").is(":visible")){
+     ingredientsPrice = ingredientsPrice + greenPrice;
+   }
+   else if ($("ul > li:contains(white sauce)").is(":visible")){
+     ingredientsPrice = ingredientsPrice + saucePrice;
+   }
+   else if ($("ul > li:contains(gluten-free crust)").is(":visible")){
+    ingredientsPrice = ingredientsPrice + crustPrice;
+   };
+   var pizzaPrice = basis + ingredientsPrice;
+   $("aside strong").html(pizzaPrice);
+  console.log(pizzaPrice);
+ };*/
