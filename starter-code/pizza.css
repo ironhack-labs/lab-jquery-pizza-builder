@@ -242,9 +242,9 @@ p.description {
 }
 
 .btn-sauce.active {
-  top: 2px;
-  box-shadow: 0 2px #998500;
-}
+    top: 2px;
+    box-shadow: 0 2px #998500;
+  }
 
 .btn-sauce.active:hover {
   box-shadow: 0 2px #776800;
