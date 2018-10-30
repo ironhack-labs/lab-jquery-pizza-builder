@@ -1,8 +1,12 @@
 // Write your Pizza Builder JavaScript in this file.
- var priceTotal;
+var priceTotal;
 
 $(document).ready(function() {
-   priceTotal=10;
+  var array = $(".panel.price b")
+    .text()
+    .split(" ", 1)[0];
+  var num = parseInt(array.substr(1, array.length - 1));
+  priceTotal = num;
   $(".panel.price strong").text(`$${priceTotal}`);
   $(".crust").removeClass("crust-gluten-free");
   $(".sauce").removeClass("sauce-white");
@@ -10,7 +14,6 @@ $(document).ready(function() {
   $(".btn-crust").removeClass("active");
   $(".panel.price li:gt(2)").hide();
 
-  console.log();
 });
 
 $(".btn-pepperonni").click(function() {
@@ -18,32 +21,48 @@ $(".btn-pepperonni").click(function() {
   $(".btn-pepperonni").toggleClass("active");
   $(".panel.price li:eq(0)").toggle();
 
-    changeButton(".btn-pepperonni",1);
+  var array = $(".panel.price li:eq(0)")
+    .text()
+    .split(" ", 1)[0];
+  var num = parseInt(array.substr(1, array.length - 1));
+
+  changeButton(".btn-pepperonni", num);
 });
 
 $(".btn-mushrooms").click(function() {
-    $(".mushroom").toggle();
-    $(".btn-mushrooms").toggleClass("active");
-    $(".panel.price li:eq(1)").toggle();
+  $(".mushroom").toggle();
+  $(".btn-mushrooms").toggleClass("active");
+  $(".panel.price li:eq(1)").toggle();
 
-    changeButton(".btn-mushrooms",1);
-  });
+  var array = $(".panel.price li:eq(1)")
+    .text()
+    .split(" ", 1)[0];
+  var num = parseInt(array.substr(1, array.length - 1));
+  changeButton(".btn-mushrooms", num);
+});
 
 $(".btn-green-peppers").click(function() {
   $(".green-pepper").toggle();
   $(".btn-green-peppers").toggleClass("active");
   $(".panel.price li:eq(2)").toggle();
 
-  changeButton(".btn-green-peppers",1);
+  var array = $(".panel.price li:eq(2)")
+    .text()
+    .split(" ", 1)[0];
+  var num = parseInt(array.substr(1, array.length - 1));
+  changeButton(".btn-green-peppers", num);
 });
-
 
 $(".btn-sauce").click(function() {
   $(".sauce").toggleClass("sauce-white");
   $(".btn-sauce").toggleClass("active");
   $(".panel.price li:eq(3)").toggle();
 
-  changeButton(".btn-sauce",3);
+  var array = $(".panel.price li:eq(3)")
+    .text()
+    .split(" ", 1)[0];
+  var num = parseInt(array.substr(1, array.length - 1));
+  changeButton(".btn-sauce", num);
 });
 
 $(".btn-crust").click(function() {
@@ -51,29 +70,30 @@ $(".btn-crust").click(function() {
   $(".btn-crust").toggleClass("active");
   $(".panel.price li:eq(4)").toggle();
 
-  changeButton(".btn-crust",5);
-  
+  var array = $(".panel.price li:eq(4)")
+    .text()
+    .split(" ", 1)[0];
+  var num = parseInt(array.substr(1, array.length - 1));
+  changeButton(".btn-crust", num);
 });
 
-
-function changeButton(button,price){
-
-    if($(button).hasClass("active")){
-        changePriceTotal("plus",price);
-    }else{
-      changePriceTotal("minus",price);
-    }
-  
+function changeButton(button, price) {
+  if ($(button).hasClass("active")) {
+    changePriceTotal("plus", price);
+  } else {
+    changePriceTotal("minus", price);
+  }
 }
 
-function changePriceTotal(operation, price){
-    if(operation === "plus"){
-        priceTotal +=price;
-    }else{
-        priceTotal -=price;
-    }
+function changePriceTotal(operation, price) {
+  if (operation === "plus") {
+    priceTotal += price;
+  } else {
+    priceTotal -= price;
+  }
+  num = 0;
 
-    $(".panel.price strong").text(`$${priceTotal}`);
+  $(".panel.price strong").text(`$${priceTotal}`);
 }
 
 // });
