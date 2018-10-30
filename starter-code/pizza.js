@@ -15,6 +15,9 @@ function isActive(thisScope) {
         $(thisScope).addClass("active");
     }
 }
+parseInt($(`strong>span`).text());
+
+
 
 function showPrice(thisScope, ingrIndex) {
     if ($(thisScope).hasClass("active")) {
@@ -24,25 +27,35 @@ function showPrice(thisScope, ingrIndex) {
     }
 }
 
-function totalPrice(){
-    parseInt($(`strong>span`).text()) += 1
-} 
+function totalPrice() {
+    var base = parseInt($(".price>b").text().match(/\d+/)[0])
+    console.log(base)
+    $(".price>ul>li:visible").each(function() {   
+       base += parseInt($(this).text().match(/\d+/)[0])
+    })
+    $(".price>strong").text(`$${base}`);
+}
 
 $(".btn-green-peppers").click(function () {
     $(".green-pepper").toggle();
     isActive(this);
     showPrice(this, 2);
+    totalPrice();
 })
 
 $(".btn-mushrooms").click(function () {
     $(".mushroom").toggle();
     isActive(this);
     showPrice(this, 1);
+    totalPrice();
+
 })
 $(".btn-pepperonni").click(function () {
     $(".pep").toggle();
     isActive(this);
     showPrice(this, 0);
+    totalPrice();
+
 })
 $(".btn-crust").click(function () {
     if ($(".crust").hasClass("crust-gluten-free")) {
@@ -52,6 +65,8 @@ $(".btn-crust").click(function () {
     }
     isActive(this);
     showPrice(this, 4);
+    totalPrice();
+
 })
 
 $(".btn-sauce").click(function () {
@@ -62,4 +77,6 @@ $(".btn-sauce").click(function () {
     }
     isActive(this);
     showPrice(this, 3);
+    totalPrice();
+
 })
