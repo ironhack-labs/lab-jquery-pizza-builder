@@ -66,7 +66,7 @@ body {
  * Buttons from:
  * http://codepen.io/TeshaR/pen/cdugG?editors=110
  */
-.btn {
+button {
   float: left;
   position: relative;
   top: 0;
