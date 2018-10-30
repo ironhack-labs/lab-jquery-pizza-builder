@@ -25,13 +25,13 @@ $(".btn, .btn-crust").removeClass("active")
 
 
 var whiteSauce= $(".btn-sauce").click(function(){
-    $("section:last").addClass("sauce-white");
-    $(".btn-sauce").addClass("active")
+    $("section:last").toggleClass("sauce-white");
+    $(".btn-sauce").toggleClass("active")
 
 })
 
 var glutenCrust=$(".btn-crust").click(function(){
-    $("section").addClass("crust-gluten-free");
-    $(".btn-crust").addClass("active")
+    $("section").toggleClass("crust-gluten-free");
+    $(".btn-crust").toggleClass("active")
 })
 
