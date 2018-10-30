@@ -9,7 +9,7 @@ $(function(){
   function toggleSauces (button, sauce, putonoff){
     button.toggleClass("active");
     sauce.toggleClass(putonoff);
-    list.toggle(priceSauce)
+    list.append(priceSauce)
   }
   
   function listPrices (ingredient){
