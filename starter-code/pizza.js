@@ -2,8 +2,7 @@
 $(function() {
   // alert("DOM is Loaded");
  
-  // $("button").click(function(){
-  //   $("#pizza").toggle();
+
 
   // Iteration 1
 
@@ -11,7 +10,7 @@ $(function() {
   // var pizzaDrawing = $("#pizza > .pep, #pizza > .mushroom, #pizza > .green-pepper");
   // pizzaDrawing.hide();
 
-  
+
   $(".btn-green-peppers").click(function () {
    $("#pizza > .green-pepper").toggle();
   });
@@ -22,6 +21,17 @@ $(function() {
   $(".btn-pepperonni").click(function () {
    $("#pizza > .pep").toggle();
   });
-  })
 
+  $(".btn-sauce").click(function () {
+    $(".sauce").toggleClass("sauce-white");
+  });
+
+  $(".btn-crust").click(function () {
+    $(".crust").toggleClass("crust-gluten-free");
+});
+})
+
+  
+
+  
 
