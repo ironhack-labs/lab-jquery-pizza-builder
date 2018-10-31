@@ -6,6 +6,8 @@ $('.btn-pepperonni').click(function() {
 });
 
 
+
+
 $('.btn-mushrooms').click(function() {
     $('.mushroom').toggle("true");
     $('.btn-mushrooms').toggleClass("active");
@@ -16,7 +18,7 @@ $('.btn-green-peppers').click(function() {
     $('.btn-green-peppers').toggleClass("active");
 });
 
-// by default is regular crust
+// by default = regular crust
 $('.crust-gluten-free').removeClass("crust-gluten-free");
 
 $('.btn-crust').click(function() {
@@ -32,3 +34,6 @@ $('.btn-sauce').click(function() {
    $('.sauce').toggleClass("sauce-white");
 });
 
+//by default REMOVE sauce-white and gluten-free-crust from price-list
+$('.price > ul > li:contains("white")').hide();
+$('.price > ul > li:contains("gluten")').hide();
