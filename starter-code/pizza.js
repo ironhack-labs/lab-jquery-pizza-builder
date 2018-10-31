@@ -34,6 +34,7 @@ $(".btn-sauce").click(function() {
 $(".price li:nth-child(4)").remove();
 $(".price li:nth-child(4)").remove();
 
+$("[$21]").remove("$21");
 
 
 })
