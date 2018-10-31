@@ -175,56 +175,56 @@ p.description {
   box-shadow: none;
 }
 
-.btn-mushrooms {
+.btn-mushroom {
   background: #b49989;
   box-shadow: 0 6px #644d40;
   color: #fff;
 }
 
-.btn-mushrooms:hover {
+.btn-mushroom:hover {
   background: #a78774;
   box-shadow: 0 5px #503d33;
   color: #fff;
 }
 
-.btn-mushrooms.active {
+.btn-mushroom.active {
   top: 2px;
   box-shadow: 0 2px #644d40;
 }
 
-.btn-mushrooms.active:hover {
+.btn-mushroom.active:hover {
   box-shadow: 0 2px #503d33;
 }
 
-.btn-mushrooms:active,
-.btn-mushrooms.active:active {
+.btn-mushroom:active,
+.btn-mushroom.active:active {
   top: 5px;
   box-shadow: none;
 }
 
-.btn-green-peppers {
+.btn-green-pepper {
   background: #129306;
   box-shadow: 0 6px #0a5203;
   color: #fff;
 }
 
-.btn-green-peppers:hover {
+.btn-green-pepper:hover {
   background: #0e7205;
   box-shadow: 0 5px #063102;
   color: #fff;
 }
 
-.btn-green-peppers.active {
+.btn-green-pepper.active {
   top: 2px;
   box-shadow: 0 2px #0a5203;
 }
 
-.btn-green-peppers.active:hover {
+.btn-green-pepper.active:hover {
   box-shadow: 0 2px #063102;
 }
 
-.btn-green-peppers:active,
-.btn-green-peppers.active:active {
+.btn-green-pepper:active,
+.btn-green-pepper.active:active {
   top: 5px;
   box-shadow: none;
 }
@@ -369,7 +369,7 @@ p.description {
     transform: rotate(12deg) translate(-4px, -600px);
 }
 
-.pep {
+.pepperonni {
     position: absolute;
     width: 80px;
     height: 70px;
@@ -384,141 +384,141 @@ p.description {
     text-indent: -9999px;
     color: #fff;
 }
-/*.pep:hover{
+.pepperonni:hover{
     -moz-transform: scale(1.3);
     -webkit-transform: scale(1.3);
     -o-transform: scale(1.3);
     transform: scale(1.3);
-  } */
-.pep.one {
+  }
+.pepperonni.one {
     margin: 60px 0 0 305px;
 }
 
-.pep.two {
+.pepperonni.two {
     margin: 75px 0 0 390px;
 }
 
-.pep.three {
+.pepperonni.three {
     margin: 115px 0 0 470px;
 }
 
-.pep.four {
+.pepperonni.four {
     margin: 190px 0 0 525px;
 }
 
-.pep.five {
+.pepperonni.five {
     margin: 275px 0 0 555px;
 }
 
-.pep.six {
+.pepperonni.six {
     margin: 365px 0 0 550px;
 }
 
-.pep.seven {
+.pepperonni.seven {
     margin: 450px 0 0 515px;
 }
 
-.pep.eight {
+.pepperonni.eight {
     margin: 515px 0 0 450px;
 }
 
-.pep.nine {
+.pepperonni.nine {
     margin: 555px 0 0 365px;
 }
 
-.pep.ten {
+.pepperonni.ten {
     margin: 560px 0 0 270px;
 }
 
-.pep.eleven {
+.pepperonni.eleven {
     margin: 560px 0 0 270px;
 }
 
-.pep.twelve {
+.pepperonni.twelve {
     margin: 524px 0 0 182px;
 }
 
-.pep.thirteen {
+.pepperonni.thirteen {
     margin: 265px 0 0 355px;
 }
 
-.pep.fourteen {
+.pepperonni.fourteen {
     margin: 233px 0 0 445px;
 }
 
-.pep.fifteen {
+.pepperonni.fifteen {
     margin: 467px 0 0 340px;
 }
 
-.pep.sixteen {
+.pepperonni.sixteen {
     margin: 194px 0 0 197px;
 }
 
-.pep.seventeen {
+.pepperonni.seventeen {
     margin: 329px 0 0 458px;
 }
 
-.pep.eightteen {
+.pepperonni.eightteen {
     margin: 461px 0 0 115px;
 }
 
-.pep.nineteen {
+.pepperonni.nineteen {
     margin: 380px 0 0 69px;
 }
 
-.pep.twenty {
+.pepperonni.twenty {
     margin: 287px 0 0 60px;
 }
 
-.pep.twenty-one {
+.pepperonni.twenty-one {
     margin: 197px 0 0 86px;
 }
 
-.pep.twenty-two {
+.pepperonni.twenty-two {
     margin: 125px 0 0 141px;
 }
 
-.pep.twenty-three {
+.pepperonni.twenty-three {
     margin: 84px 0 0 218px;
 }
 
-.pep.twenty-four {
+.pepperonni.twenty-four {
     margin: 150px 0 0 278px;
 }
 
-.pep.twenty-five {
+.pepperonni.twenty-five {
     margin: 167px 0 0 374px;
 }
 
-.pep.twenty-six {
+.pepperonni.twenty-six {
     margin: 457px 0 0 247px;
 }
 
-.pep.twenty-seven {
+.pepperonni.twenty-seven {
     margin: 426px 0 0 426px;
 }
 
-.pep.twenty-eight {
+.pepperonni.twenty-eight {
     margin: 390px 0 0 177px;
 }
 
-.pep.twenty-nine {
+.pepperonni.twenty-nine {
     margin: 290px 0 0 153px;
 }
 
-.pep.thirty {
+.pepperonni.thirty {
     margin: 362px 0 0 267px;
 }
 
-.pep.thirty-one {
+.pepperonni.thirty-one {
     margin: 270px 0 0 257px;
 }
 
-.pep.thirty-three {
+.pepperonni.thirty-three {
     margin: 358px 0 0 365px;
 }
 
-/*--- Mushrooms ---*/
+/*--- mushroom ---*/
 .mushroom {
     position: absolute;
     width: 70px;

@@ -1,101 +1,99 @@
 // Write your Pizza Builder JavaScript in this file.
 $(document).ready(function () {
     $('.crust').removeClass('crust-gluten-free');
+    $('.panel.price li:contains(crust)').hide();
+    $('.btn-crust').removeClass('active');
     $('.sauce').removeClass('sauce-white');
     $('.panel.price li:contains(sauce)').hide();
-    $('.panel.price li:contains(crust)').hide();
     $('.btn-sauce').removeClass('active');
-    $('.btn-crust').removeClass('active');
 
-    let prices = [
-        {name: 'pep', price: 1},
-        {name: 'mushroom', price: 1},
-        {name: 'green-pepper', price: 1},
-        {name: 'sauce-white', price: 3},
-        {name: 'crust-gluten-free', price: 5},
+    let ingredients = [
+        {
+            className: 'pepperonni', 
+            price: 1, name:'pepperonni', 
+            type:'topping'
+        },
+        {
+            className: 'mushroom', 
+            price: 1, 
+            name:'mushrooms', 
+            type:'topping'
+        },
+        {
+            className: 'green-pepper', 
+            price: 1, 
+            name: 'green peppers', 
+            type:'topping'
+        },
+        {
+            className: 'sauce-white', 
+            price: 3, 
+            name:'white sauce', 
+            type:'main', 
+            og:'sauce'
+        },
+        {
+            className: 'crust-gluten-free', 
+            price: 5, 
+            name:'gluten-free crust', 
+            type:'main', 
+            og:'crust'
+        },
     ];
 
     var totalPrice = 10;
 
-        for (let i = 0; i < prices.length; i++) {
-            let ingName = prices[i].name;
+        for (let i = 0; i < ingredients.length; i++) {
+            let ingName = ingredients[i].className;
 
             if ($(`.${ingName}`).is(':visible')) {
-                totalPrice += prices[i].price;
+                totalPrice += ingredients[i].price;
                 console.log(totalPrice);
             }
         }
 
     $('strong').text(`$${totalPrice}`);
 
-    $('.btn-pepperonni').click(() => {
-        if ($('.btn-pepperonni').hasClass('active')) {
-            totalPrice -= prices[0].price;
-            $('.panel.price li:contains(pepperonni)').hide();
-        } else {
-            $('.panel.price li:contains(pepperonni)').show();
-            totalPrice += prices[0].price;
+    let toppingClicker = function (ingridient) {
+        let b = $(`.btn-${ingridient.className}`).click(() => {
+            if ($(`.btn-${ingridient.className}`).hasClass('active')) {
+                totalPrice -= ingridient.price;
+                $(`.panel.price li:contains(${ingridient.name})`).hide();
+            } else {
+                $(`.panel.price li:contains(${ingridient.name})`).show();
+                totalPrice += ingridient.price;
+            }
+            $('strong').text(`$${totalPrice}`);
+            $(`.btn-${ingridient.className}`).toggleClass('active');
+            $(`.${ingridient.className}`).toggle();
+        });
+
+        return b;
+    }
+
+    let mainClicker = function (ingridient) {
+        let b = $(`.btn-${ingridient.og}`).click(() => {
+            if ($(`.btn-${ingridient.og}`).hasClass("active")) {
+                totalPrice -= ingridient.price;
+                $(`.panel.price li:contains(${ingridient.name})`).hide();
+            } else {
+                $(`.panel.price li:contains(${ingridient.name})`).show();
+                totalPrice += ingridient.price;
+            }
+            $("strong").text(`$${totalPrice}`);
+            $(`.btn-${ingridient.og}`).toggleClass("active");
+            $(`.${ingridient.og}`).toggleClass(`${ingridient.className}`);
+        });
+
+        return b;
+    }
+
+    let clickers = ingredients.map(ing => {
+        if(ing.type == 'topping'){
+            return toppingClicker(ing)
+        } else if(ing.type == 'main') {
+            return mainClicker(ing);
         }
-        $('strong').text(`$${totalPrice}`);
-        $('.btn-pepperonni').toggleClass('active');
-        $('.pep').toggle();
-
     });
-
-    $('.btn-mushrooms').click(() => {
-        if ($('.btn-mushrooms').hasClass('active')) {
-            totalPrice -= prices[1].price;
-            $('.panel.price li:contains(mushrooms)').hide();
-        } else {
-            $('.panel.price li:contains(mushrooms)').show();
-            totalPrice += prices[1].price;
-        }
-        $('strong').text(`$${totalPrice}`);
-        $('.btn-mushrooms').toggleClass('active');
-        $('.mushroom').toggle();
-
-    });
-
-    $('.btn-green-peppers').click(() => {
-        if ($('.btn-green-peppers').hasClass('active')) {
-            totalPrice -= prices[2].price;
-            $('.panel.price li:contains(peppers)').hide();
-        } else {
-            $('.panel.price li:contains(peppers)').show();
-            totalPrice += prices[2].price;
-        }
-        $('strong').text(`$${totalPrice}`);
-        $('.btn-green-peppers').toggleClass('active');
-        $('.green-pepper').toggle();
-
-    });
-
-
-    $('.btn-sauce').click(() => {
-        if ($('.btn-sauce').hasClass('active')) {
-            totalPrice -= prices[3].price;
-            $('.panel.price li:contains(white)').hide();
-        } else {
-            $('.panel.price li:contains(white)').show();
-            totalPrice += prices[3].price;
-        }
-        $('strong').text(`$${totalPrice}`);
-        $('.btn-sauce').toggleClass('active');
-        $('.sauce').toggleClass('sauce-white');
-    });
-
-    $('.btn-crust').click(() => {
-        if ($('.btn-crust').hasClass('active')) {
-            totalPrice -= prices[4].price;
-            $('.panel.price li:contains(gluten)').hide();
-        } else {
-            $('.panel.price li:contains(gluten)').show();
-            totalPrice += prices[4].price;
-        }
-        $('strong').text(`$${totalPrice}`);
-        $('.btn-crust').toggleClass('active');
-        $('.crust').toggleClass('crust-gluten-free');
-    });
-    
     
 })
