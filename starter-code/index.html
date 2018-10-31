@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta lang="en-us">
+    <meta charset="UTF-8">
     <title>Pizza Builder</title>
     <link rel="stylesheet" href="pizza.css">
   </head>
@@ -17,19 +19,19 @@
     <div class="panel controls">
       <ul>
         <li>
-          <button class="btn btn-pepperonni active">Pepperonni</button>
+          <button class="btn btn-pepperonni active" onclick="activatePeperoni()">Pepperonni</button>
         </li>
         <li>
-          <button class="btn btn-mushrooms active">Mushrooms</button>
+          <button class="btn btn-mushrooms active" onclick="activateMushrooms()">Mushrooms</button>
         </li>
         <li>
-          <button class="btn btn-green-peppers active">Green peppers</button>
+          <button class="btn btn-green-peppers active"onclick="activateGreenPepper()">Green peppers</button>
         </li>
         <li>
-          <button class="btn btn-sauce active">White sauce</button>
+          <button class="btn btn-sauce active"onclick="activateSauce()">White sauce</button>
         </li>
         <li>
-          <button class="btn btn-crust active">Gluten-free crust</button>
+          <button class="btn btn-crust active"onclick="activateCrust()">Gluten-free crust</button>
         </li>
       </ul>
     </div>
@@ -41,13 +43,13 @@
 
       <b>$10 cheese pizza</b>
       <ul>
-        <li>$1 pepperonni</li>
-        <li>$1 mushrooms</li>
-        <li>$1 green peppers</li>
-        <li>$3 white sauce</li>
-        <li>$5 gluten-free crust</li>
+        <li id="pepperoni">$1 pepperonni</li>
+        <li id="mushroomss">$1 mushrooms</li>
+        <li id="greenpeep">$1 green peppers</li>
+        <li id="white-sauce">$3 white sauce</li>
+        <li id="crust">$5 gluten-free crust</li>
       </ul>
-      <strong>$21</strong>
+      <strong id="strong">$21</strong>
     </aside>
     <!-- End Price -->
 
