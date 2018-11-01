@@ -95,6 +95,8 @@ crustBtn.click(function(){
 })
 
 
+
+// Writing DRY Code
 // function addToppings (){
     //     if ($(this).hasClass('active')){
     //         finalPizza += 1;
