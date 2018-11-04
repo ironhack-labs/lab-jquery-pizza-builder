@@ -1,48 +1,65 @@
-// Write your Pizza Builder JavaScript in this file.
-$(".btn-pepperonni").click(function(){
+// Iteration 1
+$(".btn-pepperonni").click(function() {
   $(".pep").toggle();
-  $(".btn-pepperonni").toggleClass("active");
+  $("li:contains($1 pepperonni)").toggle();
 });
 
-
-
-// ($(".mushroom").is(":visible")) {}
-
-
-/*
-$(".btn-mushrooms").click(function(){
-  if ($(".mushroom")) {
-    $(".mushroom").hide();  
-  } else {
-    $(".mushroom").show();
-  }  
-});
-*/
-
-$(".btn-mushrooms").click(function(){
+$(".btn-mushrooms").click(function() {
   $(".mushroom").toggle();
-  $(".btn-pepperonni").toggleClass("active");
+  $("li:contains($1 mushrooms)").toggle();
 });
 
-$(".btn-green-peppers").click(function(){
+$(".btn-green-peppers").click(function() {
   $(".green-pepper").toggle();
+  $("li:contains($1 green peppers)").toggle();
 });
 
-$(".btn-sauce").click(function(){
+// Iteration 2
+
+// change default class sauce-button
+$(".sauce").removeClass("sauce-white");
+
+// on-click
+$(".btn-sauce").click(function() {
   $(".sauce").toggleClass("sauce-white");
+  $("li:contains(white)").toggle();
+
+  // why does this not work?
+  if ($(".btn-sauce").html("White sauce")) {
+    $(".btn-sauce").html("Red sauce");
+  } else if ($(".btn-sauce").html("Red sauce")) {
+    $(".btn-sauce").html("White sauce");
+  }
 });
 
-$(".btn-crust").click(function(){
+// change default class crust-button
+
+$(".crust").removeClass("crust-gluten-free");
+
+$(".btn-crust").click(function() {
   $(".crust").toggleClass("crust-gluten-free");
+  $("li:contains($5 gluten-free crust)").toggle();
+ 
+  // same as above, does not work
+  if ($(".btn-crust").text("Gluten-free crust")) {
+    $(".btn-crust").text("Normal crust");
+  } else if ($(".btn-crust").text("Normal crust")) {
+    $(".btn-crust").text("Gluten-free crust");
+  }
 });
 
-// IT 3
+// Iteration 3
 
+$("button").removeClass("active");
+$("button").click(function(event) {
+  $(this).toggleClass("active");
+});
 
+// Iteration 4
 
-/*
-Write some JavaScript that will remove and add the buttons' active class appropriately. This is, if the ingredient is turned on, its button should have active. If the ingredient is off, remove the active class from the button.
+$("li:contains(white)").hide();
+$("li:contains($5 gluten-free crust)").hide();
 
-Also make sure that the buttons' initial state matches that of their ingredient. If when you first load the pizza builder there is no pepperonni, the pepperonni button should not be active.
+// Iteration 5
 
-*/ 
+$("strong").html(10);
