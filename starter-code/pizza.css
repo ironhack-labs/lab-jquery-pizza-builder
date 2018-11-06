@@ -17,6 +17,9 @@ header, section, footer, article, details {
     font-family: inherit;
     vertical-align: baseline;
 }
+.ocultar{
+    display:none
+}
 /* remember to define focus styles! */
 :focus {
     outline: 0;
