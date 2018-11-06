@@ -11,7 +11,7 @@ var pepperoni = $('.pep')
 var mushroom = $('.mushroom')
 var greenPepper = $('.green-pepper')
 var sauce = $('.sauce')
-var Crust = $('.crust')
+var crust = $('.crust')
 
 
 //Botones
@@ -49,14 +49,14 @@ btnGreen.on('click',function(e){
     }
 })
 
-/*btnSauce.on('click',function(e){
-    sauce.css('opacity','0')
+btnSauce.on('click',function(e){
+    sauce.toggleClass('sauce-white')
 })
 
 btnCrust.on('click',function(e){
-    sauce.css('opacity','0')
+    crust.toggleClass('crust-gluten-free')
 })
-*/
+
 
 
 
