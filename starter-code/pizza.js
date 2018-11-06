@@ -8,7 +8,6 @@ var priceList = $('#priceList')
 //console.log(priceList)
 
 //Toppings
-
 var pepperoni = $('.pep')
 var mushroom = $('.mushroom')
 var greenPepper = $('.green-pepper')
@@ -102,7 +101,7 @@ btnCrust.on('click',function(e){
 
 var sumPrice = function(){
     var lista = $('#priceList li')
-    var sum = 0
+    var sum = 10
     var price 
     for(var i=0; i<lista.length; i++){
         console.log(lista[i].innerText)
