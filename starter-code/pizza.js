@@ -38,7 +38,7 @@ btnPepp.on('click',function(e){
         priceList.append("<li>$1 pepperonni</li>")
     }
     btnPepp.toggleClass('active')
-
+    sumPrice()
 })
 
 // Mushroom
@@ -54,6 +54,7 @@ btnMush.on('click',function(e){
         
     }
     btnMush.toggleClass('active')
+    sumPrice()
 })
 
 // Green Pepper
@@ -68,6 +69,7 @@ btnGreen.on('click',function(e){
         priceList.append("<li>$1 green peppers</li>")
     }
     btnGreen.toggleClass('active')
+    sumPrice()
 })
 //White Sauce
 btnSauce.on('click',function(e){
@@ -80,9 +82,7 @@ btnSauce.on('click',function(e){
     var liGreen = $("li:contains('$3 white sauce')")
         liGreen.remove()  
     }
-
-    //var liGreen = $("li:contains('$1 green peppers')")
-    //liGreen.remove()
+    sumPrice()
 })
 
 //Gluten
@@ -97,7 +97,20 @@ btnCrust.on('click',function(e){
     var liGreen = $("li:contains('$5 gluten-free crust')")
         liGreen.remove()  
     }
+    sumPrice()
 })
+
+var sumPrice = function(){
+    var lista = $('#priceList li')
+    var sum = 0
+    var price 
+    for(var i=0; i<lista.length; i++){
+        console.log(lista[i].innerText)
+        price = Number(lista[i].innerText.substr(1,1))
+        sum+= price
+    }
+    $('strong').text('$'+sum)
+}
 
 
 
