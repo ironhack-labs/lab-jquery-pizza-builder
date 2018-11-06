@@ -103,7 +103,9 @@ body {
   top: 5px;
   box-shadow: none;
 }
-
+.noEsta{
+    display: none;
+}
 /*------ Header -----*/
 header {
     text-align: center;
