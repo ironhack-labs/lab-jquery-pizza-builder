@@ -981,7 +981,13 @@ p.description {
     -o-transform: rotate(69deg);
     transform: rotate(69deg);
 }
-
+/*-------- the world is mine ----------*/
+.darkCrust{
+    background-color: goldenrod;
+}
+.hide {
+    display: none;
+}
 /*------ Footer -----*/
 footer {
     margin: 0 0 30px 0;
