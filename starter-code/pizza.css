@@ -42,6 +42,10 @@ caption, th, td {
     font-weight: normal;
 }
 
+.displayNone{
+    display:none;
+}
+
 blockquote:before, blockquote:after,
 q:before, q:after {
     content: "";
