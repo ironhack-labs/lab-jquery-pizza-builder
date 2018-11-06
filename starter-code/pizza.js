@@ -30,7 +30,9 @@ btnPepp.on('click',function(e){
     } else{
         pepperoni.css('opacity','1')
     }
+    btnPepp.toggleClass('active')
 })
+
 btnMush.on('click',function(e){
     var opacity = mushroom.css('opacity')
     if(opacity === '1'){
@@ -38,6 +40,7 @@ btnMush.on('click',function(e){
     } else{
         mushroom.css('opacity','1')
     }
+    btnMush.toggleClass('active')
 })
 
 btnGreen.on('click',function(e){
@@ -47,14 +50,17 @@ btnGreen.on('click',function(e){
     } else{
         greenPepper.css('opacity','1')
     }
+    btnGreen.toggleClass('active')
 })
 
 btnSauce.on('click',function(e){
     sauce.toggleClass('sauce-white')
+    btnSauce.toggleClass('active')
 })
 
 btnCrust.on('click',function(e){
     crust.toggleClass('crust-gluten-free')
+    btnCrust.toggleClass('active')
 })
 
 
