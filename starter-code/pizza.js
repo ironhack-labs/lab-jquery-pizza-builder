@@ -22,12 +22,17 @@ $(".sauce").removeClass("sauce-white");
 // on-click
 $(".btn-sauce").click(function() {
   $(".sauce").toggleClass("sauce-white");
-  $("li:contains(white)").toggle();
+  $("aside li:nth-child(4)").show();
 
-  // why does this not work?
-  if ($(".btn-sauce").html("White sauce")) {
+  if ($("aside li:nth-child(4)").text() === "$3 white sauce") {
+    $("aside li:nth-child(4)").text("$3 red sauce");
+  } else if ($("aside li:nth-child(4)").text() === "$3 red sauce") {
+    $("aside li:nth-child(4)").text("$3 white sauce");
+  }
+
+  if ($(".btn-sauce").html() === "White sauce") {
     $(".btn-sauce").html("Red sauce");
-  } else if ($(".btn-sauce").html("Red sauce")) {
+  } else if ($(".btn-sauce").html() === "Red sauce") {
     $(".btn-sauce").html("White sauce");
   }
 });
@@ -38,12 +43,18 @@ $(".crust").removeClass("crust-gluten-free");
 
 $(".btn-crust").click(function() {
   $(".crust").toggleClass("crust-gluten-free");
-  $("li:contains($5 gluten-free crust)").toggle();
- 
-  // same as above, does not work
-  if ($(".btn-crust").text("Gluten-free crust")) {
+  $("aside li:last").show();
+
+  if ($("aside li:last").text() === "$5 gluten-free crust") {
+    $("aside li:last").text("$5 normal crust");
+  } else if ($("aside li:last").text() === "$5 normal crust") {
+    $("aside li:last").text("$5 gluten-free crust");
+  }
+
+  // this for some reason affect the CSS buttons
+  if ($(".btn-crust").text() === "Gluten-free crust") {
     $(".btn-crust").text("Normal crust");
-  } else if ($(".btn-crust").text("Normal crust")) {
+  } else if ($(".btn-crust").text() === "Normal crust") {
     $(".btn-crust").text("Gluten-free crust");
   }
 });
@@ -53,6 +64,8 @@ $(".btn-crust").click(function() {
 $("button").removeClass("active");
 $("button").click(function(event) {
   $(this).toggleClass("active");
+
+
 });
 
 // Iteration 4
@@ -62,4 +75,6 @@ $("li:contains($5 gluten-free crust)").hide();
 
 // Iteration 5
 
-$("strong").html(10);
+var price = 10; 
+
+// $("strong").html(10);
