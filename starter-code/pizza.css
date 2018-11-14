@@ -131,6 +131,10 @@ p.description {
     position: relative;
 }
 
+.ing-off{
+    display: none;
+}
+
 /*------ Panels -----*/
 
 .panel {
