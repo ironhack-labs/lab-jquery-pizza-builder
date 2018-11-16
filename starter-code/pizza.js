@@ -10,15 +10,18 @@ resultPrice = 21;
 
   function handleBtn(btnClass, ingredient, value) {
    $(btnClass).click(function(){
-     $(ingredient).toggle();
+     $(ingredient).toggle([1000], [2000]);
 
      $(this).toggleClass("active");
+     $(this).fadeOut(1000);
+     $(this).fadeIn(1000);
+     
      if ($(this).hasClass("active")) {
-       resultPrice = resultPrice + value;
-       modificar(".price strong");
+       resultPrice += value;
       }else{
-        return resultPrice = resultPrice - value;
+        resultPrice -= value;
         }
+        modificar(".price strong");
    });
  };
 
@@ -26,28 +29,28 @@ resultPrice = 21;
    $(btnClass).click(function(){
      $(ingredient).toggleClass(base);
      $(this).toggleClass("active");
+     $(this).fadeOut(1000);
+     $(this).fadeIn(1000);
 
       if ($(this).hasClass("active")) {
-      resultPrice = value + resultPrice;
-      modificar(".price strong");
-      }else{
-       return resultPrice = value - resultPrice;
+        resultPrice += value
+      } else{
+        resultPrice -= value;
       }
-    
+
+      modificar(".price strong");
    });
  };
 
-  function modificar(btnClass){
-    $(btnClass).click(function(){
-    $(".price strong").text("$" + resultPrice);
-  });
+function modificar(btnClass){
+  $(".price strong").text("$" + resultPrice);
 };
 
 
 
  handleBtn('.btn-pepperonni', '.pep', 1);
- handleBtn('.btn-green-peppers', '.green-pepper', 2);
- handleBtn('.btn-mushrooms', '.mushroom', 3);
- base('.btn-sauce', '.sauce', 'sauce-white', 4);
+ handleBtn('.btn-green-peppers', '.green-pepper', 1);
+ handleBtn('.btn-mushrooms', '.mushroom', 1);
+ base('.btn-sauce', '.sauce', 'sauce-white', 3);
  base('.btn-crust', '.crust', 'crust-gluten-free', 5);
 });
