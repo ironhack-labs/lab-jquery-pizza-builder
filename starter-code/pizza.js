@@ -39,7 +39,7 @@ $( ".btn-sauce" ).click(function() {
 });
 
 var totalBill = 10;
-$(".panel .price strong").text("$13");
+$("strong").text("$13");
 
 
 function updatePrice(){
@@ -48,7 +48,7 @@ function updatePrice(){
       var priceUnd = parseInt($(this).text().substr(1,1));
       totalBill += priceUnd;
       });
-    $(".panel.price strong").text("$" + totalBill);
+    $("strong").text("$" + totalBill);
     totalBill = 10;
     })
   }
