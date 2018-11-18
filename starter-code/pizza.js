@@ -8,13 +8,13 @@ $( ".btn-pepperonni" ).click(function() {
 
 $( ".btn-mushrooms" ).click(function() {
   $(".mushroom").toggle();
-  $(".btn-mushrooms").toggleClass("active");
+  $(this).toggleClass("active");
   $("li:contains('$1 mushrooms')").toggle();
 });
 
 $( ".btn-green-peppers" ).click(function() {
   $(".green-pepper").toggle();
-  $(".btn-green-peppers").toggleClass("active");
+  $(this).toggleClass("active");
   $("li:contains('$1 green peppers')").toggle();
 });
 
@@ -33,13 +33,26 @@ $(".sauce").toggleClass("sauce-white");
 $("li:contains('$3 white sauce')").hide();
 
 $( ".btn-sauce" ).click(function() {
-  $(".btn-sauce").toggleClass("active");
+  $(this).toggleClass("active");
   $(".sauce").toggleClass("sauce-white");
   $("li:contains('$3 white sauce')").toggle();
 });
 
+var totalBill = 10;
+$(".panel .price strong").text("$13");
+
+
 function updatePrice(){
-  var total = 10;
-  $each($(".btn.active").text()[1])
-}
+  $(".btn").click(function() {
+    $( ".panel.price li:visible" ).each(function() {
+      var priceUnd = parseInt($(this).text().substr(1,1));
+      totalBill += priceUnd;
+      });
+    $(".panel.price strong").text("$" + totalBill);
+    totalBill = 10;
+    })
+  }
+  updatePrice();
 })
+  
+
