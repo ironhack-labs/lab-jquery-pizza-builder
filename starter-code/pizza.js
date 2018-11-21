@@ -1,38 +1,44 @@
 // Write your Pizza Builder JavaScript in this file.
 
 $(document).ready(function() {
-  var prices = document.querySelectorAll('.price ul li');
-  var priceOne = 1;
-  var priceThree = 3;
-  var priceFive = 5;
-  prices[0].value = priceOne;
-  prices[1].value = priceOne;
-  prices[2].value = priceOne;
-  prices[3].value = priceThree;
-  prices[4].value = priceFive;
-  suma = prices[0].value + prices[1].value + prices[2].value + prices[3].value + prices[4].value;
-
-  function handleBtn(btnClass, ingredient, value) {
+  
+  function handleBtn(btnClass, ingredient, value, base) {
     $(btnClass).click(function(){
-      $(ingredient).toggle();
+      if (base) {
+        $(ingredient).toggleClass(base);
+      } else {
+        $(ingredient).toggle();
+      }
       $(this).toggleClass("active");
       $('.price ul li:nth-child(' + value + ')').toggle();
+      var result = selectPrice(); 
+      $('.price strong').text('$' + result);
     });
   };
 
-  function base(btnClass, ingredient, base, value) {
-    $(btnClass).click(function(){
-      $(ingredient).toggleClass(base);
-      $(this).toggleClass("active");
-      $('.price ul li:nth-child(' + value + ')').toggle();
-    });
-  };
+  function convertNumbers() {
+    var elements = $('.price ul li:visible');
+    var prices = [];
+    for(var i = 0; i < elements.length; i++ ) {
+      var price = Number(elements[i].textContent.charAt(1));
+      prices.push(price);
+    };
+    return prices;
+  }
+
+  function selectPrice() {
+    var primaryValue = 10; 
+    var price = convertNumbers().reduce(function(a, b) {
+      return a + b;
+    }, primaryValue);
+    return price;
+  }
 
   handleBtn('.btn-pepperonni', '.pep', 1);
   handleBtn('.btn-green-peppers', '.green-pepper', 2);
   handleBtn('.btn-mushrooms', '.mushroom', 3);
-  base('.btn-sauce', '.sauce', 'sauce-white', 4);
-  base('.btn-crust', '.crust', 'crust-gluten-free', 5);
+  handleBtn('.btn-sauce', '.sauce', 4, 'sauce-white');
+  handleBtn('.btn-crust', '.crust', 5, 'crust-gluten-free');
 });
   
 
