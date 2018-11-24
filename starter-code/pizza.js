@@ -1,6 +1,6 @@
 // Write your Pizza Builder JavaScript in this file.
 
-$( document ).ready(function() {
+$(document).ready(function() {
 
     $("aside.panel li:nth-child(4)").hide();
     $("aside.panel li:nth-child(5)").hide();
@@ -48,16 +48,7 @@ $( document ).ready(function() {
     $(".sauce").removeClass("sauce-white");
     $(".crust").removeClass("crust-gluten-free");
 
-    $(".btn-sauce").click(function() {
-        $(".sauce").toggleClass("sauce-white");
-        $(this).toggleClass("active");
-
-        if ($(".btn-sauce").hasClass("active")) {
-            $("aside.panel li:nth-child(4)").show();
-        } else {
-            $("aside.panel li:nth-child(4)").hide();
-        }
-
+    
     $(".btn-crust").click(function() {
         $(".crust").toggleClass("crust-gluten-free");
         $(this).toggleClass("active");
@@ -70,12 +61,60 @@ $( document ).ready(function() {
 
     });
 
+    $(".btn-sauce").click(function() {
+        $(".sauce").toggleClass("sauce-white");
+        $(this).toggleClass("active");
+
+        if ($(".btn-sauce").hasClass("active")) {
+            $("aside.panel li:nth-child(4)").show();
+        } else {
+            $("aside.panel li:nth-child(4)").hide();
+        }
+    
+        
+    function getPrices (ob) {
+        var itemsActive = $(ob); // cogiendo el objeto jQuery que almacene elementos visibles
+        var itemsActivetoArray = Object.entries(itemsActive);
+        var re = new RegExp("[0-9]");
+        // var price = re.exec(item)
+        // return console.log(parseInt(re.exec(itemsActivetoArray[0][1].innerText)));
+        var sumPrices = itemsActivetoArray.reduce(function(acc, item) {
+            return acc + (re.exec(item[0][1].innerText));
+        }, 10)
+
+    }
+
+    getPrices("aside.panel li:visible");
+
+
+
+    // function calculatePrice(toppingsArray) {
+    //     var toppings = [];
+        
+    //     if () {
+
+    //     }
+    // }
+//($("aside.panel li").css("display") !== "none")
     
     });
 
 
 });
 
-function extractPrice(ob) {
-    
-}
+// function activeIngredients () {
+
+// }
+
+// function extractPrice(items) {
+//     var prices = items.map(function(item) {
+//         var re = new RegExp("[0-9]");
+//         var price = re.exec(item);
+
+//         return parseInt(price[0]);
+
+//     })
+
+//     return prices;
+// }
+
