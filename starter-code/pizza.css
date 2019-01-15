@@ -1004,6 +1004,10 @@ footer a:hover {
     -webkit-transition: all .3s linear;
 }
 
+.price-sauce, .price-crust {
+    display: none;
+}
+
 @media screen and (max-width: 720px) {
 
     body {
