@@ -60,6 +60,13 @@ body {
     font-family: 'Courier', 'Courier New', Serif;
     max-width: 750px;
     margin: 0 auto;
+    background-image: url(../starter-code/wooden-table-with-vegetables-on-sides_23-2147714793.jpg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+.sauce-price, .crust-price {
+    display: none;
 }
 
 /*
@@ -117,7 +124,7 @@ h1 {
 
 p.description {
     font-size: 14px;
-    color: #999;
+    color: white;
     font-style: italic;
     margin: 0 0 25px 0;
     padding: 0 5px;
