@@ -121,6 +121,25 @@ function updatePriceList() {
   } else {
     $(".price li:contains(gluten)").hide();
   }
+
+  updatePriceTotal();
 }
 
-updatePriceList();
+$(window).on("load", updatePriceList);
+
+// Iteration 5: Update price
+
+function updatePriceTotal() {
+  var total = 10;
+
+  $(".price li:visible").each(function() {
+    var desc = $(this).html();
+    var additional = parseInt(desc.slice(1, 2), 10);
+    total += additional;
+  });
+
+  console.log($(".price .strong"));
+  $(".price strong").html("$" + total);
+}
+
+$(window).on("load", updatePriceTotal);
