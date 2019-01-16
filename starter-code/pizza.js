@@ -32,5 +32,11 @@ $(".btn").on("click", function() {
 })
 
 function updatePrices() {
-    $("aside strong").html("$")
+    var pepperonni = ($(".btn-pepperonni")).hasClass("active") ? 1 : 0;
+    var pepper = ($(".btn-green-peppers")).hasClass("active") ? 1 : 0
+    var mushroom = ($(".btn-mushrooms")).hasClass("active") ? 1 : 0
+    var crust = ($(".btn-crust")).hasClass("active") ? 5 : 0
+    var sauce = ($(".btn-sauce")).hasClass("active") ? 3 : 0
+    var result = 10 + pepperonni + pepper + mushroom + crust + sauce
+    $("aside strong").text("$" + result)
     }
