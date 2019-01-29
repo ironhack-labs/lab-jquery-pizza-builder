@@ -1037,3 +1037,14 @@ footer a:hover {
         margin: 70px 0 10px 0;
     }
 }
+
+.remove{
+    display: none;
+}
+/* .active{
+    background-color: black;
+    color: white;
+} */
+.hide{
+    display: default;
+}
