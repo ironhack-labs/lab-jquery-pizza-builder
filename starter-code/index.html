@@ -15,21 +15,21 @@
 
     <!-- Controls -->
     <div class="panel controls">
-      <ul>
+      <ul id = "toppingActivating">
         <li>
-          <button class="btn btn-pepperonni active">Pepperonni</button>
+          <button data-price="1" class="btn btn-pepperonni active">Pepperonni</button>
         </li>
         <li>
-          <button class="btn btn-mushrooms active">Mushrooms</button>
+          <button data-price="1" class="btn btn-mushrooms active">Mushrooms</button>
         </li>
         <li>
-          <button class="btn btn-green-peppers active">Green peppers</button>
+          <button data-price="1" class="btn btn-green-peppers active">Green peppers</button>
         </li>
         <li>
-          <button class="btn btn-sauce active">White sauce</button>
+          <button data-price="3" class="btn btn-sauce active">White sauce</button>
         </li>
         <li>
-          <button class="btn btn-crust active">Gluten-free crust</button>
+          <button data-price="5" class="btn btn-crust active">Gluten-free crust</button>
         </li>
       </ul>
     </div>
@@ -41,11 +41,11 @@
 
       <b>$10 cheese pizza</b>
       <ul>
-        <li>$1 pepperonni</li>
-        <li>$1 mushrooms</li>
-        <li>$1 green peppers</li>
-        <li>$3 white sauce</li>
-        <li>$5 gluten-free crust</li>
+        <li id ="pepperonePrice">$1 pepperonni</li>
+        <li id ="mushroomsPrice">$1 mushrooms</li>
+        <li id ="peppersPrice">$1 green peppers</li>
+        <li id ="saucePrice">$3 white sauce</li>
+        <li id ="crustPrice">$5 gluten-free crust</li>
       </ul>
       <strong>$21</strong>
     </aside>
