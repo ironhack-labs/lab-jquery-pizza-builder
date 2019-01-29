@@ -522,9 +522,9 @@ p.description {
 }
 
 /*--- Mushrooms ---*/
-/* .no-mushroom{
+.no-mushroom{
   display: none;
-} */
+}
 .mushroom {
     position: absolute;
     width: 70px;
@@ -810,6 +810,9 @@ p.description {
 
 
 /*--- Green Peppers ---*/
+.no-pepper{
+  display: none;
+}
 .green-pepper {
     position: absolute;
     width: 20px;
