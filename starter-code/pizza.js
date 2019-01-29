@@ -4,6 +4,39 @@ var mushroomStatus = true;
 var pepperoniStatus = true;
 var whiteSauce = false;
 var gfreeCrust = false;
+var allIngredients = $('.active');
+var gtObj = $('#grand-total');
+var grandTotal = gtObj[0];
+//console.log(grandTotal.innerHTML);
+
+function checkTotalPrice(){
+    allIngredients = $('.active');
+    var totalPrice = 10;
+    for(var i=0; i<allIngredients.length; i++){
+        let ingredientObj = allIngredients[i];
+        let ingredient = ingredientObj.innerHTML;
+        switch(ingredient){
+            case "Pepperonni":
+                totalPrice += 1;
+                break;
+            case "Mushrooms":
+                totalPrice += 1;
+                break;
+            case "Green peppers":
+                totalPrice += 1;
+                break;
+            case "White sauce":
+                totalPrice += 3;
+                break;
+            case "Gluten Free crust":
+                totalPrice += 5;
+        }
+    }
+    console.log(totalPrice);
+    $('#grand-total').text("$" + totalPrice);
+
+}
+checkTotalPrice();
 
 $('.btn-green-peppers').click(()=>{
     if(pepperStatus == true){
@@ -18,6 +51,7 @@ $('.btn-green-peppers').click(()=>{
         $('.btn-green-peppers').addClass("active");
         $('#greenpepper-price').show();
     }
+    checkTotalPrice()
 });
 
 $('.btn-mushrooms').click(()=>{
@@ -33,6 +67,7 @@ $('.btn-mushrooms').click(()=>{
         $('.btn-mushrooms').addClass("active");
         $('#mushroom-price').show();
     }
+    checkTotalPrice()
 });
 
 $('.btn-pepperonni').click(()=>{
@@ -48,6 +83,7 @@ $('.btn-pepperonni').click(()=>{
         $('.btn-pepperonni').addClass("active");
         $('#pepperonni-price').show();
     }
+    checkTotalPrice()
 });
 
 $('.btn-sauce').click(()=>{
@@ -63,6 +99,7 @@ $('.btn-sauce').click(()=>{
         $('#whitesauce-price').hide();
         whiteSauce = false;
     }
+    checkTotalPrice()
 });
 
 $('.btn-crust').click(()=>{
@@ -78,4 +115,5 @@ $('.btn-crust').click(()=>{
         $('#glutenfree-price').hide();
         gfreeCrust = false;
     }
+    checkTotalPrice()
 });
