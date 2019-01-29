@@ -27,47 +27,13 @@ var ingredients = [
   }
 ];
 
-var pizzaTotal = 21;
-
-var total = 11;
-/*
-var pepperonni = {
-  price: 1,
-  selected: true
-};
-
-var mushrooms = {
-  price: 1,
-  selected: true
-};
-
-var peppers = {
-  price: 1,
-  selected: true
-};
-
-var sauce = {
-  price: 3,
-  selected: true
-};
-
-var crust = {
-  price: 5,
-  selected: true
-}
-*/
-
 $(document).ready(function() {
-
-  
-
 
   $('.btn-pepperonni').click(() => {
     $('.btn-pepperonni').toggleClass('disabled');
     $('section.pep*').toggle();
     $('#pep').toggle();
     (ingredients[0].selected != true)? ingredients[0].selected = true : ingredients[0].selected = false;
-    //alert(ingredients[0].selected);
   });
 
   $('.btn-mushrooms').click(() => {
@@ -101,15 +67,17 @@ $(document).ready(function() {
     (ingredients[4].selected != true)? ingredients[4].selected = true : ingredients[4].selected = false;
   });
 
-
-  
   $('button').click(() => {
+    let pizzaTotal = 0;
+    console.log(pizzaTotal);
     for (let i = 0; i < ingredients.length; i++) {
       if (ingredients[i].selected != false) {
-        total -= ingredients[i].price
+        pizzaTotal += ingredients[i].price
       }
     }
-    alert(total);
+    pizzaTotal += 10;
+    $('strong').text(`$${pizzaTotal}`)
+    //console.log(`=> ${pizzaTotal}`);
   })
 
 });
