@@ -22,6 +22,10 @@ header, section, footer, article, details {
     outline: 0;
 }
 
+.hidden {
+    display: none;
+}
+
 body {
     line-height: 1;
     color: black;
