@@ -51,32 +51,31 @@ $('.btn-pepperonni').click(()=>{
 });
 
 $('.btn-sauce').click(()=>{
-    console.log($(this).text);
-    if(whiteSauce==true){
+    if(whiteSauce == false){
         $('.sauce').addClass("sauce-white");
-        whiteSauce = false;
-        $('.btn-sauce').removeClass("active");
-        $('#whitesauce-price').hide();
-    }
-    else {
-        $('.sauce').removeClass("sauce-white");
-        whiteSauce = true;
         $('.btn-sauce').addClass("active");
         $('#whitesauce-price').show();
+        whiteSauce = true;
+    }
+    else{
+        $('.sauce').removeClass("sauce-white");
+        $('.btn-sauce').removeClass("active");
+        $('#whitesauce-price').hide();
+        whiteSauce = false;
     }
 });
 
 $('.btn-crust').click(()=>{
-    if(gfreeCrust==true){
+    if(gfreeCrust == false){
         $('.crust').addClass("crust-gluten-free");
-        gfreeCrust = false;
-        $('.btn-crust').removeClass("active");
-        $('#glutenfree-price').hide();
-    }
-    else {
-        $('.crust').removeClass("crust-gluten-free");
-        gfreeCrust = true;
         $('.btn-crust').addClass("active");
         $('#glutenfree-price').show();
+        gfreeCrust = true;
+    }
+    else{
+        $('.crust').removeClass("crust-gluten-free");
+        $('.btn-crust').removeClass("active");
+        $('#glutenfree-price').hide();
+        gfreeCrust = false;
     }
 });
