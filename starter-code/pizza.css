@@ -1037,3 +1037,40 @@ footer a:hover {
         margin: 70px 0 10px 0;
     }
 }
+
+.disabled {
+    background: #cccccc;
+    box-shadow: 0 6px gray;
+    color: black;
+}
+
+.btn-reg {
+    background: #640d15;
+    box-shadow: 0 6px #998500;
+    /*color: #555;*/
+    color: white;
+  }
+
+.btn-reg:hover {
+    background: #640d15;
+    color: white;
+}
+
+.sauce-regular {
+    background: #640d15
+}
+
+.crust-regular {
+    background-color: #ffd800;
+ }
+
+ .btn-crust-reg {
+    background: #ffd800;
+    box-shadow: 0 6px #957160;
+    color: orangered;
+  }
+
+ .btn-crust-reg:hover {
+    background-color: #ffd800;
+    color: orangered;
+ }
