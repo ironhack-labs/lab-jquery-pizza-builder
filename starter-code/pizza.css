@@ -1037,3 +1037,10 @@ footer a:hover {
         margin: 70px 0 10px 0;
     }
 }
+.hide{
+    display:none;
+}
+.wasClick{
+    background:rgb(199, 197, 197);
+    color: rgb(240, 235, 235); 
+}
