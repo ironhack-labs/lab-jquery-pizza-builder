@@ -1004,6 +1004,10 @@ footer a:hover {
     -webkit-transition: all .3s linear;
 }
 
+.hidden {
+    display: none;
+}
+
 @media screen and (max-width: 720px) {
 
     body {
@@ -1037,3 +1041,4 @@ footer a:hover {
         margin: 70px 0 10px 0;
     }
 }
+
