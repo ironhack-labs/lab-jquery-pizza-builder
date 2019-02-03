@@ -17,19 +17,19 @@
     <div class="panel controls">
       <ul>
         <li>
-          <button class="btn btn-pepperonni active">Pepperonni</button>
+          <button class="btn btn-pepperoni active" onclick="toggle('pepperoni')">Pepperoni</button>
         </li>
         <li>
-          <button class="btn btn-mushrooms active">Mushrooms</button>
+          <button class="btn btn-mushroom active" onclick="toggle('mushroom')">Mushrooms</button>
         </li>
         <li>
-          <button class="btn btn-green-peppers active">Green peppers</button>
+          <button class="btn btn-green-pepper active" onclick="toggle('green-pepper')">Green peppers</button>
         </li>
         <li>
-          <button class="btn btn-sauce active">White sauce</button>
+          <button class="btn btn-sauce-white" onclick="toggle('sauce-white')">White sauce</button>
         </li>
         <li>
-          <button class="btn btn-crust active">Gluten-free crust</button>
+          <button class="btn btn-crust-gf" onclick="toggle('crust-gf')">Gluten-free crust</button>
         </li>
       </ul>
     </div>
@@ -41,11 +41,6 @@
 
       <b>$10 cheese pizza</b>
       <ul>
-        <li>$1 pepperonni</li>
-        <li>$1 mushrooms</li>
-        <li>$1 green peppers</li>
-        <li>$3 white sauce</li>
-        <li>$5 gluten-free crust</li>
       </ul>
       <strong>$21</strong>
     </aside>
@@ -235,42 +230,42 @@
         <div class="stem"></div>
       </section>
 
-      <section class="pep one">1</section>
-      <section class="pep two">2</section>
-      <section class="pep three">3</section>
-      <section class="pep four">4</section>
-      <section class="pep five">5</section>
-      <section class="pep six">6</section>
-      <section class="pep seven">7</section>
-      <section class="pep eight">8</section>
-      <section class="pep nine">9</section>
-      <section class="pep ten">10</section>
-      <section class="pep eleven">11</section>
-      <section class="pep twelve">12</section>
-      <section class="pep thirteen">13</section>
-      <section class="pep fourteen">14</section>
-      <section class="pep fifteen">15</section>
-      <section class="pep sixteen">16</section>
-      <section class="pep seventeen">17</section>
-      <section class="pep eightteen">18</section>
-      <section class="pep nineteen">19</section>
-      <section class="pep twenty">20</section>
-      <section class="pep twenty-one">21</section>
-      <section class="pep twenty-two">22</section>
-      <section class="pep twenty-three">23</section>
-      <section class="pep twenty-four">24</section>
-      <section class="pep twenty-five">25</section>
-      <section class="pep twenty-six">26</section>
-      <section class="pep twenty-seven">27</section>
-      <section class="pep twenty-eight">28</section>
-      <section class="pep twenty-nine">29</section>
-      <section class="pep thirty">30</section>
-      <section class="pep thirty-one">31</section>
-      <section class="pep thirty-three">33</section>
+      <section class="pepperoni one">1</section>
+      <section class="pepperoni two">2</section>
+      <section class="pepperoni three">3</section>
+      <section class="pepperoni four">4</section>
+      <section class="pepperoni five">5</section>
+      <section class="pepperoni six">6</section>
+      <section class="pepperoni seven">7</section>
+      <section class="pepperoni eight">8</section>
+      <section class="pepperoni nine">9</section>
+      <section class="pepperoni ten">10</section>
+      <section class="pepperoni eleven">11</section>
+      <section class="pepperoni twelve">12</section>
+      <section class="pepperoni thirteen">13</section>
+      <section class="pepperoni fourteen">14</section>
+      <section class="pepperoni fifteen">15</section>
+      <section class="pepperoni sixteen">16</section>
+      <section class="pepperoni seventeen">17</section>
+      <section class="pepperoni eightteen">18</section>
+      <section class="pepperoni nineteen">19</section>
+      <section class="pepperoni twenty">20</section>
+      <section class="pepperoni twenty-one">21</section>
+      <section class="pepperoni twenty-two">22</section>
+      <section class="pepperoni twenty-three">23</section>
+      <section class="pepperoni twenty-four">24</section>
+      <section class="pepperoni twenty-five">25</section>
+      <section class="pepperoni twenty-six">26</section>
+      <section class="pepperoni twenty-seven">27</section>
+      <section class="pepperoni twenty-eight">28</section>
+      <section class="pepperoni twenty-nine">29</section>
+      <section class="pepperoni thirty">30</section>
+      <section class="pepperoni thirty-one">31</section>
+      <section class="pepperoni thirty-three">33</section>
 
-      <section class="crust crust-gluten-free">
+      <section id="crust-gf" class="crust crust-gf">
         <section class="cheese"></section>
-        <section class="sauce sauce-white"></section>
+        <section id="sauce-white" class="sauce sauce-white"></section>
       </section>
     </div>
     <!-- End Pizza -->
