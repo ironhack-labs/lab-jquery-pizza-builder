@@ -33,10 +33,10 @@ function Pizza() {
                 break;
         }
     }
-    this.toggleIngredients = function (content, button, price, showA, showB, status) {
-        $(content).toggleClass(showA);
+    this.toggleIngredients = function (content, button, price, showContent, showPrice, status) {
+        $(content).toggleClass(showContent);
         $(button).toggleClass(status);
-        $(price).toggleClass(showB);
+        $(price).toggleClass(showPrice);
     }
     this.setPrice = function () {
         this.totalPrice = 10;
