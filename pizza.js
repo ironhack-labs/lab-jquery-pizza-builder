@@ -5,6 +5,7 @@ function Pizza() {
   this.greenPeppers = true;
   this.sauce = true;
   this.crust = true;
+  this.totalPrice = 0;
 
   this.toggleIngredient = function(ingredient){
     switch (ingredient) {
@@ -33,29 +34,27 @@ function Pizza() {
     }
     this.calculateTotalPrice();
   }
-
   this.toggleClasses = function(content, button, toggleClass, priceClass) {
     $(content).toggleClass(toggleClass);
     $(button).toggleClass("active");
     $(`li:contains("${priceClass}")`).toggleClass("hide");
   }
-
   this.calculateTotalPrice = function(){
-    var totalPrice = 10;
-    if (this.pepperonni) totalPrice += 1;
-    if (this.mushrooms) totalPrice += 1;
-    if (this.greenPeppers) totalPrice += 1;
-    if (this.sauce) totalPrice += 3;
-    if (this.crust) totalPrice += 5;
-    $("#total-price").text("$"+totalPrice);
+    this.totalPrice = 10;
+    if (this.pepperonni) this.totalPrice += 1;
+    if (this.mushrooms) this.totalPrice += 1;
+    if (this.greenPeppers) this.totalPrice += 1;
+    if (this.sauce) this.totalPrice += 3;
+    if (this.crust) this.totalPrice += 5;
+    $("#total-price").text("$"+this.totalPrice);
   }
 }
 var myPizza = new Pizza();
   
 $(document).ready(function(){
-  myPizza.toggleIngredient("mushroom");
-  myPizza.toggleIngredient("pepperonni");
-  myPizza.calculateTotalPrice();
+  myPizza.toggleIngredient("sauce");
+  myPizza.toggleIngredient("crust");
+  myPizza.calculateTotalPrice(); 
 })
 
 $(".btn-pepperonni").click(function(){
