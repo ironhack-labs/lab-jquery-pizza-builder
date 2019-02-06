@@ -4,32 +4,33 @@ function Pizza() {
     this.greenPeppers = true;
     this.whiteSauce = true;
     this.glutenCrust = true;
+    this.totalPrice = 21;
     this.toggleToppings = function (ingredient) {
         switch (ingredient) {
             case "pepperoni":
-                this.pepperoni ? this.pepperoni = false : this.pepperoni = true;
+                this.pepperoni ? (this.pepperoni = false, this.totalPrice -=1) : (this.pepperoni = true, this.totalPrice +=1);
                 this.toggleIngredients(".pep", ".btn-pepperonni", "#pep-price", "hide", "hide", "active");
-                this.setPrice()
+                $("#totPrice")[0].innerHTML = this.totalPrice;
                 break;
             case "mushroom":
-                this.mushrooms ? this.mushrooms = false : this.mushrooms = true;
+                this.mushrooms ? (this.mushrooms = false, this.totalPrice -=1) : (this.mushrooms = true, this.totalPrice +=1);
                 this.toggleIngredients(".mushroom", ".btn-mushrooms", "#mush-price", "hide", "hide", "active");
-                this.setPrice()
+                $("#totPrice")[0].innerHTML = this.totalPrice;
                 break;
             case "green-pepper":
-                this.greenPeppers ? this.greenPeppers = false : this.greenPeppers = true;
+                this.greenPeppers ? (this.greenPeppers = false, this.totalPrice -=1) : (this.greenPeppers = true, this.totalPrice +=1);
                 this.toggleIngredients(".green-pepper", ".btn-green-peppers", "#green-price", "hide", "hide", "active");
-                this.setPrice()
+                $("#totPrice")[0].innerHTML = this.totalPrice;
                 break;
             case "sauce":
-                this.whiteSauce ? this.whiteSauce = false : this.whiteSauce = true;
+                this.whiteSauce ? (this.whiteSauce = false, this.totalPrice -=3) : (this.whiteSauce = true, this.totalPrice +=3);
                 this.toggleIngredients(".sauce", ".btn-sauce", "#sauce-price", "sauce-white", "hide", "active");
-                this.setPrice()
+                $("#totPrice")[0].innerHTML = this.totalPrice;
                 break;
             case "crust":
-                this.glutenCrust ? this.glutenCrust = false : this.glutenCrust = true;
+                this.glutenCrust ? (this.glutenCrust = false, this.totalPrice -=5) : (this.glutenCrust = true, this.totalPrice +=5);
                 this.toggleIngredients(".crust", ".btn-crust", "#gluten-price", "crust-gluten-free", "hide", "active");
-                this.setPrice()
+                $("#totPrice")[0].innerHTML = this.totalPrice;
                 break;
         }
     }
@@ -37,15 +38,6 @@ function Pizza() {
         $(content).toggleClass(showContent);
         $(button).toggleClass(status);
         $(price).toggleClass(showPrice);
-    }
-    this.setPrice = function () {
-        this.totalPrice = 10;
-        this.pepperoni ? this.totalPrice += 1 : 0;
-        this.mushrooms ? this.totalPrice += 1 : 0;
-        this.greenPeppers ? this.totalPrice += 1 : 0;
-        this.whiteSauce ? this.totalPrice += 3 : 0;
-        this.glutenCrust ? this.totalPrice += 5 : 0;
-        $("#totPrice")[0].innerHTML = this.totalPrice;
     }
 }
 $(".btn-pepperonni").click(function () {
