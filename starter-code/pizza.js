@@ -8,41 +8,38 @@ function Pizza() {
 
   this.toggleIngredient = function(ingredient){
     switch (ingredient) {
-      case "pep":
-        $(".pep").toggleClass("hide");
-        $(".btn-pepperonni").toggleClass("active");
-        (this.pepperonni === true) ? this.pepperonni = false : this.pepperonni = true ; 
-        $("li:contains('pepperonni')").toggleClass("hide");
+      case "pepperonni":
+        this.toggleClasses(".pep",".btn-pepperonni", "hide", "pepperonni");
+        this.pepperonni ? this.pepperonni = false : this.pepperonni = true ; 
         break;
-      case "mus":
-        $(".mushroom").toggleClass("hide");
-        $(".btn-mushrooms").toggleClass("active");
-        (this.mushrooms === true) ? this.mushrooms = false : this.mushrooms = true ;
-        $("li:contains('mushrooms')").toggleClass("hide");
+      case "mushroom":
+        this.toggleClasses(".mushroom",".btn-mushrooms", "hide", "mushrooms");
+        this.mushrooms ? this.mushrooms = false : this.mushrooms = true ;
         break;
-      case "grp":
-        $(".green-pepper").toggleClass("hide");
-        $(".btn-green-peppers").toggleClass("active");
-        (this.greenPeppers === true) ? this.greenPeppers = false : this.greenPeppers = true ; 
-        $("li:contains('green')").toggleClass("hide");
+      case "peppers":
+        this.toggleClasses(".green-pepper",".btn-green-peppers", "hide", "green");
+        this.greenPeppers ? this.greenPeppers = false : this.greenPeppers = true ; 
         break;
-      case "sau":
-        $(".sauce").toggleClass("hide");
-        $(".btn-sauce").toggleClass("active");
-        (this.sauce === true) ? this.sauce = false : this.sauce = true ; 
-        $("li:contains('white')").toggleClass("hide");
+      case "sauce":
+        this.toggleClasses(".sauce",".btn-sauce", "sauce-white", "white");
+        this.sauce ? this.sauce = false : this.sauce = true ; 
         break;
-      case "cru":
-        $(".crust").toggleClass("crust-gluten-free");
-        $(".btn-crust").toggleClass("active");
-        (this.crust === true) ? this.crust = false : this.crust = true ; 
-        $("li:contains('gluten-free crust')").toggleClass("hide");
+      case "crust":
+        this.toggleClasses(".crust",".btn-crust", "crust-gluten-free", "gluten-free crust");
+        this.crust ? this.crust = false : this.crust = true ; 
         break;
       default:
         break;
     }
     this.calculateTotalPrice();
   }
+
+  this.toggleClasses = function(content, button, toggleClass, priceClass) {
+    $(content).toggleClass(toggleClass);
+    $(button).toggleClass("active");
+    $(`li:contains("${priceClass}")`).toggleClass("hide");
+  }
+
   this.calculateTotalPrice = function(){
     var totalPrice = 10;
     if (this.pepperonni) totalPrice += 1;
@@ -56,56 +53,23 @@ function Pizza() {
 var myPizza = new Pizza();
   
 $(document).ready(function(){
-  myPizza.toggleIngredient("pep");
-  myPizza.toggleIngredient("mus");
+  myPizza.toggleIngredient("mushroom");
+  myPizza.toggleIngredient("pepperonni");
   myPizza.calculateTotalPrice();
 })
 
 $(".btn-pepperonni").click(function(){
-  myPizza.toggleIngredient("pep");
+  myPizza.toggleIngredient("pepperonni");
 })
 $(".btn-mushrooms").click(function(){
-  myPizza.toggleIngredient("mus");
+  myPizza.toggleIngredient("mushroom");
 })
 $(".btn-green-peppers").click(function(){
-  myPizza.toggleIngredient("grp");
+  myPizza.toggleIngredient("peppers");
 })
 $(".btn-sauce").click(function(){
-  myPizza.toggleIngredient("sau");
+  myPizza.toggleIngredient("sauce");
 })
 $(".btn-crust").click(function(){
-  myPizza.toggleIngredient("cru");
+  myPizza.toggleIngredient("crust");
 })
-
-/*
-$(document).ready(function(){
-  $(".btn-pepperonni").removeClass("active");
-  $(".pep").addClass("hide");
-  $(".btn-mushrooms").removeClass("active");
-  $(".mushroom").addClass("hide");
-  $(".btn-green-peppers").removeClass("active");
-  $(".green-pepper").addClass("hide");
-
-})
-
-$(".btn-pepperonni").click(function(){
-  $(".pep").toggleClass("hide");
-  $(".btn-pepperonni").toggleClass("active");
-})
-$(".btn-mushrooms").click(function(){
-  $(".mushroom").toggleClass("hide");
-  $(".btn-mushrooms").toggleClass("active");
-})
-$(".btn-green-peppers").click(function(){
-  $(".green-pepper").toggleClass("hide");
-  $(".btn-green-peppers").toggleClass("active");
-})
-$(".btn-sauce").click(function(){
-  $(".sauce").toggleClass("hide");
-  $(".btn-sauce").toggleClass("active");
-})
-$(".btn-crust").click(function(){
-  $(".crust").toggleClass("hide");
-  $(".btn-crust").toggleClass("active");
-})
-*/
