@@ -17,19 +17,19 @@
     <div class="panel controls">
       <ul>
         <li>
-          <button class="btn btn-pepperonni active">Pepperonni</button>
+          <button class="btn btn-pepperonni active" id="pepperoni">Pepperonni</button>
         </li>
         <li>
-          <button class="btn btn-mushrooms active">Mushrooms</button>
+          <button class="btn btn-mushrooms active" id="mushrooms">Mushrooms</button>
         </li>
         <li>
-          <button class="btn btn-green-peppers active">Green peppers</button>
+          <button class="btn btn-green-peppers active" id="peppers">Green peppers</button>
         </li>
         <li>
-          <button class="btn btn-sauce active">White sauce</button>
+          <button class="btn btn-sauce inactive" id="sauce">White sauce</button>
         </li>
         <li>
-          <button class="btn btn-crust active">Gluten-free crust</button>
+          <button class="btn btn-crust inactive" id="crust">Gluten-free crust</button>
         </li>
       </ul>
     </div>
@@ -41,13 +41,13 @@
 
       <b>$10 cheese pizza</b>
       <ul>
-        <li>$1 pepperonni</li>
-        <li>$1 mushrooms</li>
-        <li>$1 green peppers</li>
-        <li>$3 white sauce</li>
-        <li>$5 gluten-free crust</li>
+        <li id="price-pepperoni">$1 pepperonni</li>
+        <li id="price-mushrooms">$1 mushrooms</li>
+        <li id="price-pep">$1 green peppers</li>
+        <li id="price-sauce">$3 white sauce</li>
+        <li id="price-crust">$5 gluten-free crust</li>
       </ul>
-      <strong>$21</strong>
+      <strong>$<span id="price"></span></strong>
     </aside>
     <!-- End Price -->
 
