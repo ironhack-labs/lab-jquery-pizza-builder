@@ -11,32 +11,19 @@ $(".btn-crust").removeClass("active");
 $(".price li:nth-child(4)").toggle();
 $(".price li:nth-child(5)").toggle();
 
-let realValue = 10;
 
 
 function finalPrice() {
-  if ($(".btn-pepperonni").hasClass("active")) {
-    realValue += 1;
-  } else {realValue -=1};
-
-  if ($(".btn-green-pepper").hasClass("active")) {
-    realValue += 1
-  } else {realValue -=1};
-
-  if ($(".btn-mushrooms").hasClass("active")) {
-    realValue += 1;
-  } else {realValue -=1};
-
-  if ($(".btn-sauce").hasClass("active")) {
-    realValue += 3;
-  } else {realValue -=3};
-
-  if ($(".btn-crust").hasClass("active")) {
-    realValue += 5;
-  } else {realValue -=5};
+  let realValue = 10;
+  if ($(".btn-pepperonni").hasClass("active")) {realValue += 1} else {realValue}
+  if ($(".btn-green-peppers").hasClass("active")) {realValue += 1} else {realValue}
+  if ($(".btn-mushrooms").hasClass("active")) {realValue += 1} else {realValue}
+  if ($(".btn-sauce").hasClass("active")) {realValue += 3} else {realValue}
+  if ($(".btn-crust").hasClass("active")) {realValue += 5} else {realValue}
+  $("strong").html("$" + realValue);
 }
 
-$("strong").html("$" + realValue);
+finalPrice();
 
 
 $(".btn-pepperonni").on("click", function() {
