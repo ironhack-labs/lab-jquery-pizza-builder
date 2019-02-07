@@ -7,27 +7,27 @@ function Pizza() {
     this.totalPrice = 21;
     this.toggleToppings = function (ingredient) {
         switch (ingredient) {
-            case "pepperoni":
+            case "Pepperonni":
                 this.pepperoni ? (this.pepperoni = false, this.totalPrice -=1) : (this.pepperoni = true, this.totalPrice +=1);
                 this.toggleIngredients(".pep", ".btn-pepperonni", "#pep-price", "hide", "hide", "active");
                 $("#totPrice")[0].innerHTML = this.totalPrice;
                 break;
-            case "mushroom":
+            case "Mushrooms":
                 this.mushrooms ? (this.mushrooms = false, this.totalPrice -=1) : (this.mushrooms = true, this.totalPrice +=1);
                 this.toggleIngredients(".mushroom", ".btn-mushrooms", "#mush-price", "hide", "hide", "active");
                 $("#totPrice")[0].innerHTML = this.totalPrice;
                 break;
-            case "green-pepper":
+            case "Green peppers":
                 this.greenPeppers ? (this.greenPeppers = false, this.totalPrice -=1) : (this.greenPeppers = true, this.totalPrice +=1);
                 this.toggleIngredients(".green-pepper", ".btn-green-peppers", "#green-price", "hide", "hide", "active");
                 $("#totPrice")[0].innerHTML = this.totalPrice;
                 break;
-            case "sauce":
+            case "White sauce":
                 this.whiteSauce ? (this.whiteSauce = false, this.totalPrice -=3) : (this.whiteSauce = true, this.totalPrice +=3);
                 this.toggleIngredients(".sauce", ".btn-sauce", "#sauce-price", "sauce-white", "hide", "active");
                 $("#totPrice")[0].innerHTML = this.totalPrice;
                 break;
-            case "crust":
+            case "Gluten-free crust":
                 this.glutenCrust ? (this.glutenCrust = false, this.totalPrice -=5) : (this.glutenCrust = true, this.totalPrice +=5);
                 this.toggleIngredients(".crust", ".btn-crust", "#gluten-price", "crust-gluten-free", "hide", "active");
                 $("#totPrice")[0].innerHTML = this.totalPrice;
@@ -40,19 +40,9 @@ function Pizza() {
         $(price).toggleClass(showPrice);
     }
 }
-$(".btn-pepperonni").click(function () {
-    pizza.toggleToppings("pepperoni");
+$(".btn").click(function () {
+    let ingre = $(this)[0].innerHTML
+    debugger
+    pizzaPeter.toggleToppings(ingre);
 })
-$(".btn-mushrooms").click(function () {
-    pizza.toggleToppings("mushroom");
-})
-$(".btn-green-peppers").click(function () {
-    pizza.toggleToppings("green-pepper");
-})
-$(".btn-sauce").click(function () {
-    pizza.toggleToppings("sauce");
-})
-$(".btn-crust").click(function () {
-    pizza.toggleToppings("crust");
-})
-let pizza = new Pizza();
+let pizzaPeter = new Pizza();
