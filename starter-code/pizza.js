@@ -37,9 +37,11 @@ $(".btn-pepperonni").click(function() {
 });
 
 //Set initial state of crust and crust button
-$("section.crust").removeClass("crust-gluten-free");
-$(".btn-crust").removeClass("active");
-$("aside ul li:nth-child(5)").hide();
+var initialCrust = {
+    initialState: $("section.crust").removeClass("crust-gluten-free"),
+    crustButton: $(".btn-crust").removeClass("active"),
+    crustPrice: $("aside ul li:nth-child(5)").hide()
+}
 
 //Add and remove crust
 $(".btn-crust").click(function() {
@@ -50,9 +52,12 @@ $(".btn-crust").click(function() {
 });
 
 //Set initial state of white sauce and white sauce button
-$("section.sauce").removeClass("sauce-white");
-$(".btn-sauce").removeClass("active");
-$("aside ul li:nth-child(4)").hide();
+
+var initialSauce = {
+    initialState: $("section.sauce").removeClass("sauce-white"),
+    sauceButton: $(".btn-sauce").removeClass("active"),
+    saucePrice: $("aside ul li:nth-child(4)").hide()
+}
 
 //Add and remove white sauce
 $(".btn-sauce").click(function() {
