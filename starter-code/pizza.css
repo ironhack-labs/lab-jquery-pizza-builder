@@ -17,6 +17,9 @@ header, section, footer, article, details {
     font-family: inherit;
     vertical-align: baseline;
 }
+
+
+
 /* remember to define focus styles! */
 :focus {
     outline: 0;
@@ -1036,4 +1039,12 @@ footer a:hover {
     footer {
         margin: 70px 0 10px 0;
     }
+}
+
+
+
+/* jQuery style controls */
+
+.inactive {
+    display: none;
 }
