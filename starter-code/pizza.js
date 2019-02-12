@@ -1,6 +1,9 @@
 // Write your Pizza Builder JavaScript in this file.
 $(function () {
   
+  $("li:contains('$3 white sauce')").remove();        // Se elimina al principio (iteración 2)
+  $("li:contains('$5 gluten-free crust')").remove();  // Se elimina al principio (iteración 2)
+
   $('.btn-pepperonni').click( function() {
     var peppe = $("li:contains('$1 pepperonni')");
     if (peppe[0] != undefined) { peppe.remove(); }
@@ -25,6 +28,24 @@ $(function () {
     else {
       var newPeppers = $('<li></li>').text("$1 green peppers");
       $('.price ul').append(newPeppers);
+    }
+  });
+
+  $('.btn-sauce').click( function() {
+    var sauce = $("li:contains('$3 white sauce')");
+    if (sauce[0] != undefined) { sauce.remove(); }
+    else {
+      var newSauce = $('<li></li>').text("$3 white sauce");
+      $('.price ul').append(newSauce);
+    }
+  });
+
+  $('.btn-crust').click( function() {
+    var crust = $("li:contains('$5 gluten-free crust')");
+    if (crust[0] != undefined) { crust.remove(); }
+    else {
+      var newCrust = $('<li></li>').text("$5 gluten-free crust");
+      $('.price ul').append(newCrust);
     }
   });
 
