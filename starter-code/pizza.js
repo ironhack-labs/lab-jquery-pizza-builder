@@ -2,25 +2,32 @@
   $(".pep").hide(); 
   $(".mushroom").hide(); 
   $(".green-pepper").hide();  
+  //Eliminar las clases activas de los botones
+  $(".btn").removeClass('active'); 
 //Agregar y quitar 
 // la pimienta de
 // los champiñones 
 //los pimientos verdes
 $( ".btn-pepperonni" ).click(function() {
   $(".pep").slideToggle();
+  $(this).toggleClass('active'); 
 });
 $( ".btn-mushrooms" ).click(function() {
   $(".mushroom").slideToggle();
+  $(this).toggleClass('active'); 
 });
 $( ".btn-green-peppers" ).click(function() {
   $(".green-pepper").slideToggle();
+  $(this).toggleClass('active'); 
 });
 //seleccionar la salsa blanca y la corteza sin gluten si se quiere.
 $( ".btn-crust" ).click(function() {
   $(".crust").toggleClass('crust-gluten-free');
+  $(this).toggleClass('active'); 
 });
 $( ".btn-sauce" ).click(function() {
   $(".sauce").toggleClass('sauce-white');
+  $(this).toggleClass('active'); 
 });
 
 
