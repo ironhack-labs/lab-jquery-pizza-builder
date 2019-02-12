@@ -1,5 +1,7 @@
-// Write your Pizza Builder JavaScript in this file.
-
+//Eliminar todos los ingredientes desde el inicio
+  $(".pep").hide(); 
+  $(".mushroom").hide(); 
+  $(".green-pepper").hide();  
 //Agregar y quitar 
 // la pimienta de
 // los champiñones 
@@ -13,12 +15,12 @@ $( ".btn-mushrooms" ).click(function() {
 $( ".btn-green-peppers" ).click(function() {
   $(".green-pepper").slideToggle();
 });
-
+//seleccionar la salsa blanca y la corteza sin gluten si se quiere.
 $( ".btn-crust" ).click(function() {
   $(".crust").toggleClass('crust-gluten-free');
 });
 $( ".btn-sauce" ).click(function() {
-  $(".crust").toggleClass('sauce-white');
+  $(".sauce").toggleClass('sauce-white');
 });
 
 
@@ -29,4 +31,3 @@ $(document).ready(function() {
 $(".crust").removeClass( 'crust-gluten-free');
 $(".sauce").removeClass( 'sauce-white');
 
-//seleccionar la salsa blanca y la corteza sin gluten si se quiere.
