@@ -1,7 +1,7 @@
 //Coger el precio total
 var totalPrice = 21;
 //Precio de la pizza base
-var pizzaBase = 10;
+var pizzaBase = 13;
 //Eliminar todos los ingredientes desde el inicio
 //$(".pep").hide(); 
 //$(".mushroom").hide(); 
@@ -36,13 +36,17 @@ $( ".btn-pepperonni" ).click(function() {
     $(".pep").toggle();
     $('.btn-pepperonni').addClass('active'); 
     $( "li:contains('$1 pepperonni')" ).toggle();
-    pizzaBase = pizzaBase + 1;
-    console.log('if ' + pizzaBase);
+    pizzaBase = pizzaBase - 1;
+     //Pintar el resultado total de la pizza
+     $(".panel>strong").text(pizzaBase);
+    //console.log('if ' + pizzaBase);
   } else {$(".pep").toggle();
     $('.btn-pepperonni').removeClass('active'); 
     $( "li:contains('$1 pepperonni')" ).toggle();
-    pizzaBase = pizzaBase - 1;
-    console.log('else ' + pizzaBase);
+    pizzaBase = pizzaBase + 1;
+     //Pintar el resultado total de la pizza
+     $(".panel>strong").text(pizzaBase);
+    //console.log('else ' + pizzaBase);
   }
   
 });
@@ -57,13 +61,17 @@ $( ".btn-mushrooms" ).click(function() {
     $(".mushroom").toggle();
     $('.btn-mushrooms').addClass('active'); 
     $( "li:contains('$1 mushrooms')" ).toggle();
-    pizzaBase = pizzaBase + 1;
-    console.log('if ' + pizzaBase);
+    pizzaBase = pizzaBase - 1;
+     //Pintar el resultado total de la pizza
+     $(".panel>strong").text(pizzaBase);
+    //console.log('if ' + pizzaBase);
   } else {$(".mushroom").toggle();
     $('.btn-mushrooms').removeClass('active'); 
     $( "li:contains('$1 mushrooms')" ).toggle();
-    pizzaBase = pizzaBase - 1;
-    console.log('else ' + pizzaBase);
+    pizzaBase = pizzaBase + 1;
+     //Pintar el resultado total de la pizza
+     $(".panel>strong").text(pizzaBase);
+    //console.log('else ' + pizzaBase);
   }
 });
 $( ".btn-green-peppers" ).click(function() {
@@ -76,13 +84,17 @@ $( ".btn-green-peppers" ).click(function() {
     $(".green-pepper").toggle();
     $('.btn-green-peppers').addClass('active'); 
     $( "li:contains('$1 green peppers')" ).toggle();
-    pizzaBase = pizzaBase + 1;
-    console.log('if ' + pizzaBase);
+    pizzaBase = pizzaBase - 1;
+     //Pintar el resultado total de la pizza
+     $(".panel>strong").text(pizzaBase);
+    //console.log('if ' + pizzaBase);
   } else {$(".green-pepper").toggle();
     $('.btn-green-peppers').removeClass('active'); 
     $( "li:contains('$1 green peppers')" ).toggle();
-    pizzaBase = pizzaBase - 1;
-    console.log('else ' + pizzaBase);
+    pizzaBase = pizzaBase + 1;
+    //Pintar el resultado total de la pizza
+    $(".panel>strong").text(pizzaBase);
+    //console.log('else ' + pizzaBase);
   }
 });
 //seleccionar la salsa blanca y la corteza sin gluten si se quiere.
@@ -98,14 +110,18 @@ $( ".btn-crust" ).click(function() {
     $('.btn-crust').addClass('active'); 
     $( "li:contains('$5 gluten-free crus')" ).toggle();
     pizzaBase = pizzaBase + 5;
-    console.log('if ' + pizzaBase);
+    //Pintar el resultado total de la pizza
+    $(".panel>strong").text(pizzaBase);
+    //console.log('if ' + pizzaBase);
   } else {
     $(".crust-gluten-free").toggle();
     $(".crust").removeClass('crust-gluten-free');
     $('.btn-crust').removeClass('active'); 
     $( "li:contains('$5 gluten-free crus')" ).toggle();
     pizzaBase = pizzaBase - 5;
-    console.log('else ' + pizzaBase);
+    //Pintar el resultado total de la pizza
+    $(".panel>strong").text(pizzaBase);
+    //console.log('else ' + pizzaBase);
   }
 
 
@@ -122,21 +138,26 @@ $( ".btn-sauce" ).click(function() {
     $('.btn-sauce').addClass('active'); 
     $( "li:contains('$3 white sauce')" ).toggle();
     pizzaBase = pizzaBase + 3;
-    console.log('if ' + pizzaBase);
+    //Pintar el resultado total de la pizza
+    $(".panel>strong").text(pizzaBase);
+    //console.log('if ' + pizzaBase);
   } else {
     $(".sauce").toggle();
     $(".sauce").removeClass('sauce-white');
     $('.btn-sauce').removeClass('active'); 
     $( "li:contains('$3 white sauce')" ).toggle();
     pizzaBase = pizzaBase - 3;
-    console.log('else ' + pizzaBase);
+    //Pintar el resultado total de la pizza
+    $(".panel>strong").text(pizzaBase);
+    //console.log('else ' + pizzaBase);
   }
 });
 
-//Coger el precio de cada ingrediente
 
+//Pintar el resultado total de la pizza
+$(".panel>strong").text(pizzaBase);
 
-
-
+console.log(pizzaBase);
 $(document).ready(function() {
+  //declarar las funciones que se usan (preguntar a los TAS como era)
 });
