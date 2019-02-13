@@ -1003,7 +1003,9 @@ footer a:hover {
     opacity: 0;
     -webkit-transition: all .3s linear;
 }
-
+ .hide {
+    display: none!important;
+}
 @media screen and (max-width: 720px) {
 
     body {
