@@ -128,10 +128,9 @@ function activateButton (buttons) {
   $(buttons).addClass("active");
 }
 
-function deactivateButton (buttons,ingredients,count) {
+function deactivateButton (buttons,ingredients) {
   $(buttons).removeClass("active");
   $(ingredients).addClass("activation");
-  count = 0;
 }
 
 function removeEvents(buttons) {
@@ -156,9 +155,10 @@ window.onload = function() {
 
       pepperonniButton[0].onclick = function() {
         if ($(pepperonniButton[0]).hasClass("active")) {
-          deactivateButton(pepperonniButton,howManyPepperonni,countPepperoni);
+          deactivateButton(pepperonniButton,howManyPepperonni);
           removeEvents(pepperonniButton);
           removePriceLine (pepPriceLine);
+          countPepperoni=0;
         } else {
           activateButton(pepperonniButton);
           $(pepperonniButton[1]).on("click",addPepperonni);
@@ -168,9 +168,10 @@ window.onload = function() {
 
       mushroomButton[0].onclick =function() {
         if ($(mushroomButton[0]).hasClass("active")) {
-          deactivateButton(mushroomButton,howManyMushroom,countMushroom);
+          deactivateButton(mushroomButton,howManyMushroom);
           removeEvents(mushroomButton);
           removePriceLine(mushPriceLine);
+          countMushroom = 0;
         } else {
           activateButton(mushroomButton);
           $(mushroomButton[1]).on("click",addMushroom);
@@ -180,9 +181,10 @@ window.onload = function() {
 
       greenPepperButton[0].onclick = function() {
         if ($(greenPepperButton[0]).hasClass("active")) {
-          deactivateButton(greenPepperButton,howManyGreenPeppers,countGreenPepper);
+          deactivateButton(greenPepperButton,howManyGreenPeppers);
           removeEvents(greenPepperButton);
           removePriceLine(gpPriceLine);
+          countGreenPepper = 0;
         } else {
           activateButton(greenPepperButton);
           $(greenPepperButton[1]).on("click",addGreenPepper);
