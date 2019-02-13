@@ -235,23 +235,43 @@ p.description {
   color: #555;
 }
 
+.btn-regular-sauce {
+    background: #FF5733;
+    box-shadow: 0 6px #998500;
+    color: #fff;
+}
+
 .btn-sauce:hover {
   background: #fff088;
   box-shadow: 0 5px #776800;
   color: #555;
 }
 
+.btn-regular-sauce:hover {
+    background: #FF0000;
+    box-shadow: 0 5px #776800;
+    color: #fff;
+  }
+
 .btn-sauce.active {
   top: 2px;
   box-shadow: 0 2px #998500;
 }
 
-.btn-sauce.active:hover {
+.btn-regular-sauce.active {
+  top: 2px;
+  box-shadow: 0 2px #998500;
+}
+
+.btn-sauce.active:hover,
+.btn-regular-sauce.active:hover {
   box-shadow: 0 2px #776800;
 }
 
 .btn-sauce:active,
-.btn-sauce.active:active {
+.btn-regular-sauce:active,
+.btn-sauce.active:active
+.btn-regular-sauce.active:active {
   top: 5px;
   box-shadow: none;
 }
@@ -262,23 +282,46 @@ p.description {
   color: #555;
 }
 
+.btn-regular-crust {
+    background: #ab5f2b;
+    box-shadow: 0 6px #957160;
+    color: #fff;
+  }
+
 .btn-crust:hover {
   background: #d3c3bb;
   box-shadow: 0 5px #816253;
   color: #555;
 }
 
+.btn-regular-crust:hover {
+    background: #A0522D;
+    box-shadow: 0 5px #816253;
+    color: #fff;
+  }
+
 .btn-crust.active {
   top: 2px;
   box-shadow: 0 2px #957160;
 }
 
+.btn-regular-crust.active {
+    top: 2px;
+    box-shadow: 0 2px #957160;
+  }
+
 .btn-crust.active:hover {
   box-shadow: 0 2px #816253;
 }
 
+.btn-regular-crust.active:hover {
+    box-shadow: 0 2px #816253;
+  }
+
 .btn-crust:active,
-.btn-crust.active:active {
+.btn-crust.active:active
+.btn-regular-crust:active,
+.btn-regular-crust.active:active {
   top: 5px;
   box-shadow: none;
 }
