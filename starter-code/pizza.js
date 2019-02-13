@@ -27,10 +27,12 @@ $(".btn-crust").click(gluttenFree);
 
 function souceWhite(){
     $("#pizza .crust .sauce").toggleClass("sauce-white");
+    $( ".price ul li:contains(white)" ).toggleClass("hide");
 }
 
 function gluttenFree(){
     $("#pizza .crust").toggleClass("crust-gluten-free");
+    $( ".price ul li:contains(gluten)" ).toggleClass("hide");
 }
 
 $( document ).ready(function() {
