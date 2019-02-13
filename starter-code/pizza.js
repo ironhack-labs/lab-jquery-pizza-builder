@@ -16,6 +16,12 @@ var stems = $(".stem")
 var pepperoni = $(".pep")
 var whiteSauce = $(".sauce-white")
 var glutenFree = $(".crust-gluten-free")
+//prices
+var pepPrice = $(".price li:nth-child(1)")
+var mushPrice = $(".price li:nth-child(2)")
+var gpPrice = $(".price li:nth-child(3)")
+var saucePrice = $(".price li:nth-child(4)")
+var glutenPrice = $(".price li:nth-child(5)")
 
 
 
@@ -23,35 +29,38 @@ var glutenFree = $(".crust-gluten-free")
 function addRemovePepperoni() {
   butPep.toggleClass("active");
   pepperoni.toggleClass("visible");
+  pepPrice.toggleClass("visible");
 }
 
 function addRemoveGreenPepper() {
   butGP.toggleClass("active");
   greenPepper.toggleClass("green-pepper");
+  gpPrice.toggleClass("visible");
 }
 
 function addRemoveMushroom() {
   butMush.toggleClass("active");
   caps.toggleClass("cap");
   stems.toggleClass("stem");
+  mushPrice.toggleClass("visible");
 }
 
 function addRemoveGlutenFree() {
   butGluten.toggleClass("active");
   glutenFree.toggleClass("crust-gluten-free");
+  glutenPrice.toggleClass("visible");
 }
 
 function addRemoveWhiteSauce() {
   butSauce.toggleClass("active");
   whiteSauce.toggleClass("sauce-white");
+  saucePrice.toggleClass("visible");
 }
 
 function resetPizza() {
-  addRemovePepperoni();
-  addRemoveGreenPepper();
-  addRemoveMushroom();
   addRemoveGlutenFree();
   addRemoveWhiteSauce();
+  
 }
 
 // JS Functioning after load of site
