@@ -319,6 +319,12 @@ p.description {
   display: block;
   margin-top: 6px;
 }
+.ingredients{
+    visibility: hidden;
+}
+.visible{
+    visibility: visible;
+}
 
 /*--- Crust & Sauce ---*/
 .crust {
@@ -370,12 +376,12 @@ p.description {
 }
 
 .pep {
+    display: block;
     position: absolute;
     width: 80px;
     height: 70px;
     border-radius: 60px;
     background: #b3241c;
-    z-index: 15;
     font-size: 2em;
     text-align: center;
     padding-top: 10px;
@@ -383,6 +389,9 @@ p.description {
     border: 2px solid #871b15;
     text-indent: -9999px;
     color: #fff;
+}
+.pep-index{
+    z-index: 20;
 }
 /*.pep:hover{
     -moz-transform: scale(1.3);
@@ -523,9 +532,11 @@ p.description {
     position: absolute;
     width: 70px;
     height: 75px;
-    z-index: 20;
     margin: 200px 0 0 200px;
     text-indent: -9999px;
+}
+.mushroom-index{
+    z-index: 40;
 }
 
 .cap {
@@ -811,7 +822,9 @@ p.description {
     background: #2f5e20;
     box-shadow: 2px 2px 2px rgba(66, 132, 45, .9);
     margin: 250px 0 0 400px;
-    z-index: 30;
+}
+.green-pepper-index{
+    z-index: 60;
 }
 
 .green-pepper.one {
@@ -853,7 +866,6 @@ p.description {
     -o-transform: rotate(-86deg);
     transform: rotate(-86deg);
 }
-
 .green-pepper.six {
     margin: 300px 0 0 200px;
     -webkit-transform: rotate(0deg);
@@ -981,6 +993,8 @@ p.description {
     -o-transform: rotate(69deg);
     transform: rotate(69deg);
 }
+
+/*------ Added clases -----*/
 
 /*------ Footer -----*/
 footer {

@@ -3,6 +3,8 @@
   <head>
     <title>Pizza Builder</title>
     <link rel="stylesheet" href="pizza.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="js/pizza.js"></script>
   </head>
 
   <body>
@@ -26,11 +28,12 @@
           <button class="btn btn-green-peppers active">Green peppers</button>
         </li>
         <li>
-          <button class="btn btn-sauce active">White sauce</button>
-        </li>
-        <li>
           <button class="btn btn-crust active">Gluten-free crust</button>
         </li>
+        <li>
+          <button class="btn btn-sauce active">White sauce</button>
+        </li>
+        
       </ul>
     </div>
     <!-- End Controls -->
@@ -41,13 +44,13 @@
 
       <b>$10 cheese pizza</b>
       <ul>
-        <li>$1 pepperonni</li>
-        <li>$1 mushrooms</li>
-        <li>$1 green peppers</li>
-        <li>$3 white sauce</li>
-        <li>$5 gluten-free crust</li>
+        <li class = "ingredients visible">$1 pepperonni</li>
+        <li class = "ingredients visible">$1 mushrooms</li>
+        <li class = "ingredients visible">$1 green peppers</li>
+        <li class = "ingredients">$5 gluten-free crust</li>
+        <li class = "ingredients">$3 white sauce</li>
       </ul>
-      <strong>$21</strong>
+      <strong class= "totalPrice">$21</strong>
     </aside>
     <!-- End Price -->
 
@@ -268,9 +271,9 @@
       <section class="pep thirty-one">31</section>
       <section class="pep thirty-three">33</section>
 
-      <section class="crust crust-gluten-free">
+      <section class="crust">
         <section class="cheese"></section>
-        <section class="sauce sauce-white"></section>
+        <section class="sauce"></section>
       </section>
     </div>
     <!-- End Pizza -->
@@ -290,6 +293,6 @@
     <!-- Footer -->
 
     <script src="jquery-2.1.4.js"></script>
-    <script src="pizza.js"></script>
+
   </body>
 </html>
