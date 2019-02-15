@@ -49,6 +49,19 @@ $(document).ready(function() {
         }
     }) 
 
+    $(".btn-sauce").click(function(event){
+        if ($(".sauce").hasClass("sauce-white")) {
+            $(".sauce").removeClass("sauce-white") && $(".price li:nth-child(5)").removeClass("visible");
+            $(".btn-sauce").removeClass("active")
+            totalPrice.innerHTML = calculatePrice -= 3;
+            
+        } else {
+            $(".sauce").addClass("sauce-white") && $(".price li:nth-child(5)").addClass("visible");
+            $(".btn-sauce").addClass("active")
+            totalPrice.innerHTML = calculatePrice += 3;
+        }
+    })
+
     $(".btn-crust").click(function(event){
         if ($(".crust").hasClass("crust-gluten-free")) {
             $(".crust").removeClass("crust-gluten-free") && $(".price li:nth-child(4)").removeClass("visible");
@@ -62,18 +75,7 @@ $(document).ready(function() {
         }
     })
 
-    $(".btn-sauce").click(function(event){
-        if ($(".sauce").hasClass("sauce-white")) {
-            $(".sauce").removeClass("sauce-white") && $(".price li:nth-child(5)").removeClass("visible");
-            $(".btn-sauce").removeClass("active")
-            totalPrice.innerHTML = calculatePrice -= 3;
-            
-        } else {
-            $(".sauce").addClass("sauce-white") && $(".price li:nth-child(5)").addClass("visible");
-            $(".btn-sauce").addClass("active")
-            totalPrice.innerHTML = calculatePrice += 3;
-        }
-    })
+    
 
 });
 
