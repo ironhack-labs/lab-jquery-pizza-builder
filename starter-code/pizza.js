@@ -16,14 +16,14 @@ let ingSauce        = document.getElementsByClassName("sauce ")
 let ingCrust        = document.getElementsByClassName("crust")
 
 // Prices
-let prices = document.getElementsByTagName('aside')
+let aside = document.getElementsByTagName('aside')
 
 let pricesAll = (arr) => {
   let price = [...arr]
   
 }
 
-pricesAll(prices)
+// pricesAll(prices)
 
 const removingClass = (arr,removeClass) => {
   if (arr[0].classList.contains(removeClass)) {
