@@ -80,16 +80,3 @@ $(".grab-me").click(function(){
 
 $(".pep")
 
-// var mapper = {
-//     "btn-pepperonni": {price: 1, text: "pepperonni", class: "pep"},
-//     "btn-mashrooms": {price: 1, text: "mashroom", class: "mashroom"},
-// }
-
-// $(".btn-pepperonni").click(function(){
-//     $(".pep").toggle()
-//     $(".btn-pepperonni").toggleClass("active")
-//     $($("li:contains('pepperonni')")).toggle(1000)
-//     if ($(".btn-pepperonni").hasClass("active"))  total +=1
-//     else total -= 1
-//     $("#total").text(total);
-// })
