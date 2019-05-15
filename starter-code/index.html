@@ -14,22 +14,54 @@
 <!-- End Header -->
 
 <!-- Controls -->
-<div class="panel controls">
+<div class="panel controls" id="panCmdIngredientes">
     <ul>
         <li>
-            <button class="btn btn-pepperonni active" id="cmdPep">Pepperonni</button>
+            <button class="btn btn-pepperonni active"
+                    data-cssdecorator="pep"
+                    data-tipohandlecss="show_or_hide"
+                    data-precio="1"
+                    data-isIngredienteInicial="1"
+            >Pepperonni
+            </button>
         </li>
         <li>
-            <button class="btn btn-mushrooms active" id="cmdMu">Mushrooms</button>
+            <button class="btn btn-mushrooms active"
+                    data-cssdecorator="mushroom"
+                    data-tipohandlecss="show_or_hide"
+                    data-precio="1"
+                    data-isIngredienteInicial="0"
+            >Mushrooms
+            </button>
         </li>
         <li>
-            <button class="btn btn-green-peppers active" id="cmdGreen">Green peppers</button>
+            <button class="btn btn-green-peppers active"
+                    data-cssdecorator="green-pepper"
+                    data-tipohandlecss="show_or_hide"
+                    data-precio="1"
+                    data-isIngredienteInicial="1"
+            >Green peppers
+            </button>
         </li>
         <li>
-            <button class="btn btn-sauce active" id="cmdSalsa">White sauce</button>
+            <button class="btn btn-sauce active"
+                    data-cssdecorator="sauce-white"
+                    data-tipohandlecss="removeclass"
+                    data-cssbase=".sauce"
+                    data-isIngredienteInicial="1"
+                    data-precio="3"
+            >White sauce
+            </button>
         </li>
         <li>
-            <button class="btn btn-crust active" id="cmdCrust">Gluten-free crust</button>
+            <button class="btn btn-crust active"
+                    data-cssdecorator="crust-gluten-free"
+                    data-tipohandlecss="removeclass"
+                    data-cssbase=".crust"
+                    data-precio="5"
+                    data-isIngredienteInicial="1"
+            >Gluten-free crust
+            </button>
         </li>
     </ul>
 </div>
@@ -289,44 +321,123 @@
 <!-- Footer -->
 
 <script src="jquery-2.1.4.js"></script>
-<script src="PizzaController.js"></script>
+<script src="Pizza.js"></script>
+<script src="PizzaFactory.js"></script>
 
 <script>
 
-    function getElemFromID(id) {
-        return document.getElementById(id);
+    /*
+    *
+    * */
+
+    let pizzaFactory = new PizzaFactory();
+
+    let fnUpatePizzaInfo = (() => {
+
+        let elemPizzaBaseDesc = document.getElementById("pizzaBaseDesc");
+        let elemLabTotal = document.getElementById("labTotal");
+        let elemSubtotalItems = document.getElementById('listaSubtotalItem');
+
+        return (nombrePizzaBase, total, htmlSubtotalItems) => {
+            elemPizzaBaseDesc.innerHTML = nombrePizzaBase;
+            elemLabTotal.innerHTML = total;
+            elemSubtotalItems.innerHTML = htmlSubtotalItems;
+        };
+
+    })();
+
+
+    let listaElementoDecorador = [];
+    let listaIngredientesInicial=[];
+
+
+    function actualizarRenderConPizza(pizza) {
+
+        //Reset todos los ingredeintes
+        listaElementoDecorador.forEach(item=>{
+            let btn=item.elemBoton;
+            item.fnOnHide( btn);
+        });
+
+        //con cada ingredientes de la pizza buscar el render y mostrarlo
+        pizza.getListaIngredientes().forEach(item=>{
+
+            let elemento=listaElementoDecorador.find( decorador=>{
+                return decorador.nombre===item.nombre
+            });
+
+            elemento.fnOnShow(elemento.elemBoton);
+
+        });
+
+        //Mostar la informacion del
+        fnUpatePizzaInfo( pizza.getNombrePizzaBase() , pizza.getPrecio(), pizza.getHtmlListaIngredientes() )
     }
 
-    function getElemFromCSS(css) {
-        return document.querySelectorAll(css);
+
+    let coleccionBtnIng = document.getElementById("panCmdIngredientes").getElementsByClassName('btn');
+
+    let pizzaEnPreparacion =null;
+
+    /* crear evento el evento*/
+    for (let i = 0; i < coleccionBtnIng.length; i++) {
+
+        let btn = coleccionBtnIng[i];
+
+        let nombreIngrediente = btn.innerHTML.trim();
+
+
+        /* registrar ingrediente en la pizza *********************************************** */
+        let ingrediente = new IngredientePizza(
+            nombreIngrediente,
+            parseFloat(btn.dataset.precio)
+        );
+
+        pizzaFactory.registrarIngrediente(ingrediente);
+
+        if(btn.dataset.isingredienteinicial==="1"){
+            listaIngredientesInicial.push(ingrediente);
+        }
+
+        /* crear la lista de deocradores *************************************************** */
+
+
+        let fnOnShowIngrediente = (elembtn) => {
+            $("#pizza section." + elembtn.dataset.cssdecorator).show();
+        };
+
+        let fnOnHideIngrediente = (elembtn) => {
+            $("#pizza section." + elembtn.dataset.cssdecorator).hide();
+        };
+
+
+        if (btn.dataset.tipohandlecss === 'removeclass') {
+
+            let cssBase = btn.dataset.cssbase;
+
+            fnOnShowIngrediente = (elembtn) => {
+                $(elembtn.dataset.cssbase).addClass(elembtn.dataset.cssdecorator);
+            };
+
+            fnOnHideIngrediente = (elembtn) => {
+                $(elembtn.dataset.cssbase).removeClass(elembtn.dataset.cssdecorator);
+            };
+        }
+
+        /* asociar el evento de click con ejecución de actualizar pizza */
+        listaElementoDecorador.push(new RenderIngredientePizza(nombreIngrediente, btn, fnOnShowIngrediente, fnOnHideIngrediente));
+
+        btn.onclick = function (event) {
+
+            pizzaEnPreparacion = pizzaFactory.cambiarIngrediente(pizzaEnPreparacion, nombreIngrediente);
+            actualizarRenderConPizza(pizzaEnPreparacion);
+        };
+
     }
 
-    let elemCarritoNumQ = document.getElementById("labCarritoNumQ");
 
-    let elemCmdPep = getElemFromID('cmdPep');
-    let elemCmdMu = getElemFromID('cmdMu');
-    let elemCmdGreen = getElemFromID('cmdGreen');
-    let elemCmdSalsa = getElemFromID('cmdSalsa');
-    let elemCmdCrust = getElemFromID('cmdCrust');
-
-    let elemPizzaBaseDesc = getElemFromID("pizzaBaseDesc");
-    let elemLabTotal = getElemFromID("labTotal");
-    let elemSubtotalItems = getElemFromID("listaSubtotalItem");
-    let fnUpatePizzaInfo = (desc, total, htmlSubtotalItems) => {
-        elemPizzaBaseDesc.innerHTML = desc;
-        elemLabTotal.innerHTML = total;
-        elemSubtotalItems.innerHTML = htmlSubtotalItems;
-    };
-
-    let controller = new PizzaController(fnUpatePizzaInfo);
-
-    /* los controladores de ingredientes */
-
-    controller.addControladorIngrediente('pep', elemCmdPep, '.pep', 1, true);
-    controller.addControladorIngrediente('mu', elemCmdMu, '.mushroom', 1, true);
-    controller.addControladorIngrediente('green', elemCmdGreen, '.green-pepper', 1, true);
-    controller.addControladorIngrediente('salsa', elemCmdSalsa, '.sauce-white', 1, true);
-    controller.addControladorIngrediente('crust', elemCmdCrust, '.crust-gluten-free', 1, true);
+    pizzaEnPreparacion = pizzaFactory.crearPizza('cheese pizza', 10,listaIngredientesInicial);
+    actualizarRenderConPizza(pizzaEnPreparacion);
 
 </script>
 </body>
