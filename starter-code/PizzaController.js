@@ -16,12 +16,27 @@ class ControladorIngrediente {
         //cambiar el estatus de agregacion y usar jquery para mover o remover la clase
         this.isAdd = !this.isAdd;
 
-        if (this.isAdd) {
-            $(this.cssDecorador).show();
+        if (this.cssDecorador === '.sauce-white') {
+            if (this.isAdd) {
+                $('.sauce').addClass(this.cssDecorador);
+            } else {
+                $('.sauce').removeClass(this.cssDecorador);
+            }
+        } else if (this.cssDecorador === 'crust-gluten-free') {
+            if (this.isAdd) {
+                $('.crust').addClass(this.cssDecorador);
+            } else {
+                $('.crust').removeClass(this.cssDecorador);
+            }
         } else {
-            $(this.cssDecorador).hide();
+            if (this.isAdd) {
+                $(this.cssDecorador).show();
+            } else {
+                $(this.cssDecorador).hide();
+            }
         }
     }
+
 
 }
 

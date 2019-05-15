@@ -306,22 +306,27 @@
     let elemCmdPep = getElemFromID('cmdPep');
     let elemCmdMu = getElemFromID('cmdMu');
     let elemCmdGreen = getElemFromID('cmdGreen');
-    let elemCmdSalsa= getElemFromID('cmdSalsa');
+    let elemCmdSalsa = getElemFromID('cmdSalsa');
+    let elemCmdCrust = getElemFromID('cmdCrust');
 
-    let elemPizzaBaseDesc=getElemFromID("pizzaBaseDesc");
-    let elemLabTotal=getElemFromID("labTotal");
-    let elemSubtotalItems=getElemFromID("listaSubtotalItem");
-    let fnUpatePizzaInfo=(desc,total,htmlSubtotalItems)=>{
-        elemPizzaBaseDesc.innerHTML=desc;
-        elemLabTotal.innerHTML=total;
-        elemSubtotalItems.innerHTML=htmlSubtotalItems;
+    let elemPizzaBaseDesc = getElemFromID("pizzaBaseDesc");
+    let elemLabTotal = getElemFromID("labTotal");
+    let elemSubtotalItems = getElemFromID("listaSubtotalItem");
+    let fnUpatePizzaInfo = (desc, total, htmlSubtotalItems) => {
+        elemPizzaBaseDesc.innerHTML = desc;
+        elemLabTotal.innerHTML = total;
+        elemSubtotalItems.innerHTML = htmlSubtotalItems;
     };
 
     let controller = new PizzaController(fnUpatePizzaInfo);
 
     /* los controladores de ingredientes */
 
-    controller.addControladorIngrediente('pep',elemCmdPep,'.green-pepper',1, true);
+    controller.addControladorIngrediente('pep', elemCmdPep, '.pep', 1, true);
+    controller.addControladorIngrediente('mu', elemCmdMu, '.mushroom', 1, true);
+    controller.addControladorIngrediente('green', elemCmdGreen, '.green-pepper', 1, true);
+    controller.addControladorIngrediente('salsa', elemCmdSalsa, '.sauce-white', 1, true);
+    controller.addControladorIngrediente('crust', elemCmdCrust, '.crust-gluten-free', 1, true);
 
 </script>
 </body>
