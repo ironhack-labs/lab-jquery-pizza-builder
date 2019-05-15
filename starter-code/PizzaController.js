@@ -18,15 +18,15 @@ class ControladorIngrediente {
 
         if (this.cssDecorador === '.sauce-white') {
             if (this.isAdd) {
-                $('.sauce').addClass(this.cssDecorador);
+                $('.sauce').addClass('sauce-white');
             } else {
-                $('.sauce').removeClass(this.cssDecorador);
+                $('.sauce').removeClass('sauce-white');
             }
-        } else if (this.cssDecorador === 'crust-gluten-free') {
+        } else if (this.cssDecorador === '.crust-gluten-free') {
             if (this.isAdd) {
-                $('.crust').addClass(this.cssDecorador);
+                $('.crust').addClass('crust-gluten-free');
             } else {
-                $('.crust').removeClass(this.cssDecorador);
+                $('.crust').removeClass('crust-gluten-free');
             }
         } else {
             if (this.isAdd) {
@@ -85,7 +85,13 @@ class PizzaController {
     }
 
     onIngredienteChange(controlladorIngrediente) {
-        //actualizar total
+        //actualizar total no uisamos el ultimo ingrediente
+
+        let precioTotal=0;
+        let htmlInner='';
+
+        aqui voy hay que sumar los totales y llamar el callback
+
     }
 
 
