@@ -38,7 +38,6 @@ class PizzaFactory {
         let isAgregado = index > -1;
 
 
-
         if (isAgregado) {
             //remover
             listaIngredientes = listaIngredientes.filter( item=>{

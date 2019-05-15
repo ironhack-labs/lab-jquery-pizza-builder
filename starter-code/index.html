@@ -327,7 +327,15 @@
 <script>
 
     /*
+    * A partir de los ongreientees dados por los botones de control
+    * creamos una lista de ingredientesIniciales y una lista de renderIngrediente
+    * El proceso es que al inicio creamos una piizza predeterminada con ingredientes inicales
+    * con el pizzaFactory y luego hacemos el render de la pizza (solo funcion render)
     *
+    * Caundo hacemos click en llos botones de ingrediente se ejecuta el metodo de
+    * cambiar eingrediente sobre la pizza del facotry, el caul crea una nueva pizza y la devuelve para hacer de neuvo el render
+    *
+    *El render de los elementos de pizza usa instrucciones css de ocultar o agregar clases
     * */
 
     let pizzaFactory = new PizzaFactory();
@@ -351,7 +359,7 @@
     let listaIngredientesInicial=[];
 
 
-    function actualizarRenderConPizza(pizza) {
+    function renderPizza(pizza) {
 
         //Reset todos los ingredeintes
         listaElementoDecorador.forEach(item=>{
@@ -430,14 +438,14 @@
         btn.onclick = function (event) {
 
             pizzaEnPreparacion = pizzaFactory.cambiarIngrediente(pizzaEnPreparacion, nombreIngrediente);
-            actualizarRenderConPizza(pizzaEnPreparacion);
+            renderPizza(pizzaEnPreparacion);
         };
 
     }
 
 
     pizzaEnPreparacion = pizzaFactory.crearPizza('cheese pizza', 10,listaIngredientesInicial);
-    actualizarRenderConPizza(pizzaEnPreparacion);
+    renderPizza(pizzaEnPreparacion);
 
 </script>
 </body>
