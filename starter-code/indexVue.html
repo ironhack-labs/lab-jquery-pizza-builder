@@ -72,6 +72,7 @@
 
     <!-- Begin Pizza -->
     <div id="pizza">
+
         <div v-if="pizza.ingredientes[2].isAgregado"  >
             <section class="green-pepper one"></section>
             <section class="green-pepper two"></section>
@@ -259,7 +260,7 @@
         </div>
 
 
-        <div id="seccionPep" v-if="pizza.ingredientes[0].isAgregado" >
+        <div v-if="pizza.ingredientes[0].isAgregado" >
             <section class="pep one">1</section>
             <section class="pep two">2</section>
             <section class="pep three">3</section>
