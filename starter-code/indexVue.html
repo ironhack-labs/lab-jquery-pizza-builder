@@ -295,9 +295,9 @@
         </div>
 
 
-        <section class="crust crust-gluten-free">
+        <section class="crust crust-gluten-free" v-bind:class="{ 'crust-gluten-free': pizza.ingredientes[4].isAgregado }">
             <section class="cheese"></section>
-            <section class="sauce sauce-white"></section>
+            <section class="sauce" v-bind:class="{ 'sauce-white':pizza.ingredientes[3].isAgregado }"></section>
         </section>
     </div>
     <!-- End Pizza -->
