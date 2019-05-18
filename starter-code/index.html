@@ -55,29 +55,13 @@
   
       <!-- Begin Pizza -->
       <div id="pizza">
-        <div id="pepper-container" v-if="pizza.ingredients.hasGreenPeppers">
-          <section class="green-pepper one"></section>
-          <section class="green-pepper two"></section>
-          <section class="green-pepper three"></section>
-          <section class="green-pepper four"></section>
-          <section class="green-pepper five"></section>
-          <section class="green-pepper six"></section>
-          <section class="green-pepper seven"></section>
-          <section class="green-pepper eight"></section>
-          <section class="green-pepper nine"></section>
-          <section class="green-pepper ten"></section>
-          <section class="green-pepper eleven"></section>
-          <section class="green-pepper twelve"></section>
-          <section class="green-pepper thirteen"></section>
-          <section class="green-pepper fourteen"></section>
-          <section class="green-pepper fifteen"></section>
-          <section class="green-pepper sixteen"></section>
-          <section class="green-pepper seventeen"></section>
-          <section class="green-pepper eightteen"></section>
-          <section class="green-pepper nineteen"></section>
-          <section class="green-pepper twenty"></section>
-          <section class="green-pepper twenty-one"></section>
-        </div>        <!-- pepper-container -->
+        <green-pepper
+          v-for="(greenPepper, index) in dictionary"
+          v-if="pizza.ingredients.hasGreenPeppers"
+          class="green-pepper"
+          v-bind:class="greenPepper"
+          v-bind:key="index"
+        ></green-pepper>       
         <div class="mushroom-container" v-if="pizza.ingredients.hasMushrooms">
 
           <section class="mushroom one">

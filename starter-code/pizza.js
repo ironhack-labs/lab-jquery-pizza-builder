@@ -1,4 +1,9 @@
 // Write your Pizza Builder JavaScript in this file.
+Vue.component('green-pepper',{
+  props: ['ingrediente'],
+  template: '<section></section>'
+});
+
 new Vue({
   el: '#app',
   data: {
@@ -19,7 +24,30 @@ new Vue({
         pepperonniPrice: 1,
         whiteSaucePrice: 3,
         gluttenFreeCrustPrice: 5
-    }
+    },
+    dictionary: [
+      'one',
+      'two',
+      'three',
+      'four',
+      'five',
+      'six',
+      'seven',
+      'eight',
+      'nine',
+      'ten',
+      'eleven',
+      'twelve',
+      'thirteen',
+      'fourteen',
+      'fifteen',
+      'sixteen',
+      'seventeen',
+      'eightteen',
+      'nineteen',
+      'twenty',
+      'twenty-one'
+    ]
   },
   methods: {
     toggleMushrooms: function(){
