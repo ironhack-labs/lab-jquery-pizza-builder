@@ -6,30 +6,34 @@
   </head>
 
   <body>
+<div id="app">
+
     <!-- Begin Header -->
     <header>
+
       <h1>Pizza Builder</h1>
       <p class="description">Build your own HTML and CSS pizza.</p>
     </header>
+
     <!-- End Header -->
 
     <!-- Controls -->
     <div class="panel controls">
       <ul>
         <li>
-          <button class="btn btn-pepperonni active">Pepperonni</button>
+          <button class="btn btn-pepperonni active" v-on:click="hide">Pepperonni</button>
         </li>
         <li>
-          <button class="btn btn-mushrooms active">Mushrooms</button>
+          <button class="btn btn-mushrooms active" v-on:click="hide2">Mushrooms</button>
         </li>
         <li>
-          <button class="btn btn-green-peppers active">Green peppers</button>
+          <button class="btn btn-green-peppers active" v-on:click="hide3">Green peppers</button>
         </li>
         <li>
-          <button class="btn btn-sauce active">White sauce</button>
+          <button class="btn btn-sauce active" v-on:click="hide4">White sauce</button>
         </li>
         <li>
-          <button class="btn btn-crust active">Gluten-free crust</button>
+          <button class="btn btn-crust active" v-on:click="hide5">Gluten-free crust</button>
         </li>
       </ul>
     </div>
@@ -41,18 +45,18 @@
 
       <b>$10 cheese pizza</b>
       <ul>
-        <li>$1 pepperonni</li>
-        <li>$1 mushrooms</li>
-        <li>$1 green peppers</li>
-        <li>$3 white sauce</li>
-        <li>$5 gluten-free crust</li>
+        <li v-if="hidepepperonni">$1 pepperonni</li>
+        <li v-if="hidermushroom">$1 mushrooms</li>
+        <li v-if="greenPappers">$1 green peppers</li>
+        <li v-if="WhiteSauce">$3 white sauce</li>
+        <li v-if="GlutenFree">$5 gluten-free crust</li>
       </ul>
-      <strong>$21</strong>
+      <strong>${{totalPizza}}</strong>
     </aside>
     <!-- End Price -->
 
     <!-- Begin Pizza -->
-    <div id="pizza">
+    <div v-if="greenPappers">
       <section class="green-pepper one"></section>
       <section class="green-pepper two"></section>
       <section class="green-pepper three"></section>
@@ -74,7 +78,8 @@
       <section class="green-pepper nineteen"></section>
       <section class="green-pepper twenty"></section>
       <section class="green-pepper twenty-one"></section>
-
+    </div>
+      <div v-if="hidermushroom">
       <section class="mushroom one">
         <div class="cap">1</div>
         <div class="stem"></div>
@@ -234,6 +239,8 @@
         <div class="cap">31</div>
         <div class="stem"></div>
       </section>
+    </div>
+    <div v-if="hidepepperonni">
 
       <section class="pep one">1</section>
       <section class="pep two">2</section>
@@ -268,11 +275,12 @@
       <section class="pep thirty-one">31</section>
       <section class="pep thirty-three">33</section>
 
-      <section class="crust crust-gluten-free">
-        <section class="cheese"></section>
-        <section class="sauce sauce-white"></section>
-      </section>
     </div>
+      <section class="crust crust-gluten-free" v-if="GlutenFree">
+        <section class="cheese"></section>
+        <section class="sauce sauce-white" v-if="WhiteSauce"></section>
+      </section>
+
     <!-- End Pizza -->
 
     <!-- Begin Crumbs -->
@@ -289,7 +297,8 @@
     </footer>
     <!-- Footer -->
 
-    <script src="jquery-2.1.4.js"></script>
-    <script src="pizza.js"></script>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="pizza.js"></script>
   </body>
 </html>
