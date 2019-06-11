@@ -136,7 +136,18 @@ buttonCrust.onclick = e => {
       e.style.display = ''
     }
   })
+}
 
+window.onload = function() {
+  crust.removeAttribute('class')
+  crust.setAttribute('class', 'crust')
+  buttonCrust.removeAttribute('class')
+  buttonCrust.setAttribute('class', 'btn btn-crust')
+
+  sauce.removeAttribute('class')
+  sauce.setAttribute('class', 'sauce')
+  buttonSauce.removeAttribute('class')
+  buttonSauce.setAttribute('class', 'btn btn-sauce')
 }
 
 
