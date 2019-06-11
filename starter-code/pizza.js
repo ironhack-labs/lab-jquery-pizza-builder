@@ -80,6 +80,8 @@ green_button.onclick = (e) =>{
 }
 
 crust_button.onclick = (e) =>{
+    crust_button.classList.toggle("active")
+    crust_img.classList.toggle("crust-gluten-free")
       if  (li[4].style.visibility == "visible" ||li[4].style.visibility == "" ){
         li[4].style.visibility = "hidden"; 
         li[4].style.height = "0vh"
