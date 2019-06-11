@@ -16,46 +16,38 @@ const btnChile=document.querySelector('.btn-green-peppers')
 const btnGluten=document.querySelector('.btn-crust')
 const btnSalsa=document.querySelector('.btn-sauce')
 
-//funcion para desaparecer peperonis
-btnPeperoni.onclick = e =>{
-    peperoni.forEach(e=>{
+
+//funcion principal para ingredientes
+const fIngredients=(boton,elem)=>{
+  boton.onclick = e =>{
+    elem.forEach(e=>{
       if( e.style.visibility == "visible" ){
         e.style.visibility = "hidden"  
-        btnPeperoni.classList.remove("active");//boton animacion
+        boton.classList.remove("active");//boton animacion
       } else {       
           e.style.visibility = "visible"  
-          btnPeperoni.classList.add("active");//boton animacion
+          boton.classList.add("active");//boton animacion
       }
     })
   }
-
-//funcion para desaparecer champiñones
-btnChamp.onclick = e =>{
-  champ.forEach(e=>{
-    if( e.style.visibility == "visible" ){
-      e.style.visibility = "hidden"  
-      btnChamp.classList.remove("active");//boton animacion
-
-    } else {       
-        e.style.visibility = "visible" 
-        btnChamp.classList.add("active");//boton animacion
-    }
-  })
 }
-//funcion para desaparecer chiles
-btnChile.onclick = e =>{
-  chile.forEach(e=>{
-    if( e.style.visibility == "visible" ){
-      e.style.visibility = "hidden"  
-      btnChile.classList.remove("active");//boton animacion
-
+const fMasa =(boton,ingrediente,clase)=>{
+  boton.onclick = e =>{
+    if( ingrediente.classList.item(1) == clase ){
+      ingrediente.classList.remove(clase);
+    boton.classList.remove("active");//boton animacion
     } else {       
-        e.style.visibility = "visible" 
-        btnChile.classList.add("active");//boton animacion
- 
+      ingrediente.classList.add(clase); 
+      boton.classList.add("active");//boton animacion
+
     }
-  })
-}
+  
+}}
+
+fIngredients(btnPeperoni,peperoni)
+fIngredients(btnChamp,champ)
+fIngredients(btnChile,chile)
+
 //funcion para desaparecer la Salsa
 btnSalsa.onclick = e =>{
     if( salsa.classList.item(1) == "sauce-white" ){
@@ -67,19 +59,8 @@ btnSalsa.onclick = e =>{
 
     }
 }
-//funcion para desaparecer Gluten
-btnGluten.onclick = e =>{
-
-  if( gluten.classList.item(1) == "crust-gluten-free" ){
-    gluten.classList.remove("crust-gluten-free");
-    btnGluten.classList.remove("active");//boton animacion
-  } else {       
-    gluten.classList.add("crust-gluten-free"); 
-    btnGluten.classList.add("active");//boton animacion
-
-  }
-}
-//
+fMasa(btnSalsa,salsa,"sauce-white")
+fMasa(btnGluten,gluten,"crust-gluten-free")
 
 
 
