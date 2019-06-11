@@ -8,13 +8,14 @@ const buttonMushroom = document.querySelector('.btn-mushrooms')
 const buttonSauce = document.querySelector('.btn-sauce')
 const buttonCrust = document.querySelector('.btn-crust')
 
-const prices = document.querySelector('aside ul')
+const prices = document.querySelectorAll('aside li')
 const greenpepper = document.querySelectorAll('.green-pepper')
 const mushroom = document.querySelectorAll('.mushroom')
 const pepperonni = document.querySelectorAll('.pep')
 const crust = document.querySelector('.crust')
 const cheese = document.querySelector('.cheese')
 const sauce = document.querySelector('.sauce')
+
 
 buttonGreenpeppers.onclick = e => {
   greenpepper.forEach(e => {
@@ -31,6 +32,13 @@ buttonGreenpeppers.onclick = e => {
     buttonGreenpeppers.removeAttribute('class')
     buttonGreenpeppers.setAttribute('class', 'btn btn-green-peppers active')
   }
+  prices.forEach(e => {
+    if(buttonGreenpeppers.getAttribute('class') === 'btn btn-green-peppers') {
+      if(e.innerText.includes('green pepper')) e.style.display = 'none'
+    } else {
+      e.style.display = ''
+    }
+  })
 }
 
 buttonPepperonni.onclick = e => {
@@ -48,6 +56,15 @@ buttonPepperonni.onclick = e => {
     buttonPepperonni.removeAttribute('class')
     buttonPepperonni.setAttribute('class', 'btn btn-pepperonni active')
   }
+
+  prices.forEach(e => {
+    if(buttonPepperonni.getAttribute('class') === 'btn btn-pepperonni') {
+      if(e.innerText.includes('pepperonni')) e.style.display = 'none'
+    } else {
+      e.style.display = ''
+    }
+  })
+
 }
 
 buttonMushroom.onclick = e => {
@@ -65,6 +82,15 @@ buttonMushroom.onclick = e => {
     buttonMushroom.removeAttribute('class')
     buttonMushroom.setAttribute('class', 'btn btn-mushrooms active')
   }
+
+  prices.forEach(e => {
+    if(buttonMushroom.getAttribute('class') === 'btn btn-mushrooms') {
+      if(e.innerText.includes('mushrooms')) e.style.display = 'none'
+    } else {
+      e.style.display = ''
+    }
+  })
+
 }
 
 buttonSauce.onclick = e => {
@@ -79,6 +105,15 @@ buttonSauce.onclick = e => {
     sauce.removeAttribute('class')
     sauce.setAttribute('class', 'sauce sauce-white')
   }
+
+  prices.forEach(e => {
+    if(buttonSauce.getAttribute('class') === 'btn btn-sauce') {
+      if(e.innerText.includes('sauce')) e.style.display = 'none'
+    } else {
+      e.style.display = ''
+    }
+  })
+
 }
 
 buttonCrust.onclick = e => {
@@ -93,5 +128,15 @@ buttonCrust.onclick = e => {
     crust.removeAttribute('class')
    crust.setAttribute('class', 'crust crust-gluten-free')
   }
+
+  prices.forEach(e => {
+    if(buttonCrust.getAttribute('class') === 'btn btn-crust') {
+      if(e.innerText.includes('crust')) e.style.display = 'none'
+    } else {
+      e.style.display = ''
+    }
+  })
+
 }
+
 
