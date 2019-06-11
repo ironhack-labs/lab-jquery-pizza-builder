@@ -76,7 +76,7 @@ var
 		return new jQuery.fn.init( selector, context );
 	},
 
-	// Support: Android<4.1
+	// Support: Android<4.1 
 	// Make sure we trim BOM and NBSP
 	rtrim = /^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g,
 
