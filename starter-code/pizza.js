@@ -13,6 +13,14 @@ const regularSauce = document.querySelector('.sauce')
 const saucePrice = document.querySelector('.saucePrice')
 const crustPrice = document.querySelector('.crustPrice')
 const pepPrice = document.querySelector('.pepPrice')
+const mushPrice = document.querySelector('.mushPrice')
+const greenPrice = document.querySelector('.greenPrice')
+let total = document.querySelector('.total')
+let totalPrice =  13
+let chargeCrust = 'no'
+let chargeSauce = 'no'
+
+total.innerText = '$' + totalPrice
 
 
 pepBtn.onclick = (e) => {
@@ -20,17 +28,22 @@ pepBtn.onclick = (e) => {
     if(pepperoni[i].style.display === ""){
     pepperoni[i].style.display = 'none'
     pepBtn.classList.remove ('active')
+    
     } else {
       pepperoni[i].style.display = ''
       pepBtn.classList.add('active')
+     
     }
   }
-  
+  if (pepperoni[0].style.display === ""){
+    totalPrice += 1
+  } else {
+    totalPrice -=1
+  }
+  total.innerText = '$' + totalPrice
+  pepPrice.classList.toggle('display')
 }
 
-// if (pepperoni[1].style.display = 'none'){
-//   pepBtn.classList.remove ('active')
-// }
 
 mushBtn.onclick = (e) => {
   for (let i = 0; i < mushroom.length; i++){
@@ -42,6 +55,13 @@ mushBtn.onclick = (e) => {
       mushBtn.classList.add ('active')
     }
   }
+  if (mushroom[0].style.display === ""){
+    totalPrice += 1
+  } else {
+    totalPrice -=1
+  }
+  total.innerText = '$' + totalPrice
+  mushPrice.classList.toggle('display')
 }
 
 
@@ -55,24 +75,47 @@ greenBtn.onclick = (e) => {
       greenBtn.classList.add ('active')
     }
   }
+  if (greenPeppers[0].style.display === ""){
+    totalPrice += 1
+  } else {
+    totalPrice -=1
+  }
+  total.innerText = '$' + totalPrice
+  greenPrice.classList.toggle('display')
 }
 
 glutenFree.classList.remove ('crust-gluten-free')
 crustBtn.classList.remove('active')
-crustPrice.style.display = 'none'
+
   crustBtn.onclick = () => {
     glutenFree.classList.toggle('crust-gluten-free')
     crustBtn.classList.toggle('active')
-    
+    crustPrice.classList.toggle('display')
+    if(chargeCrust === 'no') {
+      chargeCrust = 'yes'
+      totalPrice += 5
+    } else if (chargeCrust === 'yes') {
+      chargeCrust = 'no'
+      totalPrice -= 5
+    }
+    total.innerText = '$' + totalPrice
   }
 
 regularSauce.classList.remove ('sauce-white')
 sauceBtn.classList.remove('active')
-saucePrice.style.display= 'none'
+
 sauceBtn.onclick = () => {
   regularSauce.classList.toggle ('sauce-white')
   sauceBtn.classList.toggle ('active')
-  
+  saucePrice.classList.toggle('display')
+  if(chargeSauce === 'no') {
+    chargeSauce = 'yes'
+    totalPrice += 3
+  } else if (chargeSauce === 'yes') {
+    chargeSauce = 'no'
+    totalPrice -= 3
+  }
+  total.innerText = '$' + totalPrice
 }
 
 
