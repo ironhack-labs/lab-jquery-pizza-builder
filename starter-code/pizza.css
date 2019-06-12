@@ -982,6 +982,18 @@ p.description {
     transform: rotate(69deg);
 }
 
+.visible {
+  opacity: 0;
+}
+
+.green-pepper, .mushroom, .crust, .sauce,.pep {
+transition: 2s;
+}
+
+/* .transparent {
+  background: transparent;
+} */
+
 /*------ Footer -----*/
 footer {
     margin: 0 0 30px 0;
