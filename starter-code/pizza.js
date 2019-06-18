@@ -8,7 +8,7 @@ $(document).ready(function () {
   let p = $(".price li:contains(pepperonni)");
   let mushrooms = $(".price li:contains(mushrooms)");
   let peppers = $(".price li:contains(peppers)");
-  let white = $(".white");
+  let white = $(".price li:contains(sauce)");
   let gcrust = $(".price li:contains(crust)");
 
 
@@ -44,19 +44,17 @@ $(document).ready(function () {
 
 
   $(".btn-sauce").click(function () {
-
+    white.toggle();
       let crust = $(".sauce").hasClass("sauce-white");
 
       if (crust) {
 
           $(".sauce").removeClass("sauce-white");
-          $('.white').remove();
+         
           
 
       } else{
           $(".sauce").addClass("sauce-white");
-          let ing = $('.ing');
-          ing.append("<li class='white'>$3 white sauce</li>");
 
       }
       
@@ -64,19 +62,17 @@ $(document).ready(function () {
 
 
   $(".btn-crust").click(function () {
-
+    gcrust.toggle();
       let crust = $(".crust").hasClass("crust-gluten-free");
 
       if (crust) {
 
           $(".crust").removeClass("crust-gluten-free");
-          $(".gluten").remove();
+         
 
       } else{
           $(".crust").addClass("crust-gluten-free");
-          let ing = $(".ing");
-          ing.append("<li class='gluten'>$5 gluten-free crust</li>");
-      }
+              }
 
   });
   function renderPrice(){
