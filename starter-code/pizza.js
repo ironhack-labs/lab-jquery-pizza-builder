@@ -7,6 +7,7 @@ $('.btn.btn-sauce').toggleClass('active');
 $('.btn.btn-crust').toggleClass('active');
 $('.sauce').toggleClass('sauce-white');
 $('.crust').toggleClass('crust-gluten-free');
+priceUpdate();
 
 $('.btn.btn-pepperonni')
 	.eq(0)
