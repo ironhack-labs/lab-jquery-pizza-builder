@@ -1,5 +1,5 @@
 // Write your Pizza Builder JavaScript in this file.
-
+// 
 // Write your Pizza Builder JavaScript in this file.
 
 // Constants 
@@ -169,8 +169,8 @@ function renderPrice() {
           total = total + 5;
           dpanel = dpanel + `<li>$5 gluten-free crust</li>`;
         }
-
-        $(".panel.price ul").html(dpanel);
+        // profesor let newthing = $('<li></li>')     then theList.append() 
+        $(".panel.price ul").html(dpanel); 
         let dtotal = "$" + total;
         console.log("dtotal is")
         $(".panel.price strong").html(dtotal);
