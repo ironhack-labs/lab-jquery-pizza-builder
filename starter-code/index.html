@@ -40,19 +40,21 @@
       <h2>Your pizza's price</h2>
 
       <b>$10 cheese pizza</b>
-      <ul>
-        <li>$1 pepperonni</li>
-        <li>$1 mushrooms</li>
-        <li>$1 green peppers</li>
-        <li>$3 white sauce</li>
-        <li>$5 gluten-free crust</li>
+      <ul id="price-list">
+        <li id="pepperonni-price">$1 pepperonni</li>
+        <li id="mushroom-price">$1 mushrooms</li>
+        <li id="pepper-price">$1 green peppers</li>
+        <li id="sauce-price">$3 white sauce</li>
+        <li id="crust-price">$5 gluten-free crust</li>
       </ul>
-      <strong>$21</strong>
+      <strong>$<span id="total-price">13</span></strong>
     </aside>
     <!-- End Price -->
 
     <!-- Begin Pizza -->
     <div id="pizza">
+
+      <div class="peppers">
       <section class="green-pepper one"></section>
       <section class="green-pepper two"></section>
       <section class="green-pepper three"></section>
@@ -74,7 +76,9 @@
       <section class="green-pepper nineteen"></section>
       <section class="green-pepper twenty"></section>
       <section class="green-pepper twenty-one"></section>
+    </div>
 
+    <div class="mushrooms">
       <section class="mushroom one">
         <div class="cap">1</div>
         <div class="stem"></div>
@@ -234,7 +238,9 @@
         <div class="cap">31</div>
         <div class="stem"></div>
       </section>
+    </div>
 
+    <div class="pepperonnis">
       <section class="pep one">1</section>
       <section class="pep two">2</section>
       <section class="pep three">3</section>
@@ -267,6 +273,7 @@
       <section class="pep thirty">30</section>
       <section class="pep thirty-one">31</section>
       <section class="pep thirty-three">33</section>
+    </div>
 
       <section class="crust crust-gluten-free">
         <section class="cheese"></section>
