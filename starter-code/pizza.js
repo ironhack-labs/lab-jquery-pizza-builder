@@ -72,13 +72,13 @@ $(document).ready(function(){
 
   // CHECK FOR TOTAL PRICE
   // everytime a ingredient button is pressed, and depending if this item is shown or not on the page, we add its price to the total price
-
-  $(".btn").click(function(){
+  
+  function updateTotalPrice(){
     let myTotalPriceContainer = $("strong");
-    myTotalPriceContainer.text("$"+checkTotalPrice());
-  })
+    myTotalPriceContainer.text("$"+calculateTotalPrice());
+  };
 
-  function checkTotalPrice() {
+  function calculateTotalPrice() {
     let myTotalPrice = 10;
     let myAdditionalPricesContainer = $(".price  ul li");
     myAdditionalPricesContainer.each(function(){
@@ -88,5 +88,11 @@ $(document).ready(function(){
     });
     return myTotalPrice;
   }
+
+  updateTotalPrice();
+
+  $(".btn").click(function(){
+    updateTotalPrice();
+  })
 
 })
