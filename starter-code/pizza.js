@@ -59,45 +59,29 @@ function addListeners() {
 
 function clickPepperonni() {
   $("aside.panel li:contains(pepperonni)").toggle()
-  let button = $("div.panel.controls button.btn-pepperonni");
-  if(button.hasClass("active")) {
-    button.removeClass("active");
-    $("#pizza section.pep").remove()
-  } else {
-    button.addClass("active");
-    $("#pizza").prepend(peps.get());
-  }
+  $("div.panel.controls button.btn-pepperonni").toggleClass("active");
+  peps.toggle()
   updateCurrentPrice()
 }
 
 function clickSchrooms() {
   $("aside.panel li:contains(mushrooms)").toggle()
-  let button = $("div.panel.controls button.btn-mushrooms");
-  if(button.hasClass("active")) {
-    button.removeClass("active");
-    $("#pizza section.mushroom").remove()
-  } else {
-    button.addClass("active");
-    $("#pizza").prepend(mushrooms.get());
-  }
+  $("div.panel.controls button.btn-mushrooms").toggleClass("active");
+  mushrooms.toggle()
   updateCurrentPrice()
 }
 
 function clickPeppers() {
   $("aside.panel li:contains(peppers)").toggle()
-  let button = $("div.panel.controls button.btn-green-peppers");
-  if(button.hasClass("active")) {
-    button.removeClass("active");
-    $("#pizza section.green-pepper").remove()
-  } else {
-    button.addClass("active");
-    $("#pizza").prepend(peppers.get());
-  }
+  $("div.panel.controls button.btn-green-peppers").toggleClass("active");
+  peppers.toggle()
   updateCurrentPrice()
 }
 
 function updateCurrentPrice() {
-  $("aside.panel strong").text("$" + (10 + $("aside.panel ul li").filter(function () {return $(this).css("display") != "none"}).toArray().reduce((sum, e) => sum + parseInt(e.innerText.charAt(1)), 0)));
+  $("aside.panel strong").text("$" + (10 + $("aside.panel ul li").filter(function () {
+    return $(this).css("display") != "none"
+  }).toArray().reduce((sum, e) => sum + parseInt(e.innerText.charAt(1)), 0)));
 }
 
 $("document").ready(gogo)
