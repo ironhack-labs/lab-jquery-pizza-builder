@@ -17,23 +17,25 @@
     <div class="panel controls">
       <ul>
         <li>
-          <button class="btn btn-pepperonni active">Pepperonni</button>
+          <button id="pepperonni" class="btn btn-pepperonni">Pepperonni</button>
         </li>
         <li>
-          <button class="btn btn-mushrooms active">Mushrooms</button>
+          <button id="mushroom" class="btn btn-mushrooms">Mushrooms</button>
         </li>
         <li>
-          <button class="btn btn-green-peppers active">Green peppers</button>
+          <button id="green" class="btn btn-green-peppers">Green peppers</button>
         </li>
         <li>
-          <button class="btn btn-sauce active">White sauce</button>
+          <button id="sauce-white" class="btn btn-sauce">White sauce</button>
         </li>
         <li>
-          <button class="btn btn-crust active">Gluten-free crust</button>
+          <button id="crust" class="btn btn-crust">Gluten-free crust</button>
         </li>
       </ul>
     </div>
     <!-- End Controls -->
+
+
 
     <!-- Price -->
     <aside class="panel price">
@@ -41,15 +43,20 @@
 
       <b>$10 cheese pizza</b>
       <ul>
-        <li>$1 pepperonni</li>
-        <li>$1 mushrooms</li>
-        <li>$1 green peppers</li>
-        <li>$3 white sauce</li>
-        <li>$5 gluten-free crust</li>
+        <li id="pepPrice">$1 pepperonni</li>
+        <li id="mushPrice">$1 mushrooms</li>
+        <li id="greenPrice">$1 green peppers</li>
+        <li id="saucePrice">$3 white sauce</li>
+        <li id="crustPrice"> $5 gluten-free crust</li>
       </ul>
-      <strong>$21</strong>
+      <strong>$<span class="totalPizza">10</span></strong>
     </aside>
     <!-- End Price -->
+
+
+
+
+
 
     <!-- Begin Pizza -->
     <div id="pizza">
@@ -150,6 +157,7 @@
         <div class="stem"></div>
       </section>
 
+
       <section class="mushroom sixteen">
         <div class="cap">16</div>
         <div class="stem"></div>
@@ -235,6 +243,7 @@
         <div class="stem"></div>
       </section>
 
+
       <section class="pep one">1</section>
       <section class="pep two">2</section>
       <section class="pep three">3</section>
@@ -268,10 +277,12 @@
       <section class="pep thirty-one">31</section>
       <section class="pep thirty-three">33</section>
 
-      <section class="crust crust-gluten-free">
-        <section class="cheese"></section>
-        <section class="sauce sauce-white"></section>
-      </section>
+      <section class="cheese"></section>
+        
+      <section class="sauce"></section>
+      <section class="sauce-white"></section>
+
+      <section  class="crust crust-gluten-free"></section>
     </div>
     <!-- End Pizza -->
 
@@ -288,8 +299,12 @@
       </p>
     </footer>
     <!-- Footer -->
-
-    <script src="jquery-2.1.4.js"></script>
+    
+    <script
+    src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+    crossorigin="anonymous"></script>
+    
     <script src="pizza.js"></script>
   </body>
 </html>
