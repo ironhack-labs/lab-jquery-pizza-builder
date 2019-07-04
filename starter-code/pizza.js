@@ -23,9 +23,9 @@ $(document).ready(function () {
     $(".crust").toggleClass("crust-gluten-free")
   });
    
-  $(".btn-pepperonni").click(function(){
-    $(".btn-pepperonni").toggleClass("active")
-  });
+  // $(".btn-pepperonni").click(function(){
+  //   $(".btn-pepperonni").toggleClass("active")
+  // });
 
   $(".btn-mushrooms").click(function(){
     $(".btn-mushrooms").toggleClass("active")
@@ -60,33 +60,63 @@ $(document).ready(function () {
   //change price
   
   $(".btn-pepperonni").click(function() {
+   
+    $(".btn-pepperonni").toggleClass("active")
     let top1 = parseFloat(document.getElementById("top1").innerHTML)
     let prices = parseFloat(document.getElementById("prices").innerHTML)
-    let price = prices - top1
+    let price
+    if ($(".btn-pepperonni").hasClass("active")) {
+      price = prices + top1
+      } else {
+        price = prices - top1
+      }
     document.getElementById("prices").innerHTML = price
   });
+
   $(".btn-mushrooms").click(function() {
     let top2 = parseFloat(document.getElementById("top2").innerHTML)
     let prices = parseFloat(document.getElementById("prices").innerHTML)
-    let price = prices - top2
+    let price 
+    if ($(".btn-mushrooms").hasClass("active")) {
+      price = prices + top2
+      } else {
+        price = prices - top2
+      }
     document.getElementById("prices").innerHTML = price
   });
+
   $(".btn-green-peppers").click(function() {
     let top3 = parseFloat(document.getElementById("top3").innerHTML)
     let prices = parseFloat(document.getElementById("prices").innerHTML)
-    let price = prices - top3
+    let price
+    if ($(".btn-green-peppers").hasClass("active")) {
+      price = prices + top3
+      } else {
+        price = prices - top3
+      }
     document.getElementById("prices").innerHTML = price
   });
+
   $(".btn-sauce").click(function() {
     let top4 = parseFloat(document.getElementById("top4").innerHTML)
     let prices = parseFloat(document.getElementById("prices").innerHTML)
-    let price = prices + top4
+    let price 
+    if ($(".btn-sauce").hasClass("active")) {
+      price = prices + top4
+      } else {
+        price = prices - top4
+      }
     document.getElementById("prices").innerHTML = price
   });
   $(".btn-crust").click(function() {
     let top5 = parseFloat(document.getElementById("top5").innerHTML)
     let prices = parseFloat(document.getElementById("prices").innerHTML)
-    let price = prices + top5
+    let price 
+    if ($(".btn-crust").hasClass("active")) {
+      price = prices + top5
+      } else {
+        price = prices - top5
+      }
     document.getElementById("prices").innerHTML = price
   });
 });
