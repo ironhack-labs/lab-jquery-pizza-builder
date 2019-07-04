@@ -229,7 +229,7 @@ p.description {
   box-shadow: none;
 }
 
-.btn-sauce {
+.btn-sauce2 {
   background: #fff4aa;
   box-shadow: 0 6px #998500;
   color: #555;
@@ -335,6 +335,14 @@ p.description {
   box-shadow: inset 0 0 40px #d3c3bb;
 }
 
+.white {
+    display: none;
+}
+
+.gluten {
+    display: none;
+}
+
 .sauce {
     position: absolute;
     width: 620px;
@@ -347,6 +355,10 @@ p.description {
 
 .sauce-white {
   background: #fff4aa;
+}
+
+.sauce-red {
+  background: #dd2f25;
 }
 
 .cheese {
@@ -368,6 +380,7 @@ p.description {
     -o-transform: rotate(12deg) translate(-4px, -600px);
     transform: rotate(12deg) translate(-4px, -600px);
 }
+
 
 .pep {
     position: absolute;
