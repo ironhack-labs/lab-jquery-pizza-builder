@@ -34,7 +34,7 @@ function changeStatus(item, name) {
 
     if (item.hasClass("active")) {
         item.removeClass('active');
-        removeItemAside(name);   
+        removeItemAside(name);
     } else {
         item.addClass('active');
         addItemAside(name);
@@ -56,15 +56,14 @@ $(document).ready(() => {
     const $sauceItems = $('.sauce');
     const $btnCrust = $('.btn-crust');
     const $crustItems = $('.crust');
-     
-     addItemAside("pepperonni");
-     addItemAside("mushrooms");
-     addItemAside("greenPeppers");
-     $btnSauce.removeClass('active');
-     $sauceItems.toggleClass('sauce-white');
-     $btnCrust.removeClass('active');
-     $crustItems.toggleClass('crust-gluten-free');
 
+    addItemAside("pepperonni");
+    addItemAside("mushrooms");
+    addItemAside("greenPeppers");
+    $btnSauce.removeClass('active');
+    $sauceItems.toggleClass('sauce-white');
+    $btnCrust.removeClass('active');
+    $crustItems.toggleClass('crust-gluten-free');
 
 
     $btnPepperonni.on('click', () => {
@@ -93,6 +92,5 @@ $(document).ready(() => {
         $crustItems.toggleClass('crust-gluten-free');
         changeStatus($btnCrust, "glutenFree");
     });
-
 
 });
