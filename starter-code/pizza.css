@@ -235,6 +235,10 @@ p.description {
   color: #555;
 }
 
+.btn-sauce-txt {
+  content: "This text";
+  }
+
 .btn-sauce:hover {
   background: #fff088;
   box-shadow: 0 5px #776800;
