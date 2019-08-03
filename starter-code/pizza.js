@@ -56,9 +56,14 @@ $(document).ready(() => {
     const $sauceItems = $('.sauce');
     const $btnCrust = $('.btn-crust');
     const $crustItems = $('.crust');
-
+     
+     addItemAside("pepperonni");
+     addItemAside("mushrooms");
+     addItemAside("greenPeppers");
      $btnSauce.removeClass('active');
+     $sauceItems.toggleClass('sauce-white');
      $btnCrust.removeClass('active');
+     $crustItems.toggleClass('crust-gluten-free');
 
 
 
