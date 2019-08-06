@@ -17,19 +17,19 @@
     <div class="panel controls">
       <ul>
         <li>
-          <button class="btn btn-pepperonni active">Pepperonni</button>
+          <button data-id=".pep" data-topping="pepperonni" data-class="hidden" class="btn btn-pepperonni active">Pepperonni</button>
         </li>
         <li>
-          <button class="btn btn-mushrooms active">Mushrooms</button>
+          <button data-id=".mushroom" data-topping="mushroom" data-class="hidden" class="btn btn-mushrooms active">Mushrooms</button>
         </li>
         <li>
-          <button class="btn btn-green-peppers active">Green peppers</button>
+          <button data-id=".green-pepper" data-topping="green peppers" data-class="hidden" class="btn btn-green-peppers active">Green peppers</button>
         </li>
         <li>
-          <button class="btn btn-sauce active">White sauce</button>
+          <button data-id=".sauce" data-class="sauce-white" data-topping="white sauce" class="btn btn-sauce active">White sauce</button>
         </li>
         <li>
-          <button class="btn btn-crust active">Gluten-free crust</button>
+          <button data-id=".crust" data-class="crust-gluten-free" data-topping="crust" class="btn btn-crust active">Gluten-free crust</button>
         </li>
       </ul>
     </div>
@@ -39,15 +39,15 @@
     <aside class="panel price">
       <h2>Your pizza's price</h2>
 
-      <b>$10 cheese pizza</b>
+      <b>$<span class="pprice">10</span> cheese pizza</b>
       <ul>
-        <li>$1 pepperonni</li>
-        <li>$1 mushrooms</li>
-        <li>$1 green peppers</li>
-        <li>$3 white sauce</li>
-        <li>$5 gluten-free crust</li>
+        <li>$<span class="pprice">1</span> pepperonni</li>
+        <li>$<span class="pprice">1</span> mushrooms</li>
+        <li>$<span class="pprice">1</span> green peppers</li>
+        <li>$<span class="pprice">3</span> white sauce</li>
+        <li>$<span class="pprice">5</span> gluten-free crust</li>
       </ul>
-      <strong>$21</strong>
+      <strong>$<span class="ptotal">0</span></strong>
     </aside>
     <!-- End Price -->
 
@@ -289,7 +289,7 @@
     </footer>
     <!-- Footer -->
 
-    <script src="jquery-2.1.4.js"></script>
+    <script src="jquery-3.4.1.min.js"></script>
     <script src="pizza.js"></script>
   </body>
 </html>
