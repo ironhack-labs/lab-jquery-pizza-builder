@@ -6,12 +6,12 @@ let sauce = $(".sauce");
 let crust = $(".crust");
 let buttons = $(".btn");
 
-console.log(pepperonis, greenPeppers, mushrooms, sauce, crust, buttons);
+//console.log(pepperonis, greenPeppers, mushrooms, sauce, crust, buttons);
 
 function toggleIngredients(e) {
   let btnClasses = this.classList;
   let ingredientType = btnClasses[1];
-  console.log(ingredientType);
+  //console.log(ingredientType);
 
   switch (ingredientType) {
     case "btn-pepperonni":
@@ -45,11 +45,31 @@ function toggleIngredients(e) {
       .children(`.${ingredientType}`)
       .toggle();
   }
+
+  toggleIngredientInPricePanel(ingredientType);
+  calculatePrice();
 }
 
 function toggleActiveClass(e) {
   let btnClasses = this.classList;
   $(`.${btnClasses[1]}`).toggleClass(`active`);
+}
+
+function toggleIngredientInPricePanel(ingredient) {
+  $(".panel.price").children("ul").children(`#${ingredient}`).toggle();
+  //console.log(`toggled ${ingredient}`);
+}
+
+function calculatePrice() {
+  let ingredientsSelected = $(".panel.price").children("ul").children("li");
+  let total = 10;
+  for ( i = 0 ; i < ingredientsSelected.length ; i++ ) {
+    if ( ingredientsSelected[i]. )
+    total += parseInt(ingredientsSelected[i].dataset.price)
+    console.log(ingredientsSelected[i]);
+    console.log(total);
+  }
+
 }
 
 for (i = 0; i < buttons.length; i++) {
