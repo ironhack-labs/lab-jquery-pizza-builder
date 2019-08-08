@@ -5,6 +5,7 @@ let mushrooms = $(".mushroom");
 let sauce = $(".sauce");
 let crust = $(".crust");
 let buttons = $(".btn");
+let total = 13;
 
 //console.log(pepperonis, greenPeppers, mushrooms, sauce, crust, buttons);
 
@@ -47,29 +48,43 @@ function toggleIngredients(e) {
   }
 
   toggleIngredientInPricePanel(ingredientType);
-  calculatePrice();
+  //calculatePrice();
 }
 
 function toggleActiveClass(e) {
   let btnClasses = this.classList;
+  console.log(btnClasses[1]);
   $(`.${btnClasses[1]}`).toggleClass(`active`);
+  console.log(this.dataset.price);
+  if (btnClasses[2] == `active`) {
+    total += parseInt(this.dataset.price);
+  } else if (btnClasses[2] === undefined) {
+    total -= parseInt(this.dataset.price);
+  }
+  if (btnClasses[1] == `btn-sauce`) total += parseInt(this.dataset.price);
+  console.log(total);
 }
 
 function toggleIngredientInPricePanel(ingredient) {
-  $(".panel.price").children("ul").children(`#${ingredient}`).toggle();
+  $(".panel.price")
+    .children("ul")
+    .children(`#${ingredient}`)
+    .toggle();
   //console.log(`toggled ${ingredient}`);
 }
 
 function calculatePrice() {
-  let ingredientsSelected = $(".panel.price").children("ul").children("li");
+  let ingredientsSelected = $(".panel.price")
+    .children("ul")
+    .children("li");
   let total = 10;
-  for ( i = 0 ; i < ingredientsSelected.length ; i++ ) {
-    if ( ingredientsSelected[i]. )
-    total += parseInt(ingredientsSelected[i].dataset.price)
+  for (i = 0; i < ingredientsSelected.length; i++) {
+    if (ingredientsSelected[i].WHATTHEFUCKGOESHERE === "display: none")
+      if (ingredientsSelected[i].WHATTHEFUCKGOESHERE === "#ID")
+        total += parseInt(ingredientsSelected[i].dataset.price);
     console.log(ingredientsSelected[i]);
     console.log(total);
   }
-
 }
 
 for (i = 0; i < buttons.length; i++) {
