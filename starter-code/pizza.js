@@ -61,8 +61,10 @@ function toggleActiveClass(e) {
   } else if (btnClasses[2] === undefined) {
     total -= parseInt(this.dataset.price);
   }
-  if (btnClasses[1] == `btn-sauce`) total += parseInt(this.dataset.price);
+  //if (btnClasses[1] == `btn-sauce`) total += parseInt(this.dataset.price);
   console.log(total);
+  let totalPrice = $(".panel.price").children("strong");
+  totalPrice.text(`$${total}`);
 }
 
 function toggleIngredientInPricePanel(ingredient) {
