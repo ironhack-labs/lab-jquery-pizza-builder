@@ -21,12 +21,26 @@ $(document).ready(function() {
   });
 });
 
-/* Reference:
+// Removing white sauce from default pizza
+$(document).ready(function() {
+  $(".sauce").removeClass("sauce-white");
+});
 
-$( document ).ready(function() {
-  $('.heart').click(function(){
-    $(this).toggleClass('on');
+// Removing gluten-free crust from default pizza
+$(document).ready(function() {
+  $(".crust").removeClass("crust-gluten-free");
+});
+
+// Adding white sauce on button click
+$(document).ready(function() {
+  $(".btn-sauce").click(function() {
+    $(".sauce").toggleClass("sauce-white");
   });
 });
 
-*/
+// Adding gluten-free crust on button click
+$(document).ready(function() {
+  $(".btn-crust").click(function() {
+    $(".crust").toggleClass("crust-gluten-free");
+  });
+});
