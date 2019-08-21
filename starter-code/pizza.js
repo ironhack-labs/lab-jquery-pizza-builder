@@ -144,22 +144,4 @@ showPrice(glutenFreePrice, glutenButton)
 /*********************************/
 const totalPrice = document.querySelector('#total-price')
 
-const updatePrices = () => {
-  let total = 10
-  if ($('#pep-price').is(':visible')) {
-    total += 1
-  }
-  if ($('#mush-price').is(':visible')) {
-    total += 1
-  }
-  if ($('#green-price').is(':visible')) {
-    total += 1
-  }
-  if ($('#white-price').is(':visible')) {
-    total += 3
-  }
-  if ($('#gluten-price').is(':visible')) {
-    total += 5
-  }
-  document.getElementById('total-price').innerHTML = `$ ${total}`
-}
+totalPrice.innerHTML = 'Aprende algo dinero'
