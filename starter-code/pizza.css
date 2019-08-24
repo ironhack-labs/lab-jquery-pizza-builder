@@ -142,6 +142,30 @@ p.description {
     background-color: rgba(255, 255, 255, 0.8);
 }
 
+.panel.price > ul{
+    display: flex;
+    flex-direction: column;
+
+    
+
+}
+.pep-price {
+    display: initial;
+}
+.mushroom-price {
+    display: initial;
+}
+.grPep-price {
+    display: initial;
+}
+.whiteSauce-price {
+    display: none;
+}
+.glutenFreeCrust-price {
+    display: none;
+}
+
+
 
 /*------ Controls -----*/
 .controls {
@@ -152,6 +176,7 @@ p.description {
   background: #e8103b;
   box-shadow: 0 6px #890923;
   color: #fff;
+  display: initial;
 }
 
 .btn-pepperonni:hover {
@@ -552,6 +577,7 @@ p.description {
     -moz-transform: rotate(22deg);
     -o-transform: rotate(22deg);
     transform: rotate(22deg);
+    display: initial;
 }
 
 .mushroom.two {
