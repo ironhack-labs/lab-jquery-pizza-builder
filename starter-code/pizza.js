@@ -28,8 +28,6 @@ pepperonniBtn.onclick = function () {
 }
 
 
-
-
 let mushrooms = document.getElementsByClassName('mushroom')
 const arrayMush = [...mushrooms]
 
@@ -47,13 +45,6 @@ mushroomsBtn.onclick = function () {
     }
     totalPrice.innerHTML = `$${finalPrice}`
 }
-
-
-
-
-
-
-
 
 
 let gP = document.getElementsByClassName('green-pepper')
