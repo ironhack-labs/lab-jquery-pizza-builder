@@ -1,52 +1,81 @@
-// Write your Pizza Builder JavaScript in this file.
-const btnPepperonniElement = document.querySelector('btn-pepperonni')
-const btnMushroomsElement = document.querySelector('btn-mushrooms')
-const btnGreenPeppersElement = document.querySelector('btn-green-peppers')
-const btnWhiteSauceElement = document.querySelector('btn-white-sauce')
-const btnGlutenFreeCrustElement = document.querySelector('btn-gluten-free-crust')
+// BOTONES
+const btnPepperonniElement = document.querySelector('.btn-pepperonni')
+const btnMushroomsElement = document.querySelector('.btn-mushrooms')
+const btnGreenPeppersElement = document.querySelector('.btn-green-peppers')
+const btnWhiteSauceElement = document.querySelector('.btn-sauce')
+const btnGlutenFreeCrustElement = document.querySelector('.btn-crust')
+//INGREDIENTES
+const pepperonnies = document.getElementsByClassName('pep');
+const mushrooms = document.getElementsByClassName('mushroom')
+const greenPeppers = document.getElementsByClassName('green-pepper')
+const whiteSauce = document.querySelector('.sauce')
+const glutenFreeCrust = document.querySelector('.crust')
 
-btnPepperonniElement.addEventListener = () => {
-  const pepperonnies = document.getElementByClassName('pep')
-  if (btnPepperonniElement).className.contains('active') {
-    [...pepperonnies].forEach(current => {
-      current.style.display = 'none'
-    })
-    btnPepperonniElement.className = 'btn btn-pepperonni'
-  }
-  else
+btnPepperonniElement.onclick = () => {
+
+  if (pepperonnies[0].style.display === 'none') {
     [...pepperonnies].forEach(current => {
       current.style.display = ''
     })
-  btnPepperonniElement.className = 'btn btn-pepperonni active'
+    btnPepperonniElement.className = 'btn btn-pepperonni active'
+  } else {
+    [...pepperonnies].forEach(current => {
+      current.style.display = 'none'
+    })
+    pepperonnies.className = 'btn btn-pepperonni'
+  }
 }
 
-btnMushroomsElement.addEventListener = () => {
-    <
-    const mushrooms = document.getElementByClassName('mushroom')
-    if (btnMushroomsElement).className.contains('active') {
-      [...mushrooms].forEach(current => {
-        current.style.display = 'none'
-      })
-      btnMushroomsElement.className = 'btn btn-mushrooms'
-    }
-    else {
-      [...mushrooms].forEach(current => {
-        current.style.display = ''
-      })
-      btnMushroomsElement.className = 'btn btn-mushrooms active'
-    }
+btnMushroomsElement.onclick = () => {
 
-    btnGreenPeppersElement.addEventListener = () => {
-      const greenPeppers = document.getElementByClassName('green-pepper')
-      if (btnGreenPeppersElement).className.contains('active') {
-        [...greenPeppers].forEach(current => {
-          current.style.display = 'none'
-        })
-        btnGreenPeppersElement.className = 'btn btn-green-peppers'
-      }
-      else
-        [...greenPeppers].forEach(current => {
-          current.style.display = ''
-        })
-      btnGreenPeppersElement.className = 'btn btn-pepperonni active'
-    }
+  if (mushrooms[0].style.display === 'none') {
+    [...mushrooms].forEach(current => {
+      current.style.display = ''
+    })
+    mushrooms.className = 'btn btn-mushrooms active'
+  } else {
+    [...mushrooms].forEach(current => {
+      current.style.display = 'none'
+    })
+    mushrooms.className = 'btn btn-mushrooms'
+  }
+}
+
+btnGreenPeppersElement.onclick = () => {
+
+  if (greenPeppers[0].style.display === 'none') {
+    [...greenPeppers].forEach(current => {
+      current.style.display = ''
+    })
+    greenPeppers.className = 'btn btn-green-peppers active'
+  } else {
+    [...greenPeppers].forEach(current => {
+      current.style.display = 'none'
+    })
+    greenPeppers.className = 'btn btn-pepperonni'
+  }
+}
+
+btnWhiteSauceElement.onclick = () => {
+
+  if (whiteSauce.className === 'sauce') {
+    btnWhiteSauceElement.className = 'btn btn-sauce active'
+    whiteSauce.className = 'sauce sauce-white'
+  } else {
+    btnWhiteSauceElement.className = 'btn btn-sauce'
+    whiteSauce.className = 'sauce'
+  }
+}
+
+btnGlutenFreeCrustElement.onClick = () => {
+
+  if (glutenFreeCrust.className === 'crust') {
+    btnWhiteSauceElement.className = 'btn btn-crust active'
+    glutenFreeCrust.className = 'crust crust-gluten-free'
+  } else {
+    btnGlutenFreeCrustElement.className = 'btn btn-crust'
+    glutenFreeCrust.className = 'crust'
+  }
+
+
+}
