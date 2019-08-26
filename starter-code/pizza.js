@@ -23,7 +23,7 @@ let totalAmount = 0;
 
 // Disable Sauce & Crust options by default
 window.onload = function() {
-  document.getElementById('pizza-don-cangrejo').autoplay();
+  document.getElementById('pizza-don-cangrejo').play();
   btnCrust[0].classList.remove('active');
   btnWhiteSauce[0].classList.remove('active');
   priceWhite.style.display = 'none';
