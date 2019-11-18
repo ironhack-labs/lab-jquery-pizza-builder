@@ -4,9 +4,9 @@
 //buttons
 //1
 $('.btn-pepperonni').click(function () { 
-    $('.btn-pepperonni').toggleClass('active')
-    $('.pep').toggle();
-    $('li:contains("$1 pepperonni")').toggle(1000);
+    $('.btn-pepperonni').toggleClass('active')  //Obtiene boton peperoni 
+    $('.pep').toggle();//LE da la propiedad de toggle
+    $('li:contains("$1 pepperonni")').toggle(1000); //le da un aspecto de transición 
      
 });
 //2
